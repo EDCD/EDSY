@@ -9,14 +9,14 @@
  and is used here as authorized by Frontier Customer Services (https://forums.frontier.co.uk/showthread.php?t=5349).
  */
 var eddb = {
-    version: 2509,
+    version: 3004,
     ship: {
         1: {
             fdid: 128049249, fdname: 'SideWinder',
             id: 1, stype: 'mp', name: 'Sidewinder', class: 1, cost: 4070, retail: 32000,
             topspd: 220, bstspd: 320, mnv: 5, shields: 40, armour: 60, mass: 25,
-            minthrust: 45.45, boostcost: 7, pitch: 42, yaw: 16, roll: 110, pitchacc: 220, yawacc: 110, rollacc: 240,
-            heatcap: 140, heatdis: 0.13, fuelcost: 50, hardness: 20, masslock: 6, crew: 1,
+            minthrust: 45.454, boostcost: 7, pitch: 42, yaw: 16, roll: 110, pitchacc: 220, yawacc: 110, rollacc: 240, minpitch: 34,
+            heatcap: 140, heatdismin: 1.18, heatdismax: 18.15, fuelcost: 50, hardness: 20, masslock: 6, crew: 1,
             slots: {
                 hardpoint: [1, 1],
                 utility: [0, 0],
@@ -43,8 +43,8 @@ var eddb = {
             fdid: 128049255, fdname: 'Eagle',
             id: 21, stype: 'co', name: 'Eagle', class: 1, cost: 10440, retail: 44800,
             topspd: 240, bstspd: 350, mnv: 7, shields: 60, armour: 40, mass: 50,
-            minthrust: 75.0, boostcost: 8, pitch: 50, yaw: 18, roll: 120, pitchacc: 220, yawacc: 110, rollacc: 240,
-            heatcap: 165, heatdis: 0.13, fuelcost: 50, hardness: 28, masslock: 6, crew: 1,
+            minthrust: 75.0, boostcost: 8, pitch: 50, yaw: 18, roll: 120, pitchacc: 220, yawacc: 110, rollacc: 240, minpitch: 40,
+            heatcap: 165, heatdismin: 1.38, heatdismax: 21.48, fuelcost: 50, hardness: 28, masslock: 6, crew: 1,
             slots: {
                 hardpoint: [1, 1, 1],
                 utility: [0],
@@ -71,8 +71,8 @@ var eddb = {
             fdid: 128049261, fdname: 'Hauler',
             id: 31, stype: 'fr', name: 'Hauler', class: 1, cost: 29790, retail: 52720,
             topspd: 200, bstspd: 300, mnv: 4, shields: 50, armour: 100, mass: 14,
-            minthrust: 35.0, boostcost: 7, pitch: 36, yaw: 14, roll: 100, pitchacc: 220, yawacc: 110, rollacc: 240,
-            heatcap: 123, heatdis: 0.13, fuelcost: 50, hardness: 20, masslock: 6, crew: 1,
+            minthrust: 35.0, boostcost: 7, pitch: 36, yaw: 14, roll: 100, pitchacc: 220, yawacc: 110, rollacc: 240, minpitch: 30,
+            heatcap: 123, heatdismin: 1.06, heatdismax: 16.20, fuelcost: 50, hardness: 20, masslock: 6, crew: 1,
             slots: {
                 hardpoint: [1],
                 utility: [0, 0],
@@ -99,8 +99,8 @@ var eddb = {
             fdid: 128049267, fdname: 'Adder',
             id: 41, stype: 'ex', name: 'Adder', class: 1, cost: 40000, retail: 87810,
             topspd: 220, bstspd: 320, mnv: 4, shields: 60, armour: 90, mass: 35,
-            minthrust: 45.45, boostcost: 8, pitch: 38, yaw: 14, roll: 100, pitchacc: 200, yawacc: 100, rollacc: 220,
-            heatcap: 170, heatdis: 0.13, fuelcost: 50, hardness: 35, masslock: 7, crew: 2,
+            minthrust: 45.454, boostcost: 8, pitch: 38, yaw: 14, roll: 100, pitchacc: 200, yawacc: 100, rollacc: 220, minpitch: 30,
+            heatcap: 170, heatdismin: 1.45, heatdismax: 22.60, fuelcost: 50, hardness: 35, masslock: 7, crew: 2,
             slots: {
                 hardpoint: [2, 1, 1],
                 utility: [0, 0],
@@ -127,8 +127,8 @@ var eddb = {
             fdid: 128672138, fdname: 'Empire_Eagle',
             id: 25, stype: 'co', name: 'Imperial Eagle', class: 1, cost: 72180, retail: 110830,
             topspd: 300, bstspd: 400, mnv: 5, shields: 80, armour: 60, mass: 50,
-            minthrust: 70.0, boostcost: 8, pitch: 40, yaw: 15, roll: 100, pitchacc: 220, yawacc: 110, rollacc: 240,
-            heatcap: 163, heatdis: 0.13, fuelcost: 50, hardness: 28, masslock: 6, crew: 1, // verify masslock
+            minthrust: 70.0, boostcost: 8, pitch: 40, yaw: 15, roll: 100, pitchacc: 220, yawacc: 110, rollacc: 240, minpitch: 30,
+            heatcap: 163, heatdismin: 1.50, heatdismax: 21.20, fuelcost: 50, hardness: 28, masslock: 6, crew: 1, // verify masslock
             slots: {
                 hardpoint: [2, 1, 1],
                 utility: [0],
@@ -155,8 +155,8 @@ var eddb = {
             fdid: 128049273, fdname: 'Viper',
             id: 22, stype: 'co', name: 'Viper MkIII', class: 1, cost: 95900, retail: 142930,
             topspd: 320, bstspd: 400, mnv: 4, shields: 105, armour: 70, mass: 50,
-            minthrust: 62.5, boostcost: 10, pitch: 35, yaw: 15, roll: 90, pitchacc: 200, yawacc: 100, rollacc: 220,
-            heatcap: 195, heatdis: 0.13, fuelcost: 50, hardness: 35, masslock: 7, crew: 1,
+            minthrust: 62.5, boostcost: 10, pitch: 35, yaw: 15, roll: 90, pitchacc: 200, yawacc: 100, rollacc: 220, minpitch: 30,
+            heatcap: 195, heatdismin: 1.69, heatdismax: 26.20, fuelcost: 50, hardness: 35, masslock: 7, crew: 1,
             slots: {
                 hardpoint: [2, 2, 1, 1],
                 utility: [0, 0],
@@ -183,8 +183,8 @@ var eddb = {
             fdid: 128049279, fdname: 'CobraMkIII',
             id: 2, stype: 'mp', name: 'Cobra MkIII', class: 1, cost: 205800, retail: 349720,
             topspd: 280, bstspd: 400, mnv: 5, shields: 80, armour: 120, mass: 180,
-            minthrust: 50.0, boostcost: 10, pitch: 40, yaw: 10, roll: 100, pitchacc: 200, yawacc: 100, rollacc: 220,
-            heatcap: 225, heatdis: 0.14, fuelcost: 50, hardness: 35, masslock: 8, crew: 2,
+            minthrust: 50.0, boostcost: 10, pitch: 40, yaw: 10, roll: 100, pitchacc: 200, yawacc: 100, rollacc: 220, minpitch: 30,
+            heatcap: 225, heatdismin: 1.92, heatdismax: 30.63, fuelcost: 50, hardness: 35, masslock: 8, crew: 2,
             slots: {
                 hardpoint: [2, 2, 1, 1],
                 utility: [0, 0],
@@ -211,8 +211,8 @@ var eddb = {
             fdid: 128672255, fdname: 'Viper_MkIV',
             id: 28, stype: 'co', name: 'Viper MkIV', class: 1, cost: 310220, retail: 437930,
             topspd: 270, bstspd: 340, mnv: 3, shields: 150, armour: 150, mass: 190,
-            minthrust: 64.81, boostcost: 10, pitch: 30, yaw: 12, roll: 90, pitchacc: 200, yawacc: 100, rollacc: 220,
-            heatcap: 209, heatdis: 0.14, fuelcost: 50, hardness: 35, masslock: 7, crew: 1, // verify masslock
+            minthrust: 64.815, boostcost: 10, pitch: 30, yaw: 12, roll: 90, pitchacc: 200, yawacc: 100, rollacc: 220, minpitch: 25,
+            heatcap: 209, heatdismin: 1.82, heatdismax: 28.98, fuelcost: 50, hardness: 35, masslock: 7, crew: 1, // verify masslock
             slots: {
                 hardpoint: [2, 2, 1, 1],
                 utility: [0, 0],
@@ -239,8 +239,8 @@ var eddb = {
             fdid: 128671217, fdname: 'DiamondBack',
             id: 43, stype: 'ex', name: 'Diamondback Scout', class: 1, cost: 461340, retail: 564330,
             topspd: 280, bstspd: 380, mnv: 5, shields: 120, armour: 120, mass: 170,
-            minthrust: 60.71, boostcost: 10, pitch: 42, yaw: 15, roll: 100, pitchacc: 200, yawacc: 100, rollacc: 220,
-            heatcap: 346, heatdis: 0.14, fuelcost: 50, hardness: 40, masslock: 8, crew: 1,
+            minthrust: 60.714, boostcost: 10, pitch: 42, yaw: 15, roll: 100, pitchacc: 200, yawacc: 100, rollacc: 220, minpitch: 35,
+            heatcap: 346, heatdismin: 2.42, heatdismax: 48.05, fuelcost: 50, hardness: 40, masslock: 8, crew: 1,
             slots: {
                 hardpoint: [1, 1, 2, 2],
                 utility: [0, 0, 0, 0],
@@ -267,8 +267,8 @@ var eddb = {
             fdid: 128672262, fdname: 'CobraMkIV',
             id: 8, stype: 'mp', name: 'Cobra MkIV', class: 1, cost: 603740, retail: 764720,
             topspd: 200, bstspd: 300, mnv: 3, shields: 120, armour: 120, mass: 210,
-            minthrust: 50.0, boostcost: 10, pitch: 30, yaw: 10, roll: 90, pitchacc: 200, yawacc: 100, rollacc: 220,
-            heatcap: 228, heatdis: 0.14, fuelcost: 50, hardness: 35, masslock: 8, crew: 2,
+            minthrust: 50.0, boostcost: 10, pitch: 30, yaw: 10, roll: 90, pitchacc: 200, yawacc: 100, rollacc: 220, minpitch: 25,
+            heatcap: 228, heatdismin: 1.99, heatdismax: 31.68, fuelcost: 50, hardness: 35, masslock: 8, crew: 2,
             slots: {
                 hardpoint: [2, 2, 1, 1, 1],
                 utility: [0, 0],
@@ -295,8 +295,8 @@ var eddb = {
             fdid: 128049285, fdname: 'Type6',
             id: 32, stype: 'fr', name: 'Type-6 Transporter', class: 2, cost: 865790, retail: 1045950,
             topspd: 220, bstspd: 350, mnv: 3, shields: 90, armour: 180, mass: 155,
-            minthrust: 40.91, boostcost: 10, pitch: 30, yaw: 17, roll: 100, pitchacc: 220, yawacc: 110, rollacc: 240,
-            heatcap: 179, heatdis: 0.14, fuelcost: 50, hardness: 35, masslock: 8, crew: 1,
+            minthrust: 40.909, boostcost: 10, pitch: 30, yaw: 17, roll: 100, pitchacc: 220, yawacc: 110, rollacc: 240, minpitch: 23,
+            heatcap: 179, heatdismin: 1.70, heatdismax: 24.55, fuelcost: 50, hardness: 35, masslock: 8, crew: 1,
             slots: {
                 hardpoint: [1, 1],
                 utility: [0, 0, 0],
@@ -323,8 +323,8 @@ var eddb = {
             fdid: 128049291, fdname: 'Dolphin',
             id: 53, stype: 'pa', name: 'Dolphin', class: 1, cost: 1115320, retail: 1337320,
             topspd: 250, bstspd: 350, mnv: 3, shields: 110, armour: 110, mass: 140,
-            minthrust: 48.0, boostcost: 10, pitch: 30, yaw: 20, roll: 100, pitchacc: 220, yawacc: 110, rollacc: 240,
-            heatcap: 165, heatdis: 0.19, fuelcost: 50, hardness: 35, masslock: 9, crew: 1, // verify masslock
+            minthrust: 48.0, boostcost: 10, pitch: 30, yaw: 20, roll: 100, pitchacc: 220, yawacc: 110, rollacc: 240, minpitch: 23,
+            heatcap: 165, heatdismin: 1.91, heatdismax: 31.35, fuelcost: 50, hardness: 35, masslock: 9, crew: 1, // verify masslock
             slots: {
                 hardpoint: [1, 1],
                 utility: [0, 0, 0],
@@ -333,7 +333,7 @@ var eddb = {
                 internal: [5, 4, 4, 3, 2, 2, 2],
             },
             reserved: {
-                internal: [{icr: 1, ihrp: 1, imrp: 1, ipc: 1}],
+                internal: [{icr: 1, ihrp: 1, imahrp: 1, imrp: 1, ipc: 1}],
             },
             stock: {
                 hardpoint: [62160, 62160],
@@ -354,8 +354,8 @@ var eddb = {
             fdid: 128671831, fdname: 'DiamondBackXL',
             id: 44, stype: 'ex', name: 'Diamondback Explorer', class: 1, cost: 1635700, retail: 1894760,
             topspd: 260, bstspd: 340, mnv: 4, shields: 150, armour: 150, mass: 260,
-            minthrust: 61.54, boostcost: 13, pitch: 35, yaw: 13, roll: 90, pitchacc: 200, yawacc: 100, rollacc: 220,
-            heatcap: 351, heatdis: 0.14, fuelcost: 50, hardness: 42, masslock: 10, crew: 1,
+            minthrust: 61.538, boostcost: 13, pitch: 35, yaw: 13, roll: 90, pitchacc: 200, yawacc: 100, rollacc: 220, minpitch: 28,
+            heatcap: 351, heatdismin: 2.46, heatdismax: 50.55, fuelcost: 50, hardness: 42, masslock: 10, crew: 1,
             slots: {
                 hardpoint: [3, 2, 2],
                 utility: [0, 0, 0, 0],
@@ -383,8 +383,8 @@ var eddb = {
             id: 7, stype: 'mp', name: 'Imperial Courier', class: 1, cost: 2481550, retail: 2542930,
             faction: 'Empire', rank: 3,
             topspd: 280, bstspd: 380, mnv: 4, shields: 200, armour: 80, mass: 35,
-            minthrust: 78.57, boostcost: 10, pitch: 38, yaw: 16, roll: 90, pitchacc: 200, yawacc: 100, rollacc: 220,
-            heatcap: 230, heatdis: 0.11, fuelcost: 50, hardness: 30, masslock: 7, crew: 1,
+            minthrust: 78.571, boostcost: 10, pitch: 38, yaw: 16, roll: 90, pitchacc: 200, yawacc: 100, rollacc: 220, minpitch: 32,
+            heatcap: 230, heatdismin: 1.62, heatdismax: 25.05, fuelcost: 50, hardness: 30, masslock: 7, crew: 1,
             slots: {
                 hardpoint: [2, 2, 2],
                 utility: [0, 0, 0, 0],
@@ -411,8 +411,8 @@ var eddb = {
             fdid: 128672269, fdname: 'Independant_Trader',
             id: 35, stype: 'fr', name: 'Keelback', class: 2, cost: 2943870, retail: 3126150,
             topspd: 200, bstspd: 300, mnv: 2, shields: 135, armour: 270, mass: 180,
-            minthrust: 45.0, boostcost: 10, pitch: 27, yaw: 15, roll: 100, pitchacc: 220, yawacc: 110, rollacc: 240,
-            heatcap: 215, heatdis: 0.14, fuelcost: 50, hardness: 45, masslock: 8, crew: 2, // verify masslock
+            minthrust: 45.0, boostcost: 10, pitch: 27, yaw: 15, roll: 100, pitchacc: 220, yawacc: 110, rollacc: 240, minpitch: 20,
+            heatcap: 215, heatdismin: 1.87, heatdismax: 29.78, fuelcost: 50, hardness: 45, masslock: 8, crew: 2, // verify masslock
             slots: {
                 hardpoint: [1, 1, 2, 2],
                 utility: [0, 0, 0],
@@ -439,8 +439,8 @@ var eddb = {
             fdid: 128672276, fdname: 'Asp_Scout',
             id: 45, stype: 'ex', name: 'Asp Scout', class: 2, cost: 3817240, retail: 3961150,
             topspd: 220, bstspd: 300, mnv: 5, shields: 120, armour: 180, mass: 150,
-            minthrust: 50.0, boostcost: 13, pitch: 40, yaw: 15, roll: 110, pitchacc: 200, yawacc: 100, rollacc: 220,
-            heatcap: 210, heatdis: 0.14, fuelcost: 50, hardness: 52, masslock: 8, crew: 2, // verify masslock
+            minthrust: 50.0, boostcost: 13, pitch: 40, yaw: 15, roll: 110, pitchacc: 200, yawacc: 100, rollacc: 220, minpitch: 35,
+            heatcap: 210, heatdismin: 1.80, heatdismax: 29.65, fuelcost: 50, hardness: 52, masslock: 8, crew: 2, // verify masslock
             slots: {
                 hardpoint: [1, 1, 2, 2],
                 utility: [0, 0],
@@ -467,8 +467,8 @@ var eddb = {
             fdid: 128049309, fdname: 'Vulture',
             id: 23, stype: 'co', name: 'Vulture', class: 1, cost: 4689640, retail: 4925620,
             topspd: 210, bstspd: 340, mnv: 5, shields: 240, armour: 160, mass: 230,
-            minthrust: 90.48, boostcost: 16, pitch: 42, yaw: 17, roll: 110, pitchacc: 180, yawacc: 90, rollacc: 200,
-            heatcap: 237, heatdis: 0.15, fuelcost: 50, hardness: 55, masslock: 10, crew: 2,
+            minthrust: 90.476, boostcost: 16, pitch: 42, yaw: 17, roll: 110, pitchacc: 180, yawacc: 90, rollacc: 200, minpitch: 35,
+            heatcap: 237, heatdismin: 1.87, heatdismax: 35.63, fuelcost: 50, hardness: 55, masslock: 10, crew: 2,
             slots: {
                 hardpoint: [3, 3],
                 utility: [0, 0, 0, 0],
@@ -495,8 +495,8 @@ var eddb = {
             fdid: 128049303, fdname: 'Asp',
             id: 42, stype: 'ex', name: 'Asp Explorer', class: 2, cost: 6135660, retail: 6661150,
             topspd: 250, bstspd: 340, mnv: 4, shields: 140, armour: 210, mass: 280,
-            minthrust: 48.0, boostcost: 13, pitch: 38, yaw: 10, roll: 100, pitchacc: 200, yawacc: 100, rollacc: 220,
-            heatcap: 272, heatdis: 0.15, fuelcost: 50, hardness: 52, masslock: 11, crew: 2,
+            minthrust: 48.0, boostcost: 13, pitch: 38, yaw: 10, roll: 100, pitchacc: 200, yawacc: 100, rollacc: 220, minpitch: 30,
+            heatcap: 272, heatdismin: 2.34, heatdismax: 39.90, fuelcost: 50, hardness: 52, masslock: 11, crew: 2,
             slots: {
                 hardpoint: [1, 1, 1, 1, 2, 2],
                 utility: [0, 0, 0, 0],
@@ -524,8 +524,8 @@ var eddb = {
             id: 4, stype: 'mp', name: 'Federal Dropship', class: 2, cost: 13469990, retail: 14314210,
             faction: 'Federation', rank: 3,
             topspd: 180, bstspd: 300, mnv: 3, shields: 200, armour: 300, mass: 580,
-            minthrust: 55.56, boostcost: 19, pitch: 30, yaw: 14, roll: 80, pitchacc: 100, yawacc: 50, rollacc: 80,
-            heatcap: 331, heatdis: 0.14, fuelcost: 50, hardness: 60, masslock: 14, crew: 2,
+            minthrust: 55.556, boostcost: 19, pitch: 30, yaw: 14, roll: 80, pitchacc: 100, yawacc: 50, rollacc: 80, minpitch: 20,
+            heatcap: 331, heatdismin: 2.60, heatdismax: 46.50, fuelcost: 50, hardness: 60, masslock: 14, crew: 2,
             slots: {
                 hardpoint: [3, 2, 2, 2, 2],
                 utility: [0, 0, 0, 0],
@@ -552,8 +552,8 @@ var eddb = {
             fdid: 128049297, fdname: 'Type7',
             id: 33, stype: 'fr', name: 'Type-7 Transporter', class: 3, cost: 16780500, retail: 17472250,
             topspd: 180, bstspd: 300, mnv: 1, shields: 156, armour: 340, mass: 350,
-            minthrust: 33.33, boostcost: 10, pitch: 22, yaw: 22, roll: 60, pitchacc: 200, yawacc: 50, rollacc: 200,
-            heatcap: 226, heatdis: 0.14, fuelcost: 50, hardness: 54, masslock: 10, crew: 1, // verify masslock
+            minthrust: 33.333, boostcost: 10, pitch: 22, yaw: 22, roll: 60, pitchacc: 200, yawacc: 50, rollacc: 200, minpitch: 16, minyaw: 16,
+            heatcap: 226, heatdismin: 2.17, heatdismax: 32.45, fuelcost: 50, hardness: 54, masslock: 10, crew: 1, // verify masslock
             slots: {
                 hardpoint: [1, 1, 1, 1],
                 utility: [0, 0, 0, 0],
@@ -580,8 +580,8 @@ var eddb = {
             fdid: 128816574, fdname: 'TypeX',
             id: 9, stype: 'mp', name: 'Alliance Chieftain', class: 2, cost: 18572360, retail: 19382250,
             topspd: 230, bstspd: 330, mnv: 4, shields: 200, armour: 280, mass: 400,
-            minthrust: 65.0, boostcost: 18, pitch: 38, yaw: 16, roll: 90, pitchacc: NaN, yawacc: NaN, rollacc: NaN, // verify minthrust,boostcost // TODO: pitchacc,yawacc,rollacc
-            heatcap: 289, heatdis: 0.16, fuelcost: 50, hardness: 65, masslock: 13, crew: 2,
+            minthrust: 65.217, boostcost: 19, pitch: 38, yaw: 16, roll: 90, pitchacc: 170, yawacc: 60, rollacc: 150, minpitch: 32,
+            heatcap: 289, heatdismin: 2.60, heatdismax: 46.50, fuelcost: 50, hardness: 65, masslock: 13, crew: 2,
             slots: {
                 hardpoint: [3, 3, 2, 1, 1, 1],
                 utility: [0, 0, 0, 0],
@@ -609,8 +609,8 @@ var eddb = {
             id: 26, stype: 'co', name: 'Federal Assault Ship', class: 2, cost: 19071000, retail: 19814210,
             faction: 'Federation', rank: 5,
             topspd: 210, bstspd: 350, mnv: 4, shields: 200, armour: 300, mass: 480,
-            minthrust: 71.43, boostcost: 19, pitch: 38, yaw: 19, roll: 90, pitchacc: 170, yawacc: 80, rollacc: 200,
-            heatcap: 286, heatdis: 0.16, fuelcost: 50, hardness: 60, masslock: 14, crew: 2, // verify masslock
+            minthrust: 71.429, boostcost: 19, pitch: 38, yaw: 19, roll: 90, pitchacc: 170, yawacc: 80, rollacc: 200, minpitch: 30,
+            heatcap: 286, heatdismin: 2.53, heatdismax: 45.23, fuelcost: 50, hardness: 60, masslock: 14, crew: 2, // verify masslock
             slots: {
                 hardpoint: [3, 3, 2, 2],
                 utility: [0, 0, 0, 0],
@@ -638,8 +638,8 @@ var eddb = {
             id: 3, stype: 'mp', name: 'Imperial Clipper', class: 3, cost: 21077780, retail: 22295860,
             faction: 'Empire', rank: 7,
             topspd: 300, bstspd: 380, mnv: 5, shields: 180, armour: 270, mass: 400,
-            minthrust: 60.0, boostcost: 19, pitch: 40, yaw: 18, roll: 80, pitchacc: 200, yawacc: 100, rollacc: 220,
-            heatcap: 304, heatdis: 0.15, fuelcost: 50, hardness: 60, masslock: 12, crew: 2,
+            minthrust: 60.0, boostcost: 19, pitch: 40, yaw: 18, roll: 80, pitchacc: 200, yawacc: 100, rollacc: 220, minpitch: 30,
+            heatcap: 304, heatdismin: 2.63, heatdismax: 46.80, fuelcost: 50, hardness: 60, masslock: 12, crew: 2,
             slots: {
                 hardpoint: [3, 3, 2, 2],
                 utility: [0, 0, 0, 0],
@@ -667,8 +667,8 @@ var eddb = {
             id: 27, stype: 'mp', name: 'Federal Gunship', class: 2, cost: 34774790, retail: 35814210,
             faction: 'Federation', rank: 7,
             topspd: 170, bstspd: 280, mnv: 1, shields: 250, armour: 350, mass: 580,
-            minthrust: 58.82, boostcost: 23, pitch: 25, yaw: 18, roll: 80, pitchacc: 100, yawacc: 50, rollacc: 80,
-            heatcap: 325, heatdis: 0.16, fuelcost: 50, hardness: 60, masslock: 14, crew: 2, // verify masslock
+            minthrust: 58.824, boostcost: 23, pitch: 25, yaw: 18, roll: 80, pitchacc: 100, yawacc: 50, rollacc: 80, minpitch: 20,
+            heatcap: 325, heatdismin: 2.87, heatdismax: 51.40, fuelcost: 50, hardness: 60, masslock: 14, crew: 2, // verify masslock
             slots: {
                 hardpoint: [3, 2, 2, 2, 2, 1, 1],
                 utility: [0, 0, 0, 0],
@@ -695,8 +695,8 @@ var eddb = {
             fdid: 128049327, fdname: 'Orca',
             id: 51, stype: 'pa', name: 'Orca', class: 3, cost: 47790580, retail: 48539890,
             topspd: 300, bstspd: 380, mnv: 1, shields: 220, armour: 220, mass: 290,
-            minthrust: 66.67, boostcost: 16, pitch: 25, yaw: 18, roll: 55, pitchacc: 220, yawacc: 110, rollacc: 240,
-            heatcap: 262, heatdis: 0.16, fuelcost: 50, hardness: 55, masslock: 15, crew: 2,
+            minthrust: 66.667, boostcost: 16, pitch: 25, yaw: 18, roll: 55, pitchacc: 220, yawacc: 110, rollacc: 240, minpitch: 20,
+            heatcap: 262, heatdismin: 2.30, heatdismax: 42.68, fuelcost: 50, hardness: 55, masslock: 15, crew: 2,
             slots: {
                 hardpoint: [3, 2, 2],
                 utility: [0, 0, 0, 0],
@@ -705,7 +705,7 @@ var eddb = {
                 internal: [6, 5, 5, 5, 4, 3, 2, 2],
             },
             reserved: {
-                internal: [{icr: 1, ihrp: 1, imrp: 1, ipc: 1}, {icr: 1, ihrp: 1, imrp: 1, ipc: 1}],
+                internal: [{icr: 1, ihrp: 1, imahrp: 1, imrp: 1, ipc: 1}, {icr: 1, ihrp: 1, imahrp: 1, imrp: 1, ipc: 1}],
             },
             stock: {
                 hardpoint: [0, 62160, 62160],
@@ -726,8 +726,8 @@ var eddb = {
             fdid: 128049351, fdname: 'FerDeLance',
             id: 24, stype: 'co', name: 'Fer-de-Lance', class: 2, cost: 51095490, retail: 51567040,
             topspd: 260, bstspd: 350, mnv: 4, shields: 300, armour: 225, mass: 250,
-            minthrust: 84.62, boostcost: 19, pitch: 38, yaw: 12, roll: 90, pitchacc: 200, yawacc: 100, rollacc: 220,
-            heatcap: 224, heatdis: 0.19, fuelcost: 50, hardness: 70, masslock: 12, crew: 2,
+            minthrust: 84.615, boostcost: 19, pitch: 38, yaw: 12, roll: 90, pitchacc: 200, yawacc: 100, rollacc: 220, minpitch: 30,
+            heatcap: 224, heatdismin: 2.05, heatdismax: 41.63, fuelcost: 50, hardness: 70, masslock: 12, crew: 2,
             slots: {
                 hardpoint: [4, 2, 2, 2, 2],
                 utility: [0, 0, 0, 0, 0, 0],
@@ -754,8 +754,8 @@ var eddb = {
             fdid: 128049339, fdname: 'Python',
             id: 5, stype: 'mp', name: 'Python', class: 2, cost: 55171380, retail: 56978180,
             topspd: 230, bstspd: 300, mnv: 2, shields: 260, armour: 260, mass: 350,
-            minthrust: 60.87, boostcost: 23, pitch: 29, yaw: 10, roll: 90, pitchacc: 200, yawacc: 100, rollacc: 220,
-            heatcap: 300, heatdis: 0.17, fuelcost: 50, hardness: 65, masslock: 17, crew: 2,
+            minthrust: 60.870, boostcost: 23, pitch: 29, yaw: 10, roll: 90, pitchacc: 200, yawacc: 100, rollacc: 220, minpitch: 24,
+            heatcap: 300, heatdismin: 2.68, heatdismax: 52.05, fuelcost: 50, hardness: 65, masslock: 17, crew: 2,
             slots: {
                 hardpoint: [3, 3, 3, 2, 2],
                 utility: [0, 0, 0, 0],
@@ -782,8 +782,8 @@ var eddb = {
             fdid: 128049333, fdname: 'Type9',
             id: 34, stype: 'fr', name: 'Type-9 Heavy', class: 3, cost: 72076730, retail: 76555840,
             topspd: 130, bstspd: 200, mnv: 0, shields: 240, armour: 480, mass: 850,
-            minthrust: 30.77, boostcost: 19, pitch: 20, yaw: 8, roll: 20, pitchacc: 100, yawacc: 50, rollacc: 80,
-            heatcap: 289, heatdis: 0.17, fuelcost: 50, hardness: 65, masslock: 16, crew: 3,
+            minthrust: 30.769, boostcost: 19, pitch: 20, yaw: 8, roll: 20, pitchacc: 100, yawacc: 50, rollacc: 80, minpitch: 15,
+            heatcap: 289, heatdismin: 3.10, heatdismax: 48.35, fuelcost: 50, hardness: 65, masslock: 16, crew: 3,
             slots: {
                 hardpoint: [2, 2, 2, 1, 1],
                 utility: [0, 0, 0, 0],
@@ -810,8 +810,8 @@ var eddb = {
             fdid: 128049345, fdname: 'BelugaLiner',
             id: 52, stype: 'pa', name: 'Beluga Liner', class: 3, cost: 79654600, retail: 84532760,
             topspd: 200, bstspd: 280, mnv: 2, shields: 280, armour: 280, mass: 950,
-            minthrust: 55.0, boostcost: 19, pitch: 25, yaw: 17, roll: 60, pitchacc: 100, yawacc: 50, rollacc: 80,
-            heatcap: 283, heatdis: 0.18, fuelcost: 50, hardness: 60, masslock: 18, crew: 3, // verify masslock
+            minthrust: 55.0, boostcost: 19, pitch: 25, yaw: 17, roll: 60, pitchacc: 100, yawacc: 50, rollacc: 80, minpitch: 20,
+            heatcap: 283, heatdismin: 2.60, heatdismax: 50.85, fuelcost: 50, hardness: 60, masslock: 18, crew: 3, // verify masslock
             slots: {
                 hardpoint: [2, 2, 2, 2, 2],
                 utility: [0, 0, 0, 0, 0, 0],
@@ -820,7 +820,7 @@ var eddb = {
                 internal: [6, 6, 6, 6, 5, 5, 4, 3, 3, 3, 3],
             },
             reserved: {
-                internal: [null, null, {icr: 1, ihrp: 1, imrp: 1, ipc: 1}, {icr: 1, ihrp: 1, imrp: 1, ipc: 1}, {icr: 1, ihrp: 1, imrp: 1, ipc: 1}, {icr: 1, ihrp: 1, imrp: 1, ipc: 1}],
+                internal: [null, null, {icr: 1, ihrp: 1, imahrp: 1, imrp: 1, ipc: 1}, {icr: 1, ihrp: 1, imahrp: 1, imrp: 1, ipc: 1}, {icr: 1, ihrp: 1, imahrp: 1, imrp: 1, ipc: 1}, {icr: 1, ihrp: 1, imahrp: 1, imrp: 1, ipc: 1}],
             },
             stock: {
                 hardpoint: [62160, 62160, 0, 0, 0],
@@ -841,8 +841,8 @@ var eddb = {
             fdid: 128785619, fdname: 'Type9_Military',
             id: 36, stype: 'fr', name: 'Type-10 Defender', class: 3, cost: 121454652, retail: 124755342,
             topspd: 180, bstspd: 220, mnv: 0, shields: 320, armour: 580, mass: 1200,
-            minthrust: 83.5, boostcost: 19, pitch: 22, yaw: 8, roll: 40, pitchacc: NaN, yawacc: NaN, rollacc: NaN, // verify minthrust,boostcost // TODO: pitchacc,yawacc,rollacc
-            heatcap: 335, heatdis: 0.17, fuelcost: 50, hardness: 75, masslock: 26, crew: 3, // verify masslock
+            minthrust: 83.333, boostcost: 19, pitch: 22, yaw: 8, roll: 40, pitchacc: 100, yawacc: 35, rollacc: 80, minpitch: 18,
+            heatcap: 335, heatdismin: 3.16, heatdismax: 67.15, fuelcost: 50, hardness: 75, masslock: 26, crew: 3, // verify masslock
             slots: {
                 hardpoint: [2, 2, 2, 3, 3, 3, 3, 1, 1], // TODO sorted by size now
                 utility: [0, 0, 0, 0, 0, 0, 0, 0],
@@ -869,8 +869,8 @@ var eddb = {
             fdid: 128049363, fdname: 'Anaconda',
             id: 6, stype: 'mp', name: 'Anaconda', class: 3, cost: 141889930, retail: 146969450,
             topspd: 180, bstspd: 240, mnv: 1, shields: 350, armour: 525, mass: 400,
-            minthrust: 44.44, boostcost: 27, pitch: 25, yaw: 10, roll: 60, pitchacc: 100, yawacc: 50, rollacc: 80,
-            heatcap: 334, heatdis: 0.20, fuelcost: 50, hardness: 65, masslock: 23, crew: 3,
+            minthrust: 44.444, boostcost: 27, pitch: 25, yaw: 10, roll: 60, pitchacc: 100, yawacc: 50, rollacc: 80, minpitch: 20,
+            heatcap: 334, heatdismin: 3.16, heatdismax: 67.15, fuelcost: 50, hardness: 65, masslock: 23, crew: 3,
             slots: {
                 hardpoint: [4, 3, 3, 3, 2, 2, 1, 1],
                 utility: [0, 0, 0, 0, 0, 0, 0, 0],
@@ -898,8 +898,8 @@ var eddb = {
             id: 61, stype: 'sh', name: 'Federal Corvette', class: 3, cost: 182589570, retail: 187969450,
             faction: 'Federation', rank: 12,
             topspd: 200, bstspd: 260, mnv: 2, shields: 555, armour: 370, mass: 900,
-            minthrust: 50.0, boostcost: 27, pitch: 28, yaw: 8, roll: 75, pitchacc: 100, yawacc: 50, rollacc: 80,
-            heatcap: 333, heatdis: 0.21, fuelcost: 50, hardness: 70, masslock: 24, crew: 3, // verify hardness, masslock
+            minthrust: 50.0, boostcost: 27, pitch: 28, yaw: 8, roll: 75, pitchacc: 100, yawacc: 50, rollacc: 80, minpitch: 22,
+            heatcap: 333, heatdismin: 3.28, heatdismax: 70.33, fuelcost: 50, hardness: 70, masslock: 24, crew: 3, // verify hardness, masslock
             slots: {
                 hardpoint: [4, 4, 3, 2, 2, 1, 1],
                 utility: [0, 0, 0, 0, 0, 0, 0, 0],
@@ -927,8 +927,8 @@ var eddb = {
             id: 62, stype: 'sh', name: 'Imperial Cutter', class: 3, cost: 199926890, retail: 208969450,
             faction: 'Empire', rank: 12,
             topspd: 200, bstspd: 320, mnv: 0, shields: 600, armour: 400, mass: 1100,
-            minthrust: 80.0, boostcost: 23, pitch: 18, yaw: 8, roll: 45, pitchacc: 100, yawacc: 50, rollacc: 80,
-            heatcap: 327, heatdis: 0.22, fuelcost: 50, hardness: 70, masslock: 27, crew: 3, // verify hardness, masslock
+            minthrust: 80.0, boostcost: 23, pitch: 18, yaw: 8, roll: 45, pitchacc: 100, yawacc: 50, rollacc: 80, minpitch: 14,
+            heatcap: 327, heatdismin: 3.27, heatdismax: 72.58, fuelcost: 50, hardness: 70, masslock: 27, crew: 3, // verify hardness, masslock
             slots: {
                 hardpoint: [2, 2, 2, 2, 3, 3, 4],
                 utility: [0, 0, 0, 0, 0, 0, 0, 0],
@@ -1010,10 +1010,15 @@ var eddb = {
         pitch: {order: 16, abbr: 'Pch', name: 'Pitch Speed', unit: '&deg;/s', min: 0, default: 0, scale: 2, desc: 'Base pitch speed (in degrees per second) with outfitting mass equal to thruster optimal mass'}, // ship
         yaw: {order: 17, abbr: 'Yaw', name: 'Yaw Speed', unit: '&deg;/s', min: 0, default: 0, scale: 2, desc: 'Base yaw speed (in degrees per second) with outfitting mass equal to thruster optimal mass'}, // ship
         roll: {order: 18, abbr: 'Rol', name: 'Roll Speed', unit: '&deg;/s', min: 0, default: 0, scale: 2, desc: 'Base roll speed (in degrees per second) with outfitting mass equal to thruster optimal mass'}, // ship
+        minpitch: {order: 19, abbr: 'NPch', name: 'Min Pitch Speed', unit: '&deg;/s', min: 0, default: 'pitch', scale: 2, desc: 'Minimum pitch speed (in degrees per second) with outfitting mass equal to thruster optimal mass and 0 ENG pips'}, // ship
+        minyaw: {order: 19, abbr: 'NYaw', name: 'Min Yaw Speed', unit: '&deg;/s', min: 0, default: 'yaw', scale: 2, desc: 'Minimum yaw speed (in degrees per second) with outfitting mass equal to thruster optimal mass and 0 ENG pips'}, // ship
+        minroll: {order: 19, abbr: 'NRol', name: 'Min Roll Speed', unit: '&deg;/s', min: 0, default: 'roll', scale: 2, desc: 'Minimum roll speed (in degrees per second) with outfitting mass equal to thruster optimal mass and 0 ENG pips'}, // ship
         shields: {order: 19, abbr: 'Shd', name: 'Shields', min: 0, step: 1, default: 0, scale: 0, desc: 'Base shield strength (modified by the shield generator module)'}, // ship
         armour: {order: 20, abbr: 'Arm', name: 'Armour', min: 0, step: 1, default: 0, scale: 0, desc: 'Base armour strength (modified by the bulkhead module)'}, // ship
         hardness: {order: 21, abbr: 'Hrd', name: 'Armour Hardness', min: 0, step: 1, default: 0, scale: 0, desc: 'Armour hardness rating (compare to weapon armour pierce)'}, // ship
-        heatcap: {order: 22, abbr: 'HCap', name: 'Heat Capacity', min: 0, step: 1, default: 0, scale: 0, desc: 'Maximum heat capacity'}, // ship
+        heatcap: {order: 22, abbr: 'HCap', name: 'Heat Capacity', min: 0, step: 1, default: 0, scale: 0, desc: 'Nominal heat capacity'}, // ship
+        heatdismin: {order: 23, abbr: 'NHDs', name: 'Min Heat Dissipation', min: 0, default: 0, scale: 2, desc: 'Minimum heat dissipation level'}, // ship
+        heatdismax: {order: 24, abbr: 'XHDs', name: 'Max Heat Dissipation', min: 0, default: 0, scale: 2, desc: 'Maximum heat dissipation rate'}, // ship
         mount: {order: 23, abbr: 'Mnt', name: 'Mount', values: ['F', 'G', 'T'], default: '', desc: 'Mount type (fixed/gimballed/turreted)'}, // wpn
         missile: {order: 24, abbr: 'Msl', name: 'Missile Type', values: ['D', 'S'], default: '', desc: 'Missile type (dumbfire/seeking)'}, // wpn
         mass: {order: 25, abbr: 'Mass', name: 'Mass', unit: 'T', bad: 1, min: 0, default: 0, scale: 2, desc: 'Mass (in tons)'}, // *
@@ -1067,7 +1072,7 @@ var eddb = {
         syschg: {order: 69, abbr: 'SyR', name: 'Systems Recharge', unit: 'MW/s', min: 0, default: 0, scale: 2, desc: 'System capacitor recharge rate (nonsensically, in megawatts per second)'}, // distrib
         repaircap: {order: 70, abbr: 'Cap', name: 'Repair Capacity', min: 0, step: 1, default: 0, scale: 0, desc: 'Maximum repair material capacity'}, // afmu
         repaircon: {order: 71, abbr: 'Cns', name: 'Consumption', unit: '/s', min: 0, default: 0, scale: 1, desc: 'Rate of repair material consumption (in units per second)'}, // afmu
-        repairrtg: {order: 72, abbr: 'Rtg', name: 'Repair Rating', min: 0, default: 0, scale: 3, desc: 'Module integrity repaired per material consumed'}, // afmu
+        repairrtg: {order: 72, abbr: 'Rtg', name: 'Repair Rating', min: 0, default: 1, scale: 3, desc: 'Module integrity repaired per material consumed'}, // afmu
         maxlimpet: {order: 73, abbr: 'Max', name: 'Max Active Limpets', min: 0, step: 1, default: 0, scale: 0, modadd: 1, desc: 'Maximum active limpets'}, // limpet
         targetrng: {order: 74, abbr: 'Rng', name: 'Target Range', unit: 'M', min: 0, default: 0, scale: 0, desc: 'Maximum limpet target range (in meters)'}, // limpet
         limpettime: {order: 75, abbr: 'Time', name: 'Limpet Life Time', unit: 's', min: 0, time: 1, default: 0, scale: 0, desc: 'Maximum limpet life time (in seconds)'}, // limpet
@@ -1077,6 +1082,8 @@ var eddb = {
         hacktime: {order: 79, abbr: 'Hack', name: 'Hacking Time', unit: 's', bad: 1, min: 0, time: 1, default: 0, scale: 0, desc: 'Time to hack (in seconds)'}, // limpet
         mincargo: {order: 80, abbr: 'NCgo', name: 'Minimum Cargo', min: 0, step: 1, default: 0, scale: 0, modadd: 1, desc: 'Minimum cargo yield'}, // limpet
         maxcargo: {order: 81, abbr: 'XCgo', name: 'Maximum Cargo', min: 0, step: 1, default: 0, scale: 0, modadd: 1, desc: 'Maximum cargo yield'}, // limpet
+        //	lpactrng   : { order: 82, abbr:'ARng', name:'Active Range',         unit:'M',           min:    0,                  default:'targetrng',scale:0,    desc:'TODO' }, // limpet
+        //	minebonus  : { order: 82, abbr:'MnBn', name:'Mining Bonus',                             min:    0,                  default:  0, scale:1,           desc:'TODO' }, // limpet
         timerng: {order: 82, abbr: 'Rng', name: 'Range', unit: 's', min: 0, time: 1, default: 0, scale: 0, desc: 'Maximum target range (in seconds to intercept)'}, // fsdi
         facinglim: {order: 83, abbr: 'Ang', name: 'Facing Limit', unit: '&deg;', min: 0, max: 360, default: 0, scale: 2, desc: 'Maximum target angle (in degrees)'}, // fsdi
         scooprate: {order: 84, abbr: 'Rate', name: 'Scoop Rate', unit: 'T/s', min: 0, default: 0, scale: 3, desc: 'Fuel scroop rate (in tons per second)'}, // scoop
@@ -1084,23 +1091,31 @@ var eddb = {
         vcount: {order: 86, abbr: 'Vcls', name: 'Vehicle Count', min: 1, step: 1, default: 1, scale: 0, desc: 'Maximum number of vehicles that can be deployed per slot'}, // fh
         bins: {order: 87, abbr: 'Bins', name: 'Bin Count', min: 0, step: 1, default: 0, scale: 0, modadd: 1, desc: 'Number of bins'}, // refinery
         dps: {order: 88, abbr: 'DPS', name: 'Damage per Second', unit: '/s', min: 0, default: 0, scale: 2, desc: 'Raw damage per second, not including reload time'}, // wpn
+        sdps: {order: 88, abbr: 'SDPS', name: 'Sustained DPS', unit: '/s', min: 0, default: 0, scale: 2, desc: 'Sustained damage per second, including reload time'}, // wpn
         damage: {order: 89, abbr: 'Dmg', name: 'Damage', min: 0, default: 0, scale: 1, desc: 'Raw damage per shot, or per second for beams'}, // wpn
         range: {order: 90, abbr: 'Rng', name: 'Range', unit: 'M', min: 0, default: 0, scale: 0, desc: 'Maximum range (in meters)'}, // ecm
         distdraw: {order: 91, abbr: 'Dst', name: 'Distributor Draw', unit: 'MW', bad: 1, min: 0, default: 0, scale: 2, desc: 'Power distributor capacitor draw (in megawatts per shot, per second, or per shield unit)'}, // wpn,sg
         //	distdraw   : { order: 92,              name:'Active Power Draw',    unit:'MW',   bad:1, min:    0,                  default:  0, scale:2,           desc:'Power distributor capacitor draw (in megawatts)' }, // ecm
+        eps: {order: 91, abbr: 'EPS', name: 'Energy per Second', unit: 'MW/s', bad: 1, min: 0, default: 0, scale: 2, desc: 'Power distributor capacitor draw (in megawatts per second), not including reload time'}, // wpn
+        seps: {order: 91, abbr: 'SEPS', name: 'Sustained EPS', unit: 'MW/s', bad: 1, min: 0, default: 0, scale: 2, desc: 'Sustained power distributor capacitor draw (in megawatts per second), including reload time'}, // wpn
         thmload: {order: 93, abbr: 'ThL', name: 'Thermal Load', bad: 1, min: 0, default: 0, scale: 1, desc: 'Waste heat generated per use, or per second'}, // unit:'/s' without rof (wpn-rof,ecm,thrust,fsd), otherwise per-shot (wpn+rof,chaff,pointdef), except per-use for scb
-        heateff: {order: 94, abbr: 'HEf', name: 'Heat Efficiency', unit: '/MW', bad: 1, min: 0, default: 0, scale: 1, desc: 'Waste heat generated per megawatt consumed'}, // power
+        hps: {order: 94, abbr: 'HPS', name: 'Heat per Second', unit: '/s', bad: 1, min: 0, default: 0, scale: 1, desc: 'Waste heat generated per second, not including reload time'}, // wpn
+        shps: {order: 94, abbr: 'SHPS', name: 'Sustained HPS', unit: '/s', bad: 1, min: 0, default: 0, scale: 1, desc: 'Waste heat generated per second, including reload time'}, // wpn
+        heateff: {order: 94, abbr: 'HEf', name: 'Heat Efficiency', unit: '/MW', bad: 1, min: 0, default: 0, scale: 2, desc: 'Waste heat generated per megawatt consumed'}, // power
         maxfuel: {order: 95, abbr: 'Max', name: 'Max Fuel per Jump', unit: 'T', min: 0, default: 0, scale: 2, desc: 'Maximum fuel use per jump (in tons)'}, // fsd
         kinres: {order: 96, abbr: 'KiR', name: 'Kinetic Resistance', unit: '%', min: -1000, max: 100, default: 0, scale: 1, modmod: -100, desc: 'Resistance to kinetic damage'}, // shboost,bulkhead,hrp,sg
         thmres: {order: 97, abbr: 'ThR', name: 'Thermal Resistance', unit: '%', min: -1000, max: 100, default: 0, scale: 1, modmod: -100, desc: 'Resistance to thermal damage'}, // shboost,bulkhead,hrp,sg
         expres: {order: 98, abbr: 'ExR', name: 'Explosive Resistance', unit: '%', min: -1000, max: 100, default: 0, scale: 1, modmod: -100, desc: 'Resistance to explosive damage'}, // shboost,bulkhead,hrp,sg
+        caures: {order: 99, abbr: 'CaR', name: 'Caustic Resistance', unit: '%', min: -1000, max: 100, default: 0, scale: 1, modmod: -100, desc: 'Resistance to caustic damage'}, // mahrp
+        axeres: {order: 99, abbr: 'AXR', name: 'Anti-Xeno Resistance', unit: '%', min: -1000, max: 100, default: 0, scale: 1, modmod: -100, desc: 'Resistance to anti-xeno damage'}, // TODO hulls 90%, shields 95%
         pierce: {order: 99, abbr: 'Prc', name: 'Armour Piercing', min: 0, default: 0, scale: 0, desc: 'Armour pierce rating (compare to target ship armour hardness)'}, // wpn
         maxrng: {order: 100, abbr: 'Rng', name: 'Maximum Range', unit: 'M', min: 0, default: 0, scale: 0, desc: 'Maximum range (in meters)'}, // wpn,sensor
         typemis: {order: 101, abbr: 'Typ', name: 'Typical Emission', unit: 'M', min: 0, default: 0, scale: 0, desc: 'Range to resolve a contact with typical emissions (in meters)'}, // sensor
         shotspd: {order: 102, abbr: 'Spd', name: 'Shot Speed', unit: 'M/s', min: 0, default: 0, scale: 0, desc: 'Projectile speed (in meters per second)'}, // wpn
-        rof: {order: 103, abbr: 'ROF', name: 'Rate of Fire', unit: '/s', min: 0, default: 0, scale: 1, desc: 'Rate of fire (in shots per second)'}, // wpn
-        bstint: {order: 104, abbr: 'BInt', name: 'Burst Interval', unit: 's', bad: 1, min: 0, default: 0, scale: 2, desc: 'Time between shots or busts (in seconds)'}, // wpn
-        bstrof: {order: 105, abbr: 'BROF', name: 'Burst Rate of Fire', unit: '/s', min: 0, default: 0, scale: 1, modset: 1, desc: 'Burst rate of fire (in shots per second)'}, // wpn
+        rof: {order: 103, abbr: 'ROF', name: 'Rate of Fire', unit: '/s', min: 0, default: 1, scale: 1, desc: 'Raw rate of fire (in shots per second), not including reload time'}, // wpn
+        srof: {order: 103, abbr: 'SROF', name: 'Sustained ROF', unit: '/s', min: 0, default: 1, scale: 1, desc: 'Sustained rate of fire (in shots per second), including reload time'}, // wpn
+        bstint: {order: 104, abbr: 'BInt', name: 'Burst Interval', unit: 's', bad: 1, min: 0, default: 1, scale: 2, desc: 'Time between shots or busts (in seconds)'}, // wpn
+        bstrof: {order: 105, abbr: 'BROF', name: 'Burst Rate of Fire', unit: '/s', min: 0, default: 1, scale: 1, modset: 1, desc: 'Burst rate of fire (in shots per second)'}, // wpn
         bstsize: {order: 106, abbr: 'BSz', name: 'Burst Size', min: 1, step: 1, default: 1, scale: 0, modset: 1, desc: 'Number of shots in a burst'}, // wpn
         ammoclip: {order: 107, abbr: 'Clip', name: 'Ammo Clip Size', min: 1, step: 1, default: 0, scale: 0, desc: 'Maximum ammo per clip before reloading'}, // wpn
         ammomax: {order: 108, abbr: 'Ammo', name: 'Ammo Maximum', min: 0, step: 1, default: 0, scale: 0, desc: 'Maximum reserve ammo to reload from'}, // wpn
@@ -1125,6 +1140,7 @@ var eddb = {
         OutfittingFieldType_BootTime: 'boottime',
         OutfittingFieldType_BrokenRegenRate: 'bgenrate',
         OutfittingFieldType_BurstRateOfFire: 'bstrof',
+        OutfittingFieldType_CausticResistance: 'caures',
         OutfittingFieldType_CollisionResistance: null, // ignore
         OutfittingFieldType_DSS_AngleMult: 'scanangmod',
         OutfittingFieldType_DSS_RangeMult: 'scanrngmod',
@@ -1185,6 +1201,15 @@ var eddb = {
         Override_BurstSize: 'bstsize',
         OutfittingFieldType_BurstRate: 'bstrof',
         OutfittingFieldType_BurstSize: 'bstsize',
+        /* coming in 2.5/3.0 ?
+         WingDamageReduction,
+         WingMinDuration,
+         WingMaxDuration,
+         ShieldSacrificeAmountRemoved,
+         ShieldSacrificeAmountGiven,
+         FSDJumpRangeBoost,
+         FSDFuelUseIncrease
+         */
     }, // eddb.fdfieldattr{}
     fdattrmod: {
         mod_boot_time: {boottime: 1},
@@ -1199,6 +1224,9 @@ var eddb = {
         mod_defencemodifier_shield_mult: {shieldbst: 1},
         mod_defencemodifier_shield_thermic_mult: {thmres: 1},
         mod_defencemodifier_thermic_mult: {thmres: 1},
+        mod_dss_rate: {scanratemod: 1},
+        mod_dss_range: {scanrngmod: 1},
+        mod_dss_angle: {scanangmod: 1},
         mod_engine_heat: {thmload: 1},
         mod_engine_mass_curve: {optmass: 1},
         mod_engine_mass_curve_multiplier: {optmul: 1},
@@ -1220,6 +1248,11 @@ var eddb = {
         mod_powerdistributor_weapon_rate: {wepchg: 1},
         mod_powerplant_heat: {heateff: 1},
         mod_powerplant_power: {pwrcap: 1},
+        mod_scanner_range: {scanrng: 1},
+        mod_scanner_scan_time: {scantime: 1},
+        mod_scanner_max_angle: {maxangle: 1},
+        mod_sensor_passive_scan_angle: {maxangle: 1},
+        mod_sensor_range: {typemis: 1},
         mod_shield_broken_regen: {bgenrate: 1},
         mod_shield_energy_per_regen: {distdraw: 1},
         mod_shield_explosive_mult: {expres: 1},
@@ -1305,6 +1338,243 @@ var eddb = {
         trade_weapon_damage_weapon_active_power: {damage: 0.5, distdraw: 1},
         trade_weapon_hardness_weapon_heat: {pierce: 0.4, thmload: 1},
     }, // eddb.fdattrmod{}
+    blueprint: {
+        wpn_ds: {name: 'Double Shot', maxgrade: 5, maxrng: [-2, -4, -6, -8, -10], bstrof: [6, 8, 10, 12, 14], bstsize: [2, 2, 2, 2, 2], ammoclip: [15, 20, 25, 30, 35], fdname: 'Weapon_DoubleShot'},
+        wpn_eff: {name: 'Efficient', maxgrade: 5, pwrdraw: [0, -12, -24, -36, -48], damage: [8, 12, 16, 20, 24], distdraw: [0, -15, -25, -35, -45], thmload: [-37.5, -42.5, -47.5, -52.5, -60], fdname: 'Weapon_Efficient'},
+        wpn_foc: {name: 'Focused', maxgrade: 5, thmload: [1, 2, 3, 4, 5], pierce: [40, 60, 80, 100, 120], maxrng: [36, 52, 68, 84, 100], dmgfall: [36, 52, 68, 84, 100], fdname: 'Weapon_Focused'},
+        wpn_hc: {name: 'High Capacity', maxgrade: 5, mass: [20, 30, 40, 50, 60], pwrdraw: [4, 8, 12, 16, 20], ammoclip: [36, 52, 68, 84, 100], ammomax: [36, 52, 68, 84, 100], bstint: [-2, -4, -6, -8, -10], fdname: 'Weapon_HighCapacity'},
+        wpn_lw: {name: 'Light Weight', maxgrade: 5, mass: [-30, -45, -60, -75, -90], integ: [-20, -30, -40, -50, -60], pwrdraw: [0, -10, -20, -30, -40], distdraw: [0, -20, -25, -30, -35], fdname: 'Weapon_LightWeight'},
+        wpn_lr: {name: 'Long Range', maxgrade: 5, mass: [10, 15, 20, 25, 30], pwrdraw: [3, 6, 9, 12, 15], maxrng: [20, 40, 60, 80, 100], dmgfall: [1000, 1000, 1000, 1000, 1000], fdname: 'Weapon_LongRange'},
+        wpn_oc: {name: 'Overcharged', maxgrade: 5, damage: [30, 40, 50, 60, 70], distdraw: [15, 20, 25, 30, 35], thmload: [3, 6, 9, 12, 15], ammoclip: [-3, -6, -9, -12, -15], fdname: 'Weapon_Overcharged'},
+        wpn_sr: {name: 'Short Range', maxgrade: 5, damage: [27, 39, 51, 63, 75], thmload: [0, 10, 20, 30, 40], maxrng: [-10, -20, -30, -40, -50], fdname: 'Weapon_ShortRange'},
+        wpn_rf: {name: 'Rapid Fire', maxgrade: 5, damage: [-1, -2, -3, -4, -5], distdraw: [0, -5, -15, -25, -35], bstint: [-8, -17, -26, -35, -44], rldtime: [-25, -35, -45, -55, -65], jitter: [0.5, 0.5, 0.5, 0.5, 0.5], fdname: 'Weapon_RapidFire'},
+        wpn_stu: {name: 'Sturdy', maxgrade: 5, mass: [20, 40, 60, 80, 100], integ: [100, 150, 200, 250, 300], thmload: [-10, -15, -20, -25, -30], pierce: [20, 30, 40, 50, 60], fdname: 'Weapon_Sturdy'},
+        ucl_ammo: {name: 'Ammo Capacity', maxgrade: 1, mass: [100], ammomax: [50, 80], rldtime: [10], fdname: 'Misc_ChaffCapacity'}, // fake grade 2 to calibrate grade 1 minimum
+        misc_lw: {name: 'Lightweight', maxgrade: 5, mass: [-45, -55, -65, -75, -85], integ: [-10, -20, -30, -40, -50], fdname: 'Misc_LightWeight'},
+        misc_lw4: {name: 'Lightweight', maxgrade: 4, mass: [-45, -55, -65, -75], integ: [-10, -20, -30, -40], fdname: 'Misc_LightWeight'},
+        misc_rf: {name: 'Reinforced', maxgrade: 5, mass: [30, 60, 90, 120, 150], integ: [60, 120, 180, 240, 300], fdname: 'Misc_Reinforced'},
+        misc_rf4: {name: 'Reinforced', maxgrade: 4, mass: [30, 60, 90, 120], integ: [60, 120, 180, 240], fdname: 'Misc_Reinforced'},
+        misc_sh: {name: 'Shielded', maxgrade: 5, integ: [60, 120, 180, 240, 300], pwrdraw: [20, 40, 60, 80, 100], fdname: 'Misc_Shielded'},
+        misc_sh4: {name: 'Shielded', maxgrade: 4, integ: [60, 120, 180, 240], pwrdraw: [20, 40, 60, 80], fdname: 'Misc_Shielded'},
+        uhsl_ammo: {name: 'Ammo Capacity', maxgrade: 1, mass: [100], ammomax: [50, 80], rldtime: [50], fdname: 'Misc_HeatSinkCapacity'}, // fake grade 2 to calibrate grade 1 minimum
+        scan_fs: {name: 'Fast Scan', maxgrade: 5, integ: [-10, -20, -30, -40, -50], scanrng: [-5, -10, -15, -20, -25], scantime: [-20, -35, -50, -65, -80], fdname: 'Sensor_FastScan'},
+        scan_lr: {name: 'Long Range', maxgrade: 5, pwrdraw: [10, 20, 30, 40, 50], scanrng: [24, 48, 72, 96, 120], maxangle: [-10, -15, -20, -25, -30], fdname: 'Sensor_LongRange'},
+        scan_wa: {name: 'Wide Angle', maxgrade: 5, mass: [20, 40, 60, 80, 100], maxangle: [40, 80, 120, 160, 200], scantime: [10, 20, 30, 40, 50], fdname: 'Sensor_WideAngle'},
+        upd_ammo: {name: 'Ammo Capacity', maxgrade: 1, mass: [100], ammomax: [50, 80], rldtime: [10], fdname: 'Misc_PointDefenseCapacity'}, // fake grade 2 to calibrate grade 1 minimum
+        usb_br: {name: 'Blast Resistant', maxgrade: 5, kinres: [-1, -1.75, -2.5, -3.25, -4], thmres: [-1, -1.75, -2.5, -3.25, -4], expres: [7, 12, 17, 22, 27], fdname: 'ShieldBooster_Explosive'},
+        usb_hd: {name: 'Heavy Duty', maxgrade: 5, mass: [100, 150, 200, 250, 300], integ: [3, 6, 9, 12, 15], pwrdraw: [5, 10, 15, 20, 25], shieldbst: [10, 17, 24, 31, 38], fdname: 'ShieldBooster_HeavyDuty'},
+        usb_kr: {name: 'Kinetic Resistant', maxgrade: 5, kinres: [7, 12, 17, 22, 27], thmres: [-1, -1.75, -2.5, -3.25, -4], expres: [-1, -1.75, -2.5, -3.25, -4], fdname: 'ShieldBooster_Kinetic'},
+        usb_ra: {name: 'Resistance Augmented', maxgrade: 5, integ: [-4, -6, -8, -10, -12], pwrdraw: [5, 10, 15, 20, 25], kinres: [5, 8, 11, 14, 17], thmres: [5, 8, 11, 14, 17], expres: [5, 8, 11, 14, 17], fdname: 'ShieldBooster_Resistive'},
+        usb_tr: {name: 'Thermal Resistant', maxgrade: 5, kinres: [-1, -1.75, -2.5, -3.25, -4], thmres: [7, 12, 17, 22, 27], expres: [-1, -1.75, -2.5, -3.25, -4], fdname: 'ShieldBooster_Thermic'},
+        cbh_br: {name: 'Blast Resistant', maxgrade: 5, kinres: [-4, -6, -8, -10, -12], thmres: [-4, -6, -8, -10, -12], expres: [12, 19, 26, 33, 40], fdname: 'Armour_Explosive'},
+        cbh_hd: {name: 'Heavy Duty', maxgrade: 5, mass: [10, 15, 20, 25, 30], hullbst: [12, 17, 22, 27, 32], kinres: [1, 2, 3, 4, 5], thmres: [1, 2, 3, 4, 5], expres: [1, 2, 3, 4, 5], fdname: 'Armour_HeavyDuty'},
+        cbh_kr: {name: 'Kinetic Resistant', maxgrade: 5, kinres: [12, 19, 26, 33, 40], thmres: [-4, -6, -8, -10, -12], expres: [-4, -6, -8, -10, -12], fdname: 'Armour_Kinetic'},
+        cbh_lw: {name: 'Light Weight', maxgrade: 5, mass: [-15, -25, -35, -45, -55], hullbst: [-1, -2, -3, -4, -5], kinres: [3, 6, 9, 12, 15], thmres: [3, 6, 9, 12, 15], expres: [3, 6, 9, 12, 15], fdname: 'Armour_Advanced'},
+        cbh_tr: {name: 'Thermal Resistant', maxgrade: 5, kinres: [-4, -6, -8, -10, -12], thmres: [12, 19, 26, 33, 40], expres: [-4, -6, -8, -10, -12], fdname: 'Armour_Thermic'},
+        cpp_arm: {name: 'Armoured', maxgrade: 5, mass: [4, 8, 12, 16, 20], integ: [40, 60, 80, 100, 120], pwrcap: [4, 6, 8, 10, 12], heateff: [-4, -6, -8, -10, -12], fdname: 'PowerPlant_Armoured'},
+        cpp_le: {name: 'Low Emissions', maxgrade: 5, mass: [4, 8, 12, 16, 20], pwrcap: [-3, -6, -9, -12, -15], heateff: [-25, -35, -45, -55, -65], fdname: 'PowerPlant_Stealth'},
+        cpp_oc: {name: 'Overcharged', maxgrade: 5, integ: [-5, -10, -15, -20, -25], pwrcap: [12, 19, 26, 33, 40], heateff: [5, 10, 15, 20, 25], fdname: 'PowerPlant_Boosted'},
+        ct_ct: {name: 'Clean Tuning', maxgrade: 5, integ: [0, -4, -8, -12, -16], pwrdraw: [0, 4, 8, 12, 16], optmass: [-2, -4, -6, -8, -10], optmul: [8, 13, 18, 23, 28], thmload: [-20, -30, -40, -50, -60], fdname: 'Engine_Tuned'},
+        ct_dt: {name: 'Dirty Tuning', maxgrade: 5, integ: [-3, -6, -9, -12, -15], pwrdraw: [4, 6, 8, 10, 12], optmass: [-2.5, -5, -7.5, -10, -12.5], optmul: [12, 19, 26, 33, 40], thmload: [20, 30, 40, 50, 60], fdname: 'Engine_Dirty'},
+        ct_str: {name: 'Strengthening', maxgrade: 5, mass: [5, 10, 15, 20, 25], integ: [30, 50, 70, 90, 110], thmload: [-10, -20, -30, -40, -50], fdname: 'Engine_Reinforced'},
+        cfsd_fb: {name: 'Faster Boot', maxgrade: 5, integ: [-3, -6, -9, -12, -15], boottime: [-20, -35, -50, -65, -80], optmass: [3, 6, 9, 12, 15], thmload: [4, 8, 12, 16, 20], fdname: 'FSD_FastBoot'},
+        cfsd_ir: {name: 'Increased Range', maxgrade: 5, mass: [10, 15, 20, 25, 30], integ: [-3, -6, -9, -12, -15], pwrdraw: [3, 6, 9, 12, 15], optmass: [15, 25, 35, 45, 55], fdname: 'FSD_LongRange'},
+        cfsd_sh: {name: 'Shielded', maxgrade: 5, mass: [4, 8, 12, 16, 20], integ: [25, 50, 75, 100, 125], optmass: [3, 6, 9, 12, 15], thmload: [-10, -15, -20, -25, -30], fdname: 'FSD_Shielded'},
+        cpd_ce: {name: 'Charge Enhanced', maxgrade: 5, wepcap: [-1, -2, -3, -4, -5], wepchg: [9, 18, 27, 36, 45], engcap: [-1, -2, -3, -4, -5], engchg: [9, 18, 27, 36, 45], syscap: [-1, -2, -3, -4, -5], syschg: [9, 18, 27, 36, 45], fdname: 'PowerDistributor_HighFrequency'},
+        cpd_ef: {name: 'Engine Focused', maxgrade: 5, wepcap: [-3, -6, -9, -12, -15], wepchg: [-1, -2, -3, -4, -5], engcap: [20, 30, 40, 50, 60], engchg: [16, 23, 30, 37, 44], syscap: [-3, -6, -9, -12, -15], syschg: [-3, -6, -9, -12, -15], fdname: 'PowerDistributor_PriorityEngines'},
+        cpd_hc: {name: 'High Charge Capacity', maxgrade: 5, integ: [10, 15, 20, 25, 30], wepcap: [10, 18, 26, 34, 42], wepchg: [-2, -6, -10, -14, -18], engcap: [10, 18, 26, 34, 42], engchg: [-2, -6, -10, -14, -18], syscap: [10, 18, 26, 34, 42], syschg: [-2, -6, -10, -14, -18], fdname: 'PowerDistributor_HighCapacity'},
+        cpd_sh: {name: 'Shielded', maxgrade: 5, integ: [40, 80, 120, 160, 200], mass: [3, 6, 9, 12, 15], pwrdraw: [-10, -15, -20, -25, -30], fdname: 'PowerDistributor_Shielded'},
+        cpd_sf: {name: 'System Focused', maxgrade: 5, wepcap: [-3, -6, -9, -12, -15], wepchg: [-3, -6, -9, -12, -15], engcap: [-3, -6, -9, -12, -15], engchg: [-1, -2, -3, -4, -5], syscap: [20, 30, 40, 50, 60], syschg: [16, 23, 30, 37, 44], fdname: 'PowerDistributor_PrioritySystems'},
+        cpd_wf: {name: 'Weapon Focused', maxgrade: 5, wepcap: [20, 30, 40, 50, 60], wepchg: [16, 23, 30, 37, 44], engcap: [-3, -6, -9, -12, -15], engchg: [-3, -6, -9, -12, -15], syscap: [-3, -6, -9, -12, -15], syschg: [-1, -2, -3, -4, -5], fdname: 'PowerDistributor_PriorityWeapons'},
+        cs_lw: {name: 'Light Weight', maxgrade: 5, mass: [-20, -35, -50, -65, -80], integ: [-10, -20, -30, -40, -50], maxangle: [-5, -10, -15, -20, -25], fdname: 'Sensor_LightWeight'},
+        cs_lr: {name: 'Long Range', maxgrade: 5, mass: [20, 40, 60, 80, 100], maxangle: [-10, -15, -20, -25, -30], typemis: [15, 30, 45, 60, 75], fdname: 'Sensor_LongRange'},
+        cs_wa: {name: 'Wide Angle', maxgrade: 5, pwrdraw: [10, 20, 30, 40, 50], maxangle: [40, 80, 120, 160, 200], typemis: [-4, -8, -12, -16, -20], fdname: 'Sensor_WideAngle'},
+        ifsdi_eca: {name: 'Expanded Capture Arc', maxgrade: 4, pwrdraw: [10, 20, 30, 40], timerng: [-10, -15, -20, -25], facinglim: [40, 60, 80, 100], fdname: 'FSDinterdictor_Expanded'},
+        ifsdi_lr: {name: 'Longer Range', maxgrade: 4, mass: [10, 15, 20, 25], pwrdraw: [10, 20, 30, 40], timerng: [20, 30, 40, 50], facinglim: [-10, -15, -20, -25], fdname: 'FSDinterdictor_LongRange'},
+        ihrp_br: {name: 'Blast Resistant', maxgrade: 5, hullrnf: [3, 6, 9, 12, 15], kinres: [-2, -4, -6, -8, -10], thmres: [-2, -4, -6, -8, -10], expres: [12, 19, 26, 33, 40], fdname: 'HullReinforcement_Explosive'},
+        ihrp_hd: {name: 'Heavy Duty', maxgrade: 5, mass: [8, 16, 24, 32, 40], hullrnf: [24, 36, 48, 60, 72], kinres: [3, 6, 9, 12, 15], thmres: [3, 6, 9, 12, 15], expres: [3, 6, 9, 12, 15], fdname: 'HullReinforcement_HeavyDuty'},
+        ihrp_kr: {name: 'Kinetic Resistant', maxgrade: 5, hullrnf: [3, 6, 9, 12, 15], kinres: [12, 19, 26, 33, 40], thmres: [-2, -4, -6, -8, -10], expres: [-2, -4, -6, -8, -10], fdname: 'HullReinforcement_Kinetic'},
+        ihrp_lw: {name: 'Light Weight', maxgrade: 5, mass: [-8, -12, -16, -20, -24], hullbst: [8, 12, 16, 20, 24], hullrnf: [-4, -8, -12, -16, -20], fdname: 'HullReinforcement_Advanced'},
+        ihrp_tr: {name: 'Thermal Resistant', maxgrade: 5, hullrnf: [3, 6, 9, 12, 15], kinres: [-2, -4, -6, -8, -10], thmres: [12, 19, 26, 33, 40], expres: [-2, -4, -6, -8, -10], fdname: 'HullReinforcement_Thermic'},
+        iscb_rc: {name: 'Rapid Charge', maxgrade: 4, boottime: [10, 15, 20, 25], spinup: [-10, -20, -30, -40], shieldrnf: [5, 10, 15, 20], duration: [-6, -12, -18, -24], fdname: 'ShieldCellBank_Rapid'},
+        iscb_sp: {name: 'Specialised', maxgrade: 4, integ: [-5, -10, -15, -20], pwrdraw: [10, 15, 20, 25], boottime: [-8, -16, -24, -32], shieldrnf: [4, 6, 8, 10], thmload: [-6, -12, -18, -24], fdname: 'ShieldCellBank_Specialised'},
+        isg_elp: {name: 'Enhanced, Low Power', maxgrade: 5, mass: [-18, -26, -34, -42, -50], integ: [-5, -10, -15, -20, -25], pwrdraw: [-20, -25, -30, -35, -40], optmass: [-2, -3, -4, -5, -6], optmul: [3, 6, 9, 12, 15], fdname: 'ShieldGenerator_Optimised'},
+        isg_kr: {name: 'Kinetic Resistant', maxgrade: 5, integ: [20, 25, 30, 35, 40], kinres: [10, 20, 30, 40, 50], thmres: [-3, -6, -9, -12, -15], fdname: 'ShieldGenerator_Kinetic'},
+        isg_rf: {name: 'Reinforced', maxgrade: 5, optmul: [14, 20, 26, 32, 38], bgenrate: [-10, -10, -10, -10, -10], distdraw: [4, 6, 8, 10, 12], kinres: [4.5, 7.5, 10.5, 13.5, 16.5], thmres: [4.5, 7.5, 10.5, 13.5, 16.5], expres: [4.5, 7.5, 10.5, 13.5, 16.5], fdname: 'ShieldGenerator_Reinforced'},
+        isg_tr: {name: 'Thermal Resistant', maxgrade: 5, integ: [20, 25, 30, 35, 40], kinres: [-4, -8, -12, -16, -20], thmres: [10, 20, 30, 40, 50], fdname: 'ShieldGenerator_Thermic'},
+        iss_fs: {name: 'Fast Scan', maxgrade: 5, mass: [20, 40, 60, 80, 100], pwrdraw: [10, 20, 30, 40, 50], scanratemod: [20, 35, 50, 65, 80], fdname: 'Sensor_FastScan'},
+        iss_lr: {name: 'Long Range', maxgrade: 5, mass: [20, 40, 60, 80, 100], pwrdraw: [10, 20, 30, 40, 50], scanrngmod: [40, 80, 120, 160, 200], fdname: 'Sensor_LongRange'},
+        iss_wa: {name: 'Wide Angle', maxgrade: 5, mass: [20, 40, 60, 80, 100], pwrdraw: [10, 20, 30, 40, 50], scanangmod: [40, 80, 120, 160, 200], fdname: 'Sensor_WideAngle'},
+    }, // eddb.blueprint{}
+    fdexpeffect: {
+        special_armour_chunky: 'cbhx_dp',
+        special_armour_explosive: 'cbhx_lp',
+        special_armour_kinetic: 'cbhx_ap',
+        special_armour_thermic: 'cbhx_rp',
+        special_auto_loader: 'wpnx_aulo',
+        special_blinding_shell: 'wpnx_dash',
+        special_choke_canister: 'wpnx_iodi',
+        special_concordant_sequence: 'wpnx_cose',
+        special_corrosive_shell: 'wpnx_cosh',
+        special_deep_cut_payload: 'wpnx_pepa',
+        special_dispersal_field: 'wpnx_difi',
+        special_distortion_field: 'wpnx_inim',
+        special_drag_munitions: 'wpnx_drmu',
+        special_emissive_munitions: 'wpnx_emmu',
+        special_engine_cooled: 'ctx_ts',
+        special_engine_haulage: 'ctx_ddi',
+        special_engine_lightweight: 'miscx_sd',
+        special_engine_overloaded: 'ctx_ddr',
+        special_engine_toughened: 'miscx_db',
+        special_feedback_cascade_cooled: 'wpnx_feca',
+        special_force_shell: 'wpnx_fosh',
+        special_fsd_cooled: 'cfsdx_ts',
+        special_fsd_fuelcapacity: 'cfsdx_dc',
+        special_fsd_heavy: 'cfsdx_mm',
+        special_fsd_interrupt: 'wpnx_fsin',
+        special_fsd_lightweight: 'miscx_sd',
+        special_fsd_toughened: 'cfsdx_db',
+        special_high_yield_shell: 'wpnx_hys',
+        special_hullreinforcement_chunky: 'ihrpx_dp',
+        special_hullreinforcement_explosive: 'ihrpx_lp',
+        special_hullreinforcement_kinetic: 'ihrpx_ap',
+        special_hullreinforcement_thermic: 'ihrpx_rp',
+        special_incendiary_rounds: 'wpnx_inro',
+        special_lock_breaker: 'wpnx_tlb',
+        special_mass_lock: 'wpnx_mlm',
+        special_overload_munitions: 'wpnx_ovmu',
+        special_penetrator_munitions: 'wpnx_pemu',
+        special_phasing_sequence: 'wpnx_phse',
+        special_plasma_slug: 'wpnx_plsl',
+        special_plasma_slug_cooled: 'hrgx_plsl',
+        special_powerdistributor_capacity: 'cpdx_cc',
+        special_powerdistributor_efficient: 'miscx_fc',
+        special_powerdistributor_fast: 'cpdx_sc',
+        special_powerdistributor_lightweight: 'miscx_sd',
+        special_powerdistributor_toughened: 'miscx_db',
+        special_powerplant_cooled: 'cppx_ts',
+        special_powerplant_highcharge: 'cppx_mon',
+        special_powerplant_lightweight: 'miscx_sd',
+        special_powerplant_toughened: 'miscx_db',
+        special_radiant_canister: 'wpnx_raca',
+        special_regeneration_sequence: 'wpnx_rese',
+        special_reverberating_cascade: 'wpnx_reca',
+        special_scramble_spectrum: 'wpnx_scsp',
+        special_screening_shell: 'wpnx_scsh',
+        special_shield_efficient: 'isgx_ld',
+        special_shield_health: 'isgx_hc',
+        special_shield_kinetic: 'isgx_fb',
+        special_shield_lightweight: 'miscx_sd',
+        special_shield_regenerative: 'isgx_fc',
+        special_shield_resistive: 'isgx_mw',
+        special_shield_thermic: 'isgx_tb',
+        special_shield_toughened: 'miscx_db',
+        special_shieldbooster_chunky: 'usbx_sc',
+        special_shieldbooster_efficient: 'miscx_fc',
+        special_shieldbooster_explosive: 'usbx_bb',
+        special_shieldbooster_kinetic: 'usbx_fb',
+        special_shieldbooster_thermic: 'usbx_tb',
+        special_shieldbooster_toughened: 'miscx_db',
+        special_shieldcell_efficient: 'miscx_fc',
+        special_shieldcell_gradual: 'iscbx_rc',
+        special_shieldcell_lightweight: 'miscx_sd',
+        special_shieldcell_oversized: 'iscbx_bc',
+        special_shieldcell_toughened: 'miscx_db',
+        special_shiftlock_canister: 'wpnx_slc',
+        special_smart_rounds: 'wpnx_smro',
+        special_super_penetrator_cooled: 'wpnx_supe',
+        special_thermal_cascade: 'wpnx_thca',
+        special_thermal_conduit: 'wpnx_thco',
+        special_thermal_vent: 'wpnx_thve',
+        special_thermalshock: 'wpnx_thsh',
+        special_weapon_damage: 'wpnx_os',
+        special_weapon_efficient: 'miscx_fc',
+        special_weapon_lightweight: 'miscx_sd',
+        special_weapon_rateoffire: 'wpnx_muse',
+        special_weapon_toughened: 'miscx_db',
+    },
+    expeffect: {
+        miscx_fc: {name: 'Flow Control', pwrdraw: -10},
+        miscx_db: {name: 'Double Braced', integ: 15},
+        miscx_sd: {name: 'Stripped Down', mass: -10},
+
+        wpnx_aulo: {name: 'Auto Loader', special: 'Auto reload while firing'},
+        wpnx_cose: {name: 'Concordant Sequence', thmload: 50, special: 'Wing shield regen increased'},
+        wpnx_cosh: {name: 'Corrosive Shell', ammomax: -20, special: 'Target armor hardness reduced'},
+        wpnx_dash: {name: 'Dazzle Shell', special: 'Target sensor acuity reduced'},
+        wpnx_difi: {name: 'Dispersal Field', special: 'Target gimbal/turret tracking reduced'},
+        wpnx_drmu: {name: 'Drag Munitions', special: 'Target speed reduced'},
+        wpnx_emmu: {name: 'Emissive Munitions', thmload: 100, special: 'Target signature increased'},
+        wpnx_feca: {name: 'Feedback Cascade', damage: -20, thmload: -40, special: 'Target shield cell disrupted'},
+        wpnx_fosh: {name: 'Force Shell', shotspd: -16.6666666666667, special: 'Target pushed off course'},
+        wpnx_fsin: {name: 'FSD Interrupt', damage: -30, bstint: 50, special: 'Target FSD reboots'},
+        wpnx_hys: {name: 'High Yield Shell', bstint: 11.1111111111111, special: 'Damage partly explosive; target module damage'}, // TODO: test damage type distribution; -50% damage mod?
+        wpnx_inro: {name: 'Incendiary Rounds', bstint: 5.263157894737, thmload: 200, special: 'Damage mostly thermal'},
+        wpnx_inim: {name: 'Inertial Impact', damage: 50, jitter: 3, special: 'Damage half kinetic'},
+        wpnx_iodi: {name: 'Ion Disruption', special: 'Target thrusters reboot'},
+        wpnx_mlm: {name: 'Mass Lock Munition', special: 'Target FSD inhibited'},
+        wpnx_muse: {name: 'Multi-Servos', pwrdraw: 5, bstint: -2.912621359223},
+        wpnx_ovmu: {name: 'Overload Munitions', special: 'Damage partly thermal'},
+        wpnx_os: {name: 'Oversized', pwrdraw: 5, damage: 3},
+        wpnx_pemu: {name: 'Penetrator Munitions', special: 'Target module damage'},
+        wpnx_pepa: {name: 'Penetrator Payload', special: 'Target module damage'},
+        wpnx_phse: {name: 'Phasing Sequence', damage: -10, special: 'Damage slightly bypasses shields'},
+        wpnx_plsl: {name: 'Plasma Slug', damage: -10, ammomax: -100, special: 'Reload from ship fuel'},
+        hrgx_plsl: {name: 'Plasma Slug', damage: -10, thmload: -40, ammomax: -100, special: 'Reload from ship fuel'},
+        wpnx_raca: {name: 'Radiant Canister', special: 'Area heat increased and sensors disrupted'},
+        wpnx_rese: {name: 'Regeneration Sequence', damage: -10, special: 'Target wing shields regenerated'},
+        wpnx_reca: {name: 'Reverberating Cascade', special: 'Target shield generator damaged'},
+        wpnx_scsp: {name: 'Scramble Spectrum', bstint: 11.1111111111111, special: 'Target modules malfunction'},
+        wpnx_scsh: {name: 'Screening Shell', rldtime: -50, special: 'Effective against munitions'},
+        wpnx_slc: {name: 'Shift-Lock Canister', special: 'Area FSDs reboot'},
+        wpnx_smro: {name: 'Smart Rounds', special: 'No damage to untargeted ships'},
+        wpnx_supe: {name: 'Super Penetrator', thmload: -40, rldtime: 50, special: 'Target module damage'},
+        wpnx_tlb: {name: 'Target Lock Breaker', special: 'Target loses target lock'},
+        wpnx_thca: {name: 'Thermal Cascade', special: 'Shielded target heat increased'},
+        wpnx_thco: {name: 'Thermal Conduit', special: 'Damage increases with heat level'},
+        wpnx_thsh: {name: 'Thermal Shock', damage: -10, special: 'Target heat increased'},
+        wpnx_thve: {name: 'Thermal Vent', special: 'Heat reduced when striking a target'},
+
+        usbx_bb: {name: 'Blast Block', shieldbst: -1, expres: 2},
+        usbx_fb: {name: 'Force Block', shieldbst: -1, kinres: 2},
+        usbx_sc: {name: 'Super Capacitors', shieldbst: 5, kinres: -2, thmres: -2, expres: -2},
+        usbx_tb: {name: 'Thermo Block', shieldbst: -1, thmres: 2},
+
+        cbhx_ap: {name: 'Angled Plating', hullbst: -3, kinres: 8},
+        cbhx_dp: {name: 'Deep Plating', hullbst: 8, kinres: -3, thmres: -3, expres: -3},
+        cbhx_lp: {name: 'Layered Plating', hullbst: -3, expres: 8},
+        cbhx_rp: {name: 'Reflective Plating', hullbst: -3, thmres: 8},
+
+        cppx_mon: {name: 'Monstered', mass: 10, pwrcap: 5},
+        cppx_ts: {name: 'Thermal Spread', heateff: -10},
+
+        ctx_ddr: {name: 'Drag Drives', optmul: 4, thmload: 10},
+        ctx_ddi: {name: 'Drive Distributors', optmass: 10},
+        ctx_ts: {name: 'Thermal Spread', mass: 5, thmload: -10},
+
+        cfsdx_dc: {name: 'Deep Charge', pwrdraw: 5, maxfuel: 10},
+        cfsdx_db: {name: 'Double Braced', integ: 25},
+        cfsdx_mm: {name: 'Mass Manager', integ: -8, optmass: 4},
+        cfsdx_ts: {name: 'Thermal Spread', thmload: -10},
+
+        cpdx_cc: {name: 'Cluster Capacitors', wepcap: 8, wepchg: -2, engcap: 8, engchg: -2, syscap: 8, syschg: -2},
+        cpdx_sc: {name: 'Super Conduits', wepcap: -4, wepchg: 4, engcap: -4, engchg: 4, syscap: -4, syschg: 4},
+
+        ihrpx_ap: {name: 'Angled Plating', hullrnf: -5, kinres: 2},
+        ihrpx_dp: {name: 'Deep Plating', hullrnf: 10, kinres: -2, thmres: -2, expres: -2},
+        ihrpx_lp: {name: 'Layered Plating', hullrnf: -5, expres: 2},
+        ihrpx_rp: {name: 'Reflective Plating', hullrnf: -5, thmres: 2},
+
+        iscbx_bc: {name: 'Boss Cells', spinup: 20, shieldrnf: 5},
+        iscbx_rc: {name: 'Recycling Cell', duration: 10, shieldrnf: -5},
+
+        isgx_fc: {name: 'Fast Charge', genrate: 15, bgenrate: 15, kinres: -1.5, thmres: -1.5, expres: -1.5},
+        isgx_fb: {name: 'Force Block', optmul: -3, kinres: 8},
+        isgx_hc: {name: 'Hi-Cap', pwrdraw: 10, optmul: 6, distdraw: 25},
+        isgx_ld: {name: 'Lo-Draw', pwrdraw: -20, optmul: -2, distdraw: -20, kinres: -1, thmres: -1, expres: -1},
+        isgx_mw: {name: 'Multi-Weave', pwrdraw: 10, distdraw: 25, kinres: 3, thmres: 3, expres: 3},
+        isgx_tb: {name: 'Thermo Block', optmul: -3, thmres: 8},
+    }, // eddb.expeffect{}
     group: {
         hardpoint: {mtypes: {hel: 1, hul: 1, hc: 1, hex: 1, hfc: 1, hm: 1, hml: 1, hmr: 1, hmc: 1, hpa: 1, hpl: 1, hrg: 1, htp: 1}},
         utility: {mtypes: {ucl: 1, uec: 1, uex: 1, uhsl: 1, ukws: 1, ucs: 1, upd: 1, usb: 1, ufsws: 1}},
@@ -1318,1220 +1588,479 @@ var eddb = {
             {mtypes: {cs: 1}},
             {mtypes: {cft: 1}}
         ],
-        military: {mtypes: {ihrp: 1, imrp: 1, iscb: 1}},
-        internal: {mtypes: {iafmu: 1, icr: 1, iclc: 1, idlc: 1, idc: 1, ifsdi: 1, ifh: 1, ifs: 1, cft: 1, iftlc: 1, ihblc: 1, ihrp: 1, imrp: 1, ipc: 1, ipvh: 1, iplc: 1, inlc: 1, ir: 1, irlc: 1, islc: 1, iscb: 1, isg: 1, isbs: 1, iss: 1}},
+        military: {mtypes: {ihrp: 1, imahrp: 1, imrp: 1, iscb: 1}},
+        internal: {mtypes: {iafmu: 1, icr: 1, iclc: 1, idlc: 1, idc: 1, ifsdi: 1, ifh: 1, ifs: 1, cft: 1, iftlc: 1, ihblc: 1, ihrp: 1, imahrp: 1, imrp: 1, ipc: 1, ipvh: 1, iplc: 1, inlc: 1, ir: 1, irlc: 1, islc: 1, iscb: 1, isg: 1, isbs: 1, iss: 1}},
     }, // eddb.group{}
     mtype: {
-        //					Bea	Bur	Can	Fra	Min	Mis	Mul	Pla	Pul	Rai	Tor
-        // Double Shot					x
-        // Efficient		x	x	x	x			x	x	x
-        // Focused				x						x	x
-        // High Capacity			x	x	x	x	x			x
-        // Light Weight		x	x	x	x	x	x	x	x	x	x	x
-        // Long Range		x	x	x				x	x	x	x
-        // Overcharged		x	x	x	x			x	x	x
-        // Rapid Fire			x	x	x	x	x	x	x	x
-        // Short Range		x	x	x				x	x	x	x
-        // Sturdy			x	x	x	x	x	x	x	x	x	x	x
         hel: {
             name: 'Beam Lasers',
             modulenames: {'Beam Laser': 1},
+            keyattrs: ['damage', 'distdraw', 'thmload', 'maxrng'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'damage', 'distdraw', 'thmload', 'pierce', 'maxrng', 'dmgfall', 'jitter'],
-            blueprint: {
-                11: {name: 'Efficient', grade: 1, damage: [4, 8], thmload: [-32.5, -37.5], fdname: 'Weapon_Efficient'},
-                21: {name: 'Efficient', grade: 2, pwrdraw: [0, -12], damage: [8, 12], distdraw: [-5, -15], thmload: [-37.5, -42.5], fdname: 'Weapon_Efficient'},
-                31: {name: 'Efficient', grade: 3, pwrdraw: [-12, -24], damage: [12, 16], distdraw: [-15, -25], thmload: [-42.5, -47.5], fdname: 'Weapon_Efficient'},
-                41: {name: 'Efficient', grade: 4, pwrdraw: [-24, -36], damage: [16, 20], distdraw: [-25, -35], thmload: [-47.5, -52.5], fdname: 'Weapon_Efficient'},
-                51: {name: 'Efficient', grade: 5, pwrdraw: [-36, -48], damage: [20, 24], distdraw: [-35, -45], thmload: [-52.5, -60], fdname: 'Weapon_Efficient'},
-                14: {name: 'Light Weight', grade: 1, mass: [-15, -30], integ: [-20, -20], fdname: 'Weapon_LightWeight'},
-                24: {name: 'Light Weight', grade: 2, mass: [-30, -45], integ: [-30, -30], pwrdraw: [0, -10], distdraw: [-15, -20], fdname: 'Weapon_LightWeight'},
-                34: {name: 'Light Weight', grade: 3, mass: [-45, -60], integ: [-40, -40], pwrdraw: [-10, -20], distdraw: [-20, -25], fdname: 'Weapon_LightWeight'},
-                44: {name: 'Light Weight', grade: 4, mass: [-60, -75], integ: [-50, -50], pwrdraw: [-20, -30], distdraw: [-25, -30], fdname: 'Weapon_LightWeight'},
-                54: {name: 'Light Weight', grade: 5, mass: [-75, -90], integ: [-60, -60], pwrdraw: [-30, -40], distdraw: [-30, -35], fdname: 'Weapon_LightWeight'},
-                15: {name: 'Long Range', grade: 1, mass: [10, 10], pwrdraw: [3, 3], maxrng: [0, 20], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                25: {name: 'Long Range', grade: 2, mass: [15, 15], pwrdraw: [6, 6], maxrng: [20, 40], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                35: {name: 'Long Range', grade: 3, mass: [20, 20], pwrdraw: [9, 9], maxrng: [40, 60], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                45: {name: 'Long Range', grade: 4, mass: [25, 25], pwrdraw: [12, 12], maxrng: [60, 80], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                55: {name: 'Long Range', grade: 5, mass: [30, 30], pwrdraw: [15, 15], maxrng: [80, 100], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                16: {name: 'Overcharged', grade: 1, damage: [20, 30], distdraw: [15, 15], thmload: [3, 3], ammoclip: [-3, -3], fdname: 'Weapon_Overcharged'},
-                26: {name: 'Overcharged', grade: 2, damage: [30, 40], distdraw: [20, 20], thmload: [6, 6], ammoclip: [-6, -6], fdname: 'Weapon_Overcharged'},
-                36: {name: 'Overcharged', grade: 3, damage: [40, 50], distdraw: [25, 25], thmload: [9, 9], ammoclip: [-9, -9], fdname: 'Weapon_Overcharged'},
-                46: {name: 'Overcharged', grade: 4, damage: [50, 60], distdraw: [30, 30], thmload: [12, 12], ammoclip: [-12, -12], fdname: 'Weapon_Overcharged'},
-                56: {name: 'Overcharged', grade: 5, damage: [60, 70], distdraw: [35, 35], thmload: [15, 15], ammoclip: [-15, -15], fdname: 'Weapon_Overcharged'},
-                18: {name: 'Short Range', grade: 1, damage: [15, 27], maxrng: [-10, -10], fdname: 'Weapon_ShortRange'},
-                28: {name: 'Short Range', grade: 2, damage: [27, 39], thmload: [10, 10], maxrng: [-20, -20], fdname: 'Weapon_ShortRange'},
-                38: {name: 'Short Range', grade: 3, damage: [39, 51], thmload: [20, 20], maxrng: [-30, -30], fdname: 'Weapon_ShortRange'},
-                48: {name: 'Short Range', grade: 4, damage: [51, 63], thmload: [30, 30], maxrng: [-40, -40], fdname: 'Weapon_ShortRange'},
-                58: {name: 'Short Range', grade: 5, damage: [63, 75], thmload: [40, 40], maxrng: [-50, -50], fdname: 'Weapon_ShortRange'},
-                19: {name: 'Sturdy', grade: 1, mass: [20, 20], integ: [50, 100], thmload: [-5, -10], pierce: [10, 20], fdname: 'Weapon_Sturdy'},
-                29: {name: 'Sturdy', grade: 2, mass: [40, 40], integ: [100, 150], thmload: [-10, -15], pierce: [20, 30], fdname: 'Weapon_Sturdy'},
-                39: {name: 'Sturdy', grade: 3, mass: [60, 60], integ: [150, 200], thmload: [-15, -20], pierce: [30, 40], fdname: 'Weapon_Sturdy'},
-                49: {name: 'Sturdy', grade: 4, mass: [80, 80], integ: [200, 250], thmload: [-20, -25], pierce: [40, 50], fdname: 'Weapon_Sturdy'},
-                59: {name: 'Sturdy', grade: 5, mass: [100, 100], integ: [250, 300], thmload: [-25, -30], pierce: [50, 60], fdname: 'Weapon_Sturdy'},
-            },
+            blueprints: ['wpn_eff', 'wpn_lw', 'wpn_lr', 'wpn_oc', 'wpn_sr', 'wpn_stu'],
+            expeffects: ['wpnx_cose', 'miscx_db', 'miscx_fc', 'wpnx_os', 'wpnx_rese', 'miscx_sd', 'wpnx_thco', 'wpnx_thsh', 'wpnx_thve'],
         },
 
         hul: {
             name: 'Burst Lasers',
             modulenames: {'Burst Laser': 1},
+            keyattrs: ['damage', 'distdraw', 'thmload', 'maxrng'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'damage', 'distdraw', 'thmload', 'pierce', 'maxrng', 'bstint', '_bstsize', 'jitter', 'dmgfall'],
-            blueprint: {
-                11: {name: 'Efficient', grade: 1, damage: [4, 8], thmload: [-32.5, -37.5], fdname: 'Weapon_Efficient'},
-                21: {name: 'Efficient', grade: 2, pwrdraw: [0, -12], damage: [8, 12], distdraw: [-5, -15], thmload: [-37.5, -42.5], fdname: 'Weapon_Efficient'},
-                31: {name: 'Efficient', grade: 3, pwrdraw: [-12, -24], damage: [12, 16], distdraw: [-15, -25], thmload: [-42.5, -47.5], fdname: 'Weapon_Efficient'},
-                41: {name: 'Efficient', grade: 4, pwrdraw: [-24, -36], damage: [16, 20], distdraw: [-25, -35], thmload: [-47.5, -52.5], fdname: 'Weapon_Efficient'},
-                51: {name: 'Efficient', grade: 5, pwrdraw: [-36, -48], damage: [20, 24], distdraw: [-35, -45], thmload: [-52.5, -60], fdname: 'Weapon_Efficient'},
-                12: {name: 'Focused', grade: 1, thmload: [1, 1], pierce: [20, 40], maxrng: [20, 36], dmgfall: [20, 36], fdname: 'Weapon_Focused'},
-                22: {name: 'Focused', grade: 2, thmload: [2, 2], pierce: [40, 60], maxrng: [36, 52], dmgfall: [36, 52], fdname: 'Weapon_Focused'},
-                32: {name: 'Focused', grade: 3, thmload: [3, 3], pierce: [60, 80], maxrng: [52, 68], dmgfall: [52, 68], fdname: 'Weapon_Focused'},
-                42: {name: 'Focused', grade: 4, thmload: [4, 4], pierce: [80, 100], maxrng: [68, 84], dmgfall: [68, 84], fdname: 'Weapon_Focused'},
-                52: {name: 'Focused', grade: 5, thmload: [5, 5], pierce: [100, 120], maxrng: [84, 100], dmgfall: [84, 100], fdname: 'Weapon_Focused'},
-                14: {name: 'Light Weight', grade: 1, mass: [-15, -30], integ: [-20, -20], fdname: 'Weapon_LightWeight'},
-                24: {name: 'Light Weight', grade: 2, mass: [-30, -45], integ: [-30, -30], pwrdraw: [0, -10], distdraw: [-15, -20], fdname: 'Weapon_LightWeight'},
-                34: {name: 'Light Weight', grade: 3, mass: [-45, -60], integ: [-40, -40], pwrdraw: [-10, -20], distdraw: [-20, -25], fdname: 'Weapon_LightWeight'},
-                44: {name: 'Light Weight', grade: 4, mass: [-60, -75], integ: [-50, -50], pwrdraw: [-20, -30], distdraw: [-25, -30], fdname: 'Weapon_LightWeight'},
-                54: {name: 'Light Weight', grade: 5, mass: [-75, -90], integ: [-60, -60], pwrdraw: [-30, -40], distdraw: [-30, -35], fdname: 'Weapon_LightWeight'},
-                15: {name: 'Long Range', grade: 1, mass: [10, 10], pwrdraw: [3, 3], maxrng: [0, 20], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                25: {name: 'Long Range', grade: 2, mass: [15, 15], pwrdraw: [6, 6], maxrng: [20, 40], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                35: {name: 'Long Range', grade: 3, mass: [20, 20], pwrdraw: [9, 9], maxrng: [40, 60], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                45: {name: 'Long Range', grade: 4, mass: [25, 25], pwrdraw: [12, 12], maxrng: [60, 80], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                55: {name: 'Long Range', grade: 5, mass: [30, 30], pwrdraw: [15, 15], maxrng: [80, 100], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                16: {name: 'Overcharged', grade: 1, damage: [20, 30], distdraw: [15, 15], thmload: [3, 3], ammoclip: [-3, -3], fdname: 'Weapon_Overcharged'},
-                26: {name: 'Overcharged', grade: 2, damage: [30, 40], distdraw: [20, 20], thmload: [6, 6], ammoclip: [-6, -6], fdname: 'Weapon_Overcharged'},
-                36: {name: 'Overcharged', grade: 3, damage: [40, 50], distdraw: [25, 25], thmload: [9, 9], ammoclip: [-9, -9], fdname: 'Weapon_Overcharged'},
-                46: {name: 'Overcharged', grade: 4, damage: [50, 60], distdraw: [30, 30], thmload: [12, 12], ammoclip: [-12, -12], fdname: 'Weapon_Overcharged'},
-                56: {name: 'Overcharged', grade: 5, damage: [60, 70], distdraw: [35, 35], thmload: [15, 15], ammoclip: [-15, -15], fdname: 'Weapon_Overcharged'},
-                17: {name: 'Rapid Fire', grade: 1, damage: [-1, -1], bstint: [0, -8], rldtime: [-15, -25], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                27: {name: 'Rapid Fire', grade: 2, damage: [-2, -2], distdraw: [0, -5], bstint: [-8, -17], rldtime: [-25, -35], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                37: {name: 'Rapid Fire', grade: 3, damage: [-3, -3], distdraw: [-5, -15], bstint: [-17, -26], rldtime: [-35, -45], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                47: {name: 'Rapid Fire', grade: 4, damage: [-4, -4], distdraw: [-15, -25], bstint: [-26, -35], rldtime: [-45, -55], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                57: {name: 'Rapid Fire', grade: 5, damage: [-5, -5], distdraw: [-25, -35], bstint: [-35, -44], rldtime: [-55, -65], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                18: {name: 'Short Range', grade: 1, damage: [15, 27], maxrng: [-10, -10], fdname: 'Weapon_ShortRange'},
-                28: {name: 'Short Range', grade: 2, damage: [27, 39], thmload: [10, 10], maxrng: [-20, -20], fdname: 'Weapon_ShortRange'},
-                38: {name: 'Short Range', grade: 3, damage: [39, 51], thmload: [20, 20], maxrng: [-30, -30], fdname: 'Weapon_ShortRange'},
-                48: {name: 'Short Range', grade: 4, damage: [51, 63], thmload: [30, 30], maxrng: [-40, -40], fdname: 'Weapon_ShortRange'},
-                58: {name: 'Short Range', grade: 5, damage: [63, 75], thmload: [40, 40], maxrng: [-50, -50], fdname: 'Weapon_ShortRange'},
-                19: {name: 'Sturdy', grade: 1, mass: [20, 20], integ: [50, 100], thmload: [-5, -10], pierce: [10, 20], fdname: 'Weapon_Sturdy'},
-                29: {name: 'Sturdy', grade: 2, mass: [40, 40], integ: [100, 150], thmload: [-10, -15], pierce: [20, 30], fdname: 'Weapon_Sturdy'},
-                39: {name: 'Sturdy', grade: 3, mass: [60, 60], integ: [150, 200], thmload: [-15, -20], pierce: [30, 40], fdname: 'Weapon_Sturdy'},
-                49: {name: 'Sturdy', grade: 4, mass: [80, 80], integ: [200, 250], thmload: [-20, -25], pierce: [40, 50], fdname: 'Weapon_Sturdy'},
-                59: {name: 'Sturdy', grade: 5, mass: [100, 100], integ: [250, 300], thmload: [-25, -30], pierce: [50, 60], fdname: 'Weapon_Sturdy'},
-            },
+            blueprints: ['wpn_eff', 'wpn_foc', 'wpn_lw', 'wpn_lr', 'wpn_oc', 'wpn_rf', 'wpn_sr', 'wpn_stu'],
+            expeffects: ['wpnx_cose', 'miscx_db', 'miscx_fc', 'wpnx_inim', 'wpnx_muse', 'wpnx_os', 'wpnx_phse', 'wpnx_scsp', 'miscx_sd', 'wpnx_thsh'],
         },
 
         hc: {
             name: 'Cannons',
             modulenames: {'Cannon': 1},
+            ammocost: 20,
+            keyattrs: ['damage', 'distdraw', 'thmload', 'maxrng'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'damage', 'distdraw', 'thmload', 'pierce', 'maxrng', 'bstint', 'ammoclip', 'ammomax', 'rldtime', 'jitter', 'dmgfall'], // shotspd?
-            blueprint: {
-                11: {name: 'Efficient', grade: 1, damage: [4, 8], thmload: [-32.5, -37.5], fdname: 'Weapon_Efficient'},
-                21: {name: 'Efficient', grade: 2, pwrdraw: [0, -12], damage: [8, 12], distdraw: [-5, -15], thmload: [-37.5, -42.5], fdname: 'Weapon_Efficient'},
-                31: {name: 'Efficient', grade: 3, pwrdraw: [-12, -24], damage: [12, 16], distdraw: [-15, -25], thmload: [-42.5, -47.5], fdname: 'Weapon_Efficient'},
-                41: {name: 'Efficient', grade: 4, pwrdraw: [-24, -36], damage: [16, 20], distdraw: [-25, -35], thmload: [-47.5, -52.5], fdname: 'Weapon_Efficient'},
-                51: {name: 'Efficient', grade: 5, pwrdraw: [-36, -48], damage: [20, 24], distdraw: [-35, -45], thmload: [-52.5, -60], fdname: 'Weapon_Efficient'},
-                13: {name: 'High Capacity', grade: 1, mass: [20, 20], pwrdraw: [4, 4], ammoclip: [20, 36], ammomax: [20, 36], bstint: [0, -2], fdname: 'Weapon_HighCapacity'},
-                23: {name: 'High Capacity', grade: 2, mass: [30, 30], pwrdraw: [8, 8], ammoclip: [36, 52], ammomax: [36, 52], bstint: [-2, -4], fdname: 'Weapon_HighCapacity'},
-                33: {name: 'High Capacity', grade: 3, mass: [40, 40], pwrdraw: [12, 12], ammoclip: [52, 68], ammomax: [52, 68], bstint: [-4, -6], fdname: 'Weapon_HighCapacity'},
-                43: {name: 'High Capacity', grade: 4, mass: [50, 50], pwrdraw: [16, 16], ammoclip: [68, 84], ammomax: [68, 84], bstint: [-6, -8], fdname: 'Weapon_HighCapacity'},
-                53: {name: 'High Capacity', grade: 5, mass: [65, 60], pwrdraw: [20, 20], ammoclip: [84, 100], ammomax: [84, 100], bstint: [-8, -10], fdname: 'Weapon_HighCapacity'},
-                14: {name: 'Light Weight', grade: 1, mass: [-15, -30], integ: [-20, -20], fdname: 'Weapon_LightWeight'},
-                24: {name: 'Light Weight', grade: 2, mass: [-30, -45], integ: [-30, -30], pwrdraw: [0, -10], distdraw: [-15, -20], fdname: 'Weapon_LightWeight'},
-                34: {name: 'Light Weight', grade: 3, mass: [-45, -60], integ: [-40, -40], pwrdraw: [-10, -20], distdraw: [-20, -25], fdname: 'Weapon_LightWeight'},
-                44: {name: 'Light Weight', grade: 4, mass: [-60, -75], integ: [-50, -50], pwrdraw: [-20, -30], distdraw: [-25, -30], fdname: 'Weapon_LightWeight'},
-                54: {name: 'Light Weight', grade: 5, mass: [-75, -90], integ: [-60, -60], pwrdraw: [-30, -40], distdraw: [-30, -35], fdname: 'Weapon_LightWeight'},
-                15: {name: 'Long Range', grade: 1, mass: [10, 10], pwrdraw: [3, 3], maxrng: [0, 20], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                25: {name: 'Long Range', grade: 2, mass: [15, 15], pwrdraw: [6, 6], maxrng: [20, 40], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                35: {name: 'Long Range', grade: 3, mass: [20, 20], pwrdraw: [9, 9], maxrng: [40, 60], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                45: {name: 'Long Range', grade: 4, mass: [25, 25], pwrdraw: [12, 12], maxrng: [60, 80], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                55: {name: 'Long Range', grade: 5, mass: [30, 30], pwrdraw: [15, 15], maxrng: [80, 100], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                16: {name: 'Overcharged', grade: 1, damage: [20, 30], distdraw: [15, 15], thmload: [3, 3], ammoclip: [-3, -3], fdname: 'Weapon_Overcharged'},
-                26: {name: 'Overcharged', grade: 2, damage: [30, 40], distdraw: [20, 20], thmload: [6, 6], ammoclip: [-6, -6], fdname: 'Weapon_Overcharged'},
-                36: {name: 'Overcharged', grade: 3, damage: [40, 50], distdraw: [25, 25], thmload: [9, 9], ammoclip: [-9, -9], fdname: 'Weapon_Overcharged'},
-                46: {name: 'Overcharged', grade: 4, damage: [50, 60], distdraw: [30, 30], thmload: [12, 12], ammoclip: [-12, -12], fdname: 'Weapon_Overcharged'},
-                56: {name: 'Overcharged', grade: 5, damage: [60, 70], distdraw: [35, 35], thmload: [15, 15], ammoclip: [-15, -15], fdname: 'Weapon_Overcharged'},
-                17: {name: 'Rapid Fire', grade: 1, damage: [-1, -1], bstint: [0, -8], rldtime: [-15, -25], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                27: {name: 'Rapid Fire', grade: 2, damage: [-2, -2], distdraw: [0, -5], bstint: [-8, -17], rldtime: [-25, -35], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                37: {name: 'Rapid Fire', grade: 3, damage: [-3, -3], distdraw: [-5, -15], bstint: [-17, -26], rldtime: [-35, -45], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                47: {name: 'Rapid Fire', grade: 4, damage: [-4, -4], distdraw: [-15, -25], bstint: [-26, -35], rldtime: [-45, -55], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                57: {name: 'Rapid Fire', grade: 5, damage: [-5, -5], distdraw: [-25, -35], bstint: [-35, -44], rldtime: [-55, -65], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                18: {name: 'Short Range', grade: 1, damage: [15, 27], maxrng: [-10, -10], fdname: 'Weapon_ShortRange'},
-                28: {name: 'Short Range', grade: 2, damage: [27, 39], thmload: [10, 10], maxrng: [-20, -20], fdname: 'Weapon_ShortRange'},
-                38: {name: 'Short Range', grade: 3, damage: [39, 51], thmload: [20, 20], maxrng: [-30, -30], fdname: 'Weapon_ShortRange'},
-                48: {name: 'Short Range', grade: 4, damage: [51, 63], thmload: [30, 30], maxrng: [-40, -40], fdname: 'Weapon_ShortRange'},
-                58: {name: 'Short Range', grade: 5, damage: [63, 75], thmload: [40, 40], maxrng: [-50, -50], fdname: 'Weapon_ShortRange'},
-                19: {name: 'Sturdy', grade: 1, mass: [20, 20], integ: [50, 100], thmload: [-5, -10], pierce: [10, 20], fdname: 'Weapon_Sturdy'},
-                29: {name: 'Sturdy', grade: 2, mass: [40, 40], integ: [100, 150], thmload: [-10, -15], pierce: [20, 30], fdname: 'Weapon_Sturdy'},
-                39: {name: 'Sturdy', grade: 3, mass: [60, 60], integ: [150, 200], thmload: [-15, -20], pierce: [30, 40], fdname: 'Weapon_Sturdy'},
-                49: {name: 'Sturdy', grade: 4, mass: [80, 80], integ: [200, 250], thmload: [-20, -25], pierce: [40, 50], fdname: 'Weapon_Sturdy'},
-                59: {name: 'Sturdy', grade: 5, mass: [100, 100], integ: [250, 300], thmload: [-25, -30], pierce: [50, 60], fdname: 'Weapon_Sturdy'},
-            },
+            blueprints: ['wpn_eff', 'wpn_hc', 'wpn_lw', 'wpn_lr', 'wpn_oc', 'wpn_rf', 'wpn_sr', 'wpn_stu'],
+            expeffects: ['wpnx_aulo', 'wpnx_difi', 'miscx_db', 'miscx_fc', 'wpnx_fosh', 'wpnx_hys', 'wpnx_muse', 'wpnx_os', 'wpnx_smro', 'miscx_sd', 'wpnx_thca'],
         },
 
         hex: {
             name: 'Experimental',
             modulenames: {},
+            singleton: 4,
+            keyattrs: ['damage', 'distdraw', 'thmload', 'maxrng'],
         },
 
         hfc: {
             name: 'Fragment Cannons',
             modulenames: {'Fragment Cannon': 1},
+            ammocost: 17,
+            keyattrs: ['damage', 'distdraw', 'thmload', 'maxrng'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'damage', 'distdraw', 'thmload', 'pierce', 'maxrng', 'bstint', 'bstsize', 'ammoclip', 'ammomax', 'rldtime', 'jitter', 'bstrof'], // shotspd?
-            blueprint: {
-                10: {name: 'Double Shot', grade: 1, maxrng: [-2, -2], bstrof: [5.5, 6], bstsize: [2, 2], ammoclip: [10, 15], fdname: 'Weapon_DoubleShot'},
-                20: {name: 'Double Shot', grade: 2, maxrng: [-4, -4], bstrof: [6, 8], bstsize: [2, 2], ammoclip: [15, 20], fdname: 'Weapon_DoubleShot'},
-                30: {name: 'Double Shot', grade: 3, maxrng: [-6, -6], bstrof: [8, 10], bstsize: [2, 2], ammoclip: [20, 25], fdname: 'Weapon_DoubleShot'},
-                40: {name: 'Double Shot', grade: 4, maxrng: [-8, -8], bstrof: [10, 12], bstsize: [2, 2], ammoclip: [25, 30], fdname: 'Weapon_DoubleShot'},
-                50: {name: 'Double Shot', grade: 5, maxrng: [-10, -10], bstrof: [12, 14], bstsize: [2, 2], ammoclip: [30, 35], fdname: 'Weapon_DoubleShot'},
-                11: {name: 'Efficient', grade: 1, damage: [4, 8], thmload: [-32.5, -37.5], fdname: 'Weapon_Efficient'},
-                21: {name: 'Efficient', grade: 2, pwrdraw: [0, -12], damage: [8, 12], distdraw: [-5, -15], thmload: [-37.5, -42.5], fdname: 'Weapon_Efficient'},
-                31: {name: 'Efficient', grade: 3, pwrdraw: [-12, -24], damage: [12, 16], distdraw: [-15, -25], thmload: [-42.5, -47.5], fdname: 'Weapon_Efficient'},
-                41: {name: 'Efficient', grade: 4, pwrdraw: [-24, -36], damage: [16, 20], distdraw: [-25, -35], thmload: [-47.5, -52.5], fdname: 'Weapon_Efficient'},
-                51: {name: 'Efficient', grade: 5, pwrdraw: [-36, -48], damage: [20, 24], distdraw: [-35, -45], thmload: [-52.5, -60], fdname: 'Weapon_Efficient'},
-                13: {name: 'High Capacity', grade: 1, mass: [20, 20], pwrdraw: [4, 4], ammoclip: [20, 36], ammomax: [20, 36], bstint: [0, -2], fdname: 'Weapon_HighCapacity'},
-                23: {name: 'High Capacity', grade: 2, mass: [30, 30], pwrdraw: [8, 8], ammoclip: [36, 52], ammomax: [36, 52], bstint: [-2, -4], fdname: 'Weapon_HighCapacity'},
-                33: {name: 'High Capacity', grade: 3, mass: [40, 40], pwrdraw: [12, 12], ammoclip: [52, 68], ammomax: [52, 68], bstint: [-4, -6], fdname: 'Weapon_HighCapacity'},
-                43: {name: 'High Capacity', grade: 4, mass: [50, 50], pwrdraw: [16, 16], ammoclip: [68, 84], ammomax: [68, 84], bstint: [-6, -8], fdname: 'Weapon_HighCapacity'},
-                53: {name: 'High Capacity', grade: 5, mass: [65, 60], pwrdraw: [20, 20], ammoclip: [84, 100], ammomax: [84, 100], bstint: [-8, -10], fdname: 'Weapon_HighCapacity'},
-                14: {name: 'Light Weight', grade: 1, mass: [-15, -30], integ: [-20, -20], fdname: 'Weapon_LightWeight'},
-                24: {name: 'Light Weight', grade: 2, mass: [-30, -45], integ: [-30, -30], pwrdraw: [0, -10], distdraw: [-15, -20], fdname: 'Weapon_LightWeight'},
-                34: {name: 'Light Weight', grade: 3, mass: [-45, -60], integ: [-40, -40], pwrdraw: [-10, -20], distdraw: [-20, -25], fdname: 'Weapon_LightWeight'},
-                44: {name: 'Light Weight', grade: 4, mass: [-60, -75], integ: [-50, -50], pwrdraw: [-20, -30], distdraw: [-25, -30], fdname: 'Weapon_LightWeight'},
-                54: {name: 'Light Weight', grade: 5, mass: [-75, -90], integ: [-60, -60], pwrdraw: [-30, -40], distdraw: [-30, -35], fdname: 'Weapon_LightWeight'},
-                16: {name: 'Overcharged', grade: 1, damage: [20, 30], distdraw: [15, 15], thmload: [3, 3], ammoclip: [-3, -3], fdname: 'Weapon_Overcharged'},
-                26: {name: 'Overcharged', grade: 2, damage: [30, 40], distdraw: [20, 20], thmload: [6, 6], ammoclip: [-6, -6], fdname: 'Weapon_Overcharged'},
-                36: {name: 'Overcharged', grade: 3, damage: [40, 50], distdraw: [25, 25], thmload: [9, 9], ammoclip: [-9, -9], fdname: 'Weapon_Overcharged'},
-                46: {name: 'Overcharged', grade: 4, damage: [50, 60], distdraw: [30, 30], thmload: [12, 12], ammoclip: [-12, -12], fdname: 'Weapon_Overcharged'},
-                56: {name: 'Overcharged', grade: 5, damage: [60, 70], distdraw: [35, 35], thmload: [15, 15], ammoclip: [-15, -15], fdname: 'Weapon_Overcharged'},
-                17: {name: 'Rapid Fire', grade: 1, damage: [-1, -1], bstint: [0, -8], rldtime: [-15, -25], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                27: {name: 'Rapid Fire', grade: 2, damage: [-2, -2], distdraw: [0, -5], bstint: [-8, -17], rldtime: [-25, -35], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                37: {name: 'Rapid Fire', grade: 3, damage: [-3, -3], distdraw: [-5, -15], bstint: [-17, -26], rldtime: [-35, -45], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                47: {name: 'Rapid Fire', grade: 4, damage: [-4, -4], distdraw: [-15, -25], bstint: [-26, -35], rldtime: [-45, -55], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                57: {name: 'Rapid Fire', grade: 5, damage: [-5, -5], distdraw: [-25, -35], bstint: [-35, -44], rldtime: [-55, -65], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                19: {name: 'Sturdy', grade: 1, mass: [20, 20], integ: [50, 100], thmload: [-5, -10], pierce: [10, 20], fdname: 'Weapon_Sturdy'},
-                29: {name: 'Sturdy', grade: 2, mass: [40, 40], integ: [100, 150], thmload: [-10, -15], pierce: [20, 30], fdname: 'Weapon_Sturdy'},
-                39: {name: 'Sturdy', grade: 3, mass: [60, 60], integ: [150, 200], thmload: [-15, -20], pierce: [30, 40], fdname: 'Weapon_Sturdy'},
-                49: {name: 'Sturdy', grade: 4, mass: [80, 80], integ: [200, 250], thmload: [-20, -25], pierce: [40, 50], fdname: 'Weapon_Sturdy'},
-                59: {name: 'Sturdy', grade: 5, mass: [100, 100], integ: [250, 300], thmload: [-25, -30], pierce: [50, 60], fdname: 'Weapon_Sturdy'},
-            },
+            blueprints: ['wpn_ds', 'wpn_eff', 'wpn_hc', 'wpn_lw', 'wpn_oc', 'wpn_rf', 'wpn_stu'],
+            expeffects: ['wpnx_cosh', 'wpnx_dash', 'miscx_db', 'wpnx_drmu', 'miscx_fc', 'wpnx_inro', 'wpnx_muse', 'wpnx_os', 'wpnx_scsh', 'miscx_sd'],
         },
 
         hm: {
             name: 'Mines',
             modulenames: {},
+            ammocost: 209,
+            keyattrs: ['damage', 'distdraw', 'thmload'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'damage', 'thmload', 'pierce', 'bstint', 'ammoclip', 'ammomax', 'rldtime', 'jitter'],
-            blueprint: {
-                13: {name: 'High Capacity', grade: 1, mass: [20, 20], pwrdraw: [4, 4], ammoclip: [20, 36], ammomax: [20, 36], bstint: [0, -2], fdname: 'Weapon_HighCapacity'},
-                23: {name: 'High Capacity', grade: 2, mass: [30, 30], pwrdraw: [8, 8], ammoclip: [36, 52], ammomax: [36, 52], bstint: [-2, -4], fdname: 'Weapon_HighCapacity'},
-                33: {name: 'High Capacity', grade: 3, mass: [40, 40], pwrdraw: [12, 12], ammoclip: [52, 68], ammomax: [52, 68], bstint: [-4, -6], fdname: 'Weapon_HighCapacity'},
-                43: {name: 'High Capacity', grade: 4, mass: [50, 50], pwrdraw: [16, 16], ammoclip: [68, 84], ammomax: [68, 84], bstint: [-6, -8], fdname: 'Weapon_HighCapacity'},
-                53: {name: 'High Capacity', grade: 5, mass: [65, 60], pwrdraw: [20, 20], ammoclip: [84, 100], ammomax: [84, 100], bstint: [-8, -10], fdname: 'Weapon_HighCapacity'},
-                14: {name: 'Light Weight', grade: 1, mass: [-15, -30], integ: [-20, -20], fdname: 'Weapon_LightWeight'},
-                24: {name: 'Light Weight', grade: 2, mass: [-30, -45], integ: [-30, -30], pwrdraw: [0, -10], distdraw: [-15, -20], fdname: 'Weapon_LightWeight'},
-                34: {name: 'Light Weight', grade: 3, mass: [-45, -60], integ: [-40, -40], pwrdraw: [-10, -20], distdraw: [-20, -25], fdname: 'Weapon_LightWeight'},
-                44: {name: 'Light Weight', grade: 4, mass: [-60, -75], integ: [-50, -50], pwrdraw: [-20, -30], distdraw: [-25, -30], fdname: 'Weapon_LightWeight'},
-                54: {name: 'Light Weight', grade: 5, mass: [-75, -90], integ: [-60, -60], pwrdraw: [-30, -40], distdraw: [-30, -35], fdname: 'Weapon_LightWeight'},
-                17: {name: 'Rapid Fire', grade: 1, damage: [-1, -1], bstint: [0, -8], rldtime: [-15, -25], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                27: {name: 'Rapid Fire', grade: 2, damage: [-2, -2], distdraw: [0, -5], bstint: [-8, -17], rldtime: [-25, -35], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                37: {name: 'Rapid Fire', grade: 3, damage: [-3, -3], distdraw: [-5, -15], bstint: [-17, -26], rldtime: [-35, -45], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                47: {name: 'Rapid Fire', grade: 4, damage: [-4, -4], distdraw: [-15, -25], bstint: [-26, -35], rldtime: [-45, -55], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                57: {name: 'Rapid Fire', grade: 5, damage: [-5, -5], distdraw: [-25, -35], bstint: [-35, -44], rldtime: [-55, -65], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                19: {name: 'Sturdy', grade: 1, mass: [20, 20], integ: [50, 100], thmload: [-5, -10], pierce: [10, 20], fdname: 'Weapon_Sturdy'},
-                29: {name: 'Sturdy', grade: 2, mass: [40, 40], integ: [100, 150], thmload: [-10, -15], pierce: [20, 30], fdname: 'Weapon_Sturdy'},
-                39: {name: 'Sturdy', grade: 3, mass: [60, 60], integ: [150, 200], thmload: [-15, -20], pierce: [30, 40], fdname: 'Weapon_Sturdy'},
-                49: {name: 'Sturdy', grade: 4, mass: [80, 80], integ: [200, 250], thmload: [-20, -25], pierce: [40, 50], fdname: 'Weapon_Sturdy'},
-                59: {name: 'Sturdy', grade: 5, mass: [100, 100], integ: [250, 300], thmload: [-25, -30], pierce: [50, 60], fdname: 'Weapon_Sturdy'},
-            },
+            blueprints: ['wpn_hc', 'wpn_lw', 'wpn_rf', 'wpn_stu'],
+            expeffects: ['miscx_db', 'wpnx_emmu', 'miscx_fc', 'wpnx_iodi', 'wpnx_ovmu', 'wpnx_os', 'wpnx_raca', 'wpnx_reca', 'wpnx_slc', 'miscx_sd'],
         },
 
         hml: {
             name: 'Mining Lasers',
             modulenames: {'Mining Laser': 1},
-            modifiable: ['mass', 'integ', 'pwrdraw', 'damage', 'distdraw', 'thmload', 'pierce', 'maxrng'],
+            keyattrs: ['distdraw', 'thmload', 'maxrng'],
+            //	modifiable:['mass','integ','pwrdraw','damage','distdraw','thmload','pierce','maxrng'],
         },
 
         hmr: {
             name: 'Missiles',
             modulenames: {'Missile Rack': 1, 'Seeker Missile Rack': 1},
+            ammocost: 500,
+            keyattrs: ['damage', 'distdraw', 'thmload'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'damage', 'distdraw', 'thmload', 'pierce', 'bstint', 'ammoclip', 'ammomax', 'rldtime', 'jitter'], // shotspd?
-            blueprint: {
-                13: {name: 'High Capacity', grade: 1, mass: [20, 20], pwrdraw: [4, 4], ammoclip: [20, 36], ammomax: [20, 36], bstint: [0, -2], fdname: 'Weapon_HighCapacity'},
-                23: {name: 'High Capacity', grade: 2, mass: [30, 30], pwrdraw: [8, 8], ammoclip: [36, 52], ammomax: [36, 52], bstint: [-2, -4], fdname: 'Weapon_HighCapacity'},
-                33: {name: 'High Capacity', grade: 3, mass: [40, 40], pwrdraw: [12, 12], ammoclip: [52, 68], ammomax: [52, 68], bstint: [-4, -6], fdname: 'Weapon_HighCapacity'},
-                43: {name: 'High Capacity', grade: 4, mass: [50, 50], pwrdraw: [16, 16], ammoclip: [68, 84], ammomax: [68, 84], bstint: [-6, -8], fdname: 'Weapon_HighCapacity'},
-                53: {name: 'High Capacity', grade: 5, mass: [65, 60], pwrdraw: [20, 20], ammoclip: [84, 100], ammomax: [84, 100], bstint: [-8, -10], fdname: 'Weapon_HighCapacity'},
-                14: {name: 'Light Weight', grade: 1, mass: [-15, -30], integ: [-20, -20], fdname: 'Weapon_LightWeight'},
-                24: {name: 'Light Weight', grade: 2, mass: [-30, -45], integ: [-30, -30], pwrdraw: [0, -10], distdraw: [-15, -20], fdname: 'Weapon_LightWeight'},
-                34: {name: 'Light Weight', grade: 3, mass: [-45, -60], integ: [-40, -40], pwrdraw: [-10, -20], distdraw: [-20, -25], fdname: 'Weapon_LightWeight'},
-                44: {name: 'Light Weight', grade: 4, mass: [-60, -75], integ: [-50, -50], pwrdraw: [-20, -30], distdraw: [-25, -30], fdname: 'Weapon_LightWeight'},
-                54: {name: 'Light Weight', grade: 5, mass: [-75, -90], integ: [-60, -60], pwrdraw: [-30, -40], distdraw: [-30, -35], fdname: 'Weapon_LightWeight'},
-                17: {name: 'Rapid Fire', grade: 1, damage: [-1, -1], bstint: [0, -8], rldtime: [-15, -25], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                27: {name: 'Rapid Fire', grade: 2, damage: [-2, -2], distdraw: [0, -5], bstint: [-8, -17], rldtime: [-25, -35], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                37: {name: 'Rapid Fire', grade: 3, damage: [-3, -3], distdraw: [-5, -15], bstint: [-17, -26], rldtime: [-35, -45], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                47: {name: 'Rapid Fire', grade: 4, damage: [-4, -4], distdraw: [-15, -25], bstint: [-26, -35], rldtime: [-45, -55], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                57: {name: 'Rapid Fire', grade: 5, damage: [-5, -5], distdraw: [-25, -35], bstint: [-35, -44], rldtime: [-55, -65], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                19: {name: 'Sturdy', grade: 1, mass: [20, 20], integ: [50, 100], thmload: [-5, -10], pierce: [10, 20], fdname: 'Weapon_Sturdy'},
-                29: {name: 'Sturdy', grade: 2, mass: [40, 40], integ: [100, 150], thmload: [-10, -15], pierce: [20, 30], fdname: 'Weapon_Sturdy'},
-                39: {name: 'Sturdy', grade: 3, mass: [60, 60], integ: [150, 200], thmload: [-15, -20], pierce: [30, 40], fdname: 'Weapon_Sturdy'},
-                49: {name: 'Sturdy', grade: 4, mass: [80, 80], integ: [200, 250], thmload: [-20, -25], pierce: [40, 50], fdname: 'Weapon_Sturdy'},
-                59: {name: 'Sturdy', grade: 5, mass: [100, 100], integ: [250, 300], thmload: [-25, -30], pierce: [50, 60], fdname: 'Weapon_Sturdy'},
-            },
+            blueprints: ['wpn_hc', 'wpn_lw', 'wpn_rf', 'wpn_stu'],
+            expeffects: ['miscx_db', 'wpnx_emmu', 'miscx_fc', 'wpnx_fsin', 'wpnx_muse', 'wpnx_ovmu', 'wpnx_os', 'wpnx_pemu', 'miscx_sd', 'wpnx_thca'],
         },
 
         hmc: {
             name: 'Multi-Cannons',
             modulenames: {'Multi-cannon': 1},
+            ammocost: 1,
+            keyattrs: ['damage', 'distdraw', 'thmload', 'maxrng'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'damage', 'distdraw', 'thmload', 'pierce', 'maxrng', 'bstint', 'ammoclip', 'ammomax', 'rldtime', 'jitter', 'dmgfall'], // shotspd?
-            blueprint: {
-                11: {name: 'Efficient', grade: 1, damage: [4, 8], thmload: [-32.5, -37.5], fdname: 'Weapon_Efficient'},
-                21: {name: 'Efficient', grade: 2, pwrdraw: [0, -12], damage: [8, 12], distdraw: [-5, -15], thmload: [-37.5, -42.5], fdname: 'Weapon_Efficient'},
-                31: {name: 'Efficient', grade: 3, pwrdraw: [-12, -24], damage: [12, 16], distdraw: [-15, -25], thmload: [-42.5, -47.5], fdname: 'Weapon_Efficient'},
-                41: {name: 'Efficient', grade: 4, pwrdraw: [-24, -36], damage: [16, 20], distdraw: [-25, -35], thmload: [-47.5, -52.5], fdname: 'Weapon_Efficient'},
-                51: {name: 'Efficient', grade: 5, pwrdraw: [-36, -48], damage: [20, 24], distdraw: [-35, -45], thmload: [-52.5, -60], fdname: 'Weapon_Efficient'},
-                13: {name: 'High Capacity', grade: 1, mass: [20, 20], pwrdraw: [4, 4], ammoclip: [20, 36], ammomax: [20, 36], bstint: [0, -2], fdname: 'Weapon_HighCapacity'},
-                23: {name: 'High Capacity', grade: 2, mass: [30, 30], pwrdraw: [8, 8], ammoclip: [36, 52], ammomax: [36, 52], bstint: [-2, -4], fdname: 'Weapon_HighCapacity'},
-                33: {name: 'High Capacity', grade: 3, mass: [40, 40], pwrdraw: [12, 12], ammoclip: [52, 68], ammomax: [52, 68], bstint: [-4, -6], fdname: 'Weapon_HighCapacity'},
-                43: {name: 'High Capacity', grade: 4, mass: [50, 50], pwrdraw: [16, 16], ammoclip: [68, 84], ammomax: [68, 84], bstint: [-6, -8], fdname: 'Weapon_HighCapacity'},
-                53: {name: 'High Capacity', grade: 5, mass: [65, 60], pwrdraw: [20, 20], ammoclip: [84, 100], ammomax: [84, 100], bstint: [-8, -10], fdname: 'Weapon_HighCapacity'},
-                14: {name: 'Light Weight', grade: 1, mass: [-15, -30], integ: [-20, -20], fdname: 'Weapon_LightWeight'},
-                24: {name: 'Light Weight', grade: 2, mass: [-30, -45], integ: [-30, -30], pwrdraw: [0, -10], distdraw: [-15, -20], fdname: 'Weapon_LightWeight'},
-                34: {name: 'Light Weight', grade: 3, mass: [-45, -60], integ: [-40, -40], pwrdraw: [-10, -20], distdraw: [-20, -25], fdname: 'Weapon_LightWeight'},
-                44: {name: 'Light Weight', grade: 4, mass: [-60, -75], integ: [-50, -50], pwrdraw: [-20, -30], distdraw: [-25, -30], fdname: 'Weapon_LightWeight'},
-                54: {name: 'Light Weight', grade: 5, mass: [-75, -90], integ: [-60, -60], pwrdraw: [-30, -40], distdraw: [-30, -35], fdname: 'Weapon_LightWeight'},
-                15: {name: 'Long Range', grade: 1, mass: [10, 10], pwrdraw: [3, 3], maxrng: [0, 20], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                25: {name: 'Long Range', grade: 2, mass: [15, 15], pwrdraw: [6, 6], maxrng: [20, 40], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                35: {name: 'Long Range', grade: 3, mass: [20, 20], pwrdraw: [9, 9], maxrng: [40, 60], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                45: {name: 'Long Range', grade: 4, mass: [25, 25], pwrdraw: [12, 12], maxrng: [60, 80], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                55: {name: 'Long Range', grade: 5, mass: [30, 30], pwrdraw: [15, 15], maxrng: [80, 100], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                16: {name: 'Overcharged', grade: 1, damage: [20, 30], distdraw: [15, 15], thmload: [3, 3], ammoclip: [-3, -3], fdname: 'Weapon_Overcharged'},
-                26: {name: 'Overcharged', grade: 2, damage: [30, 40], distdraw: [20, 20], thmload: [6, 6], ammoclip: [-6, -6], fdname: 'Weapon_Overcharged'},
-                36: {name: 'Overcharged', grade: 3, damage: [40, 50], distdraw: [25, 25], thmload: [9, 9], ammoclip: [-9, -9], fdname: 'Weapon_Overcharged'},
-                46: {name: 'Overcharged', grade: 4, damage: [50, 60], distdraw: [30, 30], thmload: [12, 12], ammoclip: [-12, -12], fdname: 'Weapon_Overcharged'},
-                56: {name: 'Overcharged', grade: 5, damage: [60, 70], distdraw: [35, 35], thmload: [15, 15], ammoclip: [-15, -15], fdname: 'Weapon_Overcharged'},
-                17: {name: 'Rapid Fire', grade: 1, damage: [-1, -1], bstint: [0, -8], rldtime: [-15, -25], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                27: {name: 'Rapid Fire', grade: 2, damage: [-2, -2], distdraw: [0, -5], bstint: [-8, -17], rldtime: [-25, -35], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                37: {name: 'Rapid Fire', grade: 3, damage: [-3, -3], distdraw: [-5, -15], bstint: [-17, -26], rldtime: [-35, -45], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                47: {name: 'Rapid Fire', grade: 4, damage: [-4, -4], distdraw: [-15, -25], bstint: [-26, -35], rldtime: [-45, -55], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                57: {name: 'Rapid Fire', grade: 5, damage: [-5, -5], distdraw: [-25, -35], bstint: [-35, -44], rldtime: [-55, -65], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                18: {name: 'Short Range', grade: 1, damage: [15, 27], maxrng: [-10, -10], fdname: 'Weapon_ShortRange'},
-                28: {name: 'Short Range', grade: 2, damage: [27, 39], thmload: [10, 10], maxrng: [-20, -20], fdname: 'Weapon_ShortRange'},
-                38: {name: 'Short Range', grade: 3, damage: [39, 51], thmload: [20, 20], maxrng: [-30, -30], fdname: 'Weapon_ShortRange'},
-                48: {name: 'Short Range', grade: 4, damage: [51, 63], thmload: [30, 30], maxrng: [-40, -40], fdname: 'Weapon_ShortRange'},
-                58: {name: 'Short Range', grade: 5, damage: [63, 75], thmload: [40, 40], maxrng: [-50, -50], fdname: 'Weapon_ShortRange'},
-                19: {name: 'Sturdy', grade: 1, mass: [20, 20], integ: [50, 100], thmload: [-5, -10], pierce: [10, 20], fdname: 'Weapon_Sturdy'},
-                29: {name: 'Sturdy', grade: 2, mass: [40, 40], integ: [100, 150], thmload: [-10, -15], pierce: [20, 30], fdname: 'Weapon_Sturdy'},
-                39: {name: 'Sturdy', grade: 3, mass: [60, 60], integ: [150, 200], thmload: [-15, -20], pierce: [30, 40], fdname: 'Weapon_Sturdy'},
-                49: {name: 'Sturdy', grade: 4, mass: [80, 80], integ: [200, 250], thmload: [-20, -25], pierce: [40, 50], fdname: 'Weapon_Sturdy'},
-                59: {name: 'Sturdy', grade: 5, mass: [100, 100], integ: [250, 300], thmload: [-25, -30], pierce: [50, 60], fdname: 'Weapon_Sturdy'},
-            },
+            blueprints: ['wpn_eff', 'wpn_hc', 'wpn_lw', 'wpn_lr', 'wpn_oc', 'wpn_rf', 'wpn_sr', 'wpn_stu'],
+            expeffects: ['wpnx_aulo', 'wpnx_cosh', 'miscx_db', 'wpnx_emmu', 'miscx_fc', 'wpnx_inro', 'wpnx_muse', 'wpnx_os', 'wpnx_smro', 'miscx_sd', 'wpnx_thsh'],
         },
 
         hpa: {
             name: 'Plasma Accelerators',
             modulenames: {},
+            ammocost: 200,
+            keyattrs: ['damage', 'distdraw', 'thmload', 'maxrng'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'damage', 'distdraw', 'thmload', 'pierce', 'maxrng', 'bstint', 'ammoclip', 'ammomax', 'rldtime', 'jitter', 'dmgfall'], // shotspd?
-            blueprint: {
-                11: {name: 'Efficient', grade: 1, damage: [4, 8], thmload: [-32.5, -37.5], fdname: 'Weapon_Efficient'},
-                21: {name: 'Efficient', grade: 2, pwrdraw: [0, -12], damage: [8, 12], distdraw: [-5, -15], thmload: [-37.5, -42.5], fdname: 'Weapon_Efficient'},
-                31: {name: 'Efficient', grade: 3, pwrdraw: [-12, -24], damage: [12, 16], distdraw: [-15, -25], thmload: [-42.5, -47.5], fdname: 'Weapon_Efficient'},
-                41: {name: 'Efficient', grade: 4, pwrdraw: [-24, -36], damage: [16, 20], distdraw: [-25, -35], thmload: [-47.5, -52.5], fdname: 'Weapon_Efficient'},
-                51: {name: 'Efficient', grade: 5, pwrdraw: [-36, -48], damage: [20, 24], distdraw: [-35, -45], thmload: [-52.5, -60], fdname: 'Weapon_Efficient'},
-                12: {name: 'Focused', grade: 1, thmload: [1, 1], pierce: [20, 40], maxrng: [20, 36], dmgfall: [20, 36], fdname: 'Weapon_Focused'},
-                22: {name: 'Focused', grade: 2, thmload: [2, 2], pierce: [40, 60], maxrng: [36, 52], dmgfall: [36, 52], fdname: 'Weapon_Focused'},
-                32: {name: 'Focused', grade: 3, thmload: [3, 3], pierce: [60, 80], maxrng: [52, 68], dmgfall: [52, 68], fdname: 'Weapon_Focused'},
-                42: {name: 'Focused', grade: 4, thmload: [4, 4], pierce: [80, 100], maxrng: [68, 84], dmgfall: [68, 84], fdname: 'Weapon_Focused'},
-                52: {name: 'Focused', grade: 5, thmload: [5, 5], pierce: [100, 120], maxrng: [84, 100], dmgfall: [84, 100], fdname: 'Weapon_Focused'},
-                14: {name: 'Light Weight', grade: 1, mass: [-15, -30], integ: [-20, -20], fdname: 'Weapon_LightWeight'},
-                24: {name: 'Light Weight', grade: 2, mass: [-30, -45], integ: [-30, -30], pwrdraw: [0, -10], distdraw: [-15, -20], fdname: 'Weapon_LightWeight'},
-                34: {name: 'Light Weight', grade: 3, mass: [-45, -60], integ: [-40, -40], pwrdraw: [-10, -20], distdraw: [-20, -25], fdname: 'Weapon_LightWeight'},
-                44: {name: 'Light Weight', grade: 4, mass: [-60, -75], integ: [-50, -50], pwrdraw: [-20, -30], distdraw: [-25, -30], fdname: 'Weapon_LightWeight'},
-                54: {name: 'Light Weight', grade: 5, mass: [-75, -90], integ: [-60, -60], pwrdraw: [-30, -40], distdraw: [-30, -35], fdname: 'Weapon_LightWeight'},
-                15: {name: 'Long Range', grade: 1, mass: [10, 10], pwrdraw: [3, 3], maxrng: [0, 20], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                25: {name: 'Long Range', grade: 2, mass: [15, 15], pwrdraw: [6, 6], maxrng: [20, 40], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                35: {name: 'Long Range', grade: 3, mass: [20, 20], pwrdraw: [9, 9], maxrng: [40, 60], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                45: {name: 'Long Range', grade: 4, mass: [25, 25], pwrdraw: [12, 12], maxrng: [60, 80], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                55: {name: 'Long Range', grade: 5, mass: [30, 30], pwrdraw: [15, 15], maxrng: [80, 100], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                16: {name: 'Overcharged', grade: 1, damage: [20, 30], distdraw: [15, 15], thmload: [3, 3], ammoclip: [-3, -3], fdname: 'Weapon_Overcharged'},
-                26: {name: 'Overcharged', grade: 2, damage: [30, 40], distdraw: [20, 20], thmload: [6, 6], ammoclip: [-6, -6], fdname: 'Weapon_Overcharged'},
-                36: {name: 'Overcharged', grade: 3, damage: [40, 50], distdraw: [25, 25], thmload: [9, 9], ammoclip: [-9, -9], fdname: 'Weapon_Overcharged'},
-                46: {name: 'Overcharged', grade: 4, damage: [50, 60], distdraw: [30, 30], thmload: [12, 12], ammoclip: [-12, -12], fdname: 'Weapon_Overcharged'},
-                56: {name: 'Overcharged', grade: 5, damage: [60, 70], distdraw: [35, 35], thmload: [15, 15], ammoclip: [-15, -15], fdname: 'Weapon_Overcharged'},
-                17: {name: 'Rapid Fire', grade: 1, damage: [-1, -1], bstint: [0, -8], rldtime: [-15, -25], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                27: {name: 'Rapid Fire', grade: 2, damage: [-2, -2], distdraw: [0, -5], bstint: [-8, -17], rldtime: [-25, -35], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                37: {name: 'Rapid Fire', grade: 3, damage: [-3, -3], distdraw: [-5, -15], bstint: [-17, -26], rldtime: [-35, -45], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                47: {name: 'Rapid Fire', grade: 4, damage: [-4, -4], distdraw: [-15, -25], bstint: [-26, -35], rldtime: [-45, -55], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                57: {name: 'Rapid Fire', grade: 5, damage: [-5, -5], distdraw: [-25, -35], bstint: [-35, -44], rldtime: [-55, -65], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                18: {name: 'Short Range', grade: 1, damage: [15, 27], maxrng: [-10, -10], fdname: 'Weapon_ShortRange'},
-                28: {name: 'Short Range', grade: 2, damage: [27, 39], thmload: [10, 10], maxrng: [-20, -20], fdname: 'Weapon_ShortRange'},
-                38: {name: 'Short Range', grade: 3, damage: [39, 51], thmload: [20, 20], maxrng: [-30, -30], fdname: 'Weapon_ShortRange'},
-                48: {name: 'Short Range', grade: 4, damage: [51, 63], thmload: [30, 30], maxrng: [-40, -40], fdname: 'Weapon_ShortRange'},
-                58: {name: 'Short Range', grade: 5, damage: [63, 75], thmload: [40, 40], maxrng: [-50, -50], fdname: 'Weapon_ShortRange'},
-                19: {name: 'Sturdy', grade: 1, mass: [20, 20], integ: [50, 100], thmload: [-5, -10], pierce: [10, 20], fdname: 'Weapon_Sturdy'},
-                29: {name: 'Sturdy', grade: 2, mass: [40, 40], integ: [100, 150], thmload: [-10, -15], pierce: [20, 30], fdname: 'Weapon_Sturdy'},
-                39: {name: 'Sturdy', grade: 3, mass: [60, 60], integ: [150, 200], thmload: [-15, -20], pierce: [30, 40], fdname: 'Weapon_Sturdy'},
-                49: {name: 'Sturdy', grade: 4, mass: [80, 80], integ: [200, 250], thmload: [-20, -25], pierce: [40, 50], fdname: 'Weapon_Sturdy'},
-                59: {name: 'Sturdy', grade: 5, mass: [100, 100], integ: [250, 300], thmload: [-25, -30], pierce: [50, 60], fdname: 'Weapon_Sturdy'},
-            },
+            blueprints: ['wpn_eff', 'wpn_foc', 'wpn_lw', 'wpn_lr', 'wpn_oc', 'wpn_rf', 'wpn_sr', 'wpn_stu'],
+            expeffects: ['wpnx_dash', 'wpnx_difi', 'miscx_db', 'miscx_fc', 'wpnx_muse', 'wpnx_os', 'wpnx_phse', 'wpnx_plsl', 'miscx_sd', 'wpnx_tlb', 'wpnx_thco'],
         },
 
         hpl: {
             name: 'Pulse Lasers',
             modulenames: {'Pulse Laser': 1},
+            keyattrs: ['damage', 'distdraw', 'thmload', 'maxrng'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'damage', 'distdraw', 'thmload', 'pierce', 'maxrng', 'bstint', 'jitter', 'dmgfall'],
-            blueprint: {
-                11: {name: 'Efficient', grade: 1, damage: [4, 8], thmload: [-32.5, -37.5], fdname: 'Weapon_Efficient'},
-                21: {name: 'Efficient', grade: 2, pwrdraw: [0, -12], damage: [8, 12], distdraw: [-5, -15], thmload: [-37.5, -42.5], fdname: 'Weapon_Efficient'},
-                31: {name: 'Efficient', grade: 3, pwrdraw: [-12, -24], damage: [12, 16], distdraw: [-15, -25], thmload: [-42.5, -47.5], fdname: 'Weapon_Efficient'},
-                41: {name: 'Efficient', grade: 4, pwrdraw: [-24, -36], damage: [16, 20], distdraw: [-25, -35], thmload: [-47.5, -52.5], fdname: 'Weapon_Efficient'},
-                51: {name: 'Efficient', grade: 5, pwrdraw: [-36, -48], damage: [20, 24], distdraw: [-35, -45], thmload: [-52.5, -60], fdname: 'Weapon_Efficient'},
-                12: {name: 'Focused', grade: 1, thmload: [1, 1], pierce: [20, 40], maxrng: [20, 36], dmgfall: [20, 36], fdname: 'Weapon_Focused'},
-                22: {name: 'Focused', grade: 2, thmload: [2, 2], pierce: [40, 60], maxrng: [36, 52], dmgfall: [36, 52], fdname: 'Weapon_Focused'},
-                32: {name: 'Focused', grade: 3, thmload: [3, 3], pierce: [60, 80], maxrng: [52, 68], dmgfall: [52, 68], fdname: 'Weapon_Focused'},
-                42: {name: 'Focused', grade: 4, thmload: [4, 4], pierce: [80, 100], maxrng: [68, 84], dmgfall: [68, 84], fdname: 'Weapon_Focused'},
-                52: {name: 'Focused', grade: 5, thmload: [5, 5], pierce: [100, 120], maxrng: [84, 100], dmgfall: [84, 100], fdname: 'Weapon_Focused'},
-                14: {name: 'Light Weight', grade: 1, mass: [-15, -30], integ: [-20, -20], fdname: 'Weapon_LightWeight'},
-                24: {name: 'Light Weight', grade: 2, mass: [-30, -45], integ: [-30, -30], pwrdraw: [0, -10], distdraw: [-15, -20], fdname: 'Weapon_LightWeight'},
-                34: {name: 'Light Weight', grade: 3, mass: [-45, -60], integ: [-40, -40], pwrdraw: [-10, -20], distdraw: [-20, -25], fdname: 'Weapon_LightWeight'},
-                44: {name: 'Light Weight', grade: 4, mass: [-60, -75], integ: [-50, -50], pwrdraw: [-20, -30], distdraw: [-25, -30], fdname: 'Weapon_LightWeight'},
-                54: {name: 'Light Weight', grade: 5, mass: [-75, -90], integ: [-60, -60], pwrdraw: [-30, -40], distdraw: [-30, -35], fdname: 'Weapon_LightWeight'},
-                15: {name: 'Long Range', grade: 1, mass: [10, 10], pwrdraw: [3, 3], maxrng: [0, 20], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                25: {name: 'Long Range', grade: 2, mass: [15, 15], pwrdraw: [6, 6], maxrng: [20, 40], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                35: {name: 'Long Range', grade: 3, mass: [20, 20], pwrdraw: [9, 9], maxrng: [40, 60], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                45: {name: 'Long Range', grade: 4, mass: [25, 25], pwrdraw: [12, 12], maxrng: [60, 80], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                55: {name: 'Long Range', grade: 5, mass: [30, 30], pwrdraw: [15, 15], maxrng: [80, 100], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                16: {name: 'Overcharged', grade: 1, damage: [20, 30], distdraw: [15, 15], thmload: [3, 3], ammoclip: [-3, -3], fdname: 'Weapon_Overcharged'},
-                26: {name: 'Overcharged', grade: 2, damage: [30, 40], distdraw: [20, 20], thmload: [6, 6], ammoclip: [-6, -6], fdname: 'Weapon_Overcharged'},
-                36: {name: 'Overcharged', grade: 3, damage: [40, 50], distdraw: [25, 25], thmload: [9, 9], ammoclip: [-9, -9], fdname: 'Weapon_Overcharged'},
-                46: {name: 'Overcharged', grade: 4, damage: [50, 60], distdraw: [30, 30], thmload: [12, 12], ammoclip: [-12, -12], fdname: 'Weapon_Overcharged'},
-                56: {name: 'Overcharged', grade: 5, damage: [60, 70], distdraw: [35, 35], thmload: [15, 15], ammoclip: [-15, -15], fdname: 'Weapon_Overcharged'},
-                17: {name: 'Rapid Fire', grade: 1, damage: [-1, -1], bstint: [0, -8], rldtime: [-15, -25], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                27: {name: 'Rapid Fire', grade: 2, damage: [-2, -2], distdraw: [0, -5], bstint: [-8, -17], rldtime: [-25, -35], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                37: {name: 'Rapid Fire', grade: 3, damage: [-3, -3], distdraw: [-5, -15], bstint: [-17, -26], rldtime: [-35, -45], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                47: {name: 'Rapid Fire', grade: 4, damage: [-4, -4], distdraw: [-15, -25], bstint: [-26, -35], rldtime: [-45, -55], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                57: {name: 'Rapid Fire', grade: 5, damage: [-5, -5], distdraw: [-25, -35], bstint: [-35, -44], rldtime: [-55, -65], jitter: [0.5, 0.5], fdname: 'Weapon_RapidFire'},
-                18: {name: 'Short Range', grade: 1, damage: [15, 27], maxrng: [-10, -10], fdname: 'Weapon_ShortRange'},
-                28: {name: 'Short Range', grade: 2, damage: [27, 39], thmload: [10, 10], maxrng: [-20, -20], fdname: 'Weapon_ShortRange'},
-                38: {name: 'Short Range', grade: 3, damage: [39, 51], thmload: [20, 20], maxrng: [-30, -30], fdname: 'Weapon_ShortRange'},
-                48: {name: 'Short Range', grade: 4, damage: [51, 63], thmload: [30, 30], maxrng: [-40, -40], fdname: 'Weapon_ShortRange'},
-                58: {name: 'Short Range', grade: 5, damage: [63, 75], thmload: [40, 40], maxrng: [-50, -50], fdname: 'Weapon_ShortRange'},
-                19: {name: 'Sturdy', grade: 1, mass: [20, 20], integ: [50, 100], thmload: [-5, -10], pierce: [10, 20], fdname: 'Weapon_Sturdy'},
-                29: {name: 'Sturdy', grade: 2, mass: [40, 40], integ: [100, 150], thmload: [-10, -15], pierce: [20, 30], fdname: 'Weapon_Sturdy'},
-                39: {name: 'Sturdy', grade: 3, mass: [60, 60], integ: [150, 200], thmload: [-15, -20], pierce: [30, 40], fdname: 'Weapon_Sturdy'},
-                49: {name: 'Sturdy', grade: 4, mass: [80, 80], integ: [200, 250], thmload: [-20, -25], pierce: [40, 50], fdname: 'Weapon_Sturdy'},
-                59: {name: 'Sturdy', grade: 5, mass: [100, 100], integ: [250, 300], thmload: [-25, -30], pierce: [50, 60], fdname: 'Weapon_Sturdy'},
-            },
+            blueprints: ['wpn_eff', 'wpn_foc', 'wpn_lw', 'wpn_lr', 'wpn_oc', 'wpn_rf', 'wpn_sr', 'wpn_stu'],
+            expeffects: ['wpnx_cose', 'miscx_db', 'wpnx_emmu', 'miscx_fc', 'wpnx_muse', 'wpnx_os', 'wpnx_phse', 'wpnx_scsp', 'miscx_sd', 'wpnx_thsh'],
         },
 
         hrg: {
             name: 'Rail Guns',
             modulenames: {},
+            ammocost: 75,
+            keyattrs: ['damage', 'distdraw', 'thmload', 'maxrng'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'damage', 'distdraw', 'thmload', 'pierce', 'maxrng', 'bstint', 'ammoclip', 'ammomax', 'rldtime', 'jitter', 'dmgfall'],
-            blueprint: {
-                13: {name: 'High Capacity', grade: 1, mass: [20, 20], pwrdraw: [4, 4], ammoclip: [20, 36], ammomax: [20, 36], bstint: [0, -2], fdname: 'Weapon_HighCapacity'},
-                23: {name: 'High Capacity', grade: 2, mass: [30, 30], pwrdraw: [8, 8], ammoclip: [36, 52], ammomax: [36, 52], bstint: [-2, -4], fdname: 'Weapon_HighCapacity'},
-                33: {name: 'High Capacity', grade: 3, mass: [40, 40], pwrdraw: [12, 12], ammoclip: [52, 68], ammomax: [52, 68], bstint: [-4, -6], fdname: 'Weapon_HighCapacity'},
-                43: {name: 'High Capacity', grade: 4, mass: [50, 50], pwrdraw: [16, 16], ammoclip: [68, 84], ammomax: [68, 84], bstint: [-6, -8], fdname: 'Weapon_HighCapacity'},
-                53: {name: 'High Capacity', grade: 5, mass: [65, 60], pwrdraw: [20, 20], ammoclip: [84, 100], ammomax: [84, 100], bstint: [-8, -10], fdname: 'Weapon_HighCapacity'},
-                14: {name: 'Light Weight', grade: 1, mass: [-15, -30], integ: [-20, -20], fdname: 'Weapon_LightWeight'},
-                24: {name: 'Light Weight', grade: 2, mass: [-30, -45], integ: [-30, -30], pwrdraw: [0, -10], distdraw: [-15, -20], fdname: 'Weapon_LightWeight'},
-                34: {name: 'Light Weight', grade: 3, mass: [-45, -60], integ: [-40, -40], pwrdraw: [-10, -20], distdraw: [-20, -25], fdname: 'Weapon_LightWeight'},
-                44: {name: 'Light Weight', grade: 4, mass: [-60, -75], integ: [-50, -50], pwrdraw: [-20, -30], distdraw: [-25, -30], fdname: 'Weapon_LightWeight'},
-                54: {name: 'Light Weight', grade: 5, mass: [-75, -90], integ: [-60, -60], pwrdraw: [-30, -40], distdraw: [-30, -35], fdname: 'Weapon_LightWeight'},
-                15: {name: 'Long Range', grade: 1, mass: [10, 10], pwrdraw: [3, 3], maxrng: [0, 20], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                25: {name: 'Long Range', grade: 2, mass: [15, 15], pwrdraw: [6, 6], maxrng: [20, 40], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                35: {name: 'Long Range', grade: 3, mass: [20, 20], pwrdraw: [9, 9], maxrng: [40, 60], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                45: {name: 'Long Range', grade: 4, mass: [25, 25], pwrdraw: [12, 12], maxrng: [60, 80], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                55: {name: 'Long Range', grade: 5, mass: [30, 30], pwrdraw: [15, 15], maxrng: [80, 100], dmgfall: [1000, 1000], fdname: 'Weapon_LongRange'},
-                18: {name: 'Short Range', grade: 1, damage: [15, 27], maxrng: [-10, -10], fdname: 'Weapon_ShortRange'},
-                28: {name: 'Short Range', grade: 2, damage: [27, 39], thmload: [10, 10], maxrng: [-20, -20], fdname: 'Weapon_ShortRange'},
-                38: {name: 'Short Range', grade: 3, damage: [39, 51], thmload: [20, 20], maxrng: [-30, -30], fdname: 'Weapon_ShortRange'},
-                48: {name: 'Short Range', grade: 4, damage: [51, 63], thmload: [30, 30], maxrng: [-40, -40], fdname: 'Weapon_ShortRange'},
-                58: {name: 'Short Range', grade: 5, damage: [63, 75], thmload: [40, 40], maxrng: [-50, -50], fdname: 'Weapon_ShortRange'},
-                19: {name: 'Sturdy', grade: 1, mass: [20, 20], integ: [50, 100], thmload: [-5, -10], pierce: [10, 20], fdname: 'Weapon_Sturdy'},
-                29: {name: 'Sturdy', grade: 2, mass: [40, 40], integ: [100, 150], thmload: [-10, -15], pierce: [20, 30], fdname: 'Weapon_Sturdy'},
-                39: {name: 'Sturdy', grade: 3, mass: [60, 60], integ: [150, 200], thmload: [-15, -20], pierce: [30, 40], fdname: 'Weapon_Sturdy'},
-                49: {name: 'Sturdy', grade: 4, mass: [80, 80], integ: [200, 250], thmload: [-20, -25], pierce: [40, 50], fdname: 'Weapon_Sturdy'},
-                59: {name: 'Sturdy', grade: 5, mass: [100, 100], integ: [250, 300], thmload: [-25, -30], pierce: [50, 60], fdname: 'Weapon_Sturdy'},
-            },
+            blueprints: ['wpn_hc', 'wpn_lw', 'wpn_lr', 'wpn_sr', 'wpn_stu'],
+            expeffects: ['miscx_db', 'wpnx_feca', 'miscx_fc', 'wpnx_muse', 'wpnx_os', 'hrgx_plsl', 'miscx_sd', 'wpnx_supe'],
         },
 
         htp: {
             name: 'Torpedoes',
             modulenames: {},
+            ammocost: 15000,
+            keyattrs: ['damage', 'distdraw', 'thmload'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'damage', 'thmload', 'pierce', 'bstint', 'ammoclip', 'rldtime', 'jitter'], // shotspd?
-            blueprint: {
-                14: {name: 'Light Weight', grade: 1, mass: [-15, -30], integ: [-20, -20], fdname: 'Weapon_LightWeight'},
-                24: {name: 'Light Weight', grade: 2, mass: [-30, -45], integ: [-30, -30], pwrdraw: [0, -10], distdraw: [-15, -20], fdname: 'Weapon_LightWeight'},
-                34: {name: 'Light Weight', grade: 3, mass: [-45, -60], integ: [-40, -40], pwrdraw: [-10, -20], distdraw: [-20, -25], fdname: 'Weapon_LightWeight'},
-                44: {name: 'Light Weight', grade: 4, mass: [-60, -75], integ: [-50, -50], pwrdraw: [-20, -30], distdraw: [-25, -30], fdname: 'Weapon_LightWeight'},
-                54: {name: 'Light Weight', grade: 5, mass: [-75, -90], integ: [-60, -60], pwrdraw: [-30, -40], distdraw: [-30, -35], fdname: 'Weapon_LightWeight'},
-                19: {name: 'Sturdy', grade: 1, mass: [20, 20], integ: [50, 100], thmload: [-5, -10], pierce: [10, 20], fdname: 'Weapon_Sturdy'},
-                29: {name: 'Sturdy', grade: 2, mass: [40, 40], integ: [100, 150], thmload: [-10, -15], pierce: [20, 30], fdname: 'Weapon_Sturdy'},
-                39: {name: 'Sturdy', grade: 3, mass: [60, 60], integ: [150, 200], thmload: [-15, -20], pierce: [30, 40], fdname: 'Weapon_Sturdy'},
-                49: {name: 'Sturdy', grade: 4, mass: [80, 80], integ: [200, 250], thmload: [-20, -25], pierce: [40, 50], fdname: 'Weapon_Sturdy'},
-                59: {name: 'Sturdy', grade: 5, mass: [100, 100], integ: [250, 300], thmload: [-25, -30], pierce: [50, 60], fdname: 'Weapon_Sturdy'},
-            },
+            blueprints: ['wpn_lw', 'wpn_stu'],
+            expeffects: ['miscx_db', 'miscx_fc', 'wpnx_mlm', 'wpnx_os', 'wpnx_pepa', 'wpnx_reca', 'miscx_sd'],
         },
 
         ucl: {
             name: 'Chaff Launchers',
             modulenames: {},
+            ammocost: 30,
+            keyattrs: ['ammomax', 'jamdur'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'distdraw', 'thmload', 'bstint', 'ammoclip', 'ammomax', 'rldtime'], // jamdur?
-            blueprint: {
-                30: {name: 'Ammo Capacity', grade: 1, mass: [100, 100], ammomax: [25, 50], rldtime: [10, 10], fdname: 'Misc_ChaffCapacity'},
-                11: {name: 'Light Weight', grade: 1, mass: [-33, -45], integ: [-10, -10], fdname: 'Misc_LightWeight'},
-                21: {name: 'Light Weight', grade: 2, mass: [-45, -55], integ: [-20, -20], fdname: 'Misc_LightWeight'},
-                31: {name: 'Light Weight', grade: 3, mass: [-55, -65], integ: [-30, -30], fdname: 'Misc_LightWeight'},
-                41: {name: 'Light Weight', grade: 4, mass: [-65, -75], integ: [-40, -40], fdname: 'Misc_LightWeight'},
-                51: {name: 'Light Weight', grade: 5, mass: [-75, -85], integ: [-50, -50], fdname: 'Misc_LightWeight'},
-                12: {name: 'Reinforced', grade: 1, mass: [30, 30], integ: [0, 60], fdname: 'Misc_Reinforced'},
-                22: {name: 'Reinforced', grade: 2, mass: [60, 60], integ: [60, 120], fdname: 'Misc_Reinforced'},
-                32: {name: 'Reinforced', grade: 3, mass: [90, 90], integ: [120, 180], fdname: 'Misc_Reinforced'},
-                42: {name: 'Reinforced', grade: 4, mass: [120, 120], integ: [180, 240], fdname: 'Misc_Reinforced'},
-                52: {name: 'Reinforced', grade: 5, mass: [150, 150], integ: [240, 300], fdname: 'Misc_Reinforced'},
-                13: {name: 'Shielded', grade: 1, integ: [0, 60], pwrdraw: [20, 20], fdname: 'Misc_Shielded'},
-                23: {name: 'Shielded', grade: 2, integ: [60, 120], pwrdraw: [40, 40], fdname: 'Misc_Shielded'},
-                33: {name: 'Shielded', grade: 3, integ: [120, 180], pwrdraw: [60, 60], fdname: 'Misc_Shielded'},
-                43: {name: 'Shielded', grade: 4, integ: [180, 240], pwrdraw: [80, 80], fdname: 'Misc_Shielded'},
-                53: {name: 'Shielded', grade: 5, integ: [240, 300], pwrdraw: [100, 100], fdname: 'Misc_Shielded'},
-            },
+            blueprints: ['ucl_ammo', 'misc_lw', 'misc_rf', 'misc_sh'],
         },
 
         uec: {
             name: 'ECMs',
             modulenames: {},
+            keyattrs: ['cooldown', 'duration'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'distdraw', 'thmload'], // range? duration? cooldown?
-            blueprint: {
-                11: {name: 'Light Weight', grade: 1, mass: [-33, -45], integ: [-10, -10], fdname: 'Misc_LightWeight'},
-                21: {name: 'Light Weight', grade: 2, mass: [-45, -55], integ: [-20, -20], fdname: 'Misc_LightWeight'},
-                31: {name: 'Light Weight', grade: 3, mass: [-55, -65], integ: [-30, -30], fdname: 'Misc_LightWeight'},
-                41: {name: 'Light Weight', grade: 4, mass: [-65, -75], integ: [-40, -40], fdname: 'Misc_LightWeight'},
-                51: {name: 'Light Weight', grade: 5, mass: [-75, -85], integ: [-50, -50], fdname: 'Misc_LightWeight'},
-                12: {name: 'Reinforced', grade: 1, mass: [30, 30], integ: [0, 60], fdname: 'Misc_Reinforced'},
-                22: {name: 'Reinforced', grade: 2, mass: [60, 60], integ: [60, 120], fdname: 'Misc_Reinforced'},
-                32: {name: 'Reinforced', grade: 3, mass: [90, 90], integ: [120, 180], fdname: 'Misc_Reinforced'},
-                42: {name: 'Reinforced', grade: 4, mass: [120, 120], integ: [180, 240], fdname: 'Misc_Reinforced'},
-                52: {name: 'Reinforced', grade: 5, mass: [150, 150], integ: [240, 300], fdname: 'Misc_Reinforced'},
-                13: {name: 'Shielded', grade: 1, integ: [0, 60], pwrdraw: [20, 20], fdname: 'Misc_Shielded'},
-                23: {name: 'Shielded', grade: 2, integ: [60, 120], pwrdraw: [40, 40], fdname: 'Misc_Shielded'},
-                33: {name: 'Shielded', grade: 3, integ: [120, 180], pwrdraw: [60, 60], fdname: 'Misc_Shielded'},
-                43: {name: 'Shielded', grade: 4, integ: [180, 240], pwrdraw: [80, 80], fdname: 'Misc_Shielded'},
-                53: {name: 'Shielded', grade: 5, integ: [240, 300], pwrdraw: [100, 100], fdname: 'Misc_Shielded'},
-            },
+            blueprints: ['misc_lw', 'misc_rf', 'misc_sh'],
         },
 
         uex: {
             name: 'Experimental',
             modulenames: {},
+            singleton: 1,
+            keyattrs: ['cooldown', 'duration', 'scanrng', 'scantime'],
         },
 
         uhsl: {
             name: 'Heat Sink Launchers',
             modulenames: {},
+            ammocost: 25,
+            keyattrs: ['thmdrain', 'ammomax'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'distdraw', 'bstint', 'ammoclip', 'ammomax', 'rldtime'], // duration? thmdrain?
-            blueprint: {
-                30: {name: 'Ammo Capacity', grade: 1, mass: [100, 100], ammomax: [25, 50], rldtime: [50, 50], fdname: 'Misc_HeatSinkCapacity'},
-                11: {name: 'Light Weight', grade: 1, mass: [-33, -45], integ: [-10, -10], fdname: 'Misc_LightWeight'},
-                21: {name: 'Light Weight', grade: 2, mass: [-45, -55], integ: [-20, -20], fdname: 'Misc_LightWeight'},
-                31: {name: 'Light Weight', grade: 3, mass: [-55, -65], integ: [-30, -30], fdname: 'Misc_LightWeight'},
-                41: {name: 'Light Weight', grade: 4, mass: [-65, -75], integ: [-40, -40], fdname: 'Misc_LightWeight'},
-                51: {name: 'Light Weight', grade: 5, mass: [-75, -85], integ: [-50, -50], fdname: 'Misc_LightWeight'},
-                12: {name: 'Reinforced', grade: 1, mass: [30, 30], integ: [0, 60], fdname: 'Misc_Reinforced'},
-                22: {name: 'Reinforced', grade: 2, mass: [60, 60], integ: [60, 120], fdname: 'Misc_Reinforced'},
-                32: {name: 'Reinforced', grade: 3, mass: [90, 90], integ: [120, 180], fdname: 'Misc_Reinforced'},
-                42: {name: 'Reinforced', grade: 4, mass: [120, 120], integ: [180, 240], fdname: 'Misc_Reinforced'},
-                52: {name: 'Reinforced', grade: 5, mass: [150, 150], integ: [240, 300], fdname: 'Misc_Reinforced'},
-                13: {name: 'Shielded', grade: 1, integ: [0, 60], pwrdraw: [20, 20], fdname: 'Misc_Shielded'},
-                23: {name: 'Shielded', grade: 2, integ: [60, 120], pwrdraw: [40, 40], fdname: 'Misc_Shielded'},
-                33: {name: 'Shielded', grade: 3, integ: [120, 180], pwrdraw: [60, 60], fdname: 'Misc_Shielded'},
-                43: {name: 'Shielded', grade: 4, integ: [180, 240], pwrdraw: [80, 80], fdname: 'Misc_Shielded'},
-                53: {name: 'Shielded', grade: 5, integ: [240, 300], pwrdraw: [100, 100], fdname: 'Misc_Shielded'},
-            },
+            blueprints: ['uhsl_ammo', 'misc_lw', 'misc_rf', 'misc_sh'],
         },
 
         ukws: {
             name: 'Kill Warrant Scanners',
             modulenames: {'Kill Warrant Scanner': 1},
             singleton: 1,
+            keyattrs: ['scanrng', 'scantime'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'boottime', 'scanrng', 'maxangle', 'scantime'],
-            blueprint: {
-                11: {name: 'Light Weight', grade: 1, mass: [-33, -45], integ: [-10, -10], fdname: 'Misc_LightWeight'},
-                21: {name: 'Light Weight', grade: 2, mass: [-45, -55], integ: [-20, -20], fdname: 'Misc_LightWeight'},
-                31: {name: 'Light Weight', grade: 3, mass: [-55, -65], integ: [-30, -30], fdname: 'Misc_LightWeight'},
-                41: {name: 'Light Weight', grade: 4, mass: [-65, -75], integ: [-40, -40], fdname: 'Misc_LightWeight'},
-                51: {name: 'Light Weight', grade: 5, mass: [-75, -85], integ: [-50, -50], fdname: 'Misc_LightWeight'},
-                12: {name: 'Reinforced', grade: 1, mass: [30, 30], integ: [0, 60], fdname: 'Misc_Reinforced'},
-                22: {name: 'Reinforced', grade: 2, mass: [60, 60], integ: [60, 120], fdname: 'Misc_Reinforced'},
-                32: {name: 'Reinforced', grade: 3, mass: [90, 90], integ: [120, 180], fdname: 'Misc_Reinforced'},
-                42: {name: 'Reinforced', grade: 4, mass: [120, 120], integ: [180, 240], fdname: 'Misc_Reinforced'},
-                52: {name: 'Reinforced', grade: 5, mass: [150, 150], integ: [240, 300], fdname: 'Misc_Reinforced'},
-                13: {name: 'Shielded', grade: 1, integ: [0, 60], pwrdraw: [20, 20], fdname: 'Misc_Shielded'},
-                23: {name: 'Shielded', grade: 2, integ: [60, 120], pwrdraw: [40, 40], fdname: 'Misc_Shielded'},
-                33: {name: 'Shielded', grade: 3, integ: [120, 180], pwrdraw: [60, 60], fdname: 'Misc_Shielded'},
-                43: {name: 'Shielded', grade: 4, integ: [180, 240], pwrdraw: [80, 80], fdname: 'Misc_Shielded'},
-                53: {name: 'Shielded', grade: 5, integ: [240, 300], pwrdraw: [100, 100], fdname: 'Misc_Shielded'},
-                16: {name: 'Fast Scan', grade: 1, integ: [-10, -10], scanrng: [-5, -5], scantime: [-5, -20], fdname: 'Sensor_FastScan'},
-                26: {name: 'Fast Scan', grade: 2, integ: [-20, -20], scanrng: [-10, -10], scantime: [-20, -35], fdname: 'Sensor_FastScan'},
-                36: {name: 'Fast Scan', grade: 3, integ: [-30, -30], scanrng: [-15, -15], scantime: [-35, -50], fdname: 'Sensor_FastScan'},
-                46: {name: 'Fast Scan', grade: 4, integ: [-40, -40], scanrng: [-20, -20], scantime: [-50, -65], fdname: 'Sensor_FastScan'},
-                56: {name: 'Fast Scan', grade: 5, integ: [-50, -50], scanrng: [-25, -25], scantime: [-65, -80], fdname: 'Sensor_FastScan'},
-                14: {name: 'Long Range', grade: 1, pwrdraw: [10, 10], scanrng: [0, 24], maxangle: [-10, -10], fdname: 'Sensor_LongRange'},
-                24: {name: 'Long Range', grade: 2, pwrdraw: [20, 20], scanrng: [24, 48], maxangle: [-15, -15], fdname: 'Sensor_LongRange'},
-                34: {name: 'Long Range', grade: 3, pwrdraw: [30, 30], scanrng: [48, 72], maxangle: [-20, -20], fdname: 'Sensor_LongRange'},
-                44: {name: 'Long Range', grade: 4, pwrdraw: [40, 40], scanrng: [72, 96], maxangle: [-25, -25], fdname: 'Sensor_LongRange'},
-                54: {name: 'Long Range', grade: 5, pwrdraw: [50, 50], scanrng: [96, 120], maxangle: [-30, -30], fdname: 'Sensor_LongRange'},
-                15: {name: 'Wide Angle', grade: 1, mass: [20, 20], maxangle: [0, 40], scantime: [10, 10], fdname: 'Sensor_WideAngle'},
-                25: {name: 'Wide Angle', grade: 2, mass: [40, 40], maxangle: [40, 80], scantime: [20, 20], fdname: 'Sensor_WideAngle'},
-                35: {name: 'Wide Angle', grade: 3, mass: [60, 60], maxangle: [80, 120], scantime: [30, 30], fdname: 'Sensor_WideAngle'},
-                45: {name: 'Wide Angle', grade: 4, mass: [80, 80], maxangle: [120, 160], scantime: [40, 40], fdname: 'Sensor_WideAngle'},
-                55: {name: 'Wide Angle', grade: 5, mass: [100, 100], maxangle: [160, 200], scantime: [50, 50], fdname: 'Sensor_WideAngle'},
-            },
+            blueprints: ['scan_fs', 'misc_lw', 'scan_lr', 'misc_rf', 'misc_sh', 'scan_wa'],
         },
 
         ucs: {
             name: 'Manifest Scanners',
             modulenames: {'Manifest Scanner': 1},
             singleton: 1,
+            keyattrs: ['scanrng', 'scantime'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'boottime', 'scanrng', 'maxangle', 'scantime'],
-            blueprint: {
-                11: {name: 'Light Weight', grade: 1, mass: [-33, -45], integ: [-10, -10], fdname: 'Misc_LightWeight'},
-                21: {name: 'Light Weight', grade: 2, mass: [-45, -55], integ: [-20, -20], fdname: 'Misc_LightWeight'},
-                31: {name: 'Light Weight', grade: 3, mass: [-55, -65], integ: [-30, -30], fdname: 'Misc_LightWeight'},
-                41: {name: 'Light Weight', grade: 4, mass: [-65, -75], integ: [-40, -40], fdname: 'Misc_LightWeight'},
-                51: {name: 'Light Weight', grade: 5, mass: [-75, -85], integ: [-50, -50], fdname: 'Misc_LightWeight'},
-                12: {name: 'Reinforced', grade: 1, mass: [30, 30], integ: [0, 60], fdname: 'Misc_Reinforced'},
-                22: {name: 'Reinforced', grade: 2, mass: [60, 60], integ: [60, 120], fdname: 'Misc_Reinforced'},
-                32: {name: 'Reinforced', grade: 3, mass: [90, 90], integ: [120, 180], fdname: 'Misc_Reinforced'},
-                42: {name: 'Reinforced', grade: 4, mass: [120, 120], integ: [180, 240], fdname: 'Misc_Reinforced'},
-                52: {name: 'Reinforced', grade: 5, mass: [150, 150], integ: [240, 300], fdname: 'Misc_Reinforced'},
-                13: {name: 'Shielded', grade: 1, integ: [0, 60], pwrdraw: [20, 20], fdname: 'Misc_Shielded'},
-                23: {name: 'Shielded', grade: 2, integ: [60, 120], pwrdraw: [40, 40], fdname: 'Misc_Shielded'},
-                33: {name: 'Shielded', grade: 3, integ: [120, 180], pwrdraw: [60, 60], fdname: 'Misc_Shielded'},
-                43: {name: 'Shielded', grade: 4, integ: [180, 240], pwrdraw: [80, 80], fdname: 'Misc_Shielded'},
-                53: {name: 'Shielded', grade: 5, integ: [240, 300], pwrdraw: [100, 100], fdname: 'Misc_Shielded'},
-                16: {name: 'Fast Scan', grade: 1, integ: [-10, -10], scanrng: [-5, -5], scantime: [-5, -20], fdname: 'Sensor_FastScan'},
-                26: {name: 'Fast Scan', grade: 2, integ: [-20, -20], scanrng: [-10, -10], scantime: [-20, -35], fdname: 'Sensor_FastScan'},
-                36: {name: 'Fast Scan', grade: 3, integ: [-30, -30], scanrng: [-15, -15], scantime: [-35, -50], fdname: 'Sensor_FastScan'},
-                46: {name: 'Fast Scan', grade: 4, integ: [-40, -40], scanrng: [-20, -20], scantime: [-50, -65], fdname: 'Sensor_FastScan'},
-                56: {name: 'Fast Scan', grade: 5, integ: [-50, -50], scanrng: [-25, -25], scantime: [-65, -80], fdname: 'Sensor_FastScan'},
-                14: {name: 'Long Range', grade: 1, pwrdraw: [10, 10], scanrng: [0, 24], maxangle: [-10, -10], fdname: 'Sensor_LongRange'},
-                24: {name: 'Long Range', grade: 2, pwrdraw: [20, 20], scanrng: [24, 48], maxangle: [-15, -15], fdname: 'Sensor_LongRange'},
-                34: {name: 'Long Range', grade: 3, pwrdraw: [30, 30], scanrng: [48, 72], maxangle: [-20, -20], fdname: 'Sensor_LongRange'},
-                44: {name: 'Long Range', grade: 4, pwrdraw: [40, 40], scanrng: [72, 96], maxangle: [-25, -25], fdname: 'Sensor_LongRange'},
-                54: {name: 'Long Range', grade: 5, pwrdraw: [50, 50], scanrng: [96, 120], maxangle: [-30, -30], fdname: 'Sensor_LongRange'},
-                15: {name: 'Wide Angle', grade: 1, mass: [20, 20], maxangle: [0, 40], scantime: [10, 10], fdname: 'Sensor_WideAngle'},
-                25: {name: 'Wide Angle', grade: 2, mass: [40, 40], maxangle: [40, 80], scantime: [20, 20], fdname: 'Sensor_WideAngle'},
-                35: {name: 'Wide Angle', grade: 3, mass: [60, 60], maxangle: [80, 120], scantime: [30, 30], fdname: 'Sensor_WideAngle'},
-                45: {name: 'Wide Angle', grade: 4, mass: [80, 80], maxangle: [120, 160], scantime: [40, 40], fdname: 'Sensor_WideAngle'},
-                55: {name: 'Wide Angle', grade: 5, mass: [100, 100], maxangle: [160, 200], scantime: [50, 50], fdname: 'Sensor_WideAngle'},
-            },
+            blueprints: ['scan_fs', 'misc_lw', 'scan_lr', 'misc_rf', 'misc_sh', 'scan_wa'],
         },
 
         upd: {
             name: 'Point Defence',
             modulenames: {},
+            ammocost: 1,
+            keyattrs: ['maxrng'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'damage', 'thmload', 'maxrng', 'bstint', 'ammoclip', 'ammomax', 'rldtime', 'jitter'], // shotspd?
-            blueprint: {
-                30: {name: 'Ammo Capacity', grade: 1, mass: [100, 100], ammomax: [25, 50], rldtime: [10, 10], fdname: 'Misc_PointDefenseCapacity'},
-                11: {name: 'Light Weight', grade: 1, mass: [-33, -45], integ: [-10, -10], fdname: 'Misc_LightWeight'},
-                21: {name: 'Light Weight', grade: 2, mass: [-45, -55], integ: [-20, -20], fdname: 'Misc_LightWeight'},
-                31: {name: 'Light Weight', grade: 3, mass: [-55, -65], integ: [-30, -30], fdname: 'Misc_LightWeight'},
-                41: {name: 'Light Weight', grade: 4, mass: [-65, -75], integ: [-40, -40], fdname: 'Misc_LightWeight'},
-                51: {name: 'Light Weight', grade: 5, mass: [-75, -85], integ: [-50, -50], fdname: 'Misc_LightWeight'},
-                12: {name: 'Reinforced', grade: 1, mass: [30, 30], integ: [0, 60], fdname: 'Misc_Reinforced'},
-                22: {name: 'Reinforced', grade: 2, mass: [60, 60], integ: [60, 120], fdname: 'Misc_Reinforced'},
-                32: {name: 'Reinforced', grade: 3, mass: [90, 90], integ: [120, 180], fdname: 'Misc_Reinforced'},
-                42: {name: 'Reinforced', grade: 4, mass: [120, 120], integ: [180, 240], fdname: 'Misc_Reinforced'},
-                52: {name: 'Reinforced', grade: 5, mass: [150, 150], integ: [240, 300], fdname: 'Misc_Reinforced'},
-                13: {name: 'Shielded', grade: 1, integ: [0, 60], pwrdraw: [20, 20], fdname: 'Misc_Shielded'},
-                23: {name: 'Shielded', grade: 2, integ: [60, 120], pwrdraw: [40, 40], fdname: 'Misc_Shielded'},
-                33: {name: 'Shielded', grade: 3, integ: [120, 180], pwrdraw: [60, 60], fdname: 'Misc_Shielded'},
-                43: {name: 'Shielded', grade: 4, integ: [180, 240], pwrdraw: [80, 80], fdname: 'Misc_Shielded'},
-                53: {name: 'Shielded', grade: 5, integ: [240, 300], pwrdraw: [100, 100], fdname: 'Misc_Shielded'},
-            },
+            blueprints: ['upd_ammo', 'misc_lw', 'misc_rf', 'misc_sh'],
         },
 
         usb: {
             name: 'Shield Boosters',
             modulenames: {'Shield Booster': 1},
+            keyattrs: ['shieldbst', 'thmres'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'shieldbst', 'kinres', 'thmres', 'expres'],
-            blueprint: {
-                10: {name: 'Blast Resistant', grade: 1, kinres: [-1, -1], thmres: [-1, -1], expres: [2, 7], fdname: 'ShieldBooster_Explosive'},
-                20: {name: 'Blast Resistant', grade: 2, kinres: [-1.75, -1.75], thmres: [-1.75, -1.75], expres: [7, 12], fdname: 'ShieldBooster_Explosive'},
-                30: {name: 'Blast Resistant', grade: 3, kinres: [-2.5, -2.5], thmres: [-2.5, -2.5], expres: [12, 17], fdname: 'ShieldBooster_Explosive'},
-                40: {name: 'Blast Resistant', grade: 4, kinres: [-3.25, -3.25], thmres: [-3.25, -3.25], expres: [17, 22], fdname: 'ShieldBooster_Explosive'},
-                50: {name: 'Blast Resistant', grade: 5, kinres: [-4, -4], thmres: [-4, -4], expres: [22, 27], fdname: 'ShieldBooster_Explosive'},
-                11: {name: 'Heavy Duty', grade: 1, mass: [100, 100], integ: [0, 3], pwrdraw: [5, 5], shieldbst: [3, 10], fdname: 'ShieldBooster_HeavyDuty'},
-                21: {name: 'Heavy Duty', grade: 2, mass: [150, 150], integ: [3, 6], pwrdraw: [10, 10], shieldbst: [10, 17], fdname: 'ShieldBooster_HeavyDuty'},
-                31: {name: 'Heavy Duty', grade: 3, mass: [200, 200], integ: [6, 9], pwrdraw: [15, 15], shieldbst: [17, 24], fdname: 'ShieldBooster_HeavyDuty'},
-                41: {name: 'Heavy Duty', grade: 4, mass: [250, 250], integ: [9, 12], pwrdraw: [20, 20], shieldbst: [24, 31], fdname: 'ShieldBooster_HeavyDuty'},
-                51: {name: 'Heavy Duty', grade: 5, mass: [300, 300], integ: [12, 15], pwrdraw: [25, 25], shieldbst: [31, 38], fdname: 'ShieldBooster_HeavyDuty'},
-                12: {name: 'Kinetic Resistant', grade: 1, kinres: [2, 7], thmres: [-1, -1], expres: [-1, -1], fdname: 'ShieldBooster_Kinetic'},
-                22: {name: 'Kinetic Resistant', grade: 2, kinres: [7, 12], thmres: [-1.75, -1.75], expres: [-1.75, -1.75], fdname: 'ShieldBooster_Kinetic'},
-                32: {name: 'Kinetic Resistant', grade: 3, kinres: [12, 17], thmres: [-2.5, -2.5], expres: [-2.5, -2.5], fdname: 'ShieldBooster_Kinetic'},
-                42: {name: 'Kinetic Resistant', grade: 4, kinres: [17, 22], thmres: [-3.25, -3.25], expres: [-3.25, -3.25], fdname: 'ShieldBooster_Kinetic'},
-                52: {name: 'Kinetic Resistant', grade: 5, kinres: [22, 27], thmres: [-4, -4], expres: [-4, -4], fdname: 'ShieldBooster_Kinetic'},
-                13: {name: 'Resistance Augmented', grade: 1, integ: [-4, -4], pwrdraw: [5, 5], kinres: [2, 5], thmres: [2, 5], expres: [2, 5], fdname: 'ShieldBooster_Resistive'},
-                23: {name: 'Resistance Augmented', grade: 2, integ: [-6, -6], pwrdraw: [10, 10], kinres: [5, 8], thmres: [5, 8], expres: [5, 8], fdname: 'ShieldBooster_Resistive'},
-                33: {name: 'Resistance Augmented', grade: 3, integ: [-8, -8], pwrdraw: [15, 15], kinres: [8, 11], thmres: [8, 11], expres: [8, 11], fdname: 'ShieldBooster_Resistive'},
-                43: {name: 'Resistance Augmented', grade: 4, integ: [-10, -10], pwrdraw: [20, 20], kinres: [11, 14], thmres: [11, 14], expres: [11, 14], fdname: 'ShieldBooster_Resistive'},
-                53: {name: 'Resistance Augmented', grade: 5, integ: [-12, -12], pwrdraw: [25, 25], kinres: [14, 17], thmres: [14, 17], expres: [14, 17], fdname: 'ShieldBooster_Resistive'},
-                14: {name: 'Thermal Resistant', grade: 1, kinres: [-1, -1], thmres: [2, 7], expres: [-1, -1], fdname: 'ShieldBooster_Thermic'},
-                24: {name: 'Thermal Resistant', grade: 2, kinres: [-1.75, -1.75], thmres: [7, 12], expres: [-1.75, -1.75], fdname: 'ShieldBooster_Thermic'},
-                34: {name: 'Thermal Resistant', grade: 3, kinres: [-2.5, -2.5], thmres: [12, 17], expres: [-2.5, -2.5], fdname: 'ShieldBooster_Thermic'},
-                44: {name: 'Thermal Resistant', grade: 4, kinres: [-3.25, -3.25], thmres: [17, 22], expres: [-3.25, -3.25], fdname: 'ShieldBooster_Thermic'},
-                54: {name: 'Thermal Resistant', grade: 5, kinres: [-4, -4], thmres: [22, 27], expres: [-4, -4], fdname: 'ShieldBooster_Thermic'},
-            },
+            blueprints: ['usb_br', 'usb_hd', 'usb_kr', 'usb_ra', 'usb_tr'],
+            expeffects: ['usbx_bb', 'miscx_db', 'miscx_fc', 'usbx_fb', 'usbx_sc', 'usbx_tb'],
         },
 
         ufsws: {
             name: 'Wake Scanners',
             modulenames: {'Frame Shift Wake Scanner': 1},
             singleton: 1,
+            keyattrs: ['scanrng', 'scantime'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'boottime', 'scanrng', 'maxangle', 'scantime'],
-            blueprint: {
-                11: {name: 'Light Weight', grade: 1, mass: [-33, -45], integ: [-10, -10], fdname: 'Misc_LightWeight'},
-                21: {name: 'Light Weight', grade: 2, mass: [-45, -55], integ: [-20, -20], fdname: 'Misc_LightWeight'},
-                31: {name: 'Light Weight', grade: 3, mass: [-55, -65], integ: [-30, -30], fdname: 'Misc_LightWeight'},
-                41: {name: 'Light Weight', grade: 4, mass: [-65, -75], integ: [-40, -40], fdname: 'Misc_LightWeight'},
-                51: {name: 'Light Weight', grade: 5, mass: [-75, -85], integ: [-50, -50], fdname: 'Misc_LightWeight'},
-                12: {name: 'Reinforced', grade: 1, mass: [30, 30], integ: [0, 60], fdname: 'Misc_Reinforced'},
-                22: {name: 'Reinforced', grade: 2, mass: [60, 60], integ: [60, 120], fdname: 'Misc_Reinforced'},
-                32: {name: 'Reinforced', grade: 3, mass: [90, 90], integ: [120, 180], fdname: 'Misc_Reinforced'},
-                42: {name: 'Reinforced', grade: 4, mass: [120, 120], integ: [180, 240], fdname: 'Misc_Reinforced'},
-                52: {name: 'Reinforced', grade: 5, mass: [150, 150], integ: [240, 300], fdname: 'Misc_Reinforced'},
-                13: {name: 'Shielded', grade: 1, integ: [0, 60], pwrdraw: [20, 20], fdname: 'Misc_Shielded'},
-                23: {name: 'Shielded', grade: 2, integ: [60, 120], pwrdraw: [40, 40], fdname: 'Misc_Shielded'},
-                33: {name: 'Shielded', grade: 3, integ: [120, 180], pwrdraw: [60, 60], fdname: 'Misc_Shielded'},
-                43: {name: 'Shielded', grade: 4, integ: [180, 240], pwrdraw: [80, 80], fdname: 'Misc_Shielded'},
-                53: {name: 'Shielded', grade: 5, integ: [240, 300], pwrdraw: [100, 100], fdname: 'Misc_Shielded'},
-                16: {name: 'Fast Scan', grade: 1, integ: [-10, -10], scanrng: [-5, -5], scantime: [-5, -20], fdname: 'Sensor_FastScan'},
-                26: {name: 'Fast Scan', grade: 2, integ: [-20, -20], scanrng: [-10, -10], scantime: [-20, -35], fdname: 'Sensor_FastScan'},
-                36: {name: 'Fast Scan', grade: 3, integ: [-30, -30], scanrng: [-15, -15], scantime: [-35, -50], fdname: 'Sensor_FastScan'},
-                46: {name: 'Fast Scan', grade: 4, integ: [-40, -40], scanrng: [-20, -20], scantime: [-50, -65], fdname: 'Sensor_FastScan'},
-                56: {name: 'Fast Scan', grade: 5, integ: [-50, -50], scanrng: [-25, -25], scantime: [-65, -80], fdname: 'Sensor_FastScan'},
-                14: {name: 'Long Range', grade: 1, pwrdraw: [10, 10], scanrng: [0, 24], maxangle: [-10, -10], fdname: 'Sensor_LongRange'},
-                24: {name: 'Long Range', grade: 2, pwrdraw: [20, 20], scanrng: [24, 48], maxangle: [-15, -15], fdname: 'Sensor_LongRange'},
-                34: {name: 'Long Range', grade: 3, pwrdraw: [30, 30], scanrng: [48, 72], maxangle: [-20, -20], fdname: 'Sensor_LongRange'},
-                44: {name: 'Long Range', grade: 4, pwrdraw: [40, 40], scanrng: [72, 96], maxangle: [-25, -25], fdname: 'Sensor_LongRange'},
-                54: {name: 'Long Range', grade: 5, pwrdraw: [50, 50], scanrng: [96, 120], maxangle: [-30, -30], fdname: 'Sensor_LongRange'},
-                15: {name: 'Wide Angle', grade: 1, mass: [20, 20], maxangle: [0, 40], scantime: [10, 10], fdname: 'Sensor_WideAngle'},
-                25: {name: 'Wide Angle', grade: 2, mass: [40, 40], maxangle: [40, 80], scantime: [20, 20], fdname: 'Sensor_WideAngle'},
-                35: {name: 'Wide Angle', grade: 3, mass: [60, 60], maxangle: [80, 120], scantime: [30, 30], fdname: 'Sensor_WideAngle'},
-                45: {name: 'Wide Angle', grade: 4, mass: [80, 80], maxangle: [120, 160], scantime: [40, 40], fdname: 'Sensor_WideAngle'},
-                55: {name: 'Wide Angle', grade: 5, mass: [100, 100], maxangle: [160, 200], scantime: [50, 50], fdname: 'Sensor_WideAngle'},
-            },
+            blueprints: ['scan_fs', 'misc_lw', 'scan_lr', 'misc_rf', 'misc_sh', 'scan_wa'],
+        },
+
+        cch: {
+            name: 'Cargo Hatches',
+            modulenames: {},
         },
 
         cbh: {
             name: 'Bulkheads',
             modulenames: {},
+            keyattrs: ['hullbst', 'kinres'],
             modifiable: ['mass', 'hullbst', 'kinres', 'thmres', 'expres'],
-            blueprint: {
-                10: {name: 'Blast Resistant', grade: 1, kinres: [-4, -4], thmres: [-4, -4], expres: [5, 12], fdname: 'Armour_Explosive'},
-                20: {name: 'Blast Resistant', grade: 2, kinres: [-6, -6], thmres: [-6, -6], expres: [12, 19], fdname: 'Armour_Explosive'},
-                30: {name: 'Blast Resistant', grade: 3, kinres: [-8, -8], thmres: [-8, -8], expres: [19, 26], fdname: 'Armour_Explosive'},
-                40: {name: 'Blast Resistant', grade: 4, kinres: [-10, -10], thmres: [-10, -10], expres: [26, 33], fdname: 'Armour_Explosive'},
-                50: {name: 'Blast Resistant', grade: 5, kinres: [-12, -12], thmres: [-12, -12], expres: [33, 40], fdname: 'Armour_Explosive'},
-                11: {name: 'Heavy Duty', grade: 1, mass: [10, 10], hullbst: [7, 12], kinres: [0, 1], thmres: [0, 1], expres: [0, 1], fdname: 'Armour_HeavyDuty'},
-                21: {name: 'Heavy Duty', grade: 2, mass: [15, 15], hullbst: [12, 17], kinres: [1, 2], thmres: [1, 2], expres: [1, 2], fdname: 'Armour_HeavyDuty'},
-                31: {name: 'Heavy Duty', grade: 3, mass: [20, 20], hullbst: [17, 22], kinres: [2, 3], thmres: [2, 3], expres: [2, 3], fdname: 'Armour_HeavyDuty'},
-                41: {name: 'Heavy Duty', grade: 4, mass: [25, 25], hullbst: [22, 27], kinres: [3, 4], thmres: [3, 4], expres: [3, 4], fdname: 'Armour_HeavyDuty'},
-                51: {name: 'Heavy Duty', grade: 5, mass: [30, 30], hullbst: [27, 32], kinres: [4, 5], thmres: [4, 5], expres: [4, 5], fdname: 'Armour_HeavyDuty'},
-                12: {name: 'Kinetic Resistant', grade: 1, kinres: [5, 12], thmres: [-4, -4], expres: [-4, -4], fdname: 'Armour_Kinetic'},
-                22: {name: 'Kinetic Resistant', grade: 2, kinres: [12, 19], thmres: [-6, -6], expres: [-6, -6], fdname: 'Armour_Kinetic'},
-                32: {name: 'Kinetic Resistant', grade: 3, kinres: [19, 26], thmres: [-8, -8], expres: [-8, -8], fdname: 'Armour_Kinetic'},
-                42: {name: 'Kinetic Resistant', grade: 4, kinres: [26, 33], thmres: [-10, -10], expres: [-10, -10], fdname: 'Armour_Kinetic'},
-                52: {name: 'Kinetic Resistant', grade: 5, kinres: [33, 40], thmres: [-12, -12], expres: [-12, -12], fdname: 'Armour_Kinetic'},
-                13: {name: 'Light Weight', grade: 1, mass: [-5, -15], hullbst: [-1, -1], kinres: [0, 3], thmres: [0, 3], expres: [0, 3], fdname: 'Armour_Advanced'},
-                23: {name: 'Light Weight', grade: 2, mass: [-15, -25], hullbst: [-2, -2], kinres: [3, 6], thmres: [3, 6], expres: [3, 6], fdname: 'Armour_Advanced'},
-                33: {name: 'Light Weight', grade: 3, mass: [-25, -35], hullbst: [-3, -3], kinres: [6, 9], thmres: [6, 9], expres: [6, 9], fdname: 'Armour_Advanced'},
-                43: {name: 'Light Weight', grade: 4, mass: [-35, -45], hullbst: [-4, -4], kinres: [9, 12], thmres: [9, 12], expres: [9, 12], fdname: 'Armour_Advanced'},
-                53: {name: 'Light Weight', grade: 5, mass: [-45, -55], hullbst: [-5, -5], kinres: [12, 15], thmres: [12, 15], expres: [12, 15], fdname: 'Armour_Advanced'},
-                14: {name: 'Thermal Resistant', grade: 1, kinres: [-4, -4], thmres: [5, 12], expres: [-4, -4], fdname: 'Armour_Thermic'},
-                24: {name: 'Thermal Resistant', grade: 2, kinres: [-6, -6], thmres: [12, 19], expres: [-6, -6], fdname: 'Armour_Thermic'},
-                34: {name: 'Thermal Resistant', grade: 3, kinres: [-8, -8], thmres: [19, 26], expres: [-8, -8], fdname: 'Armour_Thermic'},
-                44: {name: 'Thermal Resistant', grade: 4, kinres: [-10, -10], thmres: [26, 33], expres: [-10, -10], fdname: 'Armour_Thermic'},
-                54: {name: 'Thermal Resistant', grade: 5, kinres: [-12, -12], thmres: [33, 40], expres: [-12, -12], fdname: 'Armour_Thermic'},
-            },
+            blueprints: ['cbh_br', 'cbh_hd', 'cbh_kr', 'cbh_lw', 'cbh_tr'],
+            expeffects: ['cbhx_ap', 'cbhx_dp', 'cbhx_lp', 'cbhx_rp'],
         },
 
         cpp: {
             name: 'Power Plants',
             modulenames: {'Power Plant': 1},
+            keyattrs: ['heateff'],
             modifiable: ['mass', 'integ', 'pwrcap', 'heateff'],
-            blueprint: {
-                10: {name: 'Armoured', grade: 1, mass: [4, 4], integ: [20, 40], pwrcap: [2, 4], heateff: [-2, -4], fdname: 'PowerPlant_Armoured'},
-                20: {name: 'Armoured', grade: 2, mass: [8, 8], integ: [40, 60], pwrcap: [4, 6], heateff: [-4, -6], fdname: 'PowerPlant_Armoured'},
-                30: {name: 'Armoured', grade: 3, mass: [12, 12], integ: [60, 80], pwrcap: [6, 8], heateff: [-6, -8], fdname: 'PowerPlant_Armoured'},
-                40: {name: 'Armoured', grade: 4, mass: [16, 16], integ: [80, 100], pwrcap: [8, 10], heateff: [-8, -10], fdname: 'PowerPlant_Armoured'},
-                50: {name: 'Armoured', grade: 5, mass: [20, 20], integ: [100, 120], pwrcap: [10, 12], heateff: [-10, -12], fdname: 'PowerPlant_Armoured'},
-                11: {name: 'Low Emissions', grade: 1, mass: [4, 4], pwrcap: [-3, -3], heateff: [-15, -25], fdname: 'PowerPlant_Stealth'},
-                21: {name: 'Low Emissions', grade: 2, mass: [8, 8], pwrcap: [-6, -6], heateff: [-25, -35], fdname: 'PowerPlant_Stealth'},
-                31: {name: 'Low Emissions', grade: 3, mass: [12, 12], pwrcap: [-9, -9], heateff: [-35, -45], fdname: 'PowerPlant_Stealth'},
-                41: {name: 'Low Emissions', grade: 4, mass: [16, 16], pwrcap: [-12, -12], heateff: [-45, -55], fdname: 'PowerPlant_Stealth'},
-                51: {name: 'Low Emissions', grade: 5, mass: [20, 20], pwrcap: [-15, -15], heateff: [-55, -65], fdname: 'PowerPlant_Stealth'},
-                12: {name: 'Overcharged', grade: 1, integ: [-5, -5], pwrcap: [5, 12], heateff: [5, 5], fdname: 'PowerPlant_Boosted'},
-                22: {name: 'Overcharged', grade: 2, integ: [-10, -10], pwrcap: [12, 19], heateff: [10, 10], fdname: 'PowerPlant_Boosted'},
-                32: {name: 'Overcharged', grade: 3, integ: [-15, -15], pwrcap: [19, 26], heateff: [15, 15], fdname: 'PowerPlant_Boosted'},
-                42: {name: 'Overcharged', grade: 4, integ: [-20, -20], pwrcap: [26, 33], heateff: [20, 20], fdname: 'PowerPlant_Boosted'},
-                52: {name: 'Overcharged', grade: 5, integ: [-25, -25], pwrcap: [33, 40], heateff: [25, 25], fdname: 'PowerPlant_Boosted'},
-            },
+            blueprints: ['cpp_arm', 'cpp_le', 'cpp_oc'],
+            expeffects: ['miscx_db', 'cppx_mon', 'miscx_sd', 'cppx_ts'],
         },
 
         ct: {
             name: 'Thrusters',
             modulenames: {'Thrusters': 1},
+            keyattrs: ['optmass', 'optmul'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'optmass', 'optmul', 'thmload'],
-            blueprint: {
-                10: {name: 'Clean Tuning', grade: 1, optmass: [-2, -2], optmul: [3, 8], thmload: [-10, -20], fdname: 'Engine_Tuned'},
-                20: {name: 'Clean Tuning', grade: 2, integ: [-4, -4], pwrdraw: [4, 4], optmass: [-4, -4], optmul: [8, 13], thmload: [-20, -30], fdname: 'Engine_Tuned'},
-                30: {name: 'Clean Tuning', grade: 3, integ: [-8, -8], pwrdraw: [8, 8], optmass: [-6, -6], optmul: [13, 18], thmload: [-30, -40], fdname: 'Engine_Tuned'},
-                40: {name: 'Clean Tuning', grade: 4, integ: [-12, -12], pwrdraw: [12, 12], optmass: [-8, -8], optmul: [18, 23], thmload: [-40, -50], fdname: 'Engine_Tuned'},
-                50: {name: 'Clean Tuning', grade: 5, integ: [-16, -16], pwrdraw: [16, 16], optmass: [-10, -10], optmul: [23, 28], thmload: [-50, -60], fdname: 'Engine_Tuned'},
-                11: {name: 'Dirty Tuning', grade: 1, integ: [-3, -3], pwrdraw: [4, 4], optmass: [-2.5, -2.5], optmul: [5, 12], thmload: [20, 20], fdname: 'Engine_Dirty'},
-                21: {name: 'Dirty Tuning', grade: 2, integ: [-6, -6], pwrdraw: [6, 6], optmass: [-5, -5], optmul: [12, 19], thmload: [30, 30], fdname: 'Engine_Dirty'},
-                31: {name: 'Dirty Tuning', grade: 3, integ: [-9, -9], pwrdraw: [8, 8], optmass: [-7.5, -7.5], optmul: [19, 26], thmload: [40, 40], fdname: 'Engine_Dirty'},
-                41: {name: 'Dirty Tuning', grade: 4, integ: [-12, -12], pwrdraw: [10, 10], optmass: [-10, -10], optmul: [26, 33], thmload: [50, 50], fdname: 'Engine_Dirty'},
-                51: {name: 'Dirty Tuning', grade: 5, integ: [-15, -15], pwrdraw: [12, 12], optmass: [-12.5, -12.5], optmul: [33, 40], thmload: [60, 60], fdname: 'Engine_Dirty'},
-                12: {name: 'Strengthening', grade: 1, mass: [5, 5], integ: [10, 30], thmload: [0, -10], fdname: 'Engine_Reinforced'},
-                22: {name: 'Strengthening', grade: 2, mass: [10, 10], integ: [30, 50], thmload: [-10, -20], fdname: 'Engine_Reinforced'},
-                32: {name: 'Strengthening', grade: 3, mass: [15, 15], integ: [50, 70], thmload: [-20, -30], fdname: 'Engine_Reinforced'},
-                42: {name: 'Strengthening', grade: 4, mass: [20, 20], integ: [70, 90], thmload: [-30, -40], fdname: 'Engine_Reinforced'},
-                52: {name: 'Strengthening', grade: 5, mass: [25, 25], integ: [90, 110], thmload: [-40, -50], fdname: 'Engine_Reinforced'},
-            },
+            blueprints: ['ct_ct', 'ct_dt', 'ct_str'],
+            expeffects: ['miscx_db', 'ctx_ddr', 'ctx_ddi', 'miscx_sd', 'ctx_ts'],
         },
 
         cfsd: {
             name: 'Frame Shift Drives',
             modulenames: {'Frame Shift Drive': 1},
+            keyattrs: ['optmass', 'maxfuel'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'boottime', 'optmass', 'thmload', 'maxfuel'],
-            blueprint: {
-                10: {name: 'Faster Boot', grade: 1, integ: [-3, -3], boottime: [-5, -20], optmass: [0, 3], thmload: [4, 4], fdname: 'FSD_FastBoot'},
-                20: {name: 'Faster Boot', grade: 2, integ: [-6, -6], boottime: [-20, -35], optmass: [3, 6], thmload: [8, 8], fdname: 'FSD_FastBoot'},
-                30: {name: 'Faster Boot', grade: 3, integ: [-9, -9], boottime: [-35, -50], optmass: [6, 9], thmload: [12, 12], fdname: 'FSD_FastBoot'},
-                40: {name: 'Faster Boot', grade: 4, integ: [-12, -12], boottime: [-50, -65], optmass: [9, 12], thmload: [16, 16], fdname: 'FSD_FastBoot'},
-                50: {name: 'Faster Boot', grade: 5, integ: [-15, -15], boottime: [-65, -80], optmass: [12, 15], thmload: [20, 20], fdname: 'FSD_FastBoot'},
-                11: {name: 'Increased Range', grade: 1, mass: [10, 10], integ: [-3, -3], pwrdraw: [3, 3], optmass: [5, 15], fdname: 'FSD_LongRange'},
-                21: {name: 'Increased Range', grade: 2, mass: [15, 15], integ: [-6, -6], pwrdraw: [6, 6], optmass: [15, 25], fdname: 'FSD_LongRange'},
-                31: {name: 'Increased Range', grade: 3, mass: [20, 20], integ: [-9, -9], pwrdraw: [9, 9], optmass: [25, 35], fdname: 'FSD_LongRange'},
-                41: {name: 'Increased Range', grade: 4, mass: [25, 25], integ: [-12, -12], pwrdraw: [12, 12], optmass: [35, 45], fdname: 'FSD_LongRange'},
-                51: {name: 'Increased Range', grade: 5, mass: [30, 30], integ: [-15, -15], pwrdraw: [15, 15], optmass: [45, 55], fdname: 'FSD_LongRange'},
-                13: {name: 'Shielded', grade: 1, mass: [4, 4], integ: [0, 25], optmass: [0, 3], thmload: [-5, -10], fdname: 'FSD_Shielded'},
-                23: {name: 'Shielded', grade: 2, mass: [8, 8], integ: [25, 50], optmass: [3, 6], thmload: [-10, -15], fdname: 'FSD_Shielded'},
-                33: {name: 'Shielded', grade: 3, mass: [12, 12], integ: [50, 75], optmass: [6, 9], thmload: [-15, -20], fdname: 'FSD_Shielded'},
-                43: {name: 'Shielded', grade: 4, mass: [16, 16], integ: [75, 100], optmass: [9, 12], thmload: [-20, -25], fdname: 'FSD_Shielded'},
-                53: {name: 'Shielded', grade: 5, mass: [20, 20], integ: [100, 125], optmass: [12, 15], thmload: [-25, -30], fdname: 'FSD_Shielded'},
-            },
+            blueprints: ['cfsd_fb', 'cfsd_ir', 'cfsd_sh'],
+            expeffects: ['cfsdx_dc', 'cfsdx_db', 'cfsdx_mm', 'miscx_sd', 'cfsdx_ts'],
         },
 
         cls: {
             name: 'Life Supports',
             modulenames: {'Life Support': 1},
+            keyattrs: ['emgcylife'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'boottime'], //emgcylife?
-            blueprint: {
-                11: {name: 'Light Weight', grade: 1, mass: [-33, -45], integ: [-10, -10], fdname: 'Misc_LightWeight'},
-                21: {name: 'Light Weight', grade: 2, mass: [-45, -55], integ: [-20, -20], fdname: 'Misc_LightWeight'},
-                31: {name: 'Light Weight', grade: 3, mass: [-55, -65], integ: [-30, -30], fdname: 'Misc_LightWeight'},
-                41: {name: 'Light Weight', grade: 4, mass: [-65, -75], integ: [-40, -40], fdname: 'Misc_LightWeight'},
-                //	51 : { name:'Light Weight',  grade:5, mass:[-75,-85], integ:[-50,-50],                    fdname:'Misc_LightWeight' },
-                12: {name: 'Reinforced', grade: 1, mass: [30, 30], integ: [0, 60], fdname: 'Misc_Reinforced'},
-                22: {name: 'Reinforced', grade: 2, mass: [60, 60], integ: [60, 120], fdname: 'Misc_Reinforced'},
-                32: {name: 'Reinforced', grade: 3, mass: [90, 90], integ: [120, 180], fdname: 'Misc_Reinforced'},
-                42: {name: 'Reinforced', grade: 4, mass: [120, 120], integ: [180, 240], fdname: 'Misc_Reinforced'},
-                //	52 : { name:'Reinforced',    grade:5, mass:[150,150], integ:[240,300],                    fdname:'Misc_Reinforced' },
-                13: {name: 'Shielded', grade: 1, integ: [0, 60], pwrdraw: [20, 20], fdname: 'Misc_Shielded'},
-                23: {name: 'Shielded', grade: 2, integ: [60, 120], pwrdraw: [40, 40], fdname: 'Misc_Shielded'},
-                33: {name: 'Shielded', grade: 3, integ: [120, 180], pwrdraw: [60, 60], fdname: 'Misc_Shielded'},
-                43: {name: 'Shielded', grade: 4, integ: [180, 240], pwrdraw: [80, 80], fdname: 'Misc_Shielded'},
-                //	53 : { name:'Shielded',      grade:5,                 integ:[240,300], pwrdraw:[100,100], fdname:'Misc_Shielded' },
-            },
+            blueprints: ['misc_lw4', 'misc_rf4', 'misc_sh4'],
         },
 
         cpd: {
             name: 'Power Distributors',
             modulenames: {'Power Distributor': 1},
+            keyattrs: ['engcap', 'engchg'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'boottime', 'wepcap', 'wepchg', 'engcap', 'engchg', 'syscap', 'syschg'],
-            blueprint: {
-                10: {name: 'Charge Enhanced', grade: 1, wepcap: [-1, -1], wepchg: [0, 9], engcap: [-1, -1], engchg: [0, 9], syscap: [-1, -1], syschg: [0, 9], fdname: 'PowerDistributor_HighFrequency'},
-                20: {name: 'Charge Enhanced', grade: 2, wepcap: [-2, -2], wepchg: [9, 18], engcap: [-2, -2], engchg: [9, 18], syscap: [-2, -2], syschg: [9, 18], fdname: 'PowerDistributor_HighFrequency'},
-                30: {name: 'Charge Enhanced', grade: 3, wepcap: [-3, -3], wepchg: [18, 27], engcap: [-3, -3], engchg: [18, 27], syscap: [-3, -3], syschg: [18, 27], fdname: 'PowerDistributor_HighFrequency'},
-                40: {name: 'Charge Enhanced', grade: 4, wepcap: [-4, -4], wepchg: [27, 36], engcap: [-4, -4], engchg: [27, 36], syscap: [-4, -4], syschg: [27, 36], fdname: 'PowerDistributor_HighFrequency'},
-                50: {name: 'Charge Enhanced', grade: 5, wepcap: [-5, -5], wepchg: [36, 45], engcap: [-5, -5], engchg: [36, 45], syscap: [-5, -5], syschg: [36, 45], fdname: 'PowerDistributor_HighFrequency'},
-                11: {name: 'Engine Focused', grade: 1, wepcap: [-3, -3], wepchg: [-1, -1], engcap: [10, 20], engchg: [9, 16], syscap: [-3, -3], syschg: [-3, -3], fdname: 'PowerDistributor_PriorityEngines'},
-                21: {name: 'Engine Focused', grade: 2, wepcap: [-6, -6], wepchg: [-2, -2], engcap: [20, 30], engchg: [16, 23], syscap: [-6, -6], syschg: [-6, -6], fdname: 'PowerDistributor_PriorityEngines'},
-                31: {name: 'Engine Focused', grade: 3, wepcap: [-9, -9], wepchg: [-3, -3], engcap: [30, 40], engchg: [23, 30], syscap: [-9, -9], syschg: [-9, -9], fdname: 'PowerDistributor_PriorityEngines'},
-                41: {name: 'Engine Focused', grade: 4, wepcap: [-12, -12], wepchg: [-4, -4], engcap: [40, 50], engchg: [30, 37], syscap: [-12, -12], syschg: [-12, -12], fdname: 'PowerDistributor_PriorityEngines'},
-                51: {name: 'Engine Focused', grade: 5, wepcap: [-15, -15], wepchg: [-5, -5], engcap: [50, 60], engchg: [37, 44], syscap: [-15, -15], syschg: [-15, -15], fdname: 'PowerDistributor_PriorityEngines'},
-                12: {name: 'High Charge Capacity', grade: 1, integ: [5, 10], wepcap: [2, 10], wepchg: [-2, -2], engcap: [2, 10], engchg: [-2, -2], syscap: [2, 10], syschg: [-2, -2], fdname: 'PowerDistributor_HighCapacity'},
-                22: {name: 'High Charge Capacity', grade: 2, integ: [10, 15], wepcap: [10, 18], wepchg: [-6, -6], engcap: [10, 18], engchg: [-6, -6], syscap: [10, 18], syschg: [-6, -6], fdname: 'PowerDistributor_HighCapacity'},
-                32: {name: 'High Charge Capacity', grade: 3, integ: [15, 20], wepcap: [18, 26], wepchg: [-10, -10], engcap: [18, 26], engchg: [-10, -10], syscap: [18, 26], syschg: [-10, -10], fdname: 'PowerDistributor_HighCapacity'},
-                42: {name: 'High Charge Capacity', grade: 4, integ: [20, 25], wepcap: [26, 34], wepchg: [-14, -14], engcap: [26, 34], engchg: [-14, -14], syscap: [26, 34], syschg: [-14, -14], fdname: 'PowerDistributor_HighCapacity'},
-                52: {name: 'High Charge Capacity', grade: 5, integ: [25, 30], wepcap: [34, 42], wepchg: [-18, -18], engcap: [34, 42], engchg: [-18, -18], syscap: [34, 42], syschg: [-18, -18], fdname: 'PowerDistributor_HighCapacity'},
-                13: {name: 'Shielded', grade: 1, integ: [0, 40], mass: [3, 3], pwrdraw: [-5, -10], fdname: 'PowerDistributor_Shielded'},
-                23: {name: 'Shielded', grade: 2, integ: [40, 80], mass: [6, 6], pwrdraw: [-10, -15], fdname: 'PowerDistributor_Shielded'},
-                33: {name: 'Shielded', grade: 3, integ: [80, 120], mass: [9, 9], pwrdraw: [-15, -20], fdname: 'PowerDistributor_Shielded'},
-                43: {name: 'Shielded', grade: 4, integ: [120, 160], mass: [12, 12], pwrdraw: [-20, -25], fdname: 'PowerDistributor_Shielded'},
-                53: {name: 'Shielded', grade: 5, integ: [160, 200], mass: [15, 15], pwrdraw: [-25, -30], fdname: 'PowerDistributor_Shielded'},
-                14: {name: 'System Focused', grade: 1, wepcap: [-3, -3], wepchg: [-3, -3], engcap: [-3, -3], engchg: [-1, -1], syscap: [10, 20], syschg: [9, 16], fdname: 'PowerDistributor_PrioritySystems'},
-                24: {name: 'System Focused', grade: 2, wepcap: [-6, -6], wepchg: [-6, -6], engcap: [-6, -6], engchg: [-2, -2], syscap: [20, 30], syschg: [16, 23], fdname: 'PowerDistributor_PrioritySystems'},
-                34: {name: 'System Focused', grade: 3, wepcap: [-9, -9], wepchg: [-9, -9], engcap: [-9, -9], engchg: [-3, -3], syscap: [30, 40], syschg: [23, 30], fdname: 'PowerDistributor_PrioritySystems'},
-                44: {name: 'System Focused', grade: 4, wepcap: [-12, -12], wepchg: [-12, -12], engcap: [-12, -12], engchg: [-4, -4], syscap: [40, 50], syschg: [30, 37], fdname: 'PowerDistributor_PrioritySystems'},
-                54: {name: 'System Focused', grade: 5, wepcap: [-15, -15], wepchg: [-15, -15], engcap: [-15, -15], engchg: [-5, -5], syscap: [50, 60], syschg: [37, 44], fdname: 'PowerDistributor_PrioritySystems'},
-                15: {name: 'Weapon Focused', grade: 1, wepcap: [10, 20], wepchg: [9, 16], engcap: [-3, -3], engchg: [-3, -3], syscap: [-3, -3], syschg: [-1, -1], fdname: 'PowerDistributor_PriorityWeapons'},
-                25: {name: 'Weapon Focused', grade: 2, wepcap: [20, 30], wepchg: [16, 23], engcap: [-6, -6], engchg: [-6, -6], syscap: [-6, -6], syschg: [-2, -2], fdname: 'PowerDistributor_PriorityWeapons'},
-                35: {name: 'Weapon Focused', grade: 3, wepcap: [30, 40], wepchg: [23, 30], engcap: [-9, -9], engchg: [-9, -9], syscap: [-9, -9], syschg: [-3, -3], fdname: 'PowerDistributor_PriorityWeapons'},
-                45: {name: 'Weapon Focused', grade: 4, wepcap: [40, 50], wepchg: [30, 37], engcap: [-12, -12], engchg: [-12, -12], syscap: [-12, -12], syschg: [-4, -4], fdname: 'PowerDistributor_PriorityWeapons'},
-                55: {name: 'Weapon Focused', grade: 5, wepcap: [50, 60], wepchg: [37, 44], engcap: [-15, -15], engchg: [-15, -15], syscap: [-15, -15], syschg: [-5, -5], fdname: 'PowerDistributor_PriorityWeapons'},
-            },
+            blueprints: ['cpd_ce', 'cpd_ef', 'cpd_hc', 'cpd_sh', 'cpd_sf', 'cpd_wf'],
+            expeffects: ['cpdx_cc', 'miscx_db', 'miscx_fc', 'miscx_sd', 'cpdx_sc'],
         },
 
         cs: {
             name: 'Sensors',
             modulenames: {'Sensors': 1},
+            keyattrs: ['typemis', 'maxrng'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'boottime', 'maxangle', 'typemis'], // maxrng?
-            blueprint: {
-                11: {name: 'Light Weight', grade: 1, mass: [-5, -20], integ: [-10, -10], maxangle: [-5, -5], fdname: 'Sensor_LightWeight'},
-                21: {name: 'Light Weight', grade: 2, mass: [-20, -35], integ: [-20, -20], maxangle: [-10, -10], fdname: 'Sensor_LightWeight'},
-                31: {name: 'Light Weight', grade: 3, mass: [-35, -50], integ: [-30, -30], maxangle: [-15, -15], fdname: 'Sensor_LightWeight'},
-                41: {name: 'Light Weight', grade: 4, mass: [-50, -65], integ: [-40, -40], maxangle: [-20, -20], fdname: 'Sensor_LightWeight'},
-                51: {name: 'Light Weight', grade: 5, mass: [-65, -80], integ: [-50, -50], maxangle: [-25, -25], fdname: 'Sensor_LightWeight'},
-                14: {name: 'Long Range', grade: 1, mass: [20, 20], maxangle: [-10, -10], typemis: [0, 15], fdname: 'Sensor_LongRange'},
-                24: {name: 'Long Range', grade: 2, mass: [40, 40], maxangle: [-15, -15], typemis: [15, 30], fdname: 'Sensor_LongRange'},
-                34: {name: 'Long Range', grade: 3, mass: [60, 60], maxangle: [-20, -20], typemis: [30, 45], fdname: 'Sensor_LongRange'},
-                44: {name: 'Long Range', grade: 4, mass: [80, 80], maxangle: [-25, -25], typemis: [45, 60], fdname: 'Sensor_LongRange'},
-                54: {name: 'Long Range', grade: 5, mass: [100, 100], maxangle: [-30, -30], typemis: [60, 75], fdname: 'Sensor_LongRange'},
-                15: {name: 'Wide Angle', grade: 1, pwrdraw: [10, 10], maxangle: [0, 40], typemis: [-4, -4], fdname: 'Sensor_WideAngle'},
-                25: {name: 'Wide Angle', grade: 2, pwrdraw: [20, 20], maxangle: [40, 80], typemis: [-8, -8], fdname: 'Sensor_WideAngle'},
-                35: {name: 'Wide Angle', grade: 3, pwrdraw: [30, 30], maxangle: [80, 120], typemis: [-12, -12], fdname: 'Sensor_WideAngle'},
-                45: {name: 'Wide Angle', grade: 4, pwrdraw: [40, 40], maxangle: [120, 160], typemis: [-16, -16], fdname: 'Sensor_WideAngle'},
-                55: {name: 'Wide Angle', grade: 5, pwrdraw: [50, 50], maxangle: [160, 200], typemis: [-20, -20], fdname: 'Sensor_WideAngle'},
-            },
+            blueprints: ['cs_lw', 'cs_lr', 'cs_wa'],
         },
 
         cft: {
             name: 'Fuel Tanks',
             modulenames: {},
+            keyattrs: ['fuelcap'],
         },
 
         iafmu: {
             name: 'Auto Field-Maintenance Units',
             modulenames: {'Auto Field-Maintenance Unit': 1},
+            ammocost: 1,
+            keyattrs: ['repaircap'],
             modifiable: ['integ', 'pwrdraw', 'boottime'], // repaircap? repaircon? repairrtg?
-            blueprint: {
-                13: {name: 'Shielded', grade: 1, integ: [0, 60], pwrdraw: [20, 20], fdname: 'Misc_Shielded'},
-                23: {name: 'Shielded', grade: 2, integ: [60, 120], pwrdraw: [40, 40], fdname: 'Misc_Shielded'},
-                33: {name: 'Shielded', grade: 3, integ: [120, 180], pwrdraw: [60, 60], fdname: 'Misc_Shielded'},
-                43: {name: 'Shielded', grade: 4, integ: [180, 240], pwrdraw: [80, 80], fdname: 'Misc_Shielded'},
-                //	53 : { name:'Shielded',      grade:5,                 integ:[240,300], pwrdraw:[100,100], fdname:'Misc_Shielded' },
-            },
+            blueprints: ['misc_sh4'],
         },
 
         icr: {
             name: 'Cargo Racks',
             modulenames: {},
+            keyattrs: ['cargocap'],
         },
 
         iclc: {
             name: 'Collection Limpets',
             modulenames: {'Collector Limpet Controller': 1},
+            keyattrs: ['maxlimpet', 'limpettime'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'boottime'], // maxlimpet? targetrng? limpettime? maxspd? multispd?
-            blueprint: {
-                11: {name: 'Light Weight', grade: 1, mass: [-33, -45], integ: [-10, -10], fdname: 'Misc_LightWeight'},
-                21: {name: 'Light Weight', grade: 2, mass: [-45, -55], integ: [-20, -20], fdname: 'Misc_LightWeight'},
-                31: {name: 'Light Weight', grade: 3, mass: [-55, -65], integ: [-30, -30], fdname: 'Misc_LightWeight'},
-                41: {name: 'Light Weight', grade: 4, mass: [-65, -75], integ: [-40, -40], fdname: 'Misc_LightWeight'},
-                51: {name: 'Light Weight', grade: 5, mass: [-75, -85], integ: [-50, -50], fdname: 'Misc_LightWeight'},
-                12: {name: 'Reinforced', grade: 1, mass: [30, 30], integ: [0, 60], fdname: 'Misc_Reinforced'},
-                22: {name: 'Reinforced', grade: 2, mass: [60, 60], integ: [60, 120], fdname: 'Misc_Reinforced'},
-                32: {name: 'Reinforced', grade: 3, mass: [90, 90], integ: [120, 180], fdname: 'Misc_Reinforced'},
-                42: {name: 'Reinforced', grade: 4, mass: [120, 120], integ: [180, 240], fdname: 'Misc_Reinforced'},
-                52: {name: 'Reinforced', grade: 5, mass: [150, 150], integ: [240, 300], fdname: 'Misc_Reinforced'},
-                13: {name: 'Shielded', grade: 1, integ: [0, 60], pwrdraw: [20, 20], fdname: 'Misc_Shielded'},
-                23: {name: 'Shielded', grade: 2, integ: [60, 120], pwrdraw: [40, 40], fdname: 'Misc_Shielded'},
-                33: {name: 'Shielded', grade: 3, integ: [120, 180], pwrdraw: [60, 60], fdname: 'Misc_Shielded'},
-                43: {name: 'Shielded', grade: 4, integ: [180, 240], pwrdraw: [80, 80], fdname: 'Misc_Shielded'},
-                53: {name: 'Shielded', grade: 5, integ: [240, 300], pwrdraw: [100, 100], fdname: 'Misc_Shielded'},
-            },
+            blueprints: ['misc_lw', 'misc_rf', 'misc_sh'],
         },
 
         idlc: {
             name: 'Decontamination Limpets',
             modulenames: {},
+            keyattrs: ['maxlimpet', 'targetrng'],
+            //	modifiable:['mass','integ','pwrdraw','boottime'], // maxlimpet? targetrng? limpettime? maxspd? multispd?
         },
 
         idc: {
             name: 'Docking Computers',
             modulenames: {},
+            //	modifiable:['integ','pwrdraw','boottime'],
         },
 
         ifsdi: {
             name: 'FSD Interdictors',
             modulenames: {'Frame Shift Drive Interdictor': 1},
+            keyattrs: ['timerng', 'facinglim'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'boottime', 'timerng', 'facinglim'],
-            blueprint: {
-                10: {name: 'Expanded Capture Arc', grade: 1, pwrdraw: [10, 10], timerng: [-10, -10], facinglim: [20, 40], fdname: 'FSDinterdictor_Expanded'},
-                20: {name: 'Expanded Capture Arc', grade: 2, pwrdraw: [20, 20], timerng: [-15, -15], facinglim: [40, 60], fdname: 'FSDinterdictor_Expanded'},
-                30: {name: 'Expanded Capture Arc', grade: 3, pwrdraw: [30, 30], timerng: [-20, -20], facinglim: [60, 80], fdname: 'FSDinterdictor_Expanded'},
-                40: {name: 'Expanded Capture Arc', grade: 4, pwrdraw: [40, 40], timerng: [-25, -25], facinglim: [80, 100], fdname: 'FSDinterdictor_Expanded'},
-                11: {name: 'Longer Range', grade: 1, mass: [10, 10], pwrdraw: [10, 10], timerng: [10, 20], facinglim: [-10, -10], fdname: 'FSDinterdictor_LongRange'},
-                21: {name: 'Longer Range', grade: 2, mass: [15, 15], pwrdraw: [20, 20], timerng: [20, 30], facinglim: [-15, -15], fdname: 'FSDinterdictor_LongRange'},
-                31: {name: 'Longer Range', grade: 3, mass: [20, 20], pwrdraw: [30, 30], timerng: [30, 40], facinglim: [-20, -20], fdname: 'FSDinterdictor_LongRange'},
-                41: {name: 'Longer Range', grade: 4, mass: [25, 25], pwrdraw: [40, 40], timerng: [40, 50], facinglim: [-25, -25], fdname: 'FSDinterdictor_LongRange'},
-            },
+            blueprints: ['ifsdi_eca', 'ifsdi_lr'],
         },
 
         ifh: {
             name: 'Fighter Hangars',
             modulenames: {},
             singleton: 1,
+            ammocost: 1030,
+            keyattrs: ['vslots', 'vcount'],
+            //	modifiable:['mass','integ','pwrdraw','boottime'], // vslots? vcount?
         },
 
         ifs: {
             name: 'Fuel Scoops',
             modulenames: {'Fuel Scoop': 1},
             singleton: 1,
+            keyattrs: ['scooprate'],
             modifiable: ['integ', 'pwrdraw', 'boottime'], // scooprate?
-            blueprint: {
-                13: {name: 'Shielded', grade: 1, integ: [0, 60], pwrdraw: [20, 20], fdname: 'Misc_Shielded'},
-                23: {name: 'Shielded', grade: 2, integ: [60, 120], pwrdraw: [40, 40], fdname: 'Misc_Shielded'},
-                33: {name: 'Shielded', grade: 3, integ: [120, 180], pwrdraw: [60, 60], fdname: 'Misc_Shielded'},
-                43: {name: 'Shielded', grade: 4, integ: [180, 240], pwrdraw: [80, 80], fdname: 'Misc_Shielded'},
-                //	53 : { name:'Shielded',      grade:5,                 integ:[240,300], pwrdraw:[100,100], fdname:'Misc_Shielded' },
-            },
+            blueprints: ['misc_sh4'],
         },
 
         iftlc: {
             name: 'Fuel Transfer Limpets',
             modulenames: {'Fuel Transfer Limpet Controller': 1},
+            keyattrs: ['maxlimpet', 'targetrng'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'boottime'], // maxlimpet? targetrng? limpettime? maxspd? fuelxfer?
-            blueprint: {
-                11: {name: 'Light Weight', grade: 1, mass: [-33, -45], integ: [-10, -10], fdname: 'Misc_LightWeight'},
-                21: {name: 'Light Weight', grade: 2, mass: [-45, -55], integ: [-20, -20], fdname: 'Misc_LightWeight'},
-                31: {name: 'Light Weight', grade: 3, mass: [-55, -65], integ: [-30, -30], fdname: 'Misc_LightWeight'},
-                41: {name: 'Light Weight', grade: 4, mass: [-65, -75], integ: [-40, -40], fdname: 'Misc_LightWeight'},
-                51: {name: 'Light Weight', grade: 5, mass: [-75, -85], integ: [-50, -50], fdname: 'Misc_LightWeight'},
-                12: {name: 'Reinforced', grade: 1, mass: [30, 30], integ: [0, 60], fdname: 'Misc_Reinforced'},
-                22: {name: 'Reinforced', grade: 2, mass: [60, 60], integ: [60, 120], fdname: 'Misc_Reinforced'},
-                32: {name: 'Reinforced', grade: 3, mass: [90, 90], integ: [120, 180], fdname: 'Misc_Reinforced'},
-                42: {name: 'Reinforced', grade: 4, mass: [120, 120], integ: [180, 240], fdname: 'Misc_Reinforced'},
-                52: {name: 'Reinforced', grade: 5, mass: [150, 150], integ: [240, 300], fdname: 'Misc_Reinforced'},
-                13: {name: 'Shielded', grade: 1, integ: [0, 60], pwrdraw: [20, 20], fdname: 'Misc_Shielded'},
-                23: {name: 'Shielded', grade: 2, integ: [60, 120], pwrdraw: [40, 40], fdname: 'Misc_Shielded'},
-                33: {name: 'Shielded', grade: 3, integ: [120, 180], pwrdraw: [60, 60], fdname: 'Misc_Shielded'},
-                43: {name: 'Shielded', grade: 4, integ: [180, 240], pwrdraw: [80, 80], fdname: 'Misc_Shielded'},
-                53: {name: 'Shielded', grade: 5, integ: [240, 300], pwrdraw: [100, 100], fdname: 'Misc_Shielded'},
-            },
+            blueprints: ['misc_lw', 'misc_rf', 'misc_sh'],
         },
 
         ihblc: {
             name: 'Hatch Breaker Limpets',
             modulenames: {'Hatch Breaker Limpet Controller': 1},
+            keyattrs: ['maxlimpet', 'targetrng'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'boottime'], // maxlimpet? targetrng? limpettime? maxspd? hacktime? mincargo? maxcargo?
-            blueprint: {
-                11: {name: 'Light Weight', grade: 1, mass: [-33, -45], integ: [-10, -10], fdname: 'Misc_LightWeight'},
-                21: {name: 'Light Weight', grade: 2, mass: [-45, -55], integ: [-20, -20], fdname: 'Misc_LightWeight'},
-                31: {name: 'Light Weight', grade: 3, mass: [-55, -65], integ: [-30, -30], fdname: 'Misc_LightWeight'},
-                41: {name: 'Light Weight', grade: 4, mass: [-65, -75], integ: [-40, -40], fdname: 'Misc_LightWeight'},
-                51: {name: 'Light Weight', grade: 5, mass: [-75, -85], integ: [-50, -50], fdname: 'Misc_LightWeight'},
-                12: {name: 'Reinforced', grade: 1, mass: [30, 30], integ: [0, 60], fdname: 'Misc_Reinforced'},
-                22: {name: 'Reinforced', grade: 2, mass: [60, 60], integ: [60, 120], fdname: 'Misc_Reinforced'},
-                32: {name: 'Reinforced', grade: 3, mass: [90, 90], integ: [120, 180], fdname: 'Misc_Reinforced'},
-                42: {name: 'Reinforced', grade: 4, mass: [120, 120], integ: [180, 240], fdname: 'Misc_Reinforced'},
-                52: {name: 'Reinforced', grade: 5, mass: [150, 150], integ: [240, 300], fdname: 'Misc_Reinforced'},
-                13: {name: 'Shielded', grade: 1, integ: [0, 60], pwrdraw: [20, 20], fdname: 'Misc_Shielded'},
-                23: {name: 'Shielded', grade: 2, integ: [60, 120], pwrdraw: [40, 40], fdname: 'Misc_Shielded'},
-                33: {name: 'Shielded', grade: 3, integ: [120, 180], pwrdraw: [60, 60], fdname: 'Misc_Shielded'},
-                43: {name: 'Shielded', grade: 4, integ: [180, 240], pwrdraw: [80, 80], fdname: 'Misc_Shielded'},
-                53: {name: 'Shielded', grade: 5, integ: [240, 300], pwrdraw: [100, 100], fdname: 'Misc_Shielded'},
-            },
+            blueprints: ['misc_lw', 'misc_rf', 'misc_sh'],
         },
 
         ihrp: {
             name: 'Hull Reinforcements',
             modulenames: {'Hull Reinforcement Package': 1},
+            keyattrs: ['hullrnf', 'kinres'],
             modifiable: ['mass', 'hullrnf', 'kinres', 'thmres', 'expres', 'hullbst'],
-            blueprint: {
-                10: {name: 'Blast Resistant', grade: 1, hullrnf: [0, 3], kinres: [-2, -2], thmres: [-2, -2], expres: [5, 12], fdname: 'HullReinforcement_Explosive'},
-                20: {name: 'Blast Resistant', grade: 2, hullrnf: [3, 6], kinres: [-4, -4], thmres: [-4, -4], expres: [12, 19], fdname: 'HullReinforcement_Explosive'},
-                30: {name: 'Blast Resistant', grade: 3, hullrnf: [6, 9], kinres: [-6, -6], thmres: [-6, -6], expres: [19, 26], fdname: 'HullReinforcement_Explosive'},
-                40: {name: 'Blast Resistant', grade: 4, hullrnf: [9, 12], kinres: [-8, -8], thmres: [-8, -8], expres: [26, 33], fdname: 'HullReinforcement_Explosive'},
-                50: {name: 'Blast Resistant', grade: 5, hullrnf: [12, 15], kinres: [-10, -10], thmres: [-10, -10], expres: [33, 40], fdname: 'HullReinforcement_Explosive'},
-                11: {name: 'Heavy Duty', grade: 1, mass: [8, 8], hullrnf: [12, 24], kinres: [0, 3], thmres: [0, 3], expres: [0, 3], fdname: 'HullReinforcement_HeavyDuty'},
-                21: {name: 'Heavy Duty', grade: 2, mass: [16, 16], hullrnf: [24, 36], kinres: [3, 6], thmres: [3, 6], expres: [3, 6], fdname: 'HullReinforcement_HeavyDuty'},
-                31: {name: 'Heavy Duty', grade: 3, mass: [24, 24], hullrnf: [36, 48], kinres: [6, 9], thmres: [6, 9], expres: [6, 9], fdname: 'HullReinforcement_HeavyDuty'},
-                41: {name: 'Heavy Duty', grade: 4, mass: [32, 32], hullrnf: [48, 60], kinres: [9, 12], thmres: [9, 12], expres: [9, 12], fdname: 'HullReinforcement_HeavyDuty'},
-                51: {name: 'Heavy Duty', grade: 5, mass: [40, 40], hullrnf: [60, 72], kinres: [12, 15], thmres: [12, 15], expres: [12, 15], fdname: 'HullReinforcement_HeavyDuty'},
-                12: {name: 'Kinetic Resistant', grade: 1, hullrnf: [0, 3], kinres: [5, 12], thmres: [-2, -2], expres: [-2, -2], fdname: 'HullReinforcement_Kinetic'},
-                22: {name: 'Kinetic Resistant', grade: 2, hullrnf: [3, 6], kinres: [12, 19], thmres: [-4, -4], expres: [-4, -4], fdname: 'HullReinforcement_Kinetic'},
-                32: {name: 'Kinetic Resistant', grade: 3, hullrnf: [6, 9], kinres: [19, 26], thmres: [-6, -6], expres: [-6, -6], fdname: 'HullReinforcement_Kinetic'},
-                42: {name: 'Kinetic Resistant', grade: 4, hullrnf: [9, 12], kinres: [26, 33], thmres: [-8, -8], expres: [-8, -8], fdname: 'HullReinforcement_Kinetic'},
-                52: {name: 'Kinetic Resistant', grade: 5, hullrnf: [12, 15], kinres: [33, 40], thmres: [-10, -10], expres: [-10, -10], fdname: 'HullReinforcement_Kinetic'},
-                13: {name: 'Light Weight', grade: 1, mass: [-4, -8], hullbst: [4, 8], hullrnf: [-4, -4], fdname: 'HullReinforcement_Advanced'},
-                23: {name: 'Light Weight', grade: 2, mass: [-8, -12], hullbst: [8, 12], hullrnf: [-8, -8], fdname: 'HullReinforcement_Advanced'},
-                33: {name: 'Light Weight', grade: 3, mass: [-12, -16], hullbst: [12, 16], hullrnf: [-12, -12], fdname: 'HullReinforcement_Advanced'},
-                43: {name: 'Light Weight', grade: 4, mass: [-16, -20], hullbst: [16, 20], hullrnf: [-16, -16], fdname: 'HullReinforcement_Advanced'},
-                53: {name: 'Light Weight', grade: 5, mass: [-20, -24], hullbst: [20, 24], hullrnf: [-20, -20], fdname: 'HullReinforcement_Advanced'},
-                14: {name: 'Thermal Resistant', grade: 1, hullrnf: [0, 3], kinres: [-2, -2], thmres: [5, 12], expres: [-2, -2], fdname: 'HullReinforcement_Thermic'},
-                24: {name: 'Thermal Resistant', grade: 2, hullrnf: [3, 6], kinres: [-4, -4], thmres: [12, 19], expres: [-4, -4], fdname: 'HullReinforcement_Thermic'},
-                34: {name: 'Thermal Resistant', grade: 3, hullrnf: [6, 9], kinres: [-6, -6], thmres: [19, 26], expres: [-6, -6], fdname: 'HullReinforcement_Thermic'},
-                44: {name: 'Thermal Resistant', grade: 4, hullrnf: [9, 12], kinres: [-8, -8], thmres: [26, 33], expres: [-8, -8], fdname: 'HullReinforcement_Thermic'},
-                54: {name: 'Thermal Resistant', grade: 5, hullrnf: [12, 15], kinres: [-10, -10], thmres: [33, 40], expres: [-10, -10], fdname: 'HullReinforcement_Thermic'},
-            },
+            blueprints: ['ihrp_br', 'ihrp_hd', 'ihrp_kr', 'ihrp_lw', 'ihrp_tr'],
+            expeffects: ['ihrpx_ap', 'ihrpx_dp', 'ihrpx_lp', 'ihrpx_rp'],
+        },
+
+        imahrp: {
+            name: 'Meta Alloy Hull Reinforcements',
+            modulenames: {'Meta Alloy Hull Reinforcement Package': 1},
+            keyattrs: ['hullrnf', 'caures'],
         },
 
         imrp: {
             name: 'Module Reinforcements',
             modulenames: {'Module Reinforcement Package': 1},
+            keyattrs: ['integ', 'dmgprot'],
         },
 
         ipc: {
             name: 'Passenger Cabins',
             modulenames: {'Economy Class Passenger Cabin': 1, 'Business Class Passenger Cabin': 1, 'First Class Passenger Cabin': 1, 'Luxury Class Passenger Cabin': 1},
+            keyattrs: ['cabincap'],
+            //	modifiable:['mass'], // cabincap?
         },
 
         ipvh: {
             name: 'Planetary Vehicle Hangars',
             modulenames: {'Planetary Vehicle Hangar': 1},
+            ammocost: 1030,
+            keyattrs: ['vslots'],
+            //	modifiable:['mass','integ','pwrdraw','boottime'], // vslots?
         },
 
         iplc: {
             name: 'Prospecting Limpets',
             modulenames: {'Prospector Limpet Controller': 1},
+            keyattrs: ['maxlimpet', 'limpettime'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'boottime'], // maxlimpet? limpettime? maxspd?
-            blueprint: {
-                11: {name: 'Light Weight', grade: 1, mass: [-33, -45], integ: [-10, -10], fdname: 'Misc_LightWeight'},
-                21: {name: 'Light Weight', grade: 2, mass: [-45, -55], integ: [-20, -20], fdname: 'Misc_LightWeight'},
-                31: {name: 'Light Weight', grade: 3, mass: [-55, -65], integ: [-30, -30], fdname: 'Misc_LightWeight'},
-                41: {name: 'Light Weight', grade: 4, mass: [-65, -75], integ: [-40, -40], fdname: 'Misc_LightWeight'},
-                51: {name: 'Light Weight', grade: 5, mass: [-75, -85], integ: [-50, -50], fdname: 'Misc_LightWeight'},
-                12: {name: 'Reinforced', grade: 1, mass: [30, 30], integ: [0, 60], fdname: 'Misc_Reinforced'},
-                22: {name: 'Reinforced', grade: 2, mass: [60, 60], integ: [60, 120], fdname: 'Misc_Reinforced'},
-                32: {name: 'Reinforced', grade: 3, mass: [90, 90], integ: [120, 180], fdname: 'Misc_Reinforced'},
-                42: {name: 'Reinforced', grade: 4, mass: [120, 120], integ: [180, 240], fdname: 'Misc_Reinforced'},
-                52: {name: 'Reinforced', grade: 5, mass: [150, 150], integ: [240, 300], fdname: 'Misc_Reinforced'},
-                13: {name: 'Shielded', grade: 1, integ: [0, 60], pwrdraw: [20, 20], fdname: 'Misc_Shielded'},
-                23: {name: 'Shielded', grade: 2, integ: [60, 120], pwrdraw: [40, 40], fdname: 'Misc_Shielded'},
-                33: {name: 'Shielded', grade: 3, integ: [120, 180], pwrdraw: [60, 60], fdname: 'Misc_Shielded'},
-                43: {name: 'Shielded', grade: 4, integ: [180, 240], pwrdraw: [80, 80], fdname: 'Misc_Shielded'},
-                53: {name: 'Shielded', grade: 5, integ: [240, 300], pwrdraw: [100, 100], fdname: 'Misc_Shielded'},
-            },
+            blueprints: ['misc_lw', 'misc_rf', 'misc_sh'],
         },
 
         inlc: {
             name: 'Recon Limpets',
             modulenames: {},
+            keyattrs: ['maxlimpet', 'targetrng'],
+            //	modifiable:['mass','integ','pwrdraw','boottime'], // maxlimpet? targetrng? maxspd?
         },
 
         ir: {
             name: 'Refineries',
             modulenames: {'Refinery': 1},
             singleton: 1,
+            keyattrs: ['bins'],
             modifiable: ['integ', 'pwrdraw', 'boottime'], // bins?
-            blueprint: {
-                13: {name: 'Shielded', grade: 1, integ: [0, 60], pwrdraw: [20, 20], fdname: 'Misc_Shielded'},
-                23: {name: 'Shielded', grade: 2, integ: [60, 120], pwrdraw: [40, 40], fdname: 'Misc_Shielded'},
-                33: {name: 'Shielded', grade: 3, integ: [120, 180], pwrdraw: [60, 60], fdname: 'Misc_Shielded'},
-                43: {name: 'Shielded', grade: 4, integ: [180, 240], pwrdraw: [80, 80], fdname: 'Misc_Shielded'},
-                //	53 : { name:'Shielded',      grade:5,                 integ:[240,300], pwrdraw:[100,100], fdname:'Misc_Shielded' },
-            },
+            blueprints: ['misc_sh4'],
         },
 
         irlc: {
             name: 'Repair Limpets',
             modulenames: {'Repair Limpet Controller': 1},
+            keyattrs: ['maxlimpet', 'repaircap'],
+            //	modifiable:['mass','integ','pwrdraw','boottime'], // maxlimpet? limpettime? maxspd?
         },
 
         islc: {
             name: 'Research Limpets',
             modulenames: {},
+            keyattrs: ['maxlimpet', 'targetrng'],
         },
 
         iscb: {
             name: 'Shield Cell Banks',
             modulenames: {'Shield Cell Bank': 1},
+            ammocost: 300,
+            keyattrs: ['shieldrnf', 'ammomax'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'boottime', 'spinup', 'duration', 'shieldrnf', 'thmload', 'ammomax'],
-            blueprint: {
-                10: {name: 'Rapid Charge', grade: 1, boottime: [10, 10], spinup: [0, -10], shieldrnf: [0, 5], duration: [-6, -6], fdname: 'ShieldCellBank_Rapid'},
-                20: {name: 'Rapid Charge', grade: 2, boottime: [15, 15], spinup: [-10, -20], shieldrnf: [5, 10], duration: [-12, -12], fdname: 'ShieldCellBank_Rapid'},
-                30: {name: 'Rapid Charge', grade: 3, boottime: [20, 20], spinup: [-20, -30], shieldrnf: [10, 15], duration: [-18, -18], fdname: 'ShieldCellBank_Rapid'},
-                40: {name: 'Rapid Charge', grade: 4, boottime: [25, 25], spinup: [-30, -40], shieldrnf: [15, 20], duration: [-24, -24], fdname: 'ShieldCellBank_Rapid'},
-                11: {name: 'Specialised', grade: 1, integ: [-5, -5], pwrdraw: [10, 10], boottime: [0, -8], shieldrnf: [2, 4], thmload: [0, -6], fdname: 'ShieldCellBank_Specialised'},
-                21: {name: 'Specialised', grade: 2, integ: [-10, -10], pwrdraw: [15, 15], boottime: [-8, -16], shieldrnf: [4, 6], thmload: [-6, -12], fdname: 'ShieldCellBank_Specialised'},
-                31: {name: 'Specialised', grade: 3, integ: [-15, -15], pwrdraw: [20, 20], boottime: [-16, -24], shieldrnf: [6, 8], thmload: [-12, -18], fdname: 'ShieldCellBank_Specialised'},
-                41: {name: 'Specialised', grade: 4, integ: [-20, -20], pwrdraw: [25, 25], boottime: [-24, -32], shieldrnf: [8, 10], thmload: [-18, -24], fdname: 'ShieldCellBank_Specialised'},
-            },
+            blueprints: ['iscb_rc', 'iscb_sp'],
+            expeffects: ['iscbx_bc', 'miscx_db', 'miscx_fc', 'iscbx_rc', 'miscx_sd'],
         },
 
         isg: {
             name: 'Shield Generators',
             modulenames: {'Shield Generator': 1},
             singleton: 1,
+            keyattrs: ['optmul', 'thmres'],
             modifiable: ['mass', 'integ', 'pwrdraw', 'boottime', 'optmass', 'optmul', 'genrate', 'bgenrate', 'distdraw', 'kinres', 'thmres', 'expres'],
-            blueprint: {
-                10: {name: 'Enhanced, Low Power', grade: 1, mass: [-10, -18], integ: [-5, -5], pwrdraw: [-15, -20], optmass: [-2, -2], optmul: [0, 3], fdname: 'ShieldGenerator_Optimised'},
-                20: {name: 'Enhanced, Low Power', grade: 2, mass: [-18, -26], integ: [-10, -10], pwrdraw: [-20, -25], optmass: [-3, -3], optmul: [3, 6], fdname: 'ShieldGenerator_Optimised'},
-                30: {name: 'Enhanced, Low Power', grade: 3, mass: [-26, -34], integ: [-15, -15], pwrdraw: [-25, -30], optmass: [-4, -4], optmul: [6, 9], fdname: 'ShieldGenerator_Optimised'},
-                40: {name: 'Enhanced, Low Power', grade: 4, mass: [-34, -42], integ: [-20, -20], pwrdraw: [-30, -35], optmass: [-5, -5], optmul: [9, 12], fdname: 'ShieldGenerator_Optimised'},
-                50: {name: 'Enhanced, Low Power', grade: 5, mass: [-42, -50], integ: [-25, -25], pwrdraw: [-35, -40], optmass: [-6, -6], optmul: [12, 15], fdname: 'ShieldGenerator_Optimised'},
-                11: {name: 'Kinetic Resistant', grade: 1, integ: [15, 20], kinres: [0, 10], thmres: [-3, -3], fdname: 'ShieldGenerator_Kinetic'},
-                21: {name: 'Kinetic Resistant', grade: 2, integ: [20, 25], kinres: [10, 20], thmres: [-6, -6], fdname: 'ShieldGenerator_Kinetic'},
-                31: {name: 'Kinetic Resistant', grade: 3, integ: [25, 30], kinres: [20, 30], thmres: [-9, -9], fdname: 'ShieldGenerator_Kinetic'},
-                41: {name: 'Kinetic Resistant', grade: 4, integ: [30, 35], kinres: [30, 40], thmres: [-12, -12], fdname: 'ShieldGenerator_Kinetic'},
-                51: {name: 'Kinetic Resistant', grade: 5, integ: [35, 40], kinres: [40, 50], thmres: [-15, -15], fdname: 'ShieldGenerator_Kinetic'},
-                12: {name: 'Reinforced', grade: 1, optmul: [8, 14], bgenrate: [-10, -10], distdraw: [4, 4], kinres: [1.5, 4.5], thmres: [1.5, 4.5], expres: [1.5, 4.5], fdname: 'ShieldGenerator_Reinforced'},
-                22: {name: 'Reinforced', grade: 2, optmul: [14, 20], bgenrate: [-10, -10], distdraw: [6, 6], kinres: [4.5, 7.5], thmres: [4.5, 7.5], expres: [4.5, 7.5], fdname: 'ShieldGenerator_Reinforced'},
-                32: {name: 'Reinforced', grade: 3, optmul: [20, 26], bgenrate: [-10, -10], distdraw: [8, 8], kinres: [7.5, 10.5], thmres: [7.5, 10.5], expres: [7.5, 10.5], fdname: 'ShieldGenerator_Reinforced'},
-                42: {name: 'Reinforced', grade: 4, optmul: [26, 32], bgenrate: [-10, -10], distdraw: [10, 10], kinres: [10.5, 13.5], thmres: [10.5, 13.5], expres: [10.5, 13.5], fdname: 'ShieldGenerator_Reinforced'},
-                52: {name: 'Reinforced', grade: 5, optmul: [32, 38], bgenrate: [-10, -10], distdraw: [12, 12], kinres: [13.5, 16.5], thmres: [13.5, 16.5], expres: [13.5, 16.5], fdname: 'ShieldGenerator_Reinforced'},
-                13: {name: 'Thermal Resistant', grade: 1, integ: [15, 20], kinres: [-4, -4], thmres: [0, 10], fdname: 'ShieldGenerator_Thermic'},
-                23: {name: 'Thermal Resistant', grade: 2, integ: [20, 25], kinres: [-8, -8], thmres: [10, 20], fdname: 'ShieldGenerator_Thermic'},
-                33: {name: 'Thermal Resistant', grade: 3, integ: [25, 30], kinres: [-12, -12], thmres: [20, 30], fdname: 'ShieldGenerator_Thermic'},
-                43: {name: 'Thermal Resistant', grade: 4, integ: [30, 35], kinres: [-16, -16], thmres: [30, 40], fdname: 'ShieldGenerator_Thermic'},
-                53: {name: 'Thermal Resistant', grade: 5, integ: [35, 40], kinres: [-20, -20], thmres: [40, 50], fdname: 'ShieldGenerator_Thermic'},
-            },
+            blueprints: ['isg_elp', 'isg_kr', 'isg_rf', 'isg_tr'],
+            expeffects: ['miscx_db', 'isgx_fc', 'isgx_fb', 'isgx_hc', 'isgx_ld', 'isgx_mw', 'miscx_sd', 'isgx_tb'],
         },
 
         isbs: {
             name: 'Stellar Body Scanners',
             modulenames: {},
             singleton: 1,
+            keyattrs: ['activerng', 'passiverng'],
+            //	modifiable:['mass','integ'], // activerng? passiverng? maxangle? scantime?
         },
 
         iss: {
             name: 'Surface Scanners',
             modulenames: {},
             singleton: 1,
+            keyattrs: ['scanrngmod', 'scanratemod'],
             modifiable: ['mass', 'boottime', 'pwrdraw', 'scanrngmod', 'scanangmod', 'scanratemod'],
-            blueprint: {
-                16: {name: 'Fast Scan', grade: 1, mass: [20, 20], pwrdraw: [20, 10], scanratemod: [5, 20], fdname: 'Sensor_FastScan'},
-                26: {name: 'Fast Scan', grade: 2, mass: [40, 40], pwrdraw: [40, 20], scanratemod: [20, 35], fdname: 'Sensor_FastScan'},
-                36: {name: 'Fast Scan', grade: 3, mass: [60, 60], pwrdraw: [60, 30], scanratemod: [35, 50], fdname: 'Sensor_FastScan'},
-                46: {name: 'Fast Scan', grade: 4, mass: [80, 80], pwrdraw: [80, 40], scanratemod: [50, 65], fdname: 'Sensor_FastScan'},
-                56: {name: 'Fast Scan', grade: 5, mass: [100, 100], pwrdraw: [100, 50], scanratemod: [65, 80], fdname: 'Sensor_FastScan'},
-                14: {name: 'Long Range', grade: 1, mass: [20, 20], pwrdraw: [20, 10], scanrngmod: [0, 40], fdname: 'Sensor_LongRange'},
-                24: {name: 'Long Range', grade: 2, mass: [40, 40], pwrdraw: [40, 20], scanrngmod: [40, 80], fdname: 'Sensor_LongRange'},
-                34: {name: 'Long Range', grade: 3, mass: [60, 60], pwrdraw: [60, 30], scanrngmod: [80, 120], fdname: 'Sensor_LongRange'},
-                44: {name: 'Long Range', grade: 4, mass: [80, 80], pwrdraw: [80, 40], scanrngmod: [120, 160], fdname: 'Sensor_LongRange'},
-                54: {name: 'Long Range', grade: 5, mass: [100, 100], pwrdraw: [100, 50], scanrngmod: [160, 200], fdname: 'Sensor_LongRange'},
-                15: {name: 'Wide Angle', grade: 1, mass: [20, 20], pwrdraw: [20, 10], scanangmod: [0, 40], fdname: 'Sensor_WideAngle'},
-                25: {name: 'Wide Angle', grade: 2, mass: [40, 40], pwrdraw: [40, 20], scanangmod: [40, 80], fdname: 'Sensor_WideAngle'},
-                35: {name: 'Wide Angle', grade: 3, mass: [60, 60], pwrdraw: [60, 30], scanangmod: [80, 120], fdname: 'Sensor_WideAngle'},
-                45: {name: 'Wide Angle', grade: 4, mass: [80, 80], pwrdraw: [80, 40], scanangmod: [120, 160], fdname: 'Sensor_WideAngle'},
-                55: {name: 'Wide Angle', grade: 5, mass: [100, 100], pwrdraw: [100, 50], scanangmod: [160, 200], fdname: 'Sensor_WideAngle'},
-            },
+            blueprints: ['iss_fs', 'iss_lr', 'iss_wa'],
         },
     }, // eddb.mtype{}
     module: {
 
         // HARDPOINTS
-        // TODO: find the real damage type spreads for mixed type weapons
 
         60150: {mtype: 'hel', cost: 37430, name: 'Beam Laser', mount: 'F', class: 1, rating: 'E', mass: 2.00, integ: 40, pwrdraw: 0.62, boottime: 0, dps: 9.820, damage: 9.820, distdraw: 1.940, thmload: 3.53, pierce: 18, maxrng: 3000, rof: 1 / 0, bstint: 0, brcdmg: 7.9, minbrc: 40, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 600, fdid: 128049428, fdname: 'Hpt_BeamLaser_Fixed_Small'},
         60151: {mtype: 'hel', cost: 74650, name: 'Beam Laser', mount: 'G', class: 1, rating: 'E', mass: 2.00, integ: 40, pwrdraw: 0.60, boottime: 0, dps: 7.680, damage: 7.680, distdraw: 2.110, thmload: 3.65, pierce: 18, maxrng: 3000, rof: 1 / 0, bstint: 0, brcdmg: 6.1, minbrc: 40, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 600, fdid: 128049432, fdname: 'Hpt_BeamLaser_Gimbal_Small'},
         60162: {mtype: 'hel', cost: 500000, name: 'Beam Laser', mount: 'T', class: 1, rating: 'F', mass: 2.00, integ: 40, pwrdraw: 0.57, boottime: 0, dps: 5.400, damage: 5.400, distdraw: 1.320, thmload: 2.40, pierce: 18, maxrng: 3000, rof: 1 / 0, bstint: 0, brcdmg: 4.3, minbrc: 40, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 600, fdid: 128049435, fdname: 'Hpt_BeamLaser_Turret_Small'},
         60240: {mtype: 'hel', cost: 299520, name: 'Beam Laser', mount: 'F', class: 2, rating: 'D', mass: 4.00, integ: 51, pwrdraw: 1.01, boottime: 0, dps: 15.960, damage: 15.960, distdraw: 3.160, thmload: 5.11, pierce: 35, maxrng: 3000, rof: 1 / 0, bstint: 0, brcdmg: 12.8, minbrc: 40, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 600, fdid: 128049429, fdname: 'Hpt_BeamLaser_Fixed_Medium'},
         60241: {mtype: 'hel', cost: 500600, name: 'Beam Laser', mount: 'G', class: 2, rating: 'D', mass: 4.00, integ: 51, pwrdraw: 1.00, boottime: 0, dps: 12.520, damage: 12.520, distdraw: 3.440, thmload: 5.32, pierce: 35, maxrng: 3000, rof: 1 / 0, bstint: 0, brcdmg: 10.0, minbrc: 40, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 600, fdid: 128049433, fdname: 'Hpt_BeamLaser_Gimbal_Medium'},
-        60252: {mtype: 'hel', cost: 2099900, name: 'Beam Laser', mount: 'T', class: 2, rating: 'E', mass: 4.00, integ: 51, pwrdraw: 0.93, boottime: 0, dps: 8.820, damage: 8.830, distdraw: 2.160, thmload: 3.53, pierce: 35, maxrng: 3000, rof: 1 / 0, bstint: 0, brcdmg: 7.1, minbrc: 40, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 600, fdid: 128049436, fdname: 'Hpt_BeamLaser_Turret_Medium'},
+        60252: {mtype: 'hel', cost: 2099900, name: 'Beam Laser', mount: 'T', class: 2, rating: 'E', mass: 4.00, integ: 51, pwrdraw: 0.93, boottime: 0, dps: 8.830, damage: 8.830, distdraw: 2.160, thmload: 3.53, pierce: 35, maxrng: 3000, rof: 1 / 0, bstint: 0, brcdmg: 7.1, minbrc: 40, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 600, fdid: 128049436, fdname: 'Hpt_BeamLaser_Turret_Medium'},
         60330: {mtype: 'hel', cost: 1177600, name: 'Beam Laser', mount: 'F', class: 3, rating: 'C', mass: 8.00, integ: 64, pwrdraw: 1.62, boottime: 0, dps: 25.780, damage: 25.780, distdraw: 5.100, thmload: 7.22, pierce: 50, maxrng: 3000, rof: 1 / 0, bstint: 0, brcdmg: 20.6, minbrc: 40, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 600, fdid: 128049430, fdname: 'Hpt_BeamLaser_Fixed_Large'},
         60331: {mtype: 'hel', cost: 2396160, name: 'Beam Laser', mount: 'G', class: 3, rating: 'C', mass: 8.00, integ: 64, pwrdraw: 1.60, boottime: 0, dps: 20.300, damage: 20.300, distdraw: 5.580, thmload: 7.61, pierce: 50, maxrng: 3000, rof: 1 / 0, bstint: 0, brcdmg: 16.2, minbrc: 40, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 600, fdid: 128049434, fdname: 'Hpt_BeamLaser_Gimbal_Large'},
         60332: {mtype: 'hel', cost: 19399600, name: 'Beam Laser', mount: 'T', class: 3, rating: 'D', mass: 8.00, integ: 64, pwrdraw: 1.51, boottime: 0, dps: 14.360, damage: 14.360, distdraw: 3.510, thmload: 5.11, pierce: 50, maxrng: 3000, rof: 1 / 0, bstint: 0, brcdmg: 11.5, minbrc: 40, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 600, fdid: 128049437, fdname: 'Hpt_BeamLaser_Turret_Large'},
@@ -2545,7 +2074,7 @@ var eddb = {
         61250: {mtype: 'hul', cost: 23000, name: 'Burst Laser', mount: 'F', class: 2, rating: 'E', mass: 4.00, integ: 40, pwrdraw: 1.05, boottime: 0, dps: 13.045, damage: 3.530, distdraw: 0.500, thmload: 0.78, pierce: 35, maxrng: 3000, rof: 3.695, bstint: 0.630, bstrof: 11, bstsize: 3, brcdmg: 3.0, minbrc: 40, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 500, fdid: 128049401, fdname: 'Hpt_PulseLaserBurst_Fixed_Medium'},
         61261: {mtype: 'hul', cost: 48500, name: 'Burst Laser', mount: 'G', class: 2, rating: 'F', mass: 4.00, integ: 40, pwrdraw: 1.04, boottime: 0, dps: 10.296, damage: 2.450, distdraw: 0.490, thmload: 0.67, pierce: 35, maxrng: 3000, rof: 4.203, bstint: 0.560, bstrof: 13, bstsize: 3, brcdmg: 2.1, minbrc: 40, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 500, fdid: 128049405, fdname: 'Hpt_PulseLaserBurst_Gimbal_Medium'},
         61262: {mtype: 'hul', cost: 162800, name: 'Burst Laser', mount: 'T', class: 2, rating: 'F', mass: 4.00, integ: 40, pwrdraw: 0.98, boottime: 0, dps: 6.760, damage: 1.720, distdraw: 0.275, thmload: 0.38, pierce: 35, maxrng: 3000, rof: 3.930, bstint: 0.630, bstrof: 15, bstsize: 3, brcdmg: 0.9, minbrc: 60, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 500, fdid: 128049408, fdname: 'Hpt_PulseLaserBurst_Turret_Medium'},
-        61340: {mtype: 'hul', cost: 140400, name: 'Burst Laser', mount: 'F', class: 3, rating: 'D', mass: 8.00, integ: 64, pwrdraw: 1.66, boottime: 0, dps: 20.785, damage: 7.730, distdraw: 1.110, thmload: 1.70, pierce: 52, maxrng: 3000, rof: 2.689, bstint: 0.830, bstrof: 7, bstsize: 3, brcdmg: 3.9, minbrc: 60, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 500, fdid: 128049402, fdname: 'Hpt_PulseLaserBurst_Fixed_Large'},
+        61340: {mtype: 'hul', cost: 140400, name: 'Burst Laser', mount: 'F', class: 3, rating: 'D', mass: 8.00, integ: 64, pwrdraw: 1.66, boottime: 0, dps: 20.785, damage: 7.730, distdraw: 1.110, thmload: 1.70, pierce: 52, maxrng: 3000, rof: 2.689, bstint: 0.830, bstrof: 7, bstsize: 3, brcdmg: 3.9, minbrc: 40, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 500, fdid: 128049402, fdname: 'Hpt_PulseLaserBurst_Fixed_Large'},
         61351: {mtype: 'hul', cost: 281600, name: 'Burst Laser', mount: 'G', class: 3, rating: 'E', mass: 8.00, integ: 64, pwrdraw: 1.65, boottime: 0, dps: 16.605, damage: 5.160, distdraw: 1.030, thmload: 1.42, pierce: 52, maxrng: 3000, rof: 3.218, bstint: 0.710, bstrof: 9, bstsize: 3, brcdmg: 4.4, minbrc: 40, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 500, fdid: 128049406, fdname: 'Hpt_PulseLaserBurst_Gimbal_Large'},
         61352: {mtype: 'hul', cost: 800400, name: 'Burst Laser', mount: 'T', class: 3, rating: 'E', mass: 8.00, integ: 64, pwrdraw: 1.57, boottime: 0, dps: 11.010, damage: 3.530, distdraw: 0.560, thmload: 0.78, pierce: 52, maxrng: 3000, rof: 3.119, bstint: 0.780, bstrof: 11, bstsize: 3, brcdmg: 1.8, minbrc: 60, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 500, fdid: 128049409, fdname: 'Hpt_PulseLaserBurst_Turret_Large'},
         61450: {mtype: 'hul', cost: 281600, name: 'Burst Laser', mount: 'F', class: 4, rating: 'E', mass: 16.00, integ: 80, pwrdraw: 2.58, boottime: 0, dps: 32.259, damage: 20.610, distdraw: 2.980, thmload: 4.53, pierce: 65, maxrng: 3000, rof: 1.565, bstint: 1.250, bstrof: 3, bstsize: 3, brcdmg: 17.5, minbrc: 40, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 500, fdid: 128049403, fdname: 'Hpt_PulseLaserBurst_Fixed_Huge'},
@@ -2558,12 +2087,12 @@ var eddb = {
         70240: {mtype: 'hc', cost: 168430, name: 'Cannon', mount: 'F', class: 2, rating: 'D', mass: 4.00, integ: 51, pwrdraw: 0.49, boottime: 0, dps: 16.993, damage: 36.875, distdraw: 0.700, thmload: 2.11, pierce: 50, maxrng: 3500, shotspd: 1050, rof: 0.461, bstint: 2.170, ammoclip: 6, ammomax: 120, rldtime: 3.0, brcdmg: 35.0, minbrc: 60, maxbrc: 90, dmgtype: 'K', kinwgt: 1, dmgfall: 3500, fdid: 128049439, fdname: 'Hpt_Cannon_Fixed_Medium'},
         70241: {mtype: 'hc', cost: 337600, name: 'Cannon', mount: 'G', class: 2, rating: 'D', mass: 4.00, integ: 51, pwrdraw: 0.54, boottime: 0, dps: 12.274, damage: 25.530, distdraw: 0.750, thmload: 1.92, pierce: 50, maxrng: 3500, shotspd: 875, rof: 0.481, bstint: 2.080, ammoclip: 5, ammomax: 100, rldtime: 4.0, brcdmg: 24.3, minbrc: 60, maxbrc: 90, dmgtype: 'K', kinwgt: 1, dmgfall: 3500, fdid: 128049443, fdname: 'Hpt_Cannon_Gimbal_Medium'},
         70252: {mtype: 'hc', cost: 4051200, name: 'Cannon', mount: 'T', class: 2, rating: 'E', mass: 4.00, integ: 51, pwrdraw: 0.45, boottime: 0, dps: 7.916, damage: 19.790, distdraw: 0.340, thmload: 1.03, pierce: 50, maxrng: 3500, shotspd: 875, rof: 0.400, bstint: 2.500, ammoclip: 5, ammomax: 100, rldtime: 4.0, brcdmg: 18.8, minbrc: 60, maxbrc: 90, dmgtype: 'K', kinwgt: 1, dmgfall: 3500, fdid: 128049446, fdname: 'Hpt_Cannon_Turret_Medium'},
-        70330: {mtype: 'hc', cost: 675200, name: 'Cannon', mount: 'F', class: 3, rating: 'C', mass: 8.00, integ: 64, pwrdraw: 0.67, boottime: 0, dps: 23.372, damage: 55.625, distdraw: 1.070, thmload: 3.20, pierce: 70, maxrng: 4000, shotspd: 960, rof: 0.420, bstint: 2.300, ammoclip: 6, ammomax: 120, rldtime: 3.0, brcdmg: 52.8, minbrc: 60, maxbrc: 90, dmgtype: 'K', kinwgt: 1, dmgfall: 4000, fdid: 128049440, fdname: 'Hpt_Cannon_Fixed_Large'},
+        70330: {mtype: 'hc', cost: 675200, name: 'Cannon', mount: 'F', class: 3, rating: 'C', mass: 8.00, integ: 64, pwrdraw: 0.67, boottime: 0, dps: 23.372, damage: 55.625, distdraw: 1.070, thmload: 3.20, pierce: 70, maxrng: 4000, shotspd: 960, rof: 0.420, bstint: 2.380, ammoclip: 6, ammomax: 120, rldtime: 3.0, brcdmg: 52.8, minbrc: 60, maxbrc: 90, dmgtype: 'K', kinwgt: 1, dmgfall: 4000, fdid: 128049440, fdname: 'Hpt_Cannon_Fixed_Large'},
         70331: {mtype: 'hc', cost: 1350400, name: 'Cannon', mount: 'G', class: 3, rating: 'C', mass: 8.00, integ: 64, pwrdraw: 0.75, boottime: 0, dps: 16.485, damage: 37.421, distdraw: 1.140, thmload: 2.93, pierce: 70, maxrng: 4000, shotspd: 800, rof: 0.441, bstint: 2.270, ammoclip: 5, ammomax: 100, rldtime: 4.0, brcdmg: 35.5, minbrc: 60, maxbrc: 90, dmgtype: 'K', kinwgt: 1, dmgfall: 4000, fdid: 128671120, fdname: 'Hpt_Cannon_Gimbal_Large'},
         70342: {mtype: 'hc', cost: 16204800, name: 'Cannon', mount: 'T', class: 3, rating: 'D', mass: 8.00, integ: 64, pwrdraw: 0.64, boottime: 0, dps: 11.154, damage: 30.340, distdraw: 0.530, thmload: 1.58, pierce: 70, maxrng: 4000, shotspd: 800, rof: 0.368, bstint: 2.720, ammoclip: 5, ammomax: 100, rldtime: 4.0, brcdmg: 28.8, minbrc: 60, maxbrc: 90, dmgtype: 'K', kinwgt: 1, dmgfall: 4000, fdid: 128049447, fdname: 'Hpt_Cannon_Turret_Large'},
         70420: {mtype: 'hc', cost: 2700800, name: 'Cannon', mount: 'F', class: 4, rating: 'B', mass: 16.00, integ: 80, pwrdraw: 0.92, boottime: 0, dps: 31.606, damage: 83.125, distdraw: 1.610, thmload: 4.83, pierce: 90, maxrng: 4500, shotspd: 900, rof: 0.380, bstint: 2.630, ammoclip: 6, ammomax: 120, rldtime: 3.0, brcdmg: 79.0, minbrc: 60, maxbrc: 90, dmgtype: 'K', kinwgt: 1, dmgfall: 4500, fdid: 128049441, fdname: 'Hpt_Cannon_Fixed_Huge'},
         70421: {mtype: 'hc', cost: 5401600, name: 'Cannon', mount: 'G', class: 4, rating: 'B', mass: 16.00, integ: 80, pwrdraw: 1.03, boottime: 0, dps: 22.636, damage: 56.590, distdraw: 1.720, thmload: 4.43, pierce: 90, maxrng: 4500, shotspd: 750, rof: 0.400, bstint: 2.500, ammoclip: 5, ammomax: 100, rldtime: 4.0, brcdmg: 53.8, minbrc: 60, maxbrc: 90, dmgtype: 'K', kinwgt: 1, dmgfall: 4500, fdid: 128049444, fdname: 'Hpt_Cannon_Gimbal_Huge'},
-        //	70422 : { mtype:'hc',  cost:     NaN, name:'Cannon',                      mount:'T',              class:4, rating:'?', mass:16.00, integ:80, pwrdraw:0.88, boottime:0, dps:15.456, damage:46.060, distdraw:0.80 , thmload:2.40, pierce: 90, maxrng:4500, shotspd: 750, rof:0.336, bstint:2.980,                      ammoclip: 5, ammomax: 100,            rldtime:4.0, brcdmg: NaN, minbrc:60, maxbrc:90,             dmgtype:'K', kinwgt:1, dmgfall:4500, fdid:     null, fdname:'Hpt_Cannon_Turret_Huge' },
+        //	70422 : { mtype:'hc',  cost:     NaN, name:'Cannon',                      mount:'T',              class:4, rating:'?', mass:16.00, integ:80, pwrdraw:0.88, boottime:0, dps:15.456, damage:46.060, distdraw:0.800, thmload:2.40, pierce: 90, maxrng:4500, shotspd: 750, rof:0.336, bstint:2.980,                      ammoclip: 5, ammomax: 100,            rldtime:4.0, brcdmg: NaN, minbrc:60, maxbrc:90,             dmgtype:'K', kinwgt:1, dmgfall:4500, fdid:     null, fdname:'Hpt_Cannon_Turret_Huge' }, // TODO: cost,rating,brcdmg,fdid
 
         71150: {mtype: 'hfc', cost: 36000, name: 'Fragment Cannon', mount: 'F', class: 1, rating: 'E', mass: 2.00, integ: 40, pwrdraw: 0.45, boottime: 0, dps: 95.333, damage: 1.430, distdraw: 0.210, thmload: 0.41, pierce: 20, maxrng: 2000, shotspd: 667, rof: 5.556, bstint: 0.180, ammoclip: 3, ammomax: 180, rounds: 12, rldtime: 5.0, brcdmg: 1.3, minbrc: 40, maxbrc: 80, jitter: 5.0, dmgtype: 'K', kinwgt: 1, dmgfall: 1800, fdid: 128049448, fdname: 'Hpt_Slugshot_Fixed_Small'},
         71151: {mtype: 'hfc', cost: 54720, name: 'Fragment Cannon', mount: 'G', class: 1, rating: 'E', mass: 2.00, integ: 40, pwrdraw: 0.59, boottime: 0, dps: 71.294, damage: 1.010, distdraw: 0.260, thmload: 0.44, pierce: 20, maxrng: 2000, shotspd: 667, rof: 5.882, bstint: 0.170, ammoclip: 3, ammomax: 180, rounds: 12, rldtime: 5.0, brcdmg: 0.9, minbrc: 40, maxbrc: 80, jitter: 5.0, dmgtype: 'K', kinwgt: 1, dmgfall: 1800, fdid: 128049451, fdname: 'Hpt_Slugshot_Gimbal_Small'},
@@ -2576,9 +2105,9 @@ var eddb = {
         71332: {mtype: 'hfc', cost: 5836800, name: 'Fragment Cannon', mount: 'T', class: 3, rating: 'C', mass: 8.00, integ: 64, pwrdraw: 1.29, boottime: 0, dps: 143.280, damage: 2.985, distdraw: 0.370, thmload: 0.74, pierce: 45, maxrng: 2000, shotspd: 667, rof: 4.000, bstint: 0.250, ammoclip: 3, ammomax: 180, rounds: 12, rldtime: 5.0, brcdmg: 2.7, minbrc: 40, maxbrc: 80, jitter: 5.0, dmgtype: 'K', kinwgt: 1, dmgfall: 1800, fdid: 128671322, fdname: 'Hpt_Slugshot_Turret_Large'},
         71334: {mtype: 'hfc', cost: 1751040, name: 'Pacifier Frag-Cannon', mount: 'F', class: 3, rating: 'C', mass: 8.00, integ: 64, pwrdraw: 1.02, boottime: 0, dps: 216.000, damage: 3.960, distdraw: 0.570, thmload: 1.13, pierce: 45, maxrng: 3000, shotspd: 1000, rof: 4.545, bstint: 0.220, ammoclip: 3, ammomax: 180, rounds: 12, rldtime: 5.0, brcdmg: 3.1, minbrc: 40, maxbrc: 80, jitter: 1.7, dmgtype: 'K', kinwgt: 1, dmgfall: 1800, fdid: 128671343, fdname: 'Hpt_Slugshot_Fixed_Large_Range'}, // verify
 
-        80190: {mtype: 'hm', cost: 24260, name: 'Mine Launcher', mount: 'F', class: 1, rating: 'I', mass: 2.00, integ: 40, pwrdraw: 0.40, boottime: 0, dps: 44.000, damage: 44.000, thmload: 5.00, pierce: 60, rof: 1.000, bstint: 1.000, ammoclip: 1, ammomax: 36, rldtime: 2.0, minbrc: 0, maxbrc: 0, dmgtype: 'ET', expwgt: 2, thmwgt: 1, dmgfall: 100000, fdid: 128049500, fdname: 'Hpt_MineLauncher_Fixed_Small'},
-        80191: {mtype: 'hm', cost: 36390, name: 'Shock Mine Launcher', mount: 'F', class: 1, rating: 'I', mass: 2.00, integ: 40, pwrdraw: 0.40, boottime: 0, dps: 32.000, damage: 32.000, thmload: 5.00, pierce: 60, rof: 1.000, bstint: 1.000, ammoclip: 1, ammomax: 36, rldtime: 2.0, brcdmg: 9.6, minbrc: 0, maxbrc: 0, dmgtype: 'ET', expwgt: 1, thmwgt: 1, dmgfall: 100000, fdid: 128671448, fdname: 'Hpt_MineLauncher_Fixed_Small_Impulse'},
-        80290: {mtype: 'hm', cost: 294080, name: 'Mine Launcher', mount: 'F', class: 2, rating: 'I', mass: 4.00, integ: 51, pwrdraw: 0.40, boottime: 0, dps: 44.000, damage: 44.000, thmload: 7.50, pierce: 60, rof: 1.000, bstint: 1.000, ammoclip: 3, ammomax: 72, rldtime: 6.6, brcdmg: 13.2, minbrc: 0, maxbrc: 0, dmgtype: 'ET', expwgt: 2, thmwgt: 1, dmgfall: 100000, fdid: 128049501, fdname: 'Hpt_MineLauncher_Fixed_Medium'},
+        80190: {mtype: 'hm', cost: 24260, name: 'Mine Launcher', mount: 'F', class: 1, rating: 'I', mass: 2.00, integ: 40, pwrdraw: 0.40, boottime: 0, dps: 44.000, damage: 44.000, thmload: 5.00, pierce: 60, rof: 1.000, bstint: 1.000, ammoclip: 1, ammomax: 36, rldtime: 2.0, minbrc: 0, maxbrc: 0, dmgtype: 'ET', expwgt: 26 / 44, thmwgt: 18 / 44, dmgfall: 000000, fdid: 128049500, fdname: 'Hpt_MineLauncher_Fixed_Small'},
+        80191: {mtype: 'hm', cost: 36390, name: 'Shock Mine Launcher', mount: 'F', class: 1, rating: 'I', mass: 2.00, integ: 40, pwrdraw: 0.40, boottime: 0, dps: 32.000, damage: 32.000, thmload: 5.00, pierce: 60, rof: 1.000, bstint: 1.000, ammoclip: 1, ammomax: 36, rldtime: 2.0, brcdmg: 9.6, minbrc: 0, maxbrc: 0, dmgtype: 'ET', expwgt: 20 / 32, thmwgt: 12 / 32, dmgfall: 000000, fdid: 128671448, fdname: 'Hpt_MineLauncher_Fixed_Small_Impulse'},
+        80290: {mtype: 'hm', cost: 294080, name: 'Mine Launcher', mount: 'F', class: 2, rating: 'I', mass: 4.00, integ: 51, pwrdraw: 0.40, boottime: 0, dps: 44.000, damage: 44.000, thmload: 7.50, pierce: 60, rof: 1.000, bstint: 1.000, ammoclip: 3, ammomax: 72, rldtime: 6.6, brcdmg: 13.2, minbrc: 0, maxbrc: 0, dmgtype: 'ET', expwgt: 26 / 44, thmwgt: 18 / 44, dmgfall: 000000, fdid: 128049501, fdname: 'Hpt_MineLauncher_Fixed_Medium'},
 
         81140: {mtype: 'hml', cost: 6800, name: 'Mining Laser', mount: 'F', class: 1, rating: 'D', mass: 2.00, integ: 40, pwrdraw: 0.50, boottime: 0, dps: 2.000, damage: 2.000, distdraw: 1.500, thmload: 2.00, pierce: 18, maxrng: 500, rof: 1 / 0, bstint: 0, brcdmg: 0.3, minbrc: 10, maxbrc: 20, dmgtype: 'T', thmwgt: 1, dmgfall: 300, fdid: 128049525, fdname: 'Hpt_MiningLaser_Fixed_Small'},
         81142: {mtype: 'hml', cost: 9400, name: 'Mining Laser', mount: 'T', class: 1, rating: 'D', mass: 2.00, integ: 40, pwrdraw: 0.50, boottime: 0, dps: 2.000, damage: 2.000, distdraw: 1.500, thmload: 2.00, pierce: 18, maxrng: 500, rof: 1 / 0, bstint: 0, brcdmg: 0.3, minbrc: 10, maxbrc: 20, dmgtype: 'T', thmwgt: 1, dmgfall: 300, fdid: 128740819, fdname: 'Hpt_MiningLaser_Turret_Small'},
@@ -2586,30 +2115,36 @@ var eddb = {
         81242: {mtype: 'hml', cost: 32580, name: 'Mining Laser', mount: 'T', class: 2, rating: 'D', mass: 2.00, integ: 51, pwrdraw: 0.75, boottime: 0, dps: 4.000, damage: 4.000, distdraw: 3.000, thmload: 4.00, pierce: 18, maxrng: 500, rof: 1 / 0, bstint: 0, brcdmg: 0.6, minbrc: 10, maxbrc: 20, dmgtype: 'T', thmwgt: 1, dmgfall: 300, fdid: 128740820, fdname: 'Hpt_MiningLaser_Turret_Medium'},
         81144: {mtype: 'hml', cost: 33860, name: 'Mining Lance Beam Laser', mount: 'F', class: 1, rating: 'D', mass: 2.00, integ: 40, pwrdraw: 0.70, boottime: 0, dps: 8.000, damage: 8.000, distdraw: 1.750, thmload: 6.00, pierce: 18, maxrng: 2000, rof: 1 / 0, bstint: 0, brcdmg: 1.2, minbrc: 10, maxbrc: 20, dmgtype: 'T', thmwgt: 1, dmgfall: NaN, fdid: null, fdname: 'Hpt_MiningLaser_Fixed_Small_Advanced'}, // TODO: dmgfall,fdid
 
-        82120: {mtype: 'hmr', cost: 32180, name: 'Missile Rack', mount: 'F', missile: 'D', class: 1, rating: 'B', mass: 2.00, integ: 40, pwrdraw: 0.40, boottime: 0, dps: 25.000, damage: 50.000, distdraw: 0.240, thmload: 3.60, pierce: 60, shotspd: 750, rof: 0.500, bstint: 2.000, ammoclip: 8, ammomax: 16, rldtime: 5.0, brcdmg: 20.0, minbrc: 100, maxbrc: 100, dmgtype: 'E', expwgt: 1, dmgfall: 100000, fdid: 128666724, fdname: 'Hpt_DumbfireMissileRack_Fixed_Small'},
-        82123: {mtype: 'hmr', cost: 72600, name: 'Seeker Missile Rack', mount: 'F', missile: 'S', class: 1, rating: 'B', mass: 2.00, integ: 40, pwrdraw: 0.60, boottime: 0, dps: 13.333, damage: 40.000, distdraw: 0.240, thmload: 3.60, pierce: 60, shotspd: 625, rof: 0.333, bstint: 3.000, ammoclip: 6, ammomax: 6, rldtime: 12.0, brcdmg: 16.0, minbrc: 0, maxbrc: 0, dmgtype: 'E', expwgt: 1, dmgfall: 100000, fdid: 128049492, fdname: 'Hpt_BasicMissileRack_Fixed_Small'},
-        82220: {mtype: 'hmr', cost: 240400, name: 'Missile Rack', mount: 'F', missile: 'D', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 25.000, damage: 50.000, distdraw: 0.240, thmload: 3.60, pierce: 60, shotspd: 750, rof: 0.500, bstint: 2.000, ammoclip: 12, ammomax: 48, rldtime: 5.0, brcdmg: 20.0, minbrc: 100, maxbrc: 100, dmgtype: 'E', expwgt: 1, dmgfall: 100000, fdid: 128666725, fdname: 'Hpt_DumbfireMissileRack_Fixed_Medium'},
-        82223: {mtype: 'hmr', cost: 512400, name: 'Seeker Missile Rack', mount: 'F', missile: 'S', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 13.333, damage: 40.000, distdraw: 0.240, thmload: 3.60, pierce: 60, shotspd: 625, rof: 0.333, bstint: 3.000, ammoclip: 6, ammomax: 18, rldtime: 12.0, brcdmg: 16.0, minbrc: 0, maxbrc: 0, dmgtype: 'E', expwgt: 1, dmgfall: 100000, fdid: 128049493, fdname: 'Hpt_BasicMissileRack_Fixed_Medium'},
-        82224: {mtype: 'hmr', cost: 768600, name: 'Pack-Hound Missile Rack', mount: 'F', missile: 'S', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 60.000, damage: 7.500, distdraw: 0.240, thmload: 3.60, pierce: 60, shotspd: 600, rof: 2.000, bstint: 0.500, ammoclip: 12, ammomax: 120, rounds: 4, rldtime: 5.0, brcdmg: 3.0, minbrc: 0, maxbrc: 0, dmgtype: 'E', expwgt: 1, dmgfall: 100000, fdid: 128671344, fdname: 'Hpt_DrunkMissileRack_Fixed_Medium'},
-        82225: {mtype: 'hmr', cost: 1951040, name: 'Rocket Propelled FSD Disrupter', mount: 'F', missile: 'D', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 13.333, damage: 40.000, distdraw: 0.240, thmload: 3.60, pierce: 60, shotspd: 750, rof: 0.333, bstint: 3.000, ammoclip: 12, ammomax: 48, rldtime: 5.0, brcdmg: 16.0, minbrc: 100, maxbrc: 100, dmgtype: 'E', expwgt: 1, dmgfall: 100000, fdid: 128732552, fdname: 'Hpt_DumbfireMissileRack_Fixed_Medium_Lasso'},
+        82120: {mtype: 'hmr', cost: 32180, name: 'Missile Rack', mount: 'F', missile: 'D', class: 1, rating: 'B', mass: 2.00, integ: 40, pwrdraw: 0.40, boottime: 0, dps: 25.000, damage: 50.000, distdraw: 0.240, thmload: 3.60, pierce: 60, shotspd: 750, rof: 0.500, bstint: 2.000, ammoclip: 8, ammomax: 16, rldtime: 5.0, brcdmg: 20.0, minbrc: 100, maxbrc: 100, dmgtype: 'E', expwgt: 1, dmgfall: 000000, fdid: 128666724, fdname: 'Hpt_DumbfireMissileRack_Fixed_Small'},
+        82123: {mtype: 'hmr', cost: 72600, name: 'Seeker Missile Rack', mount: 'F', missile: 'S', class: 1, rating: 'B', mass: 2.00, integ: 40, pwrdraw: 0.60, boottime: 0, dps: 13.333, damage: 40.000, distdraw: 0.240, thmload: 3.60, pierce: 60, shotspd: 625, rof: 0.333, bstint: 3.000, ammoclip: 6, ammomax: 6, rldtime: 12.0, brcdmg: 16.0, minbrc: 0, maxbrc: 0, dmgtype: 'E', expwgt: 1, dmgfall: 000000, fdid: 128049492, fdname: 'Hpt_BasicMissileRack_Fixed_Small'},
+        82220: {mtype: 'hmr', cost: 240400, name: 'Missile Rack', mount: 'F', missile: 'D', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 25.000, damage: 50.000, distdraw: 0.240, thmload: 3.60, pierce: 60, shotspd: 750, rof: 0.500, bstint: 2.000, ammoclip: 12, ammomax: 48, rldtime: 5.0, brcdmg: 20.0, minbrc: 100, maxbrc: 100, dmgtype: 'E', expwgt: 1, dmgfall: 000000, fdid: 128666725, fdname: 'Hpt_DumbfireMissileRack_Fixed_Medium'},
+        82223: {mtype: 'hmr', cost: 512400, name: 'Seeker Missile Rack', mount: 'F', missile: 'S', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 13.333, damage: 40.000, distdraw: 0.240, thmload: 3.60, pierce: 60, shotspd: 625, rof: 0.333, bstint: 3.000, ammoclip: 6, ammomax: 18, rldtime: 12.0, brcdmg: 16.0, minbrc: 0, maxbrc: 0, dmgtype: 'E', expwgt: 1, dmgfall: 000000, fdid: 128049493, fdname: 'Hpt_BasicMissileRack_Fixed_Medium'},
+        82224: {mtype: 'hmr', cost: 768600, name: 'Pack-Hound Missile Rack', mount: 'F', missile: 'S', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 60.000, damage: 7.500, distdraw: 0.240, thmload: 3.60, pierce: 60, shotspd: 600, rof: 2.000, bstint: 0.500, ammoclip: 12, ammomax: 120, rounds: 4, rldtime: 5.0, brcdmg: 3.0, minbrc: 0, maxbrc: 0, dmgtype: 'E', expwgt: 1, dmgfall: 000000, fdid: 128671344, fdname: 'Hpt_DrunkMissileRack_Fixed_Medium'},
+        82225: {mtype: 'hmr', cost: 1951040, name: 'Rocket Propelled FSD Disrupter', mount: 'F', missile: 'D', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 13.333, damage: 40.000, distdraw: 0.240, thmload: 3.60, pierce: 60, shotspd: 750, rof: 0.333, bstint: 3.000, ammoclip: 12, ammomax: 48, rldtime: 5.0, brcdmg: 16.0, minbrc: 100, maxbrc: 100, dmgtype: 'E', expwgt: 1, dmgfall: 000000, fdid: 128732552, fdname: 'Hpt_DumbfireMissileRack_Fixed_Medium_Lasso'},
 
-        86220: {mtype: 'hex', cost: 540900, name: 'AX Missile Rack', mount: 'F', missile: 'D', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 32.0, damage: 64.0, distdraw: 0.14, thmload: 2.4, pierce: 60, shotspd: 750, rof: 0.5, bstint: 2, ammoclip: 8, ammomax: 64, rldtime: 5.0, brcdmg: 0.1, minbrc: 80, maxbrc: 100, dmgtype: 'X', axewgt: 1, dmgfall: 100000, fdid: 128788699, fdname: 'Hpt_ATDumbfireMissile_Fixed_Medium'},
-        86222: {mtype: 'hex', cost: 2022700, name: 'AX Missile Rack', mount: 'T', missile: 'D', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 25.0, damage: 50.0, distdraw: 0.08, thmload: 1.5, pierce: 60, maxrng: 5000, shotspd: 750, rof: 0.5, bstint: 2, ammoclip: 8, ammomax: 64, rldtime: 5.0, brcdmg: 0.1, minbrc: 80, maxbrc: 100, dmgtype: 'X', axewgt: 1, dmgfall: 100000, fdid: 128788704, fdname: 'Hpt_ATDumbfireMissile_Turret_Medium'},
-        86310: {mtype: 'hex', cost: 1352250, name: 'AX Missile Rack', mount: 'F', missile: 'D', class: 3, rating: 'A', mass: 8.00, integ: 64, pwrdraw: 1.62, boottime: 0, dps: 32.0, damage: 64.0, distdraw: 0.24, thmload: 3.6, pierce: 60, shotspd: 750, rof: 0.5, bstint: 2, ammoclip: 12, ammomax: 128, rldtime: 5.0, brcdmg: 0.1, minbrc: 80, maxbrc: 100, dmgtype: 'X', axewgt: 1, dmgfall: 100000, fdid: 128788700, fdname: 'Hpt_ATDumbfireMissile_Fixed_Large'},
-        86312: {mtype: 'hex', cost: 4056750, name: 'AX Missile Rack', mount: 'T', missile: 'D', class: 3, rating: 'A', mass: 8.00, integ: 64, pwrdraw: 1.75, boottime: 0, dps: 25.0, damage: 50.0, distdraw: 0.14, thmload: 1.9, pierce: 60, maxrng: 5000, shotspd: 750, rof: 0.5, bstint: 2, ammoclip: 12, ammomax: 128, rldtime: 5.0, brcdmg: 0.1, minbrc: 80, maxbrc: 100, dmgtype: 'X', axewgt: 1, dmgfall: 100000, fdid: 128788705, fdname: 'Hpt_ATDumbfireMissile_Turret_Large'},
-        86253: {mtype: 'hex', cost: 379000, name: 'AX Multi-Cannon', mount: 'F', class: 2, rating: 'E', mass: 4.00, integ: 51, pwrdraw: 0.46, boottime: 0, dps: 23.6, damage: 3.3, distdraw: 0.11, thmload: 0.2, pierce: 17, maxrng: 4000, shotspd: 1600, rof: 7.1, bstint: 0.14, ammoclip: 100, ammomax: 2100, rldtime: 4.0, brcdmg: 2.8, minbrc: 50, maxbrc: 80, dmgtype: 'X', axewgt: 1, dmgfall: 2000, fdid: 128788701, fdname: 'Hpt_ATMultiCannon_Fixed_Medium'},
-        86265: {mtype: 'hex', cost: 1826500, name: 'AX Multi-Cannon', mount: 'T', class: 2, rating: 'F', mass: 4.00, integ: 51, pwrdraw: 0.50, boottime: 0, dps: 10.8, damage: 1.7, distdraw: 0.06, thmload: 0.1, pierce: 17, maxrng: 4000, shotspd: 1600, rof: 6.2, bstint: 0.16, ammoclip: 90, ammomax: 2100, rldtime: 4.0, brcdmg: 0.4, minbrc: 50, maxbrc: 50, dmgtype: 'X', axewgt: 1, dmgfall: 2000, fdid: 128793059, fdname: 'Hpt_ATMultiCannon_Turret_Medium'},
-        86333: {mtype: 'hex', cost: 1181500, name: 'AX Multi-Cannon', mount: 'F', class: 3, rating: 'C', mass: 8.00, integ: 64, pwrdraw: 0.64, boottime: 0, dps: 36.0, damage: 6.1, distdraw: 0.18, thmload: 0.3, pierce: 33, maxrng: 4000, shotspd: 1600, rof: 5.9, bstint: 0.17, ammoclip: 100, ammomax: 2100, rldtime: 4.0, brcdmg: 5.2, minbrc: 50, maxbrc: 80, dmgtype: 'X', axewgt: 1, dmgfall: 2000, fdid: 128788702, fdname: 'Hpt_ATMultiCannon_Fixed_Large'},
-        86355: {mtype: 'hex', cost: 3821600, name: 'AX Multi-Cannon', mount: 'T', class: 3, rating: 'E', mass: 8.00, integ: 64, pwrdraw: 0.64, boottime: 0, dps: 20.7, damage: 3.3, distdraw: 0.06, thmload: 0.1, pierce: 33, maxrng: 4000, shotspd: 1600, rof: 6.2, bstint: 0.16, ammoclip: 90, ammomax: 2100, rldtime: 4.0, brcdmg: 0.8, minbrc: 50, maxbrc: 50, dmgtype: 'X', axewgt: 1, dmgfall: 2000, fdid: 128793060, fdname: 'Hpt_ATMultiCannon_Turret_Large'},
-        86226: {mtype: 'hex', cost: 261800, name: 'Remote Release Flak Launcher', mount: 'F', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 17.0, damage: 34.0, distdraw: 0.24, thmload: 3.6, pierce: 60, shotspd: 550, rof: 0.5, bstint: 2, ammoclip: 1, ammomax: 32, rldtime: 2.0, brcdmg: 1.7, minbrc: 100, maxbrc: 100, dmgtype: 'E', expwgt: 1, dmgfall: 100000, fdid: 128785626, fdname: 'Hpt_FlakMortar_Fixed_Medium'},
-        86228: {mtype: 'hex', cost: 1259200, name: 'Remote Release Flak Launcher', mount: 'T', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 17.0, damage: 34.0, distdraw: 0.24, thmload: 3.6, pierce: 60, shotspd: 550, rof: 0.5, bstint: 2, ammoclip: 1, ammomax: 32, rldtime: 2.0, brcdmg: 1.7, minbrc: 100, maxbrc: 100, dmgtype: 'E', expwgt: 1, dmgfall: 100000, fdid: 128793058, fdname: 'Hpt_FlakMortar_Turret_Medium'},
+        86220: {mtype: 'hex', cost: 540900, name: 'AX Missile Rack', mount: 'F', missile: 'D', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 32.0, damage: 64.0, distdraw: 0.14, thmload: 2.4, pierce: 60, shotspd: 750, rof: 0.5, bstint: 2, ammoclip: 8, ammomax: 64, rldtime: 5.0, brcdmg: 0.1, minbrc: 80, maxbrc: 100, dmgtype: 'XE', expwgt: 27 / 64, axewgt: 37 / 64, dmgfall: 000000, fdid: 128788699, fdname: 'Hpt_ATDumbfireMissile_Fixed_Medium'},
+        86222: {mtype: 'hex', cost: 2022700, name: 'AX Missile Rack', mount: 'T', missile: 'D', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 25.0, damage: 50.0, distdraw: 0.08, thmload: 1.5, pierce: 60, maxrng: 5000, shotspd: 750, rof: 0.5, bstint: 2, ammoclip: 8, ammomax: 64, rldtime: 5.0, brcdmg: 0.1, minbrc: 80, maxbrc: 100, dmgtype: 'XE', expwgt: 20 / 50, axewgt: 30 / 50, dmgfall: 000000, fdid: 128788704, fdname: 'Hpt_ATDumbfireMissile_Turret_Medium'},
+        86310: {mtype: 'hex', cost: 1352250, name: 'AX Missile Rack', mount: 'F', missile: 'D', class: 3, rating: 'A', mass: 8.00, integ: 64, pwrdraw: 1.62, boottime: 0, dps: 32.0, damage: 64.0, distdraw: 0.24, thmload: 3.6, pierce: 60, shotspd: 750, rof: 0.5, bstint: 2, ammoclip: 12, ammomax: 128, rldtime: 5.0, brcdmg: 0.1, minbrc: 80, maxbrc: 100, dmgtype: 'XE', expwgt: 27 / 64, axewgt: 37 / 64, dmgfall: 000000, fdid: 128788700, fdname: 'Hpt_ATDumbfireMissile_Fixed_Large'},
+        86312: {mtype: 'hex', cost: 4056750, name: 'AX Missile Rack', mount: 'T', missile: 'D', class: 3, rating: 'A', mass: 8.00, integ: 64, pwrdraw: 1.75, boottime: 0, dps: 25.0, damage: 50.0, distdraw: 0.14, thmload: 1.9, pierce: 60, maxrng: 5000, shotspd: 750, rof: 0.5, bstint: 2, ammoclip: 12, ammomax: 128, rldtime: 5.0, brcdmg: 0.1, minbrc: 80, maxbrc: 100, dmgtype: 'XE', expwgt: 20 / 50, axewgt: 30 / 50, dmgfall: 000000, fdid: 128788705, fdname: 'Hpt_ATDumbfireMissile_Turret_Large'},
+        86253: {mtype: 'hex', cost: 379000, name: 'AX Multi-Cannon', mount: 'F', class: 2, rating: 'E', mass: 4.00, integ: 51, pwrdraw: 0.46, boottime: 0, dps: 23.643, damage: 3.310, distdraw: 0.11, thmload: 0.18, pierce: 17, maxrng: 4000, shotspd: 1600, rof: 7.143, bstint: 0.140, ammoclip: 100, ammomax: 2100, rldtime: 4.0, brcdmg: 2.8, minbrc: 50, maxbrc: 80, dmgtype: 'XK', kinwgt: 1.12 / 3.31, axewgt: 2.19 / 3.31, dmgfall: 2000, fdid: 128788701, fdname: 'Hpt_ATMultiCannon_Fixed_Medium'},
+        86265: {mtype: 'hex', cost: 1826500, name: 'AX Multi-Cannon', mount: 'T', class: 2, rating: 'F', mass: 4.00, integ: 51, pwrdraw: 0.50, boottime: 0, dps: 10.812, damage: 1.730, distdraw: 0.06, thmload: 0.09, pierce: 17, maxrng: 4000, shotspd: 1600, rof: 6.250, bstint: 0.160, ammoclip: 90, ammomax: 2100, rldtime: 4.0, brcdmg: 0.4, minbrc: 50, maxbrc: 50, dmgtype: 'XK', kinwgt: 0.56 / 1.73, axewgt: 1.17 / 1.73, dmgfall: 2000, fdid: 128793059, fdname: 'Hpt_ATMultiCannon_Turret_Medium'},
+        86333: {mtype: 'hex', cost: 1181500, name: 'AX Multi-Cannon', mount: 'F', class: 3, rating: 'C', mass: 8.00, integ: 64, pwrdraw: 0.64, boottime: 0, dps: 35.971, damage: 6.115, distdraw: 0.18, thmload: 0.28, pierce: 33, maxrng: 4000, shotspd: 1600, rof: 5.882, bstint: 0.170, ammoclip: 100, ammomax: 2100, rldtime: 4.0, brcdmg: 5.2, minbrc: 50, maxbrc: 80, dmgtype: 'XK', kinwgt: 2.19 / 6.115, axewgt: 3.925 / 6.115, dmgfall: 2000, fdid: 128788702, fdname: 'Hpt_ATMultiCannon_Fixed_Large'},
+        86355: {mtype: 'hex', cost: 3821600, name: 'AX Multi-Cannon', mount: 'T', class: 3, rating: 'E', mass: 8.00, integ: 64, pwrdraw: 0.64, boottime: 0, dps: 20.688, damage: 3.310, distdraw: 0.06, thmload: 0.09, pierce: 33, maxrng: 4000, shotspd: 1600, rof: 6.250, bstint: 0.160, ammoclip: 90, ammomax: 2100, rldtime: 4.0, brcdmg: 0.8, minbrc: 50, maxbrc: 50, dmgtype: 'XK', kinwgt: 1.12 / 3.31, axewgt: 2.19 / 3.31, dmgfall: 2000, fdid: 128793060, fdname: 'Hpt_ATMultiCannon_Turret_Large'},
+        86226: {mtype: 'hex', cost: 261800, name: 'Remote Release Flak Launcher', mount: 'F', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 17.0, damage: 34.0, distdraw: 0.24, thmload: 3.6, pierce: 60, shotspd: 550, rof: 0.5, bstint: 2, ammoclip: 1, ammomax: 32, rldtime: 2.0, brcdmg: 1.7, minbrc: 100, maxbrc: 100, dmgtype: 'E', expwgt: 1, dmgfall: 000000, nosingleton: 1, fdid: 128785626, fdname: 'Hpt_FlakMortar_Fixed_Medium'},
+        86228: {mtype: 'hex', cost: 1259200, name: 'Remote Release Flak Launcher', mount: 'T', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 17.0, damage: 34.0, distdraw: 0.24, thmload: 3.6, pierce: 60, shotspd: 550, rof: 0.5, bstint: 2, ammoclip: 1, ammomax: 32, rldtime: 2.0, brcdmg: 1.7, minbrc: 100, maxbrc: 100, dmgtype: 'E', expwgt: 1, dmgfall: 000000, nosingleton: 1, fdid: 128793058, fdname: 'Hpt_FlakMortar_Turret_Medium'},
 
-        87220: {mtype: 'hex', cost: 580500, name: 'Enzyme Missile Rack', mount: 'F', missile: 'D', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 2.5, damage: 5.0, distdraw: 0.08, thmload: 1.5, pierce: 60, shotspd: 750, rof: 0.5, bstint: 2, ammoclip: 8, ammomax: 64, rldtime: 5.0, brcdmg: 0.0, minbrc: 80, maxbrc: 100, dmgtype: 'E', expwgt: 1, fdid: 128833995, fdname: 'Hpt_CausticMissile_Fixed_Medium'},
-        87223: {mtype: 'hex', cost: 353760, name: 'Remote Release Flechette Launcher', mount: 'F', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 6.5, damage: 13.0, distdraw: 0.24, thmload: 3.6, pierce: 80, shotspd: 550, rof: 0.5, bstint: 2, ammoclip: 1, ammomax: 72, rldtime: 2.0, brcdmg: 6.5, minbrc: 100, maxbrc: 100, dmgtype: 'K', kinwgt: 1, fdid: 128833996, fdname: 'Hpt_FlechetteLauncher_Fixed_Medium'},
-        87222: {mtype: 'hex', cost: 1349200, name: 'Remote Release Flechette Launcher', mount: 'T', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 6.5, damage: 13.0, distdraw: 0.24, thmload: 3.6, pierce: 70, shotspd: 550, rof: 0.5, bstint: 2, ammoclip: 1, ammomax: 72, rldtime: 2.0, brcdmg: 6.5, minbrc: 100, maxbrc: 100, dmgtype: 'K', kinwgt: 1, fdid: 128833997, fdname: 'Hpt_FlechetteLauncher_Turret_Medium'},
-        87244: {mtype: 'hex', cost: 507510, name: 'Shock Cannon', mount: 'F', class: 2, rating: 'D', mass: 4.00, integ: 51, pwrdraw: 0.57, boottime: 0, dps: 129.6, damage: 13.0, distdraw: 0.47, thmload: 1.8, pierce: 40, maxrng: 3000, shotspd: 1200, rof: 10.0, bstint: 0.1, ammoclip: 16, ammomax: 240, rldtime: 6.0, brcdmg: 9.1, minbrc: 40, maxbrc: 60, dmgtype: 'K', kinwgt: 1, dmgfall: 2500, fdid: 128834002, fdname: 'Hpt_PlasmaShockCannon_Fixed_Medium'},
-        87245: {mtype: 'hex', cost: 845200, name: 'Shock Cannon', mount: 'G', class: 2, rating: 'D', mass: 4.00, integ: 51, pwrdraw: 0.61, boottime: 0, dps: 102.1, damage: 10.2, distdraw: 0.58, thmload: 2.1, pierce: 40, maxrng: 3000, shotspd: 1200, rof: 10.0, bstint: 0.1, ammoclip: 16, ammomax: 240, rldtime: 6.0, brcdmg: 7.1, minbrc: 40, maxbrc: 80, dmgtype: 'K', kinwgt: 1, dmgfall: 2500, fdid: 128834003, fdname: 'Hpt_PlasmaShockCannon_Gimbal_Medium'},
-        87256: {mtype: 'hex', cost: 1659200, name: 'Shock Cannon', mount: 'T', class: 2, rating: 'E', mass: 4.00, integ: 51, pwrdraw: 0.50, boottime: 0, dps: 89.6, damage: 9.0, distdraw: 0.39, thmload: 1.2, pierce: 40, maxrng: 3000, shotspd: 1200, rof: 10.0, bstint: 0.1, ammoclip: 16, ammomax: 240, rldtime: 6.0, brcdmg: 6.3, minbrc: 40, maxbrc: 80, dmgtype: 'K', kinwgt: 1, dmgfall: 2500, fdid: 128834004, fdname: 'Hpt_PlasmaShockCannon_Turret_Medium'},
+        87220: {mtype: 'hex', cost: 580500, name: 'Enzyme Missile Rack', mount: 'F', missile: 'D', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 2.5, damage: 5.0, distdraw: 0.08, thmload: 1.5, pierce: 60, shotspd: 750, rof: 0.5, bstint: 2, ammoclip: 8, ammomax: 64, rldtime: 5.0, brcdmg: 0.0, minbrc: 80, maxbrc: 100, dmgtype: 'CE', expwgt: 5 / 5, cauwgt: 0 / 5, fdid: 128833995, fdname: 'Hpt_CausticMissile_Fixed_Medium'}, // TODO: verify damage,dps
+        87223: {mtype: 'hex', cost: 353760, name: 'Remote Release Flechette Launcher', mount: 'F', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 6.5, damage: 13.0, distdraw: 0.24, thmload: 3.6, pierce: 80, shotspd: 550, rof: 0.5, bstint: 2, ammoclip: 1, ammomax: 72, rldtime: 2.0, brcdmg: 6.5, minbrc: 100, maxbrc: 100, dmgtype: 'KE', kinwgt: 10 / 13, expwgt: 3 / 13, nosingleton: 1, fdid: 128833996, fdname: 'Hpt_FlechetteLauncher_Fixed_Medium'},
+        87222: {mtype: 'hex', cost: 1349200, name: 'Remote Release Flechette Launcher', mount: 'T', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.20, boottime: 0, dps: 6.5, damage: 13.0, distdraw: 0.24, thmload: 3.6, pierce: 70, shotspd: 550, rof: 0.5, bstint: 2, ammoclip: 1, ammomax: 72, rldtime: 2.0, brcdmg: 6.5, minbrc: 100, maxbrc: 100, dmgtype: 'KE', kinwgt: 10 / 13, expwgt: 3 / 13, nosingleton: 1, fdid: 128833997, fdname: 'Hpt_FlechetteLauncher_Turret_Medium'},
+        87244: {mtype: 'hex', cost: 507510, name: 'Shock Cannon', mount: 'F', class: 2, rating: 'D', mass: 4.00, integ: 51, pwrdraw: 0.57, boottime: 0, dps: 129.600, damage: 12.960, distdraw: 0.47, thmload: 1.80, pierce: 40, maxrng: 3000, shotspd: 1200, rof: 10.0, bstint: 0.1, ammoclip: 16, ammomax: 240, rldtime: 6.0, brcdmg: 9.1, minbrc: 40, maxbrc: 60, dmgtype: 'K', kinwgt: 1, dmgfall: 2500, nosingleton: 1, fdid: 128834002, fdname: 'Hpt_PlasmaShockCannon_Fixed_Medium'},
+        87245: {mtype: 'hex', cost: 845200, name: 'Shock Cannon', mount: 'G', class: 2, rating: 'D', mass: 4.00, integ: 51, pwrdraw: 0.61, boottime: 0, dps: 102.100, damage: 10.210, distdraw: 0.58, thmload: 2.10, pierce: 40, maxrng: 3000, shotspd: 1200, rof: 10.0, bstint: 0.1, ammoclip: 16, ammomax: 240, rldtime: 6.0, brcdmg: 7.1, minbrc: 40, maxbrc: 80, dmgtype: 'K', kinwgt: 1, dmgfall: 2500, nosingleton: 1, fdid: 128834003, fdname: 'Hpt_PlasmaShockCannon_Gimbal_Medium'},
+        87256: {mtype: 'hex', cost: 1659200, name: 'Shock Cannon', mount: 'T', class: 2, rating: 'E', mass: 4.00, integ: 51, pwrdraw: 0.50, boottime: 0, dps: 89.600, damage: 8.960, distdraw: 0.39, thmload: 1.24, pierce: 40, maxrng: 3000, shotspd: 1200, rof: 10.0, bstint: 0.1, ammoclip: 16, ammomax: 240, rldtime: 6.0, brcdmg: 6.3, minbrc: 40, maxbrc: 80, dmgtype: 'K', kinwgt: 1, dmgfall: 2500, nosingleton: 1, fdid: 128834004, fdname: 'Hpt_PlasmaShockCannon_Turret_Medium'},
+
+        88220: {mtype: 'hex', cost: NaN, name: 'Guardian Gauss Cannon', mount: 'F', class: 2, rating: 'B', mass: 4.00, integ: 42, pwrdraw: 2.61, boottime: 0, dps: 84.337, damage: 70.0, distdraw: 7.20, thmload: 25.00, pierce: 140, maxrng: 3000, rof: 1.205, bstint: 0.83, ammoclip: 1, ammomax: 80, rldtime: 1.0, brcdmg: 35.0, minbrc: 20, maxbrc: 40, dmgtype: 'TX', thmwgt: 35 / 70, axewgt: 35 / 70, dmgfall: 1500, fdid: 128833687, fdname: 'Hpt_Guardian_GaussCannon_Fixed_Medium'}, // TODO: verify
+        88223: {mtype: 'hex', cost: NaN, name: 'Guardian Plasma Charger', mount: 'F', class: 2, rating: 'B', mass: 4.00, integ: 42, pwrdraw: 2.13, boottime: 0, dps: 42.5, damage: 5.0, distdraw: 1.25, thmload: 5.21, pierce: 80, maxrng: 3000, shotspd: 1200, rof: 0.5, bstint: 2.0, ammoclip: 15, ammomax: 200, rounds: 17, rldtime: 3.0, brcdmg: 1.3, minbrc: 50, maxbrc: 80, dmgtype: 'AX', abswgt: 2.5 / 5, axewgt: 2.5 / 5, dmgfall: 1000, fdid: 128833998, fdname: 'Hpt_Guardian_PlasmaLauncher_Fixed_Medium'}, // TODO: verify // TODO: model charge mechanic?
+        88255: {mtype: 'hex', cost: NaN, name: 'Guardian Plasma Charger', mount: 'T', class: 2, rating: 'E', mass: 4.00, integ: 42, pwrdraw: 2.01, boottime: 0, dps: 34.0, damage: 4.0, distdraw: 1.40, thmload: 5.80, pierce: 80, maxrng: 3000, shotspd: 1200, rof: 0.5, bstint: 2.0, ammoclip: 15, ammomax: 200, rounds: 17, rldtime: 3.0, brcdmg: 1.0, minbrc: 50, maxbrc: 80, dmgtype: 'AX', abswgt: 2 / 4, axewgt: 2 / 4, dmgfall: 1000, fdid: 128833999, fdname: 'Hpt_Guardian_PlasmaLauncher_Turret_Medium'}, // TODO: verify // TODO: model charge mechanic?
+        //	88323 : { mtype:'hex', cost:     NaN, name:'Guardian Plasma Charger',     mount:'F',              class:3, rating:'?', mass: 8.00, integ:42, pwrdraw:2.13, boottime:0, dps:42.5  , damage: 5.0  , distdraw:1.25 , thmload:5.21, pierce: 80, maxrng:3000, shotspd:1200, rof:0.5  , bstint:2.0  ,                      ammoclip:15, ammomax: 200, rounds:17, rldtime:3.0, brcdmg: 1.3, minbrc:50, maxbrc:80,             dmgtype:'AX', abswgt:2.5/5, axewgt:2.5/5, dmgfall:1000, fdid:128834783, fdname:'Hpt_Guardian_PlasmaLauncher_Fixed_Large' }, // TODO: all stats // TODO: model charge mechanic?
+        //	88355 : { mtype:'hex', cost:     NaN, name:'Guardian Plasma Charger',     mount:'T',              class:3, rating:'?', mass: 8.00, integ:42, pwrdraw:2.01, boottime:0, dps:34.0  , damage: 4.0  , distdraw:1.40 , thmload:5.80, pierce: 80, maxrng:3000, shotspd:1200, rof:0.5  , bstint:2.0  ,                      ammoclip:15, ammomax: 200, rounds:17, rldtime:3.0, brcdmg: 1.0, minbrc:50, maxbrc:80,             dmgtype:'AX', abswgt:2/4, axewgt:2/4, dmgfall:1000, fdid:128834784, fdname:'Hpt_Guardian_PlasmaLauncher_Turret_Large' }, // TODO: all stats // TODO: model charge mechanic?
 
         72160: {mtype: 'hmc', cost: 9500, name: 'Multi-cannon', mount: 'F', class: 1, rating: 'F', mass: 2.00, integ: 40, pwrdraw: 0.28, boottime: 0, dps: 8.615, damage: 1.120, distdraw: 0.060, thmload: 0.09, pierce: 22, maxrng: 4000, shotspd: 1600, rof: 7.692, bstint: 0.130, ammoclip: 100, ammomax: 2100, rldtime: 4.0, brcdmg: 1.0, minbrc: 40, maxbrc: 80, dmgtype: 'K', kinwgt: 1, dmgfall: 2000, fdid: 128049455, fdname: 'Hpt_MultiCannon_Fixed_Small'},
         72171: {mtype: 'hmc', cost: 14250, name: 'Multi-cannon', mount: 'G', class: 1, rating: 'G', mass: 2.00, integ: 40, pwrdraw: 0.37, boottime: 0, dps: 6.833, damage: 0.820, distdraw: 0.070, thmload: 0.10, pierce: 22, maxrng: 4000, shotspd: 1600, rof: 8.333, bstint: 0.120, ammoclip: 90, ammomax: 2100, rldtime: 5.0, brcdmg: 0.7, minbrc: 40, maxbrc: 80, dmgtype: 'K', kinwgt: 1, dmgfall: 2000, fdid: 128049459, fdname: 'Hpt_MultiCannon_Gimbal_Small'},
@@ -2623,12 +2158,10 @@ var eddb = {
         72411: {mtype: 'hmc', cost: 6377600, name: 'Multi-cannon', mount: 'G', class: 4, rating: 'A', mass: 16.00, integ: 80, pwrdraw: 1.22, boottime: 0, dps: 23.300, damage: 3.460, distdraw: 0.370, thmload: 0.51, pierce: 68, maxrng: 4000, shotspd: 1600, rof: 3.367, bstint: 0.297, ammoclip: 90, ammomax: 2100, rounds: 2, rldtime: 5.0, brcdmg: 3.1, minbrc: 40, maxbrc: 80, dmgtype: 'K', kinwgt: 1, dmgfall: 2000, fdid: 128681996, fdname: 'Hpt_MultiCannon_Gimbal_Huge'},
         72144: {mtype: 'hmc', cost: 14250, name: 'Enforcer Cannon', mount: 'F', class: 1, rating: 'F', mass: 2.00, integ: 40, pwrdraw: 0.28, boottime: 0, dps: 12.391, damage: 2.850, distdraw: 0.120, thmload: 0.18, pierce: 30, maxrng: 4500, shotspd: 1800, rof: 4.348, bstint: 0.230, ammoclip: 60, ammomax: 1000, rldtime: 4.0, brcdmg: 2.6, minbrc: 40, maxbrc: 80, dmgtype: 'K', kinwgt: 1, dmgfall: NaN, fdid: null, fdname: 'Hpt_MultiCannon_Fixed_Small_Strong'}, // TODO: dmgfall,fdid
 
-        83230: {mtype: 'hpa', cost: 834200, name: 'Plasma Accelerator', mount: 'F', class: 2, rating: 'C', mass: 4.00, integ: 51, pwrdraw: 1.43, boottime: 0, dps: 17.921, damage: 54.300, distdraw: 8.650, thmload: 15.58, pierce: 100, maxrng: 3500, shotspd: 875, rof: 0.330, bstint: 3.030, ammoclip: 5, ammomax: 100, rldtime: 6.0, brcdmg: 46.2, minbrc: 40, maxbrc: 80, dmgtype: 'A', abswgt: 3, kinwgt: 1, thmwgt: 1, dmgfall: 2000, fdid: 128049465, fdname: 'Hpt_PlasmaAccelerator_Fixed_Medium'},
-        83320: {mtype: 'hpa', cost: 3051200, name: 'Plasma Accelerator', mount: 'F', class: 3, rating: 'B', mass: 8.00, integ: 64, pwrdraw: 1.97, boottime: 0, dps: 24.174, damage: 83.400, distdraw: 13.600, thmload: 21.75, pierce: 100, maxrng: 3500, shotspd: 875, rof: 0.290, bstint: 3.450, ammoclip: 5, ammomax: 100, rldtime: 6.0, brcdmg: 70.9, minbrc: 40, maxbrc: 80, dmgtype: 'A', abswgt: 3, kinwgt: 1, thmwgt: 1, dmgfall: 2000, fdid: 128049466, fdname: 'Hpt_PlasmaAccelerator_Fixed_Large'},
-        83410: {mtype: 'hpa', cost: 13793600, name: 'Plasma Accelerator', mount: 'F', class: 4, rating: 'A', mass: 16.00, integ: 80, pwrdraw: 2.63, boottime: 0, dps: 31.313, damage: 125.250, distdraw: 21.040, thmload: 29.46, pierce: 100, maxrng: 3500, shotspd: 875, rof: 0.250, bstint: 4.000, ammoclip: 5, ammomax: 100, rldtime: 6.0, brcdmg: 106.5, minbrc: 40, maxbrc: 80, dmgtype: 'A', abswgt: 3, kinwgt: 1, thmwgt: 1, dmgfall: 2000, fdid: 128049467, fdname: 'Hpt_PlasmaAccelerator_Fixed_Huge'},
-        83324: {mtype: 'hpa', cost: 4576800, name: 'Advanced Plasma Accelerator', mount: 'F', class: 3, rating: 'B', mass: 8.00, integ: 64, pwrdraw: 1.97, boottime: 0, dps: 28.667, damage: 34.400, distdraw: 5.500, thmload: 11.00, pierce: 100, maxrng: 3500, shotspd: 875, rof: 0.833, bstint: 1.200, ammoclip: 20, ammomax: 300, rldtime: 6.0, brcdmg: 30.9, minbrc: 40, maxbrc: 80, dmgtype: 'A', abswgt: 3, kinwgt: 1, thmwgt: 1, dmgfall: 2000, fdid: 128671339, fdname: 'Hpt_PlasmaAccelerator_Fixed_Large_Advanced'}, // verify
-
-        //	TODO  : { mtype:'hpb', cost:     NaN, name:'Plasma Burst Cannon',         mount:'F',              class:2, rating:'?', mass: 4.00, integ:NaN,pwrdraw:1.43, boottime:0, dps:15.750, damage:14.000, distdraw:3.000,thmload:15.00, pierce: 55, maxrng: NaN, shotspd: NaN, rof:1.125, bstint:2.000, bstrof:3, bstsize:3, ammoclip: 9, ammomax: NaN,            rldtime:8.0, brcdmg: NaN, minbrc:NaN,maxbrc:NaN,            dmgtype:'A', abswgt:3, kinwgt:1, thmwgt:1, dmgfall: NaN, fdid:     null, fdname:'Hpt_PlasmaBurstCannon_Fixed_Medium' },
+        83230: {mtype: 'hpa', cost: 834200, name: 'Plasma Accelerator', mount: 'F', class: 2, rating: 'C', mass: 4.00, integ: 51, pwrdraw: 1.43, boottime: 0, dps: 17.921, damage: 54.300, distdraw: 8.650, thmload: 15.58, pierce: 100, maxrng: 3500, shotspd: 875, rof: 0.330, bstint: 3.030, ammoclip: 5, ammomax: 100, rldtime: 6.0, brcdmg: 46.2, minbrc: 40, maxbrc: 80, dmgtype: 'AKT', abswgt: 32.5 / 54.3, kinwgt: 10.9 / 54.3, thmwgt: 10.9 / 54.3, dmgfall: 2000, fdid: 128049465, fdname: 'Hpt_PlasmaAccelerator_Fixed_Medium'},
+        83320: {mtype: 'hpa', cost: 3051200, name: 'Plasma Accelerator', mount: 'F', class: 3, rating: 'B', mass: 8.00, integ: 64, pwrdraw: 1.97, boottime: 0, dps: 24.174, damage: 83.400, distdraw: 13.600, thmload: 21.75, pierce: 100, maxrng: 3500, shotspd: 875, rof: 0.290, bstint: 3.450, ammoclip: 5, ammomax: 100, rldtime: 6.0, brcdmg: 70.9, minbrc: 40, maxbrc: 80, dmgtype: 'AKT', abswgt: 50 / 83.4, kinwgt: 16.7 / 83.4, thmwgt: 16.7 / 83.4, dmgfall: 2000, fdid: 128049466, fdname: 'Hpt_PlasmaAccelerator_Fixed_Large'},
+        83410: {mtype: 'hpa', cost: 13793600, name: 'Plasma Accelerator', mount: 'F', class: 4, rating: 'A', mass: 16.00, integ: 80, pwrdraw: 2.63, boottime: 0, dps: 31.313, damage: 125.250, distdraw: 21.040, thmload: 29.46, pierce: 100, maxrng: 3500, shotspd: 875, rof: 0.250, bstint: 4.000, ammoclip: 5, ammomax: 100, rldtime: 6.0, brcdmg: 106.5, minbrc: 40, maxbrc: 80, dmgtype: 'AKT', abswgt: 75.25 / 125.25, kinwgt: 25 / 125.25, thmwgt: 25 / 125.25, dmgfall: 2000, fdid: 128049467, fdname: 'Hpt_PlasmaAccelerator_Fixed_Huge'},
+        83324: {mtype: 'hpa', cost: 4576800, name: 'Advanced Plasma Accelerator', mount: 'F', class: 3, rating: 'B', mass: 8.00, integ: 64, pwrdraw: 1.97, boottime: 0, dps: 28.667, damage: 34.400, distdraw: 5.500, thmload: 11.00, pierce: 100, maxrng: 3500, shotspd: 875, rof: 0.833, bstint: 1.200, ammoclip: 20, ammomax: 300, rldtime: 6.0, brcdmg: 30.9, minbrc: 40, maxbrc: 80, dmgtype: 'AKT', abswgt: 20.6 / 34.4, kinwgt: 6.9 / 34.4, thmwgt: 6.9 / 34.4, dmgfall: 2000, fdid: 128671339, fdname: 'Hpt_PlasmaAccelerator_Fixed_Large_Advanced'}, // verify
 
         62160: {mtype: 'hpl', cost: 2200, name: 'Pulse Laser', mount: 'F', class: 1, rating: 'F', mass: 2.00, integ: 40, pwrdraw: 0.39, boottime: 0, dps: 7.885, damage: 2.050, distdraw: 0.300, thmload: 0.33, pierce: 20, maxrng: 3000, rof: 3.846, bstint: 0.260, brcdmg: 1.7, minbrc: 40, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 500, fdid: 128049381, fdname: 'Hpt_PulseLaser_Fixed_Small'},
         62171: {mtype: 'hpl', cost: 6600, name: 'Pulse Laser', mount: 'G', class: 1, rating: 'G', mass: 2.00, integ: 40, pwrdraw: 0.39, boottime: 0, dps: 6.240, damage: 1.560, distdraw: 0.310, thmload: 0.31, pierce: 20, maxrng: 3000, rof: 4.000, bstint: 0.250, brcdmg: 1.3, minbrc: 40, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 500, fdid: 128049385, fdname: 'Hpt_PulseLaser_Gimbal_Small'},
@@ -2643,14 +2176,16 @@ var eddb = {
         62411: {mtype: 'hpl', cost: 877600, name: 'Pulse Laser', mount: 'G', class: 4, rating: 'A', mass: 16.00, integ: 80, pwrdraw: 1.37, boottime: 0, dps: 21.722, damage: 7.820, distdraw: 1.560, thmload: 1.56, pierce: 65, maxrng: 3000, rof: 2.778, bstint: 0.360, brcdmg: 6.6, minbrc: 40, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 500, fdid: 128681995, fdname: 'Hpt_PulseLaser_Gimbal_Huge'},
         62254: {mtype: 'hpl', cost: 26400, name: 'Pulse Disruptor Laser', mount: 'F', class: 2, rating: 'E', mass: 4.00, integ: 51, pwrdraw: 0.70, boottime: 0, dps: 4.667, damage: 2.800, distdraw: 0.900, thmload: 1.00, pierce: 35, maxrng: 3000, rof: 1.667, bstint: 0.600, brcdmg: 2.4, minbrc: 40, maxbrc: 80, dmgtype: 'T', thmwgt: 1, dmgfall: 500, fdid: 128671342, fdname: 'Hpt_PulseLaser_Fixed_Medium_Disruptor'}, // verify
 
-        84140: {mtype: 'hrg', cost: 51600, name: 'Rail Gun', mount: 'F', class: 1, rating: 'D', mass: 2.00, integ: 40, pwrdraw: 1.15, boottime: 0, dps: 37.048, damage: 23.340, distdraw: 2.690, thmload: 12.00, pierce: 100, maxrng: 3000, rof: 1.587, bstint: 0.630, ammoclip: 1, ammomax: 80, rldtime: 1.0, brcdmg: 22.2, minbrc: 40, maxbrc: 80, dmgtype: 'TK', thmwgt: 2, kinwgt: 1, dmgfall: 1000, fdid: 128049488, fdname: 'Hpt_Railgun_Fixed_Small'},
-        84220: {mtype: 'hrg', cost: 412800, name: 'Rail Gun', mount: 'F', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.63, boottime: 0, dps: 50.036, damage: 41.530, distdraw: 5.110, thmload: 20.00, pierce: 100, maxrng: 3000, rof: 1.205, bstint: 0.830, ammoclip: 1, ammomax: 80, rldtime: 1.0, brcdmg: 39.5, minbrc: 40, maxbrc: 80, dmgtype: 'TK', thmwgt: 2, kinwgt: 1, dmgfall: 1000, fdid: 128049489, fdname: 'Hpt_Railgun_Fixed_Medium'},
-        84224: {mtype: 'hrg', cost: 619200, name: 'Imperial Hammer Rail Gun', mount: 'F', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.63, boottime: 0, dps: 61.364, damage: 15.000, distdraw: 2.000, thmload: 11.00, pierce: 100, maxrng: 3000, rof: 4.091, bstint: 0.400, bstrof: 6, bstsize: 3, ammoclip: 3, ammomax: 240, rldtime: 1.2, brcdmg: 14.3, minbrc: 40, maxbrc: 80, dmgtype: 'TK', thmwgt: 2, kinwgt: 1, dmgfall: 1000, fdid: 128671341, fdname: 'Hpt_Railgun_Fixed_Medium_Burst'}, // verify
+        84140: {mtype: 'hrg', cost: 51600, name: 'Rail Gun', mount: 'F', class: 1, rating: 'D', mass: 2.00, integ: 40, pwrdraw: 1.15, boottime: 0, dps: 37.048, damage: 23.340, distdraw: 2.690, thmload: 12.00, pierce: 100, maxrng: 3000, rof: 1.587, bstint: 0.630, ammoclip: 1, ammomax: 80, rldtime: 1.0, brcdmg: 22.2, minbrc: 40, maxbrc: 80, dmgtype: 'TK', thmwgt: 15.56 / 23.34, kinwgt: 7.78 / 23.34, dmgfall: 1000, fdid: 128049488, fdname: 'Hpt_Railgun_Fixed_Small'},
+        84220: {mtype: 'hrg', cost: 412800, name: 'Rail Gun', mount: 'F', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.63, boottime: 0, dps: 50.036, damage: 41.530, distdraw: 5.110, thmload: 20.00, pierce: 100, maxrng: 3000, rof: 1.205, bstint: 0.830, ammoclip: 1, ammomax: 80, rldtime: 1.0, brcdmg: 39.5, minbrc: 40, maxbrc: 80, dmgtype: 'TK', thmwgt: 27.69 / 41.53, kinwgt: 13.84 / 41.53, dmgfall: 1000, fdid: 128049489, fdname: 'Hpt_Railgun_Fixed_Medium'},
+        84224: {mtype: 'hrg', cost: 619200, name: 'Imperial Hammer Rail Gun', mount: 'F', class: 2, rating: 'B', mass: 4.00, integ: 51, pwrdraw: 1.63, boottime: 0, dps: 61.364, damage: 15.000, distdraw: 2.000, thmload: 11.00, pierce: 100, maxrng: 3000, rof: 4.091, bstint: 0.400, bstrof: 6, bstsize: 3, ammoclip: 3, ammomax: 240, rldtime: 1.2, brcdmg: 14.3, minbrc: 40, maxbrc: 80, dmgtype: 'TK', thmwgt: 10 / 15, kinwgt: 5 / 15, dmgfall: 1000, fdid: 128671341, fdname: 'Hpt_Railgun_Fixed_Medium_Burst'}, // verify
 
-        //	TODO  : { mtype:'hsl', cost:     NaN, name:'Stealth Laser',               mount:'F',              class:1, rating:'?', mass: 2.00, integ:NaN,pwrdraw:0.19, boottime:0, dps: 6.000, damage: 1.800, distdraw:0.330, thmload:0.01, pierce:100, maxrng: NaN,               rof:3.333, bstint:0.300,                                                                         brcdmg: NaN, minbrc:NaN,maxbrc:NaN,            dmgtype:'T', thmwgt:1, dmgfall: NaN, fdid:     null, fdname:'Hpt_PulseLaserStealth_Fixed_Small' },
+        85193: {mtype: 'htp', cost: 11200, name: 'Torpedo Pylon', mount: 'F', missile: 'S', class: 1, rating: 'I', mass: 2.00, integ: 40, pwrdraw: 0.40, boottime: 0, dps: 120.000, damage: 120.000, thmload: 45.00, pierce: 1e4, shotspd: 250, rof: 1.000, bstint: 1.000, ammoclip: 1, rldtime: 5.0, brcdmg: 60.0, minbrc: 100, maxbrc: 100, dmgtype: 'E', expwgt: 1, dmgfall: 000000, fdid: 128049509, fdname: 'Hpt_AdvancedTorpPylon_Fixed_Small'},
+        85293: {mtype: 'htp', cost: 44800, name: 'Torpedo Pylon', mount: 'F', missile: 'S', class: 2, rating: 'I', mass: 4.00, integ: 51, pwrdraw: 0.40, boottime: 0, dps: 120.000, damage: 120.000, thmload: 50.00, pierce: 1e4, shotspd: 250, rof: 1.000, bstint: 1.000, ammoclip: 2, rldtime: 5.0, brcdmg: 60.0, minbrc: 100, maxbrc: 100, dmgtype: 'E', expwgt: 1, dmgfall: 000000, fdid: 128049510, fdname: 'Hpt_AdvancedTorpPylon_Fixed_Medium'},
 
-        85193: {mtype: 'htp', cost: 11200, name: 'Torpedo Pylon', mount: 'F', missile: 'S', class: 1, rating: 'I', mass: 2.00, integ: 40, pwrdraw: 0.40, boottime: 0, dps: 120.000, damage: 120.000, thmload: 45.00, pierce: 1e4, shotspd: 250, rof: 1.000, bstint: 1.000, ammoclip: 1, rldtime: 5.0, brcdmg: 60.0, minbrc: 100, maxbrc: 100, dmgtype: 'E', expwgt: 1, dmgfall: 1e5, fdid: 128049509, fdname: 'Hpt_AdvancedTorpPylon_Fixed_Small'},
-        85293: {mtype: 'htp', cost: 44800, name: 'Torpedo Pylon', mount: 'F', missile: 'S', class: 2, rating: 'I', mass: 4.00, integ: 51, pwrdraw: 0.40, boottime: 0, dps: 120.000, damage: 120.000, thmload: 50.00, pierce: 1e4, shotspd: 250, rof: 1.000, bstint: 1.000, ammoclip: 2, rldtime: 5.0, brcdmg: 60.0, minbrc: 100, maxbrc: 100, dmgtype: 'E', expwgt: 1, dmgfall: 1e5, fdid: 128049510, fdname: 'Hpt_AdvancedTorpPylon_Fixed_Medium'},
+        //	TODO2 : { mtype:''   , cost:     NaN, name:'Plasma Burst Cannon',         mount:'F',              class:2, rating:'?', mass: 4.00, integ:NaN,pwrdraw:1.43, boottime:0, dps:15.750, damage:14.000, distdraw:3.000,thmload:15.00, pierce: 55, maxrng: NaN, shotspd: NaN, rof:1.125, bstint:2.000, bstrof:3, bstsize:3, ammoclip: 9, ammomax: NaN,            rldtime:8.0, brcdmg: NaN, minbrc:NaN,maxbrc:NaN,            dmgtype:'A', abswgt:3, kinwgt:1, thmwgt:1, dmgfall: NaN, fdid:     null, fdname:'Hpt_PlasmaBurstCannon_Fixed_Medium' },
+        //	TODO3 : { mtype:''   , cost:     NaN, name:'Stealth Laser',               mount:'F',              class:1, rating:'?', mass: 2.00, integ:NaN,pwrdraw:0.19, boottime:0, dps: 6.000, damage: 1.800, distdraw:0.330, thmload:0.01, pierce:1e4, maxrng: NaN,               rof:3.333, bstint:0.300,                                                                         brcdmg: NaN, minbrc:NaN,maxbrc:NaN,            dmgtype:'T', thmwgt:1, dmgfall: NaN, fdid:     null, fdname:'Hpt_PulseLaserStealth_Fixed_Small' },
+
 
         // UTILITY MOUNTS
 
@@ -2659,7 +2194,7 @@ var eddb = {
 
         51060: {mtype: 'uec', cost: 12500, name: 'Electronic Countermeasure', class: 0, rating: 'F', mass: 1.30, integ: 20, pwrdraw: 0.20, passive: 1, boottime: 0, range: 3000, duration: 3, distdraw: 4.00, thmload: 4.0, cooldown: 10, fdid: 128049516, fdname: 'Hpt_ElectronicCountermeasure_Tiny'},
 
-        58061: {mtype: 'uex', cost: 63000, name: 'Shutdown Field Neutraliser', class: 0, rating: 'F', mass: 1.30, integ: 35, pwrdraw: 0.20, passive: 1, boottime: 0, range: 3000, duration: 1, distdraw: 0.25, cooldown: 10, fdid: 128771884, fdname: 'Hpt_AntiUnknownShutdown_Tiny'},
+        58061: {mtype: 'uex', cost: 63000, name: 'Shutdown Field Neutraliser', class: 0, rating: 'F', mass: 1.30, integ: 35, pwrdraw: 0.20, passive: 1, boottime: 0, range: 3000, duration: 1, distdraw: 0.25, cooldown: 10, nosingleton: 1, fdid: 128771884, fdname: 'Hpt_AntiUnknownShutdown_Tiny'},
         58050: {mtype: 'uex', cost: 365700, name: 'Xeno Scanner', class: 0, rating: 'E', mass: 1.30, integ: 56, pwrdraw: 0.20, boottime: 2, scanrng: 500, maxangle: 23.00, scantime: 10, fdid: 128793115, fdname: 'Hpt_XenoScanner_Basic_Tiny'},
 
         52090: {mtype: 'uhsl', cost: 3500, name: 'Heat Sink Launcher', class: 0, rating: 'I', mass: 1.30, integ: 20, pwrdraw: 0.20, passive: 1, boottime: 0, distdraw: 2.00, rof: 0.2, bstint: 5.00, ammoclip: 1, ammomax: 2, rldtime: 10.0, duration: 10, thmdrain: 100.0, fdid: 128049519, fdname: 'Hpt_HeatSinkLauncher_Turret_Tiny'},
@@ -2676,7 +2211,7 @@ var eddb = {
         55020: {mtype: 'ucs', cost: 365700, name: 'Manifest Scanner', class: 0, rating: 'B', mass: 1.30, integ: 56, pwrdraw: 1.60, boottime: 3, scanrng: 3500, maxangle: 15.00, scantime: 10, fdid: 128662523, fdname: 'Hpt_CargoScanner_Size0_Class4'},
         55010: {mtype: 'ucs', cost: 1097100, name: 'Manifest Scanner', class: 0, rating: 'A', mass: 1.30, integ: 48, pwrdraw: 3.20, boottime: 3, scanrng: 4000, maxangle: 15.00, scantime: 10, fdid: 128662524, fdname: 'Hpt_CargoScanner_Size0_Class5'},
 
-        53090: {mtype: 'upd', cost: 18550, name: 'Point Defence', mount: 'T', class: 0, rating: 'I', mass: 0.50, integ: 30, pwrdraw: 0.20, passive: 1, boottime: 0, dps: 2.0, damage: 0.2, thmload: 0.07, maxrng: 2500, shotspd: 1000, rof: 10.0, bstint: 0.20, bstrof: 15, bstsize: 4, ammoclip: 12, ammomax: 10000, rldtime: 0.4, jitter: 0.75, dmgtype: 'K', dmgfall: 1e5, fdid: 128049522, fdname: 'Hpt_PlasmaPointDefence_Turret_Tiny'},
+        53090: {mtype: 'upd', cost: 18550, name: 'Point Defence', mount: 'T', class: 0, rating: 'I', mass: 0.50, integ: 30, pwrdraw: 0.20, passive: 1, boottime: 0, dps: 2.0, damage: 0.2, thmload: 0.07, maxrng: 2500, shotspd: 1000, rof: 10.0, bstint: 0.20, bstrof: 15, bstsize: 4, ammoclip: 12, ammomax: 10000, rldtime: 0.4, jitter: 0.75, dmgtype: 'K', dmgfall: 000000, fdid: 128049522, fdname: 'Hpt_PlasmaPointDefence_Turret_Tiny'},
 
         54050: {mtype: 'usb', cost: 10000, name: 'Shield Booster', class: 0, rating: 'E', mass: 0.50, integ: 25, pwrdraw: 0.20, passive: 1, boottime: 0, shieldbst: 4.0, kinres: 0.0, thmres: 0.0, expres: 0.0, fdid: 128668532, fdname: 'Hpt_ShieldBooster_Size0_Class1'},
         54040: {mtype: 'usb', cost: 23000, name: 'Shield Booster', class: 0, rating: 'D', mass: 1.00, integ: 35, pwrdraw: 0.50, passive: 1, boottime: 0, shieldbst: 8.0, kinres: 0.0, thmres: 0.0, expres: 0.0, fdid: 128668533, fdname: 'Hpt_ShieldBooster_Size0_Class2'},
@@ -2693,53 +2228,64 @@ var eddb = {
         // CORE COMPONENTS
 
 
+        49180: {mtype: 'cch', cost: 0, name: 'Cargo Hatch', class: 1, rating: 'H', pwrdraw: 0.6},
+
         40131: {mtype: 'cbh', cost: NaN, name: 'Lightweight Alloy', class: 1, rating: 'C', mass: NaN, hullbst: 80.0, kinres: -20.0, thmres: 0.0, expres: -40.0, fdid: null, fdname: null}, // placeholder
         40122: {mtype: 'cbh', cost: NaN, name: 'Reinforced Alloy', class: 1, rating: 'B', mass: NaN, hullbst: 152.0, kinres: -20.0, thmres: 0.0, expres: -40.0, fdid: null, fdname: null}, // placeholder
         40113: {mtype: 'cbh', cost: NaN, name: 'Military Grade Composite', class: 1, rating: 'A', mass: NaN, hullbst: 250.0, kinres: -20.0, thmres: 0.0, expres: -40.0, fdid: null, fdname: null}, // placeholder
         40114: {mtype: 'cbh', cost: NaN, name: 'Mirrored Surface Composite', class: 1, rating: 'A', mass: NaN, hullbst: 250.0, kinres: -75.0, thmres: 50.0, expres: -50.0, fdid: null, fdname: null}, // placeholder
         40115: {mtype: 'cbh', cost: NaN, name: 'Reactive Surface Composite', class: 1, rating: 'A', mass: NaN, hullbst: 250.0, kinres: 25.0, thmres: -40.0, expres: 20.0, fdid: null, fdname: null}, // placeholder
 
+
         41250: {mtype: 'cpp', cost: 1980, name: 'Power Plant', class: 2, rating: 'E', mass: 2.50, integ: 46, pwrcap: 6.40, heateff: 1.00, fdid: 128064033, fdname: 'Int_Powerplant_Size2_Class1'},
         41240: {mtype: 'cpp', cost: 5930, name: 'Power Plant', class: 2, rating: 'D', mass: 1.00, integ: 41, pwrcap: 7.20, heateff: 0.75, fdid: 128064034, fdname: 'Int_Powerplant_Size2_Class2'},
         41230: {mtype: 'cpp', cost: 17800, name: 'Power Plant', class: 2, rating: 'C', mass: 1.30, integ: 51, pwrcap: 8.00, heateff: 0.50, fdid: 128064035, fdname: 'Int_Powerplant_Size2_Class3'},
         41220: {mtype: 'cpp', cost: 53410, name: 'Power Plant', class: 2, rating: 'B', mass: 2.00, integ: 61, pwrcap: 8.80, heateff: 0.45, fdid: 128064036, fdname: 'Int_Powerplant_Size2_Class4'},
         41210: {mtype: 'cpp', cost: 160220, name: 'Power Plant', class: 2, rating: 'A', mass: 1.30, integ: 56, pwrcap: 9.60, heateff: 0.40, fdid: 128064037, fdname: 'Int_Powerplant_Size2_Class5'},
+        41211: {mtype: 'cpp', cost: 162000, name: 'Guardian Hybrid Power Plant', class: 2, rating: 'A', mass: 1.50, integ: 56, pwrcap: 12.70, heateff: 0.5, fdid: 128833988, fdname: 'Int_GuardianPowerplant_Size2'}, // TODO: verify
 
         41350: {mtype: 'cpp', cost: 6270, name: 'Power Plant', class: 3, rating: 'E', mass: 5.00, integ: 58, pwrcap: 8.00, heateff: 1.00, fdid: 128064038, fdname: 'Int_Powerplant_Size3_Class1'},
         41340: {mtype: 'cpp', cost: 18810, name: 'Power Plant', class: 3, rating: 'D', mass: 2.00, integ: 51, pwrcap: 9.00, heateff: 0.75, fdid: 128064039, fdname: 'Int_Powerplant_Size3_Class2'},
         41330: {mtype: 'cpp', cost: 56440, name: 'Power Plant', class: 3, rating: 'C', mass: 2.50, integ: 64, pwrcap: 10.00, heateff: 0.50, fdid: 128064040, fdname: 'Int_Powerplant_Size3_Class3'},
         41320: {mtype: 'cpp', cost: 169300, name: 'Power Plant', class: 3, rating: 'B', mass: 4.00, integ: 77, pwrcap: 11.00, heateff: 0.45, fdid: 128064041, fdname: 'Int_Powerplant_Size3_Class4'},
         41310: {mtype: 'cpp', cost: 507910, name: 'Power Plant', class: 3, rating: 'A', mass: 2.50, integ: 70, pwrcap: 12.00, heateff: 0.40, fdid: 128064042, fdname: 'Int_Powerplant_Size3_Class5'},
+        41311: {mtype: 'cpp', cost: 291600, name: 'Guardian Hybrid Power Plant', class: 3, rating: 'A', mass: 2.90, integ: 70, pwrcap: 15.80, heateff: 0.5, fdid: 128833989, fdname: 'Int_GuardianPowerplant_Size3'}, // TODO: verify
 
         41450: {mtype: 'cpp', cost: 19880, name: 'Power Plant', class: 4, rating: 'E', mass: 10.00, integ: 72, pwrcap: 10.40, heateff: 1.00, fdid: 128064043, fdname: 'Int_Powerplant_Size4_Class1'},
         41440: {mtype: 'cpp', cost: 59630, name: 'Power Plant', class: 4, rating: 'D', mass: 4.00, integ: 64, pwrcap: 11.70, heateff: 0.75, fdid: 128064044, fdname: 'Int_Powerplant_Size4_Class2'},
         41430: {mtype: 'cpp', cost: 178900, name: 'Power Plant', class: 4, rating: 'C', mass: 5.00, integ: 80, pwrcap: 13.00, heateff: 0.50, fdid: 128064045, fdname: 'Int_Powerplant_Size4_Class3'},
         41420: {mtype: 'cpp', cost: 536690, name: 'Power Plant', class: 4, rating: 'B', mass: 8.00, integ: 96, pwrcap: 14.30, heateff: 0.45, fdid: 128064046, fdname: 'Int_Powerplant_Size4_Class4'},
         41410: {mtype: 'cpp', cost: 1610080, name: 'Power Plant', class: 4, rating: 'A', mass: 5.00, integ: 88, pwrcap: 15.60, heateff: 0.40, fdid: 128064047, fdname: 'Int_Powerplant_Size4_Class5'},
+        41411: {mtype: 'cpp', cost: 524880, name: 'Guardian Hybrid Power Plant', class: 4, rating: 'A', mass: 5.90, integ: 88, pwrcap: 20.60, heateff: 0.5, fdid: 128833990, fdname: 'Int_GuardianPowerplant_Size4'}, // TODO: verify
 
         41550: {mtype: 'cpp', cost: 63010, name: 'Power Plant', class: 5, rating: 'E', mass: 20.00, integ: 86, pwrcap: 13.60, heateff: 1.00, fdid: 128064048, fdname: 'Int_Powerplant_Size5_Class1'},
         41540: {mtype: 'cpp', cost: 189040, name: 'Power Plant', class: 5, rating: 'D', mass: 8.00, integ: 77, pwrcap: 15.30, heateff: 0.75, fdid: 128064049, fdname: 'Int_Powerplant_Size5_Class2'},
         41530: {mtype: 'cpp', cost: 567110, name: 'Power Plant', class: 5, rating: 'C', mass: 10.00, integ: 96, pwrcap: 17.00, heateff: 0.50, fdid: 128064050, fdname: 'Int_Powerplant_Size5_Class3'},
         41520: {mtype: 'cpp', cost: 1701320, name: 'Power Plant', class: 5, rating: 'B', mass: 16.00, integ: 115, pwrcap: 18.70, heateff: 0.45, fdid: 128064051, fdname: 'Int_Powerplant_Size5_Class4'},
         41510: {mtype: 'cpp', cost: 5103950, name: 'Power Plant', class: 5, rating: 'A', mass: 10.00, integ: 106, pwrcap: 20.40, heateff: 0.40, fdid: 128064052, fdname: 'Int_Powerplant_Size5_Class5'},
+        41511: {mtype: 'cpp', cost: 944790, name: 'Guardian Hybrid Power Plant', class: 5, rating: 'A', mass: 11.70, integ: 106, pwrcap: 26.90, heateff: 0.5, fdid: 128833991, fdname: 'Int_GuardianPowerplant_Size5'}, // TODO: verify
 
         41650: {mtype: 'cpp', cost: 199750, name: 'Power Plant', class: 6, rating: 'E', mass: 40.00, integ: 102, pwrcap: 16.80, heateff: 1.00, fdid: 128064053, fdname: 'Int_Powerplant_Size6_Class1'},
         41640: {mtype: 'cpp', cost: 599240, name: 'Power Plant', class: 6, rating: 'D', mass: 16.00, integ: 90, pwrcap: 18.90, heateff: 0.75, fdid: 128064054, fdname: 'Int_Powerplant_Size6_Class2'},
         41630: {mtype: 'cpp', cost: 1797730, name: 'Power Plant', class: 6, rating: 'C', mass: 20.00, integ: 113, pwrcap: 21.00, heateff: 0.50, fdid: 128064055, fdname: 'Int_Powerplant_Size6_Class3'},
         41620: {mtype: 'cpp', cost: 5393180, name: 'Power Plant', class: 6, rating: 'B', mass: 32.00, integ: 136, pwrcap: 23.10, heateff: 0.45, fdid: 128064056, fdname: 'Int_Powerplant_Size6_Class4'},
         41610: {mtype: 'cpp', cost: 16179530, name: 'Power Plant', class: 6, rating: 'A', mass: 20.00, integ: 124, pwrcap: 25.20, heateff: 0.40, fdid: 128064057, fdname: 'Int_Powerplant_Size6_Class5'},
+        41611: {mtype: 'cpp', cost: 1700610, name: 'Guardian Hybrid Power Plant', class: 6, rating: 'A', mass: 23.40, integ: 124, pwrcap: 33.30, heateff: 0.5, fdid: 128833992, fdname: 'Int_GuardianPowerplant_Size6'}, // TODO: verify
 
         41750: {mtype: 'cpp', cost: 633200, name: 'Power Plant', class: 7, rating: 'E', mass: 80.00, integ: 118, pwrcap: 20.00, heateff: 1.00, fdid: 128064058, fdname: 'Int_Powerplant_Size7_Class1'},
         41740: {mtype: 'cpp', cost: 1899600, name: 'Power Plant', class: 7, rating: 'D', mass: 32.00, integ: 105, pwrcap: 22.50, heateff: 0.75, fdid: 128064059, fdname: 'Int_Powerplant_Size7_Class2'},
         41730: {mtype: 'cpp', cost: 5698790, name: 'Power Plant', class: 7, rating: 'C', mass: 40.00, integ: 131, pwrcap: 25.00, heateff: 0.50, fdid: 128064060, fdname: 'Int_Powerplant_Size7_Class3'},
         41720: {mtype: 'cpp', cost: 17096370, name: 'Power Plant', class: 7, rating: 'B', mass: 64.00, integ: 157, pwrcap: 27.50, heateff: 0.45, fdid: 128064061, fdname: 'Int_Powerplant_Size7_Class4'},
         41710: {mtype: 'cpp', cost: 51289110, name: 'Power Plant', class: 7, rating: 'A', mass: 40.00, integ: 144, pwrcap: 30.00, heateff: 0.40, fdid: 128064062, fdname: 'Int_Powerplant_Size7_Class5'},
+        41711: {mtype: 'cpp', cost: 3061100, name: 'Guardian Hybrid Power Plant', class: 7, rating: 'A', mass: 46.80, integ: 144, pwrcap: 39.60, heateff: 0.5, fdid: 128833993, fdname: 'Int_GuardianPowerplant_Size7'}, // TODO: verify
 
         41850: {mtype: 'cpp', cost: 2007240, name: 'Power Plant', class: 8, rating: 'E', mass: 160.00, integ: 135, pwrcap: 24.00, heateff: 1.00, fdid: 128064063, fdname: 'Int_Powerplant_Size8_Class1'},
         41840: {mtype: 'cpp', cost: 6021720, name: 'Power Plant', class: 8, rating: 'D', mass: 64.00, integ: 120, pwrcap: 27.00, heateff: 0.75, fdid: 128064064, fdname: 'Int_Powerplant_Size8_Class2'},
         41830: {mtype: 'cpp', cost: 18065170, name: 'Power Plant', class: 8, rating: 'C', mass: 80.00, integ: 150, pwrcap: 30.00, heateff: 0.50, fdid: 128064065, fdname: 'Int_Powerplant_Size8_Class3'},
         41820: {mtype: 'cpp', cost: 54195500, name: 'Power Plant', class: 8, rating: 'B', mass: 128.00, integ: 180, pwrcap: 33.00, heateff: 0.45, fdid: 128064066, fdname: 'Int_Powerplant_Size8_Class4'},
         41810: {mtype: 'cpp', cost: 162586490, name: 'Power Plant', class: 8, rating: 'A', mass: 80.00, integ: 165, pwrcap: 36.00, heateff: 0.40, fdid: 128064067, fdname: 'Int_Powerplant_Size8_Class5'},
+        41811: {mtype: 'cpp', cost: 5509980, name: 'Guardian Hybrid Power Plant', class: 8, rating: 'A', mass: 93.60, integ: 165, pwrcap: 47.50, heateff: 0.5, fdid: 128833994, fdname: 'Int_GuardianPowerplant_Size8'}, // TODO: verify
+
 
         42250: {mtype: 'ct', cost: 1980, name: 'Thrusters', class: 2, rating: 'E', mass: 2.50, integ: 46, pwrdraw: 2.00, boottime: 0, minmass: 24, optmass: 48, maxmass: 72, minmul: 83, optmul: 100, maxmul: 103, thmload: 1.3, fdid: 128064068, fdname: 'Int_Engine_Size2_Class1'},
         42240: {mtype: 'ct', cost: 5930, name: 'Thrusters', class: 2, rating: 'D', mass: 1.00, integ: 41, pwrdraw: 2.25, boottime: 0, minmass: 27, optmass: 54, maxmass: 81, minmul: 86, optmul: 100, maxmul: 106, thmload: 1.3, fdid: 128064069, fdname: 'Int_Engine_Size2_Class2'},
@@ -2938,11 +2484,11 @@ var eddb = {
         46220: {mtype: 'cs', cost: 22620, name: 'Sensors', class: 2, rating: 'B', mass: 4.00, integ: 61, pwrdraw: 0.38, boottime: 5, maxrng: 8000, maxangle: 30.00, typemis: 5720, fdid: 128064226, fdname: 'Int_Sensors_Size2_Class4'}, // verify price
         46210: {mtype: 'cs', cost: 56550, name: 'Sensors', class: 2, rating: 'A', mass: 2.50, integ: 56, pwrdraw: 0.69, boottime: 5, maxrng: 8000, maxangle: 30.00, typemis: 6240, fdid: 128064227, fdname: 'Int_Sensors_Size2_Class5'}, // verify price
 
-        46350: {mtype: 'cs', cost: 4050, name: 'Sensors', class: 3, rating: 'E', mass: 5.00, integ: 58, pwrdraw: 0.22, boottime: 5, maxrng: 8000, maxangle: 30.00, typemis: 4320, fdid: 128064228, fdname: 'Int_Sensors_Size3_Class1'}, // verify price
-        46340: {mtype: 'cs', cost: 10130, name: 'Sensors', class: 3, rating: 'D', mass: 2.00, integ: 51, pwrdraw: 0.25, boottime: 5, maxrng: 8000, maxangle: 30.00, typemis: 4860, fdid: 128064229, fdname: 'Int_Sensors_Size3_Class2'}, // verify price
-        46330: {mtype: 'cs', cost: 25330, name: 'Sensors', class: 3, rating: 'C', mass: 5.00, integ: 64, pwrdraw: 0.28, boottime: 5, maxrng: 8000, maxangle: 30.00, typemis: 5400, fdid: 128064230, fdname: 'Int_Sensors_Size3_Class3'}, // verify price
-        46320: {mtype: 'cs', cost: 63330, name: 'Sensors', class: 3, rating: 'B', mass: 8.00, integ: 77, pwrdraw: 0.46, boottime: 5, maxrng: 8000, maxangle: 30.00, typemis: 5940, fdid: 128064231, fdname: 'Int_Sensors_Size3_Class4'}, // verify price
-        46310: {mtype: 'cs', cost: 158330, name: 'Sensors', class: 3, rating: 'A', mass: 5.00, integ: 77, pwrdraw: 0.84, boottime: 5, maxrng: 8000, maxangle: 30.00, typemis: 6480, fdid: 128064232, fdname: 'Int_Sensors_Size3_Class5'}, // verify price
+        46350: {mtype: 'cs', cost: 4050, name: 'Sensors', class: 3, rating: 'E', mass: 5.00, integ: 58, pwrdraw: 0.22, boottime: 5, maxrng: 8000, maxangle: 30.00, typemis: 4320, fdid: 128064228, fdname: 'Int_Sensors_Size3_Class1'},
+        46340: {mtype: 'cs', cost: 10130, name: 'Sensors', class: 3, rating: 'D', mass: 2.00, integ: 51, pwrdraw: 0.25, boottime: 5, maxrng: 8000, maxangle: 30.00, typemis: 4860, fdid: 128064229, fdname: 'Int_Sensors_Size3_Class2'},
+        46330: {mtype: 'cs', cost: 25330, name: 'Sensors', class: 3, rating: 'C', mass: 5.00, integ: 64, pwrdraw: 0.28, boottime: 5, maxrng: 8000, maxangle: 30.00, typemis: 5400, fdid: 128064230, fdname: 'Int_Sensors_Size3_Class3'},
+        46320: {mtype: 'cs', cost: 63330, name: 'Sensors', class: 3, rating: 'B', mass: 8.00, integ: 77, pwrdraw: 0.46, boottime: 5, maxrng: 8000, maxangle: 30.00, typemis: 5940, fdid: 128064231, fdname: 'Int_Sensors_Size3_Class4'},
+        46310: {mtype: 'cs', cost: 158330, name: 'Sensors', class: 3, rating: 'A', mass: 5.00, integ: 70, pwrdraw: 0.84, boottime: 5, maxrng: 8000, maxangle: 30.00, typemis: 6480, fdid: 128064232, fdname: 'Int_Sensors_Size3_Class5'},
 
         46450: {mtype: 'cs', cost: 11350, name: 'Sensors', class: 4, rating: 'E', mass: 10.00, integ: 72, pwrdraw: 0.27, boottime: 5, maxrng: 8000, maxangle: 30.00, typemis: 4480, fdid: 128064233, fdname: 'Int_Sensors_Size4_Class1'},
         46440: {mtype: 'cs', cost: 28370, name: 'Sensors', class: 4, rating: 'D', mass: 4.00, integ: 64, pwrdraw: 0.31, boottime: 5, maxrng: 8000, maxangle: 30.00, typemis: 5040, fdid: 128064234, fdname: 'Int_Sensors_Size4_Class2'},
@@ -3044,6 +2590,9 @@ var eddb = {
         850: {mtype: 'icr', cost: 3829870, name: 'Cargo Rack (Cap: 256)', class: 8, rating: 'E', cargocap: 256, fdid: 128064345, fdname: 'Int_CargoRack_Size8_Class1'},
         151: {mtype: 'icr', cost: 6250, name: 'Corrosion Resistant Cargo Rack (Cap: 1)', class: 1, rating: 'E', cargocap: 1, fdid: 128681641, fdname: 'Int_CorrosionProofCargoRack_Size1_Class1'},
         161: {mtype: 'icr', cost: 12560, name: 'Corrosion Resistant Cargo Rack (Cap: 2)', class: 1, rating: 'F', cargocap: 2, fdid: 128681992, fdname: 'Int_CorrosionProofCargoRack_Size1_Class2'},
+        //	  251 : { mtype:'icr', cost:    NaN, name:'Corrosion Resistant Cargo Rack (Cap: 4)',  class:2, rating:'E', cargocap: 4, fdid:     null, fdname:'Int_CorrosionProofCargoRack_Size2_Class1' }, // TODO: verify; cost,fdid
+        451: {mtype: 'icr', cost: 94330, name: 'Corrosion Resistant Cargo Rack (Cap: 16)', class: 4, rating: 'E', cargocap: 16, fdid: 128833944, fdname: 'Int_CorrosionProofCargoRack_Size4_Class1'}, // TODO: verify; cost
+
 
         22150: {mtype: 'iclc', cost: 600, name: 'Collector Limpet Controller', class: 1, rating: 'E', mass: 0.50, integ: 24, pwrdraw: 0.14, boottime: 6, maxlimpet: 1, targetrng: 800, limpettime: 300, maxspd: 200, multispd: 60, fdid: 128671229, fdname: 'Int_DroneControl_Collection_Size1_Class1'},
         22140: {mtype: 'iclc', cost: 1200, name: 'Collector Limpet Controller', class: 1, rating: 'D', mass: 0.50, integ: 32, pwrdraw: 0.18, boottime: 6, maxlimpet: 1, targetrng: 600, limpettime: 600, maxspd: 200, multispd: 60, fdid: 128671230, fdname: 'Int_DroneControl_Collection_Size1_Class2'},
@@ -3167,7 +2716,7 @@ var eddb = {
         23550: {mtype: 'iftlc', cost: 48600, name: 'Fuel Transfer Limpet Controller', class: 5, rating: 'E', mass: 20.00, integ: 58, pwrdraw: 0.40, boottime: 10, maxlimpet: 4, targetrng: 780, limpettime: 60, maxspd: 200, fuelxfer: 1.0, fdid: 128671259, fdname: 'Int_DroneControl_FuelTransfer_Size5_Class1'},
         23540: {mtype: 'iftlc', cost: 97200, name: 'Fuel Transfer Limpet Controller', class: 5, rating: 'D', mass: 8.00, integ: 77, pwrdraw: 0.30, boottime: 10, maxlimpet: 4, targetrng: 1040, limpettime: 60, maxspd: 200, fuelxfer: 1.0, fdid: 128671260, fdname: 'Int_DroneControl_FuelTransfer_Size5_Class2'},
         23530: {mtype: 'iftlc', cost: 194400, name: 'Fuel Transfer Limpet Controller', class: 5, rating: 'C', mass: 20.00, integ: 96, pwrdraw: 0.50, boottime: 10, maxlimpet: 4, targetrng: 1300, limpettime: 60, maxspd: 200, fuelxfer: 1.0, fdid: 128671261, fdname: 'Int_DroneControl_FuelTransfer_Size5_Class3'},
-        23520: {mtype: 'iftlc', cost: 388800, name: 'Fuel Transfer Limpet Controller', class: 5, rating: 'B', mass: 32.00, integ: 157, pwrdraw: 0.97, boottime: 10, maxlimpet: 4, targetrng: 1560, limpettime: 60, maxspd: 200, fuelxfer: 1.0, fdid: 128671262, fdname: 'Int_DroneControl_FuelTransfer_Size5_Class4'}, // TODO BUG pwrdraw:0.70 ?
+        23520: {mtype: 'iftlc', cost: 388800, name: 'Fuel Transfer Limpet Controller', class: 5, rating: 'B', mass: 32.00, integ: 157, pwrdraw: 0.97, boottime: 10, maxlimpet: 4, targetrng: 1560, limpettime: 60, maxspd: 200, fuelxfer: 1.0, fdid: 128671262, fdname: 'Int_DroneControl_FuelTransfer_Size5_Class4'}, // TODO BUG? pwrdraw:0.70
         23510: {mtype: 'iftlc', cost: 777600, name: 'Fuel Transfer Limpet Controller', class: 5, rating: 'A', mass: 20.00, integ: 134, pwrdraw: 0.60, boottime: 10, maxlimpet: 4, targetrng: 1820, limpettime: 60, maxspd: 200, fuelxfer: 1.0, fdid: 128671263, fdname: 'Int_DroneControl_FuelTransfer_Size5_Class5'},
 
         23750: {mtype: 'iftlc', cost: 437400, name: 'Fuel Transfer Limpet Controller', class: 7, rating: 'E', mass: 80.00, integ: 79, pwrdraw: 0.55, boottime: 10, maxlimpet: 8, targetrng: 1020, limpettime: 60, maxspd: 200, fuelxfer: 1.0, fdid: 128671264, fdname: 'Int_DroneControl_FuelTransfer_Size7_Class1'},
@@ -3177,29 +2726,29 @@ var eddb = {
         23710: {mtype: 'iftlc', cost: 6998400, name: 'Fuel Transfer Limpet Controller', class: 7, rating: 'A', mass: 80.00, integ: 183, pwrdraw: 0.83, boottime: 10, maxlimpet: 8, targetrng: 2380, limpettime: 60, maxspd: 200, fuelxfer: 1.0, fdid: 128671268, fdname: 'Int_DroneControl_FuelTransfer_Size7_Class5'},
 
         // TODO: thmload added in 3.0?
-        26150: {mtype: 'ihblc', cost: 600, name: 'Hatch Breaker Limpet Controller', class: 1, rating: 'E', mass: 1.30, integ: 32, pwrdraw: 0.12, boottime: 3, maxlimpet: 2, targetrng: 1500, limpettime: 120, maxspd: 500, hacktime: 22, mincargo: 1, maxcargo: 6, fdid: 128066532, fdname: 'Int_DroneControl_ResourceSiphon_Size1_Class1'},
-        26140: {mtype: 'ihblc', cost: 1200, name: 'Hatch Breaker Limpet Controller', class: 1, rating: 'D', mass: 0.50, integ: 24, pwrdraw: 0.16, boottime: 3, maxlimpet: 1, targetrng: 2000, limpettime: 120, maxspd: 500, hacktime: 19, mincargo: 2, maxcargo: 7, fdid: 128066533, fdname: 'Int_DroneControl_ResourceSiphon_Size1_Class2'},
-        26130: {mtype: 'ihblc', cost: 2400, name: 'Hatch Breaker Limpet Controller', class: 1, rating: 'C', mass: 1.30, integ: 40, pwrdraw: 0.20, boottime: 3, maxlimpet: 1, targetrng: 2500, limpettime: 120, maxspd: 500, hacktime: 16, mincargo: 3, maxcargo: 8, fdid: 128066534, fdname: 'Int_DroneControl_ResourceSiphon_Size1_Class3'},
-        26120: {mtype: 'ihblc', cost: 4800, name: 'Hatch Breaker Limpet Controller', class: 1, rating: 'B', mass: 2.00, integ: 56, pwrdraw: 0.24, boottime: 3, maxlimpet: 2, targetrng: 3000, limpettime: 120, maxspd: 500, hacktime: 13, mincargo: 4, maxcargo: 9, fdid: 128066535, fdname: 'Int_DroneControl_ResourceSiphon_Size1_Class4'},
-        26110: {mtype: 'ihblc', cost: 9600, name: 'Hatch Breaker Limpet Controller', class: 1, rating: 'A', mass: 1.30, integ: 48, pwrdraw: 0.28, boottime: 3, maxlimpet: 1, targetrng: 3500, limpettime: 120, maxspd: 500, hacktime: 10, mincargo: 5, maxcargo: 10, fdid: 128066536, fdname: 'Int_DroneControl_ResourceSiphon_Size1_Class5'},
+        26150: {mtype: 'ihblc', cost: 600, name: 'Hatch Breaker Limpet Controller', class: 1, rating: 'E', mass: 1.30, integ: 32, pwrdraw: 0.12, boottime: 3, maxlimpet: 2, targetrng: 1500, lpactrng: 1600, limpettime: 120, maxspd: 500, hacktime: 22, mincargo: 1, maxcargo: 6, fdid: 128066532, fdname: 'Int_DroneControl_ResourceSiphon_Size1_Class1'},
+        26140: {mtype: 'ihblc', cost: 1200, name: 'Hatch Breaker Limpet Controller', class: 1, rating: 'D', mass: 0.50, integ: 24, pwrdraw: 0.16, boottime: 3, maxlimpet: 1, targetrng: 2000, lpactrng: 2100, limpettime: 120, maxspd: 500, hacktime: 19, mincargo: 2, maxcargo: 7, fdid: 128066533, fdname: 'Int_DroneControl_ResourceSiphon_Size1_Class2'},
+        26130: {mtype: 'ihblc', cost: 2400, name: 'Hatch Breaker Limpet Controller', class: 1, rating: 'C', mass: 1.30, integ: 40, pwrdraw: 0.20, boottime: 3, maxlimpet: 1, targetrng: 2500, lpactrng: 2600, limpettime: 120, maxspd: 500, hacktime: 16, mincargo: 3, maxcargo: 8, fdid: 128066534, fdname: 'Int_DroneControl_ResourceSiphon_Size1_Class3'},
+        26120: {mtype: 'ihblc', cost: 4800, name: 'Hatch Breaker Limpet Controller', class: 1, rating: 'B', mass: 2.00, integ: 56, pwrdraw: 0.24, boottime: 3, maxlimpet: 2, targetrng: 3000, lpactrng: 3100, limpettime: 120, maxspd: 500, hacktime: 13, mincargo: 4, maxcargo: 9, fdid: 128066535, fdname: 'Int_DroneControl_ResourceSiphon_Size1_Class4'},
+        26110: {mtype: 'ihblc', cost: 9600, name: 'Hatch Breaker Limpet Controller', class: 1, rating: 'A', mass: 1.30, integ: 48, pwrdraw: 0.28, boottime: 3, maxlimpet: 1, targetrng: 3500, lpactrng: 3600, limpettime: 120, maxspd: 500, hacktime: 10, mincargo: 5, maxcargo: 10, fdid: 128066536, fdname: 'Int_DroneControl_ResourceSiphon_Size1_Class5'},
 
-        26350: {mtype: 'ihblc', cost: 5400, name: 'Hatch Breaker Limpet Controller', class: 3, rating: 'E', mass: 5.00, integ: 51, pwrdraw: 0.18, boottime: 3, maxlimpet: 4, targetrng: 1620, limpettime: 120, maxspd: 500, hacktime: 17, mincargo: 1, maxcargo: 6, fdid: 128066537, fdname: 'Int_DroneControl_ResourceSiphon_Size3_Class1'},
-        26340: {mtype: 'ihblc', cost: 10800, name: 'Hatch Breaker Limpet Controller', class: 3, rating: 'D', mass: 2.00, integ: 38, pwrdraw: 0.24, boottime: 3, maxlimpet: 3, targetrng: 2160, limpettime: 120, maxspd: 500, hacktime: 14, mincargo: 2, maxcargo: 7, fdid: 128066538, fdname: 'Int_DroneControl_ResourceSiphon_Size3_Class2'},
-        26330: {mtype: 'ihblc', cost: 21600, name: 'Hatch Breaker Limpet Controller', class: 3, rating: 'C', mass: 5.00, integ: 64, pwrdraw: 0.30, boottime: 3, maxlimpet: 3, targetrng: 2700, limpettime: 120, maxspd: 500, hacktime: 12, mincargo: 3, maxcargo: 8, fdid: 128066539, fdname: 'Int_DroneControl_ResourceSiphon_Size3_Class3'},
-        26320: {mtype: 'ihblc', cost: 43200, name: 'Hatch Breaker Limpet Controller', class: 3, rating: 'B', mass: 8.00, integ: 90, pwrdraw: 0.36, boottime: 3, maxlimpet: 4, targetrng: 3240, limpettime: 120, maxspd: 500, hacktime: 10, mincargo: 4, maxcargo: 9, fdid: 128066540, fdname: 'Int_DroneControl_ResourceSiphon_Size3_Class4'},
-        26310: {mtype: 'ihblc', cost: 86400, name: 'Hatch Breaker Limpet Controller', class: 3, rating: 'A', mass: 5.00, integ: 77, pwrdraw: 0.42, boottime: 3, maxlimpet: 3, targetrng: 3780, limpettime: 120, maxspd: 500, hacktime: 7, mincargo: 5, maxcargo: 10, fdid: 128066541, fdname: 'Int_DroneControl_ResourceSiphon_Size3_Class5'},
+        26350: {mtype: 'ihblc', cost: 5400, name: 'Hatch Breaker Limpet Controller', class: 3, rating: 'E', mass: 5.00, integ: 51, pwrdraw: 0.18, boottime: 3, maxlimpet: 4, targetrng: 1620, lpactrng: 1720, limpettime: 120, maxspd: 500, hacktime: 17, mincargo: 1, maxcargo: 6, fdid: 128066537, fdname: 'Int_DroneControl_ResourceSiphon_Size3_Class1'},
+        26340: {mtype: 'ihblc', cost: 10800, name: 'Hatch Breaker Limpet Controller', class: 3, rating: 'D', mass: 2.00, integ: 38, pwrdraw: 0.24, boottime: 3, maxlimpet: 3, targetrng: 2160, lpactrng: 2260, limpettime: 120, maxspd: 500, hacktime: 14, mincargo: 2, maxcargo: 7, fdid: 128066538, fdname: 'Int_DroneControl_ResourceSiphon_Size3_Class2'},
+        26330: {mtype: 'ihblc', cost: 21600, name: 'Hatch Breaker Limpet Controller', class: 3, rating: 'C', mass: 5.00, integ: 64, pwrdraw: 0.30, boottime: 3, maxlimpet: 3, targetrng: 2700, lpactrng: 2800, limpettime: 120, maxspd: 500, hacktime: 12, mincargo: 3, maxcargo: 8, fdid: 128066539, fdname: 'Int_DroneControl_ResourceSiphon_Size3_Class3'},
+        26320: {mtype: 'ihblc', cost: 43200, name: 'Hatch Breaker Limpet Controller', class: 3, rating: 'B', mass: 8.00, integ: 90, pwrdraw: 0.36, boottime: 3, maxlimpet: 4, targetrng: 3240, lpactrng: 3340, limpettime: 120, maxspd: 500, hacktime: 10, mincargo: 4, maxcargo: 9, fdid: 128066540, fdname: 'Int_DroneControl_ResourceSiphon_Size3_Class4'},
+        26310: {mtype: 'ihblc', cost: 86400, name: 'Hatch Breaker Limpet Controller', class: 3, rating: 'A', mass: 5.00, integ: 77, pwrdraw: 0.42, boottime: 3, maxlimpet: 3, targetrng: 3780, lpactrng: 3870, limpettime: 120, maxspd: 500, hacktime: 7, mincargo: 5, maxcargo: 10, fdid: 128066541, fdname: 'Int_DroneControl_ResourceSiphon_Size3_Class5'},
 
-        26550: {mtype: 'ihblc', cost: 48600, name: 'Hatch Breaker Limpet Controller', class: 5, rating: 'E', mass: 20.00, integ: 77, pwrdraw: 0.30, boottime: 3, maxlimpet: 9, targetrng: 1980, limpettime: 120, maxspd: 500, hacktime: 11, mincargo: 1, maxcargo: 6, fdid: 128066542, fdname: 'Int_DroneControl_ResourceSiphon_Size5_Class1'},
-        26540: {mtype: 'ihblc', cost: 97200, name: 'Hatch Breaker Limpet Controller', class: 5, rating: 'D', mass: 8.00, integ: 58, pwrdraw: 0.40, boottime: 3, maxlimpet: 6, targetrng: 2640, limpettime: 120, maxspd: 500, hacktime: 10, mincargo: 2, maxcargo: 7, fdid: 128066543, fdname: 'Int_DroneControl_ResourceSiphon_Size5_Class2'},
-        26530: {mtype: 'ihblc', cost: 194400, name: 'Hatch Breaker Limpet Controller', class: 5, rating: 'C', mass: 20.00, integ: 96, pwrdraw: 0.50, boottime: 3, maxlimpet: 7, targetrng: 3300, limpettime: 120, maxspd: 500, hacktime: 8, mincargo: 3, maxcargo: 8, fdid: 128066544, fdname: 'Int_DroneControl_ResourceSiphon_Size5_Class3'},
-        26520: {mtype: 'ihblc', cost: 388800, name: 'Hatch Breaker Limpet Controller', class: 5, rating: 'B', mass: 32.00, integ: 134, pwrdraw: 0.60, boottime: 3, maxlimpet: 9, targetrng: 3960, limpettime: 120, maxspd: 500, hacktime: 6, mincargo: 4, maxcargo: 9, fdid: 128066545, fdname: 'Int_DroneControl_ResourceSiphon_Size5_Class4'},
-        26510: {mtype: 'ihblc', cost: 777600, name: 'Hatch Breaker Limpet Controller', class: 5, rating: 'A', mass: 20.00, integ: 115, pwrdraw: 0.70, boottime: 3, maxlimpet: 6, targetrng: 4620, limpettime: 120, maxspd: 500, hacktime: 5, mincargo: 5, maxcargo: 10, fdid: 128066546, fdname: 'Int_DroneControl_ResourceSiphon_Size5_Class5'},
+        26550: {mtype: 'ihblc', cost: 48600, name: 'Hatch Breaker Limpet Controller', class: 5, rating: 'E', mass: 20.00, integ: 77, pwrdraw: 0.30, boottime: 3, maxlimpet: 9, targetrng: 1980, lpactrng: 2080, limpettime: 120, maxspd: 500, hacktime: 11, mincargo: 1, maxcargo: 6, fdid: 128066542, fdname: 'Int_DroneControl_ResourceSiphon_Size5_Class1'},
+        26540: {mtype: 'ihblc', cost: 97200, name: 'Hatch Breaker Limpet Controller', class: 5, rating: 'D', mass: 8.00, integ: 58, pwrdraw: 0.40, boottime: 3, maxlimpet: 6, targetrng: 2640, lpactrng: 2740, limpettime: 120, maxspd: 500, hacktime: 10, mincargo: 2, maxcargo: 7, fdid: 128066543, fdname: 'Int_DroneControl_ResourceSiphon_Size5_Class2'},
+        26530: {mtype: 'ihblc', cost: 194400, name: 'Hatch Breaker Limpet Controller', class: 5, rating: 'C', mass: 20.00, integ: 96, pwrdraw: 0.50, boottime: 3, maxlimpet: 7, targetrng: 3300, lpactrng: 3400, limpettime: 120, maxspd: 500, hacktime: 8, mincargo: 3, maxcargo: 8, fdid: 128066544, fdname: 'Int_DroneControl_ResourceSiphon_Size5_Class3'},
+        26520: {mtype: 'ihblc', cost: 388800, name: 'Hatch Breaker Limpet Controller', class: 5, rating: 'B', mass: 32.00, integ: 134, pwrdraw: 0.60, boottime: 3, maxlimpet: 9, targetrng: 3960, lpactrng: 4060, limpettime: 120, maxspd: 500, hacktime: 6, mincargo: 4, maxcargo: 9, fdid: 128066545, fdname: 'Int_DroneControl_ResourceSiphon_Size5_Class4'},
+        26510: {mtype: 'ihblc', cost: 777600, name: 'Hatch Breaker Limpet Controller', class: 5, rating: 'A', mass: 20.00, integ: 115, pwrdraw: 0.70, boottime: 3, maxlimpet: 6, targetrng: 4620, lpactrng: 4720, limpettime: 120, maxspd: 500, hacktime: 5, mincargo: 5, maxcargo: 10, fdid: 128066546, fdname: 'Int_DroneControl_ResourceSiphon_Size5_Class5'},
 
-        26750: {mtype: 'ihblc', cost: 437400, name: 'Hatch Breaker Limpet Controller', class: 7, rating: 'E', mass: 80.00, integ: 105, pwrdraw: 0.42, boottime: 3, maxlimpet: 18, targetrng: 2580, limpettime: 120, maxspd: 500, hacktime: 6, mincargo: 1, maxcargo: 6, fdid: 128066547, fdname: 'Int_DroneControl_ResourceSiphon_Size7_Class1'},
-        26740: {mtype: 'ihblc', cost: 874800, name: 'Hatch Breaker Limpet Controller', class: 7, rating: 'D', mass: 32.00, integ: 79, pwrdraw: 0.56, boottime: 3, maxlimpet: 12, targetrng: 3440, limpettime: 120, maxspd: 500, hacktime: 5, mincargo: 2, maxcargo: 7, fdid: 128066548, fdname: 'Int_DroneControl_ResourceSiphon_Size7_Class2'},
-        26730: {mtype: 'ihblc', cost: 1749600, name: 'Hatch Breaker Limpet Controller', class: 7, rating: 'C', mass: 80.00, integ: 131, pwrdraw: 0.70, boottime: 3, maxlimpet: 15, targetrng: 4300, limpettime: 120, maxspd: 500, hacktime: 4, mincargo: 3, maxcargo: 8, fdid: 128066549, fdname: 'Int_DroneControl_ResourceSiphon_Size7_Class3'},
-        26720: {mtype: 'ihblc', cost: 3499200, name: 'Hatch Breaker Limpet Controller', class: 7, rating: 'B', mass: 128.00, integ: 183, pwrdraw: 0.84, boottime: 3, maxlimpet: 18, targetrng: 5160, limpettime: 120, maxspd: 500, hacktime: 3, mincargo: 4, maxcargo: 9, fdid: 128066550, fdname: 'Int_DroneControl_ResourceSiphon_Size7_Class4'},
-        26710: {mtype: 'ihblc', cost: 6998400, name: 'Hatch Breaker Limpet Controller', class: 7, rating: 'A', mass: 80.00, integ: 157, pwrdraw: 0.98, boottime: 3, maxlimpet: 12, targetrng: 6020, limpettime: 120, maxspd: 500, hacktime: 2, mincargo: 5, maxcargo: 10, fdid: 128066551, fdname: 'Int_DroneControl_ResourceSiphon_Size7_Class5'},
+        26750: {mtype: 'ihblc', cost: 437400, name: 'Hatch Breaker Limpet Controller', class: 7, rating: 'E', mass: 80.00, integ: 105, pwrdraw: 0.42, boottime: 3, maxlimpet: 18, targetrng: 2580, lpactrng: 2680, limpettime: 120, maxspd: 500, hacktime: 6, mincargo: 1, maxcargo: 6, fdid: 128066547, fdname: 'Int_DroneControl_ResourceSiphon_Size7_Class1'},
+        26740: {mtype: 'ihblc', cost: 874800, name: 'Hatch Breaker Limpet Controller', class: 7, rating: 'D', mass: 32.00, integ: 79, pwrdraw: 0.56, boottime: 3, maxlimpet: 12, targetrng: 3440, lpactrng: 3540, limpettime: 120, maxspd: 500, hacktime: 5, mincargo: 2, maxcargo: 7, fdid: 128066548, fdname: 'Int_DroneControl_ResourceSiphon_Size7_Class2'},
+        26730: {mtype: 'ihblc', cost: 1749600, name: 'Hatch Breaker Limpet Controller', class: 7, rating: 'C', mass: 80.00, integ: 131, pwrdraw: 0.70, boottime: 3, maxlimpet: 15, targetrng: 4300, lpactrng: 4400, limpettime: 120, maxspd: 500, hacktime: 4, mincargo: 3, maxcargo: 8, fdid: 128066549, fdname: 'Int_DroneControl_ResourceSiphon_Size7_Class3'},
+        26720: {mtype: 'ihblc', cost: 3499200, name: 'Hatch Breaker Limpet Controller', class: 7, rating: 'B', mass: 128.00, integ: 183, pwrdraw: 0.84, boottime: 3, maxlimpet: 18, targetrng: 5160, lpactrng: 5260, limpettime: 120, maxspd: 500, hacktime: 3, mincargo: 4, maxcargo: 9, fdid: 128066550, fdname: 'Int_DroneControl_ResourceSiphon_Size7_Class4'},
+        26710: {mtype: 'ihblc', cost: 6998400, name: 'Hatch Breaker Limpet Controller', class: 7, rating: 'A', mass: 80.00, integ: 157, pwrdraw: 0.98, boottime: 3, maxlimpet: 12, targetrng: 6020, lpactrng: 6120, limpettime: 120, maxspd: 500, hacktime: 2, mincargo: 5, maxcargo: 10, fdid: 128066551, fdname: 'Int_DroneControl_ResourceSiphon_Size7_Class5'},
 
         4150: {mtype: 'ihrp', cost: 5000, name: 'Hull Reinforcement Package', class: 1, rating: 'E', mass: 2.00, hullrnf: 80, kinres: 0.5, thmres: 0.5, expres: 0.5, fdid: 128668537, fdname: 'Int_HullReinforcement_Size1_Class1'},
         4140: {mtype: 'ihrp', cost: 15000, name: 'Hull Reinforcement Package', class: 1, rating: 'D', mass: 1.00, hullrnf: 110, kinres: 0.5, thmres: 0.5, expres: 0.5, fdid: 128668538, fdname: 'Int_HullReinforcement_Size1_Class2'},
@@ -3211,6 +2760,18 @@ var eddb = {
         4440: {mtype: 'ihrp', cost: 195000, name: 'Hull Reinforcement Package', class: 4, rating: 'D', mass: 8.00, hullrnf: 330, kinres: 2.0, thmres: 2.0, expres: 2.0, fdid: 128668544, fdname: 'Int_HullReinforcement_Size4_Class2'},
         4550: {mtype: 'ihrp', cost: 150000, name: 'Hull Reinforcement Package', class: 5, rating: 'E', mass: 32.00, hullrnf: 360, kinres: 2.5, thmres: 2.5, expres: 2.5, fdid: 128668545, fdname: 'Int_HullReinforcement_Size5_Class1'},
         4540: {mtype: 'ihrp', cost: 450000, name: 'Hull Reinforcement Package', class: 5, rating: 'D', mass: 16.00, hullrnf: 390, kinres: 2.5, thmres: 2.5, expres: 2.5, fdid: 128668546, fdname: 'Int_HullReinforcement_Size5_Class2'},
+
+        9151: {mtype: 'imahrp', cost: 7500, name: 'Meta Alloy Hull Reinforcement Package', class: 1, rating: 'E', mass: 2, hullrnf: 72, caures: 3.0, fdid: null, fdname: 'Int_MetaAlloyHullReinforcement_Size1_Class1'}, // TODO: fdid
+        9141: {mtype: 'imahrp', cost: 22500, name: 'Meta Alloy Hull Reinforcement Package', class: 1, rating: 'D', mass: 2, hullrnf: 99, caures: 3.0, fdid: null, fdname: 'Int_MetaAlloyHullReinforcement_Size1_Class2'}, // TODO: fdid
+        9251: {mtype: 'imahrp', cost: 18000, name: 'Meta Alloy Hull Reinforcement Package', class: 2, rating: 'E', mass: 4, hullrnf: 135, caures: 3.0, fdid: null, fdname: 'Int_MetaAlloyHullReinforcement_Size2_Class1'}, // TODO: fdid
+        9241: {mtype: 'imahrp', cost: 54000, name: 'Meta Alloy Hull Reinforcement Package', class: 2, rating: 'D', mass: 2, hullrnf: 171, caures: 3.0, fdid: null, fdname: 'Int_MetaAlloyHullReinforcement_Size2_Class2'}, // TODO: fdid
+        9351: {mtype: 'imahrp', cost: 42000, name: 'Meta Alloy Hull Reinforcement Package', class: 3, rating: 'E', mass: 8, hullrnf: 207, caures: 3.0, fdid: null, fdname: 'Int_MetaAlloyHullReinforcement_Size3_Class1'}, // TODO: fdid
+        9341: {mtype: 'imahrp', cost: 126000, name: 'Meta Alloy Hull Reinforcement Package', class: 3, rating: 'D', mass: 4, hullrnf: 234, caures: 3.0, fdid: null, fdname: 'Int_MetaAlloyHullReinforcement_Size3_Class2'}, // TODO: fdid
+        9451: {mtype: 'imahrp', cost: 97500, name: 'Meta Alloy Hull Reinforcement Package', class: 4, rating: 'E', mass: 16, hullrnf: 270, caures: 3.0, fdid: null, fdname: 'Int_MetaAlloyHullReinforcement_Size4_Class1'}, // TODO: fdid
+        9441: {mtype: 'imahrp', cost: 292500, name: 'Meta Alloy Hull Reinforcement Package', class: 4, rating: 'D', mass: 8, hullrnf: 297, caures: 3.0, fdid: null, fdname: 'Int_MetaAlloyHullReinforcement_Size4_Class2'}, // TODO: fdid
+        9551: {mtype: 'imahrp', cost: 225000, name: 'Meta Alloy Hull Reinforcement Package', class: 5, rating: 'E', mass: 32, hullrnf: 324, caures: 3.0, fdid: null, fdname: 'Int_MetaAlloyHullReinforcement_Size5_Class1'}, // TODO: fdid
+        9541: {mtype: 'imahrp', cost: 675000, name: 'Meta Alloy Hull Reinforcement Package', class: 5, rating: 'D', mass: 16, hullrnf: 351, caures: 3.0, fdid: null, fdname: 'Int_MetaAlloyHullReinforcement_Size5_Class2'}, // TODO: fdid
+
 
         8150: {mtype: 'imrp', cost: 5000, name: 'Module Reinforcement Package', class: 1, rating: 'E', mass: 2.00, integ: 77, dmgprot: 30, fdid: 128737270, fdname: 'Int_ModuleReinforcement_Size1_Class1'},
         8140: {mtype: 'imrp', cost: 15000, name: 'Module Reinforcement Package', class: 1, rating: 'D', mass: 1.00, integ: 70, dmgprot: 60, fdid: 128737271, fdname: 'Int_ModuleReinforcement_Size1_Class2'},
@@ -3250,29 +2811,29 @@ var eddb = {
         5680: {mtype: 'ipvh', cost: 576000, name: 'Planetary Vehicle Hangar', class: 6, rating: 'H', mass: 34.00, integ: 30, pwrdraw: 0.60, boottime: 5, vslots: 4, vcount: 1, fdid: 128672292, fdname: 'Int_BuggyBay_Size6_Class1'},
         5670: {mtype: 'ipvh', cost: 691200, name: 'Planetary Vehicle Hangar', class: 6, rating: 'G', mass: 17.00, integ: 30, pwrdraw: 1.80, boottime: 5, vslots: 4, vcount: 1, fdid: 128672293, fdname: 'Int_BuggyBay_Size6_Class2'},
 
-        24150: {mtype: 'iplc', cost: 600, name: 'Prospector Limpet Controller', class: 1, rating: 'E', mass: 1.30, integ: 24, pwrdraw: 0.18, boottime: 4, maxlimpet: 1, /*targetrng: 3000,*/ limpettime: 600, maxspd: 200, fdid: 128671269, fdname: 'Int_DroneControl_Prospector_Size1_Class1'},
-        24140: {mtype: 'iplc', cost: 1200, name: 'Prospector Limpet Controller', class: 1, rating: 'D', mass: 0.50, integ: 32, pwrdraw: 0.14, boottime: 4, maxlimpet: 1, /*targetrng: 4000,*/ limpettime: 600, maxspd: 200, fdid: 128671270, fdname: 'Int_DroneControl_Prospector_Size1_Class2'},
-        24130: {mtype: 'iplc', cost: 2400, name: 'Prospector Limpet Controller', class: 1, rating: 'C', mass: 1.30, integ: 40, pwrdraw: 0.23, boottime: 4, maxlimpet: 1, /*targetrng: 5000,*/ limpettime: 600, maxspd: 200, fdid: 128671271, fdname: 'Int_DroneControl_Prospector_Size1_Class3'},
-        24120: {mtype: 'iplc', cost: 4800, name: 'Prospector Limpet Controller', class: 1, rating: 'B', mass: 2.00, integ: 48, pwrdraw: 0.32, boottime: 4, maxlimpet: 1, /*targetrng: 6000,*/ limpettime: 600, maxspd: 200, fdid: 128671272, fdname: 'Int_DroneControl_Prospector_Size1_Class4'},
-        24110: {mtype: 'iplc', cost: 9600, name: 'Prospector Limpet Controller', class: 1, rating: 'A', mass: 1.30, integ: 56, pwrdraw: 0.28, boottime: 4, maxlimpet: 1, /*targetrng: 7000,*/ limpettime: 600, maxspd: 200, fdid: 128671273, fdname: 'Int_DroneControl_Prospector_Size1_Class5'},
+        24150: {mtype: 'iplc', cost: 600, name: 'Prospector Limpet Controller', class: 1, rating: 'E', mass: 1.30, integ: 24, pwrdraw: 0.18, boottime: 4, maxlimpet: 1, lpactrng: 3000, limpettime: 600, maxspd: 200, minebonus: 1.0, fdid: 128671269, fdname: 'Int_DroneControl_Prospector_Size1_Class1'},
+        24140: {mtype: 'iplc', cost: 1200, name: 'Prospector Limpet Controller', class: 1, rating: 'D', mass: 0.50, integ: 32, pwrdraw: 0.14, boottime: 4, maxlimpet: 1, lpactrng: 4000, limpettime: 600, maxspd: 200, minebonus: 2.0, fdid: 128671270, fdname: 'Int_DroneControl_Prospector_Size1_Class2'},
+        24130: {mtype: 'iplc', cost: 2400, name: 'Prospector Limpet Controller', class: 1, rating: 'C', mass: 1.30, integ: 40, pwrdraw: 0.23, boottime: 4, maxlimpet: 1, lpactrng: 5000, limpettime: 600, maxspd: 200, minebonus: 2.5, fdid: 128671271, fdname: 'Int_DroneControl_Prospector_Size1_Class3'},
+        24120: {mtype: 'iplc', cost: 4800, name: 'Prospector Limpet Controller', class: 1, rating: 'B', mass: 2.00, integ: 48, pwrdraw: 0.32, boottime: 4, maxlimpet: 1, lpactrng: 6000, limpettime: 600, maxspd: 200, minebonus: 3.0, fdid: 128671272, fdname: 'Int_DroneControl_Prospector_Size1_Class4'},
+        24110: {mtype: 'iplc', cost: 9600, name: 'Prospector Limpet Controller', class: 1, rating: 'A', mass: 1.30, integ: 56, pwrdraw: 0.28, boottime: 4, maxlimpet: 1, lpactrng: 7000, limpettime: 600, maxspd: 200, minebonus: 3.5, fdid: 128671273, fdname: 'Int_DroneControl_Prospector_Size1_Class5'},
 
-        24350: {mtype: 'iplc', cost: 5400, name: 'Prospector Limpet Controller', class: 3, rating: 'E', mass: 5.00, integ: 38, pwrdraw: 0.27, boottime: 4, maxlimpet: 2, /*targetrng: 3300,*/ limpettime: 600, maxspd: 200, fdid: 128671274, fdname: 'Int_DroneControl_Prospector_Size3_Class1'},
-        24340: {mtype: 'iplc', cost: 10800, name: 'Prospector Limpet Controller', class: 3, rating: 'D', mass: 2.00, integ: 51, pwrdraw: 0.20, boottime: 4, maxlimpet: 2, /*targetrng: 4400,*/ limpettime: 600, maxspd: 200, fdid: 128671275, fdname: 'Int_DroneControl_Prospector_Size3_Class2'},
-        24330: {mtype: 'iplc', cost: 21600, name: 'Prospector Limpet Controller', class: 3, rating: 'C', mass: 5.00, integ: 64, pwrdraw: 0.34, boottime: 4, maxlimpet: 2, /*targetrng: 5500,*/ limpettime: 600, maxspd: 200, fdid: 128671276, fdname: 'Int_DroneControl_Prospector_Size3_Class3'},
-        24320: {mtype: 'iplc', cost: 43200, name: 'Prospector Limpet Controller', class: 3, rating: 'B', mass: 8.00, integ: 77, pwrdraw: 0.48, boottime: 4, maxlimpet: 2, /*targetrng: 6600,*/ limpettime: 600, maxspd: 200, fdid: 128671277, fdname: 'Int_DroneControl_Prospector_Size3_Class4'},
-        24310: {mtype: 'iplc', cost: 86400, name: 'Prospector Limpet Controller', class: 3, rating: 'A', mass: 5.00, integ: 90, pwrdraw: 0.41, boottime: 4, maxlimpet: 2, /*targetrng: 7700,*/ limpettime: 600, maxspd: 200, fdid: 128671278, fdname: 'Int_DroneControl_Prospector_Size3_Class5'},
+        24350: {mtype: 'iplc', cost: 5400, name: 'Prospector Limpet Controller', class: 3, rating: 'E', mass: 5.00, integ: 38, pwrdraw: 0.27, boottime: 4, maxlimpet: 2, lpactrng: 3300, limpettime: 600, maxspd: 200, minebonus: 1.0, fdid: 128671274, fdname: 'Int_DroneControl_Prospector_Size3_Class1'},
+        24340: {mtype: 'iplc', cost: 10800, name: 'Prospector Limpet Controller', class: 3, rating: 'D', mass: 2.00, integ: 51, pwrdraw: 0.20, boottime: 4, maxlimpet: 2, lpactrng: 4400, limpettime: 600, maxspd: 200, minebonus: 2.0, fdid: 128671275, fdname: 'Int_DroneControl_Prospector_Size3_Class2'},
+        24330: {mtype: 'iplc', cost: 21600, name: 'Prospector Limpet Controller', class: 3, rating: 'C', mass: 5.00, integ: 64, pwrdraw: 0.34, boottime: 4, maxlimpet: 2, lpactrng: 5500, limpettime: 600, maxspd: 200, minebonus: 2.5, fdid: 128671276, fdname: 'Int_DroneControl_Prospector_Size3_Class3'},
+        24320: {mtype: 'iplc', cost: 43200, name: 'Prospector Limpet Controller', class: 3, rating: 'B', mass: 8.00, integ: 77, pwrdraw: 0.48, boottime: 4, maxlimpet: 2, lpactrng: 6600, limpettime: 600, maxspd: 200, minebonus: 3.0, fdid: 128671277, fdname: 'Int_DroneControl_Prospector_Size3_Class4'},
+        24310: {mtype: 'iplc', cost: 86400, name: 'Prospector Limpet Controller', class: 3, rating: 'A', mass: 5.00, integ: 90, pwrdraw: 0.41, boottime: 4, maxlimpet: 2, lpactrng: 7700, limpettime: 600, maxspd: 200, minebonus: 3.5, fdid: 128671278, fdname: 'Int_DroneControl_Prospector_Size3_Class5'},
 
-        24550: {mtype: 'iplc', cost: 48600, name: 'Prospector Limpet Controller', class: 5, rating: 'E', mass: 20.00, integ: 58, pwrdraw: 0.40, boottime: 4, maxlimpet: 4, /*targetrng: 3900,*/ limpettime: 600, maxspd: 200, fdid: 128671279, fdname: 'Int_DroneControl_Prospector_Size5_Class1'},
-        24540: {mtype: 'iplc', cost: 97200, name: 'Prospector Limpet Controller', class: 5, rating: 'D', mass: 8.00, integ: 77, pwrdraw: 0.30, boottime: 4, maxlimpet: 4, /*targetrng: 5200,*/ limpettime: 600, maxspd: 200, fdid: 128671280, fdname: 'Int_DroneControl_Prospector_Size5_Class2'},
-        24530: {mtype: 'iplc', cost: 194400, name: 'Prospector Limpet Controller', class: 5, rating: 'C', mass: 20.00, integ: 96, pwrdraw: 0.50, boottime: 4, maxlimpet: 4, /*targetrng: 6500,*/ limpettime: 600, maxspd: 200, fdid: 128671281, fdname: 'Int_DroneControl_Prospector_Size5_Class3'},
-        24520: {mtype: 'iplc', cost: 388800, name: 'Prospector Limpet Controller', class: 5, rating: 'B', mass: 32.00, integ: 157, pwrdraw: 0.97, boottime: 4, maxlimpet: 4, /*targetrng: 7800,*/ limpettime: 600, maxspd: 200, fdid: 128671282, fdname: 'Int_DroneControl_Prospector_Size5_Class4'}, // TODO BUG pwrdraw:0.70 ?
-        24510: {mtype: 'iplc', cost: 777600, name: 'Prospector Limpet Controller', class: 5, rating: 'A', mass: 20.00, integ: 134, pwrdraw: 0.60, boottime: 4, maxlimpet: 4, /*targetrng: 9100,*/ limpettime: 600, maxspd: 200, fdid: 128671283, fdname: 'Int_DroneControl_Prospector_Size5_Class5'},
+        24550: {mtype: 'iplc', cost: 48600, name: 'Prospector Limpet Controller', class: 5, rating: 'E', mass: 20.00, integ: 58, pwrdraw: 0.40, boottime: 4, maxlimpet: 4, lpactrng: 3900, limpettime: 600, maxspd: 200, minebonus: 1.0, fdid: 128671279, fdname: 'Int_DroneControl_Prospector_Size5_Class1'},
+        24540: {mtype: 'iplc', cost: 97200, name: 'Prospector Limpet Controller', class: 5, rating: 'D', mass: 8.00, integ: 77, pwrdraw: 0.30, boottime: 4, maxlimpet: 4, lpactrng: 5200, limpettime: 600, maxspd: 200, minebonus: 2.0, fdid: 128671280, fdname: 'Int_DroneControl_Prospector_Size5_Class2'},
+        24530: {mtype: 'iplc', cost: 194400, name: 'Prospector Limpet Controller', class: 5, rating: 'C', mass: 20.00, integ: 96, pwrdraw: 0.50, boottime: 4, maxlimpet: 4, lpactrng: 6500, limpettime: 600, maxspd: 200, minebonus: 2.5, fdid: 128671281, fdname: 'Int_DroneControl_Prospector_Size5_Class3'},
+        24520: {mtype: 'iplc', cost: 388800, name: 'Prospector Limpet Controller', class: 5, rating: 'B', mass: 32.00, integ: 157, pwrdraw: 0.97, boottime: 4, maxlimpet: 4, lpactrng: 7800, limpettime: 600, maxspd: 200, minebonus: 3.0, fdid: 128671282, fdname: 'Int_DroneControl_Prospector_Size5_Class4'}, // TODO BUG? pwrdraw:0.70
+        24510: {mtype: 'iplc', cost: 777600, name: 'Prospector Limpet Controller', class: 5, rating: 'A', mass: 20.00, integ: 134, pwrdraw: 0.60, boottime: 4, maxlimpet: 4, lpactrng: 9100, limpettime: 600, maxspd: 200, minebonus: 3.5, fdid: 128671283, fdname: 'Int_DroneControl_Prospector_Size5_Class5'},
 
-        24750: {mtype: 'iplc', cost: 437400, name: 'Prospector Limpet Controller', class: 7, rating: 'E', mass: 80.00, integ: 79, pwrdraw: 0.55, boottime: 4, maxlimpet: 8, /*targetrng: 5100,*/ limpettime: 600, maxspd: 200, fdid: 128671284, fdname: 'Int_DroneControl_Prospector_Size7_Class1'},
-        24740: {mtype: 'iplc', cost: 874800, name: 'Prospector Limpet Controller', class: 7, rating: 'D', mass: 32.00, integ: 105, pwrdraw: 0.41, boottime: 4, maxlimpet: 8, /*targetrng: 6800,*/ limpettime: 600, maxspd: 200, fdid: 128671285, fdname: 'Int_DroneControl_Prospector_Size7_Class2'},
-        24730: {mtype: 'iplc', cost: 1749600, name: 'Prospector Limpet Controller', class: 7, rating: 'C', mass: 80.00, integ: 131, pwrdraw: 0.69, boottime: 4, maxlimpet: 8, /*targetrng: 8500,*/ limpettime: 600, maxspd: 200, fdid: 128671286, fdname: 'Int_DroneControl_Prospector_Size7_Class3'},
-        24720: {mtype: 'iplc', cost: 3499200, name: 'Prospector Limpet Controller', class: 7, rating: 'B', mass: 128.00, integ: 157, pwrdraw: 0.97, boottime: 4, maxlimpet: 8, /*targetrng:10200,*/ limpettime: 600, maxspd: 200, fdid: 128671287, fdname: 'Int_DroneControl_Prospector_Size7_Class4'},
-        24710: {mtype: 'iplc', cost: 6998400, name: 'Prospector Limpet Controller', class: 7, rating: 'A', mass: 80.00, integ: 183, pwrdraw: 0.83, boottime: 4, maxlimpet: 8, /*targetrng:11900,*/ limpettime: 600, maxspd: 200, fdid: 128671288, fdname: 'Int_DroneControl_Prospector_Size7_Class5'},
+        24750: {mtype: 'iplc', cost: 437400, name: 'Prospector Limpet Controller', class: 7, rating: 'E', mass: 80.00, integ: 79, pwrdraw: 0.55, boottime: 4, maxlimpet: 8, lpactrng: 5100, limpettime: 600, maxspd: 200, minebonus: 1.0, fdid: 128671284, fdname: 'Int_DroneControl_Prospector_Size7_Class1'},
+        24740: {mtype: 'iplc', cost: 874800, name: 'Prospector Limpet Controller', class: 7, rating: 'D', mass: 32.00, integ: 105, pwrdraw: 0.41, boottime: 4, maxlimpet: 8, lpactrng: 6800, limpettime: 600, maxspd: 200, minebonus: 2.0, fdid: 128671285, fdname: 'Int_DroneControl_Prospector_Size7_Class2'},
+        24730: {mtype: 'iplc', cost: 1749600, name: 'Prospector Limpet Controller', class: 7, rating: 'C', mass: 80.00, integ: 131, pwrdraw: 0.69, boottime: 4, maxlimpet: 8, lpactrng: 8500, limpettime: 600, maxspd: 200, minebonus: 2.5, fdid: 128671286, fdname: 'Int_DroneControl_Prospector_Size7_Class3'},
+        24720: {mtype: 'iplc', cost: 3499200, name: 'Prospector Limpet Controller', class: 7, rating: 'B', mass: 128.00, integ: 157, pwrdraw: 0.97, boottime: 4, maxlimpet: 8, lpactrng: 10200, limpettime: 600, maxspd: 200, minebonus: 3.0, fdid: 128671287, fdname: 'Int_DroneControl_Prospector_Size7_Class4'},
+        24710: {mtype: 'iplc', cost: 6998400, name: 'Prospector Limpet Controller', class: 7, rating: 'A', mass: 80.00, integ: 183, pwrdraw: 0.83, boottime: 4, maxlimpet: 8, lpactrng: 11900, limpettime: 600, maxspd: 200, minebonus: 3.5, fdid: 128671288, fdname: 'Int_DroneControl_Prospector_Size7_Class5'},
 
         // TODO: thmload added in 3.0?
         21150: {mtype: 'inlc', cost: 2600, name: 'Recon Limpet Controller', class: 1, rating: 'E', mass: 1.30, integ: 24, pwrdraw: 0.18, boottime: 10, maxlimpet: 1, targetrng: 1200, maxspd: 100, hacktime: 22, fdid: 128837858, fdname: 'Int_DroneControl_Recon_Size1_Class1'},
@@ -3319,7 +2880,7 @@ var eddb = {
         27550: {mtype: 'irlc', cost: 48600, name: 'Repair Limpet Controller', class: 5, rating: 'E', mass: 20.00, integ: 58, pwrdraw: 0.40, boottime: 10, maxlimpet: 3, targetrng: 780, limpettime: 300, maxspd: 200, repaircap: 310, fdid: 128777337, fdname: 'Int_DroneControl_Repair_Size5_Class1'},
         27540: {mtype: 'irlc', cost: 97200, name: 'Repair Limpet Controller', class: 5, rating: 'D', mass: 8.00, integ: 77, pwrdraw: 0.30, boottime: 10, maxlimpet: 3, targetrng: 1040, limpettime: 300, maxspd: 200, repaircap: 310, fdid: 128777338, fdname: 'Int_DroneControl_Repair_Size5_Class2'},
         27530: {mtype: 'irlc', cost: 194400, name: 'Repair Limpet Controller', class: 5, rating: 'C', mass: 20.00, integ: 96, pwrdraw: 0.50, boottime: 10, maxlimpet: 3, targetrng: 1300, limpettime: 300, maxspd: 200, repaircap: 310, fdid: 128777339, fdname: 'Int_DroneControl_Repair_Size5_Class3'},
-        27520: {mtype: 'irlc', cost: 388800, name: 'Repair Limpet Controller', class: 5, rating: 'B', mass: 32.00, integ: 157, pwrdraw: 0.97, boottime: 10, maxlimpet: 3, targetrng: 1560, limpettime: 300, maxspd: 200, repaircap: 310, fdid: 128777340, fdname: 'Int_DroneControl_Repair_Size5_Class4'}, // TODO BUG pwrdraw:0.70 ?
+        27520: {mtype: 'irlc', cost: 388800, name: 'Repair Limpet Controller', class: 5, rating: 'B', mass: 32.00, integ: 157, pwrdraw: 0.97, boottime: 10, maxlimpet: 3, targetrng: 1560, limpettime: 300, maxspd: 200, repaircap: 310, fdid: 128777340, fdname: 'Int_DroneControl_Repair_Size5_Class4'}, // TODO BUG? pwrdraw:0.70
         27510: {mtype: 'irlc', cost: 777600, name: 'Repair Limpet Controller', class: 5, rating: 'A', mass: 20.00, integ: 134, pwrdraw: 0.60, boottime: 10, maxlimpet: 3, targetrng: 1820, limpettime: 300, maxspd: 200, repaircap: 310, fdid: 128777341, fdname: 'Int_DroneControl_Repair_Size5_Class5'},
 
         27750: {mtype: 'irlc', cost: 437400, name: 'Repair Limpet Controller', class: 7, rating: 'E', mass: 80.00, integ: 79, pwrdraw: 0.55, boottime: 10, maxlimpet: 4, targetrng: 1020, limpettime: 300, maxspd: 200, repaircap: 450, fdid: 128777342, fdname: 'Int_DroneControl_Repair_Size7_Class1'},
@@ -3378,78 +2939,81 @@ var eddb = {
         31820: {mtype: 'iscb', cost: 10899760, name: 'Shield Cell Bank', class: 8, rating: 'B', mass: 256.00, integ: 210, pwrdraw: 2.88, boottime: 25, spinup: 5, duration: 17.1, shieldrnf: 56.0, thmload: 800.0, ammoclip: 1, ammomax: 5, fdid: 128064336, fdname: 'Int_ShieldCellBank_Size8_Class4'},
         31810: {mtype: 'iscb', cost: 27249390, name: 'Shield Cell Bank', class: 8, rating: 'A', mass: 160.00, integ: 180, pwrdraw: 3.36, boottime: 25, spinup: 5, duration: 17.1, shieldrnf: 65.0, thmload: 800.0, ammoclip: 1, ammomax: 4, fdid: 128064337, fdname: 'Int_ShieldCellBank_Size8_Class5'},
 
-        //	30150 : { mtype:'isg', cost:      NaN, name:'Shield Generator', class:1, rating:'E', mass:   NaN, integ:NaN, pwrdraw: NaN, boottime:1, minmass: 13.0, optmass:  25.0, maxmass:  63.0, minmul:30, optmul: 80, maxmul:130, genrate:1.0, bgenrate:1.6, distdraw:0.6, kinres:40.0, thmres:-20.0, expres:50.0, fdid:null, fdname:null }, // TODO
-        //	30140 : { mtype:'isg', cost:      NaN, name:'Shield Generator', class:1, rating:'D', mass:   NaN, integ:NaN, pwrdraw: NaN, boottime:1, minmass: 13.0, optmass:  25.0, maxmass:  63.0, minmul:40, optmul: 90, maxmul:140, genrate:1.0, bgenrate:1.6, distdraw:0.6, kinres:40.0, thmres:-20.0, expres:50.0, fdid:null, fdname:null }, // TODO
-        //	30130 : { mtype:'isg', cost:      NaN, name:'Shield Generator', class:1, rating:'C', mass:   NaN, integ:NaN, pwrdraw: NaN, boottime:1, minmass: 13.0, optmass:  25.0, maxmass:  63.0, minmul:50, optmul:100, maxmul:150, genrate:1.0, bgenrate:1.6, distdraw:0.6, kinres:40.0, thmres:-20.0, expres:50.0, fdid:null, fdname:null }, // TODO
-        //	30120 : { mtype:'isg', cost:      NaN, name:'Shield Generator', class:1, rating:'B', mass:   NaN, integ:NaN, pwrdraw: NaN, boottime:1, minmass: 13.0, optmass:  25.0, maxmass:  63.0, minmul:60, optmul:110, maxmul:160, genrate:1.0, bgenrate:1.6, distdraw:0.6, kinres:40.0, thmres:-20.0, expres:50.0, fdid:null, fdname:null }, // TODO
-        30110: {mtype: 'isg', cost: 88075, name: 'Shield Generator', class: 1, rating: 'A', mass: 1.30, integ: 48, pwrdraw: 1.68, boottime: 1, minmass: 13.0, optmass: 25.0, maxmass: 63.0, minmul: 70, optmul: 120, maxmul: 170, genrate: 1.0, bgenrate: 1.6, distdraw: 0.60, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064262, fdname: 'Int_ShieldGenerator_Size1_Class5'},
+        //	30150 : { mtype:'isg', cost:      NaN, name:'Shield Generator', class:1, rating:'E', mass:   NaN, integ:NaN, pwrdraw: NaN, boottime:1, minmass: 13.0, optmass:  25.0, maxmass:  63.0, minmul:30, optmul: 80, maxmul:130, genrate:1.0, bgenrate:1.60, thmload:1.2, distdraw:0.6, kinres:40.0, thmres:-20.0, expres:50.0, fdid:null, fdname:null }, // TODO
+        //	30140 : { mtype:'isg', cost:      NaN, name:'Shield Generator', class:1, rating:'D', mass:   NaN, integ:NaN, pwrdraw: NaN, boottime:1, minmass: 13.0, optmass:  25.0, maxmass:  63.0, minmul:40, optmul: 90, maxmul:140, genrate:1.0, bgenrate:1.60, thmload:1.2, distdraw:0.6, kinres:40.0, thmres:-20.0, expres:50.0, fdid:null, fdname:null }, // TODO
+        //	30130 : { mtype:'isg', cost:      NaN, name:'Shield Generator', class:1, rating:'C', mass:   NaN, integ:NaN, pwrdraw: NaN, boottime:1, minmass: 13.0, optmass:  25.0, maxmass:  63.0, minmul:50, optmul:100, maxmul:150, genrate:1.0, bgenrate:1.60, thmload:1.2, distdraw:0.6, kinres:40.0, thmres:-20.0, expres:50.0, fdid:null, fdname:null }, // TODO
+        //	30120 : { mtype:'isg', cost:      NaN, name:'Shield Generator', class:1, rating:'B', mass:   NaN, integ:NaN, pwrdraw: NaN, boottime:1, minmass: 13.0, optmass:  25.0, maxmass:  63.0, minmul:60, optmul:110, maxmul:160, genrate:1.0, bgenrate:1.60, thmload:1.2, distdraw:0.6, kinres:40.0, thmres:-20.0, expres:50.0, fdid:null, fdname:null }, // TODO
+        30110: {mtype: 'isg', cost: 88075, name: 'Shield Generator', class: 1, rating: 'A', mass: 1.30, integ: 48, pwrdraw: 1.68, boottime: 1, minmass: 13.0, optmass: 25.0, maxmass: 63.0, minmul: 70, optmul: 120, maxmul: 170, genrate: 1.0, bgenrate: 1.60, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064262, fdname: 'Int_ShieldGenerator_Size1_Class5'},
 
-        30250: {mtype: 'isg', cost: 1980, name: 'Shield Generator', class: 2, rating: 'E', mass: 2.50, integ: 41, pwrdraw: 0.90, boottime: 1, minmass: 28.0, optmass: 55.0, maxmass: 138.0, minmul: 30, optmul: 80, maxmul: 130, genrate: 1.0, bgenrate: 1.6, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064263, fdname: 'Int_ShieldGenerator_Size2_Class1'},
-        30240: {mtype: 'isg', cost: 5930, name: 'Shield Generator', class: 2, rating: 'D', mass: 1.00, integ: 31, pwrdraw: 1.20, boottime: 1, minmass: 28.0, optmass: 55.0, maxmass: 138.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 1.0, bgenrate: 1.6, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064264, fdname: 'Int_ShieldGenerator_Size2_Class2'},
-        30230: {mtype: 'isg', cost: 17800, name: 'Shield Generator', class: 2, rating: 'C', mass: 2.50, integ: 51, pwrdraw: 1.50, boottime: 1, minmass: 28.0, optmass: 55.0, maxmass: 138.0, minmul: 50, optmul: 100, maxmul: 150, genrate: 1.0, bgenrate: 1.6, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064265, fdname: 'Int_ShieldGenerator_Size2_Class3'},
-        30220: {mtype: 'isg', cost: 53410, name: 'Shield Generator', class: 2, rating: 'B', mass: 4.00, integ: 71, pwrdraw: 1.80, boottime: 1, minmass: 28.0, optmass: 55.0, maxmass: 138.0, minmul: 60, optmul: 110, maxmul: 160, genrate: 1.0, bgenrate: 1.6, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064266, fdname: 'Int_ShieldGenerator_Size2_Class4'},
-        30210: {mtype: 'isg', cost: 160220, name: 'Shield Generator', class: 2, rating: 'A', mass: 2.50, integ: 61, pwrdraw: 2.10, boottime: 1, minmass: 28.0, optmass: 55.0, maxmass: 138.0, minmul: 70, optmul: 120, maxmul: 170, genrate: 1.0, bgenrate: 1.6, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064267, fdname: 'Int_ShieldGenerator_Size2_Class5'},
+        30250: {mtype: 'isg', cost: 1980, name: 'Shield Generator', class: 2, rating: 'E', mass: 2.50, integ: 41, pwrdraw: 0.90, boottime: 1, minmass: 28.0, optmass: 55.0, maxmass: 138.0, minmul: 30, optmul: 80, maxmul: 130, genrate: 1.0, bgenrate: 1.60, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064263, fdname: 'Int_ShieldGenerator_Size2_Class1'},
+        30240: {mtype: 'isg', cost: 5930, name: 'Shield Generator', class: 2, rating: 'D', mass: 1.00, integ: 31, pwrdraw: 1.20, boottime: 1, minmass: 28.0, optmass: 55.0, maxmass: 138.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 1.0, bgenrate: 1.60, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064264, fdname: 'Int_ShieldGenerator_Size2_Class2'},
+        30230: {mtype: 'isg', cost: 17800, name: 'Shield Generator', class: 2, rating: 'C', mass: 2.50, integ: 51, pwrdraw: 1.50, boottime: 1, minmass: 28.0, optmass: 55.0, maxmass: 138.0, minmul: 50, optmul: 100, maxmul: 150, genrate: 1.0, bgenrate: 1.60, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064265, fdname: 'Int_ShieldGenerator_Size2_Class3'},
+        30220: {mtype: 'isg', cost: 53410, name: 'Shield Generator', class: 2, rating: 'B', mass: 4.00, integ: 71, pwrdraw: 1.80, boottime: 1, minmass: 28.0, optmass: 55.0, maxmass: 138.0, minmul: 60, optmul: 110, maxmul: 160, genrate: 1.0, bgenrate: 1.60, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064266, fdname: 'Int_ShieldGenerator_Size2_Class4'},
+        30210: {mtype: 'isg', cost: 160220, name: 'Shield Generator', class: 2, rating: 'A', mass: 2.50, integ: 61, pwrdraw: 2.10, boottime: 1, minmass: 28.0, optmass: 55.0, maxmass: 138.0, minmul: 70, optmul: 120, maxmul: 170, genrate: 1.0, bgenrate: 1.60, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064267, fdname: 'Int_ShieldGenerator_Size2_Class5'},
 
-        30350: {mtype: 'isg', cost: 6270, name: 'Shield Generator', class: 3, rating: 'E', mass: 5.00, integ: 51, pwrdraw: 1.08, boottime: 1, minmass: 83.0, optmass: 165.0, maxmass: 413.0, minmul: 30, optmul: 80, maxmul: 130, genrate: 1.0, bgenrate: 1.9, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064268, fdname: 'Int_ShieldGenerator_Size3_Class1'},
-        30340: {mtype: 'isg', cost: 18810, name: 'Shield Generator', class: 3, rating: 'D', mass: 2.00, integ: 38, pwrdraw: 1.44, boottime: 1, minmass: 83.0, optmass: 165.0, maxmass: 413.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 1.0, bgenrate: 1.9, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064269, fdname: 'Int_ShieldGenerator_Size3_Class2'},
-        30330: {mtype: 'isg', cost: 56440, name: 'Shield Generator', class: 3, rating: 'C', mass: 5.00, integ: 64, pwrdraw: 1.80, boottime: 1, minmass: 83.0, optmass: 165.0, maxmass: 413.0, minmul: 50, optmul: 100, maxmul: 150, genrate: 1.0, bgenrate: 1.9, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064270, fdname: 'Int_ShieldGenerator_Size3_Class3'},
-        30320: {mtype: 'isg', cost: 169300, name: 'Shield Generator', class: 3, rating: 'B', mass: 8.00, integ: 90, pwrdraw: 2.16, boottime: 1, minmass: 83.0, optmass: 165.0, maxmass: 413.0, minmul: 60, optmul: 110, maxmul: 160, genrate: 1.0, bgenrate: 1.9, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064271, fdname: 'Int_ShieldGenerator_Size3_Class4'},
-        30310: {mtype: 'isg', cost: 507910, name: 'Shield Generator', class: 3, rating: 'A', mass: 5.00, integ: 77, pwrdraw: 2.52, boottime: 1, minmass: 83.0, optmass: 165.0, maxmass: 413.0, minmul: 70, optmul: 120, maxmul: 170, genrate: 1.0, bgenrate: 1.9, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064272, fdname: 'Int_ShieldGenerator_Size3_Class5'},
+        30350: {mtype: 'isg', cost: 6270, name: 'Shield Generator', class: 3, rating: 'E', mass: 5.00, integ: 51, pwrdraw: 1.08, boottime: 1, minmass: 83.0, optmass: 165.0, maxmass: 413.0, minmul: 30, optmul: 80, maxmul: 130, genrate: 1.0, bgenrate: 1.87, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064268, fdname: 'Int_ShieldGenerator_Size3_Class1'},
+        30340: {mtype: 'isg', cost: 18810, name: 'Shield Generator', class: 3, rating: 'D', mass: 2.00, integ: 38, pwrdraw: 1.44, boottime: 1, minmass: 83.0, optmass: 165.0, maxmass: 413.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 1.0, bgenrate: 1.87, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064269, fdname: 'Int_ShieldGenerator_Size3_Class2'},
+        30330: {mtype: 'isg', cost: 56440, name: 'Shield Generator', class: 3, rating: 'C', mass: 5.00, integ: 64, pwrdraw: 1.80, boottime: 1, minmass: 83.0, optmass: 165.0, maxmass: 413.0, minmul: 50, optmul: 100, maxmul: 150, genrate: 1.0, bgenrate: 1.87, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064270, fdname: 'Int_ShieldGenerator_Size3_Class3'},
+        30320: {mtype: 'isg', cost: 169300, name: 'Shield Generator', class: 3, rating: 'B', mass: 8.00, integ: 90, pwrdraw: 2.16, boottime: 1, minmass: 83.0, optmass: 165.0, maxmass: 413.0, minmul: 60, optmul: 110, maxmul: 160, genrate: 1.0, bgenrate: 1.87, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064271, fdname: 'Int_ShieldGenerator_Size3_Class4'},
+        30310: {mtype: 'isg', cost: 507910, name: 'Shield Generator', class: 3, rating: 'A', mass: 5.00, integ: 77, pwrdraw: 2.52, boottime: 1, minmass: 83.0, optmass: 165.0, maxmass: 413.0, minmul: 70, optmul: 120, maxmul: 170, genrate: 1.0, bgenrate: 1.87, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064272, fdname: 'Int_ShieldGenerator_Size3_Class5'},
 
-        30450: {mtype: 'isg', cost: 19880, name: 'Shield Generator', class: 4, rating: 'E', mass: 10.00, integ: 64, pwrdraw: 1.32, boottime: 1, minmass: 143.0, optmass: 285.0, maxmass: 713.0, minmul: 30, optmul: 80, maxmul: 130, genrate: 1.0, bgenrate: 2.5, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064273, fdname: 'Int_ShieldGenerator_Size4_Class1'},
-        30440: {mtype: 'isg', cost: 59630, name: 'Shield Generator', class: 4, rating: 'D', mass: 4.00, integ: 48, pwrdraw: 1.76, boottime: 1, minmass: 143.0, optmass: 285.0, maxmass: 713.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 1.0, bgenrate: 2.5, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064274, fdname: 'Int_ShieldGenerator_Size4_Class2'},
-        30430: {mtype: 'isg', cost: 178900, name: 'Shield Generator', class: 4, rating: 'C', mass: 10.00, integ: 80, pwrdraw: 2.20, boottime: 1, minmass: 143.0, optmass: 285.0, maxmass: 713.0, minmul: 50, optmul: 100, maxmul: 150, genrate: 1.0, bgenrate: 2.5, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064275, fdname: 'Int_ShieldGenerator_Size4_Class3'},
-        30420: {mtype: 'isg', cost: 536690, name: 'Shield Generator', class: 4, rating: 'B', mass: 16.00, integ: 112, pwrdraw: 2.64, boottime: 1, minmass: 143.0, optmass: 285.0, maxmass: 713.0, minmul: 60, optmul: 110, maxmul: 160, genrate: 1.0, bgenrate: 2.5, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064276, fdname: 'Int_ShieldGenerator_Size4_Class4'},
-        30410: {mtype: 'isg', cost: 1610080, name: 'Shield Generator', class: 4, rating: 'A', mass: 10.00, integ: 96, pwrdraw: 3.08, boottime: 1, minmass: 143.0, optmass: 285.0, maxmass: 713.0, minmul: 70, optmul: 120, maxmul: 170, genrate: 1.0, bgenrate: 2.5, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064277, fdname: 'Int_ShieldGenerator_Size4_Class5'},
+        30450: {mtype: 'isg', cost: 19880, name: 'Shield Generator', class: 4, rating: 'E', mass: 10.00, integ: 64, pwrdraw: 1.32, boottime: 1, minmass: 143.0, optmass: 285.0, maxmass: 713.0, minmul: 30, optmul: 80, maxmul: 130, genrate: 1.0, bgenrate: 2.53, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064273, fdname: 'Int_ShieldGenerator_Size4_Class1'},
+        30440: {mtype: 'isg', cost: 59630, name: 'Shield Generator', class: 4, rating: 'D', mass: 4.00, integ: 48, pwrdraw: 1.76, boottime: 1, minmass: 143.0, optmass: 285.0, maxmass: 713.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 1.0, bgenrate: 2.53, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064274, fdname: 'Int_ShieldGenerator_Size4_Class2'},
+        30430: {mtype: 'isg', cost: 178900, name: 'Shield Generator', class: 4, rating: 'C', mass: 10.00, integ: 80, pwrdraw: 2.20, boottime: 1, minmass: 143.0, optmass: 285.0, maxmass: 713.0, minmul: 50, optmul: 100, maxmul: 150, genrate: 1.0, bgenrate: 2.53, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064275, fdname: 'Int_ShieldGenerator_Size4_Class3'},
+        30420: {mtype: 'isg', cost: 536690, name: 'Shield Generator', class: 4, rating: 'B', mass: 16.00, integ: 112, pwrdraw: 2.64, boottime: 1, minmass: 143.0, optmass: 285.0, maxmass: 713.0, minmul: 60, optmul: 110, maxmul: 160, genrate: 1.0, bgenrate: 2.53, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064276, fdname: 'Int_ShieldGenerator_Size4_Class4'},
+        30410: {mtype: 'isg', cost: 1610080, name: 'Shield Generator', class: 4, rating: 'A', mass: 10.00, integ: 96, pwrdraw: 3.08, boottime: 1, minmass: 143.0, optmass: 285.0, maxmass: 713.0, minmul: 70, optmul: 120, maxmul: 170, genrate: 1.0, bgenrate: 2.53, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064277, fdname: 'Int_ShieldGenerator_Size4_Class5'},
 
-        30550: {mtype: 'isg', cost: 63010, name: 'Shield Generator', class: 5, rating: 'E', mass: 20.00, integ: 77, pwrdraw: 1.56, boottime: 1, minmass: 203.0, optmass: 405.0, maxmass: 1013.0, minmul: 30, optmul: 80, maxmul: 130, genrate: 1.0, bgenrate: 3.7, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064278, fdname: 'Int_ShieldGenerator_Size5_Class1'},
-        30540: {mtype: 'isg', cost: 189040, name: 'Shield Generator', class: 5, rating: 'D', mass: 8.00, integ: 58, pwrdraw: 2.08, boottime: 1, minmass: 203.0, optmass: 405.0, maxmass: 1013.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 1.0, bgenrate: 3.7, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064279, fdname: 'Int_ShieldGenerator_Size5_Class2'},
-        30530: {mtype: 'isg', cost: 567110, name: 'Shield Generator', class: 5, rating: 'C', mass: 20.00, integ: 96, pwrdraw: 2.60, boottime: 1, minmass: 203.0, optmass: 405.0, maxmass: 1013.0, minmul: 50, optmul: 100, maxmul: 150, genrate: 1.0, bgenrate: 3.7, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064280, fdname: 'Int_ShieldGenerator_Size5_Class3'},
-        30520: {mtype: 'isg', cost: 1701320, name: 'Shield Generator', class: 5, rating: 'B', mass: 32.00, integ: 134, pwrdraw: 3.12, boottime: 1, minmass: 203.0, optmass: 405.0, maxmass: 1013.0, minmul: 60, optmul: 110, maxmul: 160, genrate: 1.0, bgenrate: 3.7, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064281, fdname: 'Int_ShieldGenerator_Size5_Class4'},
-        30510: {mtype: 'isg', cost: 5103950, name: 'Shield Generator', class: 5, rating: 'A', mass: 20.00, integ: 115, pwrdraw: 3.64, boottime: 1, minmass: 203.0, optmass: 405.0, maxmass: 1013.0, minmul: 70, optmul: 120, maxmul: 170, genrate: 1.0, bgenrate: 3.7, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064282, fdname: 'Int_ShieldGenerator_Size5_Class5'},
+        30550: {mtype: 'isg', cost: 63010, name: 'Shield Generator', class: 5, rating: 'E', mass: 20.00, integ: 77, pwrdraw: 1.56, boottime: 1, minmass: 203.0, optmass: 405.0, maxmass: 1013.0, minmul: 30, optmul: 80, maxmul: 130, genrate: 1.0, bgenrate: 3.75, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064278, fdname: 'Int_ShieldGenerator_Size5_Class1'},
+        30540: {mtype: 'isg', cost: 189040, name: 'Shield Generator', class: 5, rating: 'D', mass: 8.00, integ: 58, pwrdraw: 2.08, boottime: 1, minmass: 203.0, optmass: 405.0, maxmass: 1013.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 1.0, bgenrate: 3.75, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064279, fdname: 'Int_ShieldGenerator_Size5_Class2'},
+        30530: {mtype: 'isg', cost: 567110, name: 'Shield Generator', class: 5, rating: 'C', mass: 20.00, integ: 96, pwrdraw: 2.60, boottime: 1, minmass: 203.0, optmass: 405.0, maxmass: 1013.0, minmul: 50, optmul: 100, maxmul: 150, genrate: 1.0, bgenrate: 3.75, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064280, fdname: 'Int_ShieldGenerator_Size5_Class3'},
+        30520: {mtype: 'isg', cost: 1701320, name: 'Shield Generator', class: 5, rating: 'B', mass: 32.00, integ: 134, pwrdraw: 3.12, boottime: 1, minmass: 203.0, optmass: 405.0, maxmass: 1013.0, minmul: 60, optmul: 110, maxmul: 160, genrate: 1.0, bgenrate: 3.75, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064281, fdname: 'Int_ShieldGenerator_Size5_Class4'},
+        30510: {mtype: 'isg', cost: 5103950, name: 'Shield Generator', class: 5, rating: 'A', mass: 20.00, integ: 115, pwrdraw: 3.64, boottime: 1, minmass: 203.0, optmass: 405.0, maxmass: 1013.0, minmul: 70, optmul: 120, maxmul: 170, genrate: 1.0, bgenrate: 3.75, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064282, fdname: 'Int_ShieldGenerator_Size5_Class5'},
 
-        30650: {mtype: 'isg', cost: 199750, name: 'Shield Generator', class: 6, rating: 'E', mass: 40.00, integ: 90, pwrdraw: 1.86, boottime: 1, minmass: 270.0, optmass: 540.0, maxmass: 1350.0, minmul: 30, optmul: 80, maxmul: 130, genrate: 1.3, bgenrate: 5.3, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064283, fdname: 'Int_ShieldGenerator_Size6_Class1'},
-        30640: {mtype: 'isg', cost: 599240, name: 'Shield Generator', class: 6, rating: 'D', mass: 16.00, integ: 68, pwrdraw: 2.48, boottime: 1, minmass: 270.0, optmass: 540.0, maxmass: 1350.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 1.3, bgenrate: 5.3, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064284, fdname: 'Int_ShieldGenerator_Size6_Class2'},
-        30630: {mtype: 'isg', cost: 1797730, name: 'Shield Generator', class: 6, rating: 'C', mass: 40.00, integ: 113, pwrdraw: 3.10, boottime: 1, minmass: 270.0, optmass: 540.0, maxmass: 1350.0, minmul: 50, optmul: 100, maxmul: 150, genrate: 1.3, bgenrate: 5.3, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064285, fdname: 'Int_ShieldGenerator_Size6_Class3'},
-        30620: {mtype: 'isg', cost: 5393180, name: 'Shield Generator', class: 6, rating: 'B', mass: 64.00, integ: 158, pwrdraw: 3.72, boottime: 1, minmass: 270.0, optmass: 540.0, maxmass: 1350.0, minmul: 60, optmul: 110, maxmul: 160, genrate: 1.3, bgenrate: 5.3, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064286, fdname: 'Int_ShieldGenerator_Size6_Class4'},
-        30610: {mtype: 'isg', cost: 16179530, name: 'Shield Generator', class: 6, rating: 'A', mass: 40.00, integ: 136, pwrdraw: 4.34, boottime: 1, minmass: 270.0, optmass: 540.0, maxmass: 1350.0, minmul: 70, optmul: 120, maxmul: 170, genrate: 1.3, bgenrate: 5.3, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064287, fdname: 'Int_ShieldGenerator_Size6_Class5'},
+        30650: {mtype: 'isg', cost: 199750, name: 'Shield Generator', class: 6, rating: 'E', mass: 40.00, integ: 90, pwrdraw: 1.86, boottime: 1, minmass: 270.0, optmass: 540.0, maxmass: 1350.0, minmul: 30, optmul: 80, maxmul: 130, genrate: 1.3, bgenrate: 5.33, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064283, fdname: 'Int_ShieldGenerator_Size6_Class1'},
+        30640: {mtype: 'isg', cost: 599240, name: 'Shield Generator', class: 6, rating: 'D', mass: 16.00, integ: 68, pwrdraw: 2.48, boottime: 1, minmass: 270.0, optmass: 540.0, maxmass: 1350.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 1.3, bgenrate: 5.33, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064284, fdname: 'Int_ShieldGenerator_Size6_Class2'},
+        30630: {mtype: 'isg', cost: 1797730, name: 'Shield Generator', class: 6, rating: 'C', mass: 40.00, integ: 113, pwrdraw: 3.10, boottime: 1, minmass: 270.0, optmass: 540.0, maxmass: 1350.0, minmul: 50, optmul: 100, maxmul: 150, genrate: 1.3, bgenrate: 5.33, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064285, fdname: 'Int_ShieldGenerator_Size6_Class3'},
+        30620: {mtype: 'isg', cost: 5393180, name: 'Shield Generator', class: 6, rating: 'B', mass: 64.00, integ: 158, pwrdraw: 3.72, boottime: 1, minmass: 270.0, optmass: 540.0, maxmass: 1350.0, minmul: 60, optmul: 110, maxmul: 160, genrate: 1.3, bgenrate: 5.33, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064286, fdname: 'Int_ShieldGenerator_Size6_Class4'},
+        30610: {mtype: 'isg', cost: 16179530, name: 'Shield Generator', class: 6, rating: 'A', mass: 40.00, integ: 136, pwrdraw: 4.34, boottime: 1, minmass: 270.0, optmass: 540.0, maxmass: 1350.0, minmul: 70, optmul: 120, maxmul: 170, genrate: 1.3, bgenrate: 5.33, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064287, fdname: 'Int_ShieldGenerator_Size6_Class5'},
 
-        30750: {mtype: 'isg', cost: 633200, name: 'Shield Generator', class: 7, rating: 'E', mass: 80.00, integ: 105, pwrdraw: 2.10, boottime: 1, minmass: 530.0, optmass: 1060.0, maxmass: 2650.0, minmul: 30, optmul: 80, maxmul: 130, genrate: 1.8, bgenrate: 7.3, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064288, fdname: 'Int_ShieldGenerator_Size7_Class1'},
-        30740: {mtype: 'isg', cost: 1899600, name: 'Shield Generator', class: 7, rating: 'D', mass: 32.00, integ: 79, pwrdraw: 2.80, boottime: 1, minmass: 530.0, optmass: 1060.0, maxmass: 2650.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 1.8, bgenrate: 7.3, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064289, fdname: 'Int_ShieldGenerator_Size7_Class2'},
-        30730: {mtype: 'isg', cost: 5698790, name: 'Shield Generator', class: 7, rating: 'C', mass: 80.00, integ: 131, pwrdraw: 3.50, boottime: 1, minmass: 530.0, optmass: 1060.0, maxmass: 2650.0, minmul: 50, optmul: 100, maxmul: 150, genrate: 1.8, bgenrate: 7.3, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064290, fdname: 'Int_ShieldGenerator_Size7_Class3'},
-        30720: {mtype: 'isg', cost: 17096370, name: 'Shield Generator', class: 7, rating: 'B', mass: 128.00, integ: 183, pwrdraw: 4.20, boottime: 1, minmass: 530.0, optmass: 1060.0, maxmass: 2650.0, minmul: 60, optmul: 110, maxmul: 160, genrate: 1.8, bgenrate: 7.3, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064291, fdname: 'Int_ShieldGenerator_Size7_Class4'},
-        30710: {mtype: 'isg', cost: 51289110, name: 'Shield Generator', class: 7, rating: 'A', mass: 80.00, integ: 157, pwrdraw: 4.90, boottime: 1, minmass: 530.0, optmass: 1060.0, maxmass: 2650.0, minmul: 70, optmul: 120, maxmul: 170, genrate: 1.8, bgenrate: 7.3, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064292, fdname: 'Int_ShieldGenerator_Size7_Class5'},
+        30750: {mtype: 'isg', cost: 633200, name: 'Shield Generator', class: 7, rating: 'E', mass: 80.00, integ: 105, pwrdraw: 2.10, boottime: 1, minmass: 530.0, optmass: 1060.0, maxmass: 2650.0, minmul: 30, optmul: 80, maxmul: 130, genrate: 1.8, bgenrate: 7.33, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064288, fdname: 'Int_ShieldGenerator_Size7_Class1'},
+        30740: {mtype: 'isg', cost: 1899600, name: 'Shield Generator', class: 7, rating: 'D', mass: 32.00, integ: 79, pwrdraw: 2.80, boottime: 1, minmass: 530.0, optmass: 1060.0, maxmass: 2650.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 1.8, bgenrate: 7.33, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064289, fdname: 'Int_ShieldGenerator_Size7_Class2'},
+        30730: {mtype: 'isg', cost: 5698790, name: 'Shield Generator', class: 7, rating: 'C', mass: 80.00, integ: 131, pwrdraw: 3.50, boottime: 1, minmass: 530.0, optmass: 1060.0, maxmass: 2650.0, minmul: 50, optmul: 100, maxmul: 150, genrate: 1.8, bgenrate: 7.33, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064290, fdname: 'Int_ShieldGenerator_Size7_Class3'},
+        30720: {mtype: 'isg', cost: 17096370, name: 'Shield Generator', class: 7, rating: 'B', mass: 128.00, integ: 183, pwrdraw: 4.20, boottime: 1, minmass: 530.0, optmass: 1060.0, maxmass: 2650.0, minmul: 60, optmul: 110, maxmul: 160, genrate: 1.8, bgenrate: 7.33, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064291, fdname: 'Int_ShieldGenerator_Size7_Class4'},
+        30710: {mtype: 'isg', cost: 51289110, name: 'Shield Generator', class: 7, rating: 'A', mass: 80.00, integ: 157, pwrdraw: 4.90, boottime: 1, minmass: 530.0, optmass: 1060.0, maxmass: 2650.0, minmul: 70, optmul: 120, maxmul: 170, genrate: 1.8, bgenrate: 7.33, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064292, fdname: 'Int_ShieldGenerator_Size7_Class5'},
 
-        30850: {mtype: 'isg', cost: 2007240, name: 'Shield Generator', class: 8, rating: 'E', mass: 160.00, integ: 120, pwrdraw: 2.40, boottime: 1, minmass: 900.0, optmass: 1800.0, maxmass: 4500.0, minmul: 30, optmul: 80, maxmul: 130, genrate: 2.4, bgenrate: 9.6, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064293, fdname: 'Int_ShieldGenerator_Size8_Class1'},
-        30840: {mtype: 'isg', cost: 6021720, name: 'Shield Generator', class: 8, rating: 'D', mass: 64.00, integ: 90, pwrdraw: 3.20, boottime: 1, minmass: 900.0, optmass: 1800.0, maxmass: 4500.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 2.4, bgenrate: 9.6, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064294, fdname: 'Int_ShieldGenerator_Size8_Class2'},
-        30830: {mtype: 'isg', cost: 18065170, name: 'Shield Generator', class: 8, rating: 'C', mass: 160.00, integ: 150, pwrdraw: 4.00, boottime: 1, minmass: 900.0, optmass: 1800.0, maxmass: 4500.0, minmul: 50, optmul: 100, maxmul: 150, genrate: 2.4, bgenrate: 9.6, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064295, fdname: 'Int_ShieldGenerator_Size8_Class3'},
-        30820: {mtype: 'isg', cost: 54195500, name: 'Shield Generator', class: 8, rating: 'B', mass: 256.00, integ: 210, pwrdraw: 4.80, boottime: 1, minmass: 900.0, optmass: 1800.0, maxmass: 4500.0, minmul: 60, optmul: 110, maxmul: 160, genrate: 2.4, bgenrate: 9.6, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064296, fdname: 'Int_ShieldGenerator_Size8_Class4'},
-        30810: {mtype: 'isg', cost: 162586490, name: 'Shield Generator', class: 8, rating: 'A', mass: 160.00, integ: 180, pwrdraw: 5.60, boottime: 1, minmass: 900.0, optmass: 1800.0, maxmass: 4500.0, minmul: 70, optmul: 120, maxmul: 170, genrate: 2.4, bgenrate: 9.6, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064297, fdname: 'Int_ShieldGenerator_Size8_Class5'},
+        30850: {mtype: 'isg', cost: 2007240, name: 'Shield Generator', class: 8, rating: 'E', mass: 160.00, integ: 120, pwrdraw: 2.40, boottime: 1, minmass: 900.0, optmass: 1800.0, maxmass: 4500.0, minmul: 30, optmul: 80, maxmul: 130, genrate: 2.4, bgenrate: 9.6, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064293, fdname: 'Int_ShieldGenerator_Size8_Class1'},
+        30840: {mtype: 'isg', cost: 6021720, name: 'Shield Generator', class: 8, rating: 'D', mass: 64.00, integ: 90, pwrdraw: 3.20, boottime: 1, minmass: 900.0, optmass: 1800.0, maxmass: 4500.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 2.4, bgenrate: 9.6, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064294, fdname: 'Int_ShieldGenerator_Size8_Class2'},
+        30830: {mtype: 'isg', cost: 18065170, name: 'Shield Generator', class: 8, rating: 'C', mass: 160.00, integ: 150, pwrdraw: 4.00, boottime: 1, minmass: 900.0, optmass: 1800.0, maxmass: 4500.0, minmul: 50, optmul: 100, maxmul: 150, genrate: 2.4, bgenrate: 9.6, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064295, fdname: 'Int_ShieldGenerator_Size8_Class3'},
+        30820: {mtype: 'isg', cost: 54195500, name: 'Shield Generator', class: 8, rating: 'B', mass: 256.00, integ: 210, pwrdraw: 4.80, boottime: 1, minmass: 900.0, optmass: 1800.0, maxmass: 4500.0, minmul: 60, optmul: 110, maxmul: 160, genrate: 2.4, bgenrate: 9.6, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064296, fdname: 'Int_ShieldGenerator_Size8_Class4'},
+        30810: {mtype: 'isg', cost: 162586490, name: 'Shield Generator', class: 8, rating: 'A', mass: 160.00, integ: 180, pwrdraw: 5.60, boottime: 1, minmass: 900.0, optmass: 1800.0, maxmass: 4500.0, minmul: 70, optmul: 120, maxmul: 170, genrate: 2.4, bgenrate: 9.6, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128064297, fdname: 'Int_ShieldGenerator_Size8_Class5'},
 
-        30132: {mtype: 'isg', cost: 7710, name: 'Bi-Weave Shield Generator', class: 1, rating: 'C', mass: 1.30, integ: 40, pwrdraw: 1.20, boottime: 1, minmass: 13.0, optmass: 25.0, maxmass: 63.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 1.8, bgenrate: 2.4, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671331, fdname: 'Int_ShieldGenerator_Size1_Class3_Fast'}, // TODO: verify bgenrate
-        30232: {mtype: 'isg', cost: 26710, name: 'Bi-Weave Shield Generator', class: 2, rating: 'C', mass: 2.50, integ: 51, pwrdraw: 1.50, boottime: 1, minmass: 28.0, optmass: 55.0, maxmass: 138.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 1.8, bgenrate: 2.4, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671332, fdname: 'Int_ShieldGenerator_Size2_Class3_Fast'}, // TODO: verify bgenrate
-        30332: {mtype: 'isg', cost: 84650, name: 'Bi-Weave Shield Generator', class: 3, rating: 'C', mass: 5.00, integ: 64, pwrdraw: 1.80, boottime: 1, minmass: 83.0, optmass: 165.0, maxmass: 413.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 1.8, bgenrate: 2.8, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671333, fdname: 'Int_ShieldGenerator_Size3_Class3_Fast'}, // TODO: verify bgenrate
-        30432: {mtype: 'isg', cost: 268350, name: 'Bi-Weave Shield Generator', class: 4, rating: 'C', mass: 10.00, integ: 80, pwrdraw: 2.20, boottime: 1, minmass: 143.0, optmass: 285.0, maxmass: 713.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 1.8, bgenrate: 3.8, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671334, fdname: 'Int_ShieldGenerator_Size4_Class3_Fast'}, // TODO: verify bgenrate
-        30532: {mtype: 'isg', cost: 850660, name: 'Bi-Weave Shield Generator', class: 5, rating: 'C', mass: 20.00, integ: 96, pwrdraw: 2.60, boottime: 1, minmass: 203.0, optmass: 405.0, maxmass: 1013.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 2.2, bgenrate: 5.6, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671335, fdname: 'Int_ShieldGenerator_Size5_Class3_Fast'}, // TODO: verify bgenrate
-        30632: {mtype: 'isg', cost: 2696590, name: 'Bi-Weave Shield Generator', class: 6, rating: 'C', mass: 40.00, integ: 113, pwrdraw: 3.10, boottime: 1, minmass: 270.0, optmass: 540.0, maxmass: 1350.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 3.2, bgenrate: 8.0, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671336, fdname: 'Int_ShieldGenerator_Size6_Class3_Fast'}, // TODO: verify bgenrate
-        30732: {mtype: 'isg', cost: 8548190, name: 'Bi-Weave Shield Generator', class: 7, rating: 'C', mass: 80.00, integ: 131, pwrdraw: 3.50, boottime: 1, minmass: 530.0, optmass: 1060.0, maxmass: 2650.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 4.4, bgenrate: 11.0, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671337, fdname: 'Int_ShieldGenerator_Size7_Class3_Fast'}, // TODO: verify bgenrate
-        30832: {mtype: 'isg', cost: 27097750, name: 'Bi-Weave Shield Generator', class: 8, rating: 'C', mass: 160.00, integ: 150, pwrdraw: 4.00, boottime: 1, minmass: 900.0, optmass: 1800.0, maxmass: 4500.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 5.8, bgenrate: 14.4, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671338, fdname: 'Int_ShieldGenerator_Size8_Class3_Fast'}, // TODO: verify bgenrate
+        30132: {mtype: 'isg', cost: 7710, name: 'Bi-Weave Shield Generator', class: 1, rating: 'C', mass: 1.30, integ: 40, pwrdraw: 1.20, boottime: 1, minmass: 13.0, optmass: 25.0, maxmass: 63.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 1.8, bgenrate: 2.400, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671331, fdname: 'Int_ShieldGenerator_Size1_Class3_Fast'}, // TODO: verify bgenrate
+        30232: {mtype: 'isg', cost: 26710, name: 'Bi-Weave Shield Generator', class: 2, rating: 'C', mass: 2.50, integ: 51, pwrdraw: 1.50, boottime: 1, minmass: 28.0, optmass: 55.0, maxmass: 138.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 1.8, bgenrate: 2.400, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671332, fdname: 'Int_ShieldGenerator_Size2_Class3_Fast'}, // TODO: verify bgenrate
+        30332: {mtype: 'isg', cost: 84650, name: 'Bi-Weave Shield Generator', class: 3, rating: 'C', mass: 5.00, integ: 64, pwrdraw: 1.80, boottime: 1, minmass: 83.0, optmass: 165.0, maxmass: 413.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 1.8, bgenrate: 2.805, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671333, fdname: 'Int_ShieldGenerator_Size3_Class3_Fast'}, // TODO: verify bgenrate
+        30432: {mtype: 'isg', cost: 268350, name: 'Bi-Weave Shield Generator', class: 4, rating: 'C', mass: 10.00, integ: 80, pwrdraw: 2.20, boottime: 1, minmass: 143.0, optmass: 285.0, maxmass: 713.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 1.8, bgenrate: 3.795, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671334, fdname: 'Int_ShieldGenerator_Size4_Class3_Fast'}, // TODO: verify bgenrate
+        30532: {mtype: 'isg', cost: 850660, name: 'Bi-Weave Shield Generator', class: 5, rating: 'C', mass: 20.00, integ: 96, pwrdraw: 2.60, boottime: 1, minmass: 203.0, optmass: 405.0, maxmass: 1013.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 2.2, bgenrate: 5.625, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671335, fdname: 'Int_ShieldGenerator_Size5_Class3_Fast'}, // TODO: verify bgenrate
+        30632: {mtype: 'isg', cost: 2696590, name: 'Bi-Weave Shield Generator', class: 6, rating: 'C', mass: 40.00, integ: 113, pwrdraw: 3.10, boottime: 1, minmass: 270.0, optmass: 540.0, maxmass: 1350.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 3.2, bgenrate: 7.995, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671336, fdname: 'Int_ShieldGenerator_Size6_Class3_Fast'}, // TODO: verify bgenrate
+        30732: {mtype: 'isg', cost: 8548190, name: 'Bi-Weave Shield Generator', class: 7, rating: 'C', mass: 80.00, integ: 131, pwrdraw: 3.50, boottime: 1, minmass: 530.0, optmass: 1060.0, maxmass: 2650.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 4.4, bgenrate: 10.995, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671337, fdname: 'Int_ShieldGenerator_Size7_Class3_Fast'}, // TODO: verify bgenrate
+        30832: {mtype: 'isg', cost: 27097750, name: 'Bi-Weave Shield Generator', class: 8, rating: 'C', mass: 160.00, integ: 150, pwrdraw: 4.00, boottime: 1, minmass: 900.0, optmass: 1800.0, maxmass: 4500.0, minmul: 40, optmul: 90, maxmul: 140, genrate: 5.8, bgenrate: 14.400, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671338, fdname: 'Int_ShieldGenerator_Size8_Class3_Fast'}, // TODO: verify bgenrate
 
-        30111: {mtype: 'isg', cost: 132200, name: 'Prismatic Shield Generator', class: 1, rating: 'A', mass: 2.60, integ: 48, pwrdraw: 2.52, boottime: 1, minmass: 13.0, optmass: 25.0, maxmass: 63.0, minmul: 100, optmul: 150, maxmul: 200, genrate: 1.0, bgenrate: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671323, fdname: 'Int_ShieldGenerator_Size1_Class5_Strong'}, // TODO: verify bgenrate
-        30211: {mtype: 'isg', cost: 240340, name: 'Prismatic Shield Generator', class: 2, rating: 'A', mass: 5.00, integ: 61, pwrdraw: 3.15, boottime: 1, minmass: 28.0, optmass: 55.0, maxmass: 138.0, minmul: 100, optmul: 150, maxmul: 200, genrate: 1.0, bgenrate: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671324, fdname: 'Int_ShieldGenerator_Size2_Class5_Strong'}, // TODO: verify bgenrate
-        30311: {mtype: 'isg', cost: 761870, name: 'Prismatic Shield Generator', class: 3, rating: 'A', mass: 10.00, integ: 77, pwrdraw: 3.78, boottime: 1, minmass: 83.0, optmass: 165.0, maxmass: 413.0, minmul: 100, optmul: 150, maxmul: 200, genrate: 1.0, bgenrate: 1.3, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671325, fdname: 'Int_ShieldGenerator_Size3_Class5_Strong'}, // TODO: verify bgenrate
-        30411: {mtype: 'isg', cost: 2415120, name: 'Prismatic Shield Generator', class: 4, rating: 'A', mass: 20.00, integ: 96, pwrdraw: 4.62, boottime: 1, minmass: 143.0, optmass: 285.0, maxmass: 713.0, minmul: 100, optmul: 150, maxmul: 200, genrate: 1.0, bgenrate: 1.66, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671326, fdname: 'Int_ShieldGenerator_Size4_Class5_Strong'},
-        30511: {mtype: 'isg', cost: 7655930, name: 'Prismatic Shield Generator', class: 5, rating: 'A', mass: 40.00, integ: 115, pwrdraw: 5.46, boottime: 1, minmass: 203.0, optmass: 405.0, maxmass: 1013.0, minmul: 100, optmul: 150, maxmul: 200, genrate: 1.0, bgenrate: 2.3, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671327, fdname: 'Int_ShieldGenerator_Size5_Class5_Strong'}, // TODO: verify bgenrate
-        30611: {mtype: 'isg', cost: 24269300, name: 'Prismatic Shield Generator', class: 6, rating: 'A', mass: 80.00, integ: 136, pwrdraw: 6.51, boottime: 1, minmass: 270.0, optmass: 540.0, maxmass: 1350.0, minmul: 100, optmul: 150, maxmul: 200, genrate: 1.0, bgenrate: 3.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671328, fdname: 'Int_ShieldGenerator_Size6_Class5_Strong'}, // TODO: verify bgenrate
-        30711: {mtype: 'isg', cost: 76933670, name: 'Prismatic Shield Generator', class: 7, rating: 'A', mass: 160.00, integ: 157, pwrdraw: 7.35, boottime: 1, minmass: 530.0, optmass: 1060.0, maxmass: 2650.0, minmul: 100, optmul: 150, maxmul: 200, genrate: 1.1, bgenrate: 4.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671329, fdname: 'Int_ShieldGenerator_Size7_Class5_Strong'}, // TODO: verify bgenrate
-        30811: {mtype: 'isg', cost: 243879730, name: 'Prismatic Shield Generator', class: 8, rating: 'A', mass: 320.00, integ: 180, pwrdraw: 8.40, boottime: 1, minmass: 900.0, optmass: 1800.0, maxmass: 4500.0, minmul: 100, optmul: 150, maxmul: 200, genrate: 1.4, bgenrate: 5.4, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671330, fdname: 'Int_ShieldGenerator_Size8_Class5_Strong'}, // TODO: verify bgenrate
+        30111: {mtype: 'isg', cost: 132200, name: 'Prismatic Shield Generator', class: 1, rating: 'A', mass: 2.60, integ: 48, pwrdraw: 2.52, boottime: 1, minmass: 13.0, optmass: 25.0, maxmass: 63.0, minmul: 100, optmul: 150, maxmul: 200, genrate: 1.0, bgenrate: 1.2, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671323, fdname: 'Int_ShieldGenerator_Size1_Class5_Strong'}, // TODO: verify bgenrate
+        30211: {mtype: 'isg', cost: 240340, name: 'Prismatic Shield Generator', class: 2, rating: 'A', mass: 5.00, integ: 61, pwrdraw: 3.15, boottime: 1, minmass: 28.0, optmass: 55.0, maxmass: 138.0, minmul: 100, optmul: 150, maxmul: 200, genrate: 1.0, bgenrate: 1.2, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671324, fdname: 'Int_ShieldGenerator_Size2_Class5_Strong'}, // TODO: verify bgenrate
+        30311: {mtype: 'isg', cost: 761870, name: 'Prismatic Shield Generator', class: 3, rating: 'A', mass: 10.00, integ: 77, pwrdraw: 3.78, boottime: 1, minmass: 83.0, optmass: 165.0, maxmass: 413.0, minmul: 100, optmul: 150, maxmul: 200, genrate: 1.0, bgenrate: 1.3, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671325, fdname: 'Int_ShieldGenerator_Size3_Class5_Strong'}, // TODO: verify bgenrate
+        30411: {mtype: 'isg', cost: 2415120, name: 'Prismatic Shield Generator', class: 4, rating: 'A', mass: 20.00, integ: 96, pwrdraw: 4.62, boottime: 1, minmass: 143.0, optmass: 285.0, maxmass: 713.0, minmul: 100, optmul: 150, maxmul: 200, genrate: 1.0, bgenrate: 1.66, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671326, fdname: 'Int_ShieldGenerator_Size4_Class5_Strong'},
+        30511: {mtype: 'isg', cost: 7655930, name: 'Prismatic Shield Generator', class: 5, rating: 'A', mass: 40.00, integ: 115, pwrdraw: 5.46, boottime: 1, minmass: 203.0, optmass: 405.0, maxmass: 1013.0, minmul: 100, optmul: 150, maxmul: 200, genrate: 1.0, bgenrate: 2.34, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671327, fdname: 'Int_ShieldGenerator_Size5_Class5_Strong'}, // TODO: verify bgenrate
+        30611: {mtype: 'isg', cost: 24269300, name: 'Prismatic Shield Generator', class: 6, rating: 'A', mass: 80.00, integ: 136, pwrdraw: 6.51, boottime: 1, minmass: 270.0, optmass: 540.0, maxmass: 1350.0, minmul: 100, optmul: 150, maxmul: 200, genrate: 1.0, bgenrate: 3.2, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671328, fdname: 'Int_ShieldGenerator_Size6_Class5_Strong'}, // TODO: verify bgenrate
+        30711: {mtype: 'isg', cost: 76933670, name: 'Prismatic Shield Generator', class: 7, rating: 'A', mass: 160.00, integ: 157, pwrdraw: 7.35, boottime: 1, minmass: 530.0, optmass: 1060.0, maxmass: 2650.0, minmul: 100, optmul: 150, maxmul: 200, genrate: 1.1, bgenrate: 4.25, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671329, fdname: 'Int_ShieldGenerator_Size7_Class5_Strong'}, // TODO: verify bgenrate
+        30811: {mtype: 'isg', cost: 243879730, name: 'Prismatic Shield Generator', class: 8, rating: 'A', mass: 320.00, integ: 180, pwrdraw: 8.40, boottime: 1, minmass: 900.0, optmass: 1800.0, maxmass: 4500.0, minmul: 100, optmul: 150, maxmul: 200, genrate: 1.4, bgenrate: 5.4, thmload: 1.2, distdraw: 0.6, kinres: 40.0, thmres: -20.0, expres: 50.0, fdid: 128671330, fdname: 'Int_ShieldGenerator_Size8_Class5_Strong'}, // TODO: verify bgenrate
 
 
         10150: {mtype: 'isbs', cost: 1000, name: 'Basic Discovery Scanner', class: 1, rating: 'E', mass: 2.00, integ: 40, activerng: 500, passiverng: 0.33, maxangle: 10.00, scantime: 5, fdid: 128662535, fdname: 'Int_StellarBodyDiscoveryScanner_Standard'},
         10140: {mtype: 'isbs', cost: 505000, name: 'Intermediate Discovery Scanner', class: 1, rating: 'D', mass: 2.00, integ: 40, activerng: 1000, passiverng: 3.34, maxangle: 10.00, scantime: 5, fdid: 128663560, fdname: 'Int_StellarBodyDiscoveryScanner_Intermediate'},
         10130: {mtype: 'isbs', cost: 1545000, name: 'Advanced Discovery Scanner', class: 1, rating: 'C', mass: 2.00, integ: 40, activerng: 1 / 0, passiverng: 33.36, maxangle: 10.00, scantime: 5, fdid: 128663561, fdname: 'Int_StellarBodyDiscoveryScanner_Advanced'},
 
-        11130: {mtype: 'iss', cost: 250000, name: 'Detailed Surface Scanner', class: 1, rating: 'C', mass: 1.30, boottime: 2, fdid: 128666634, fdname: 'Int_DetailedSurfaceScanner_Tiny'},
+        11130: {mtype: 'iss', cost: 250000, name: 'Detailed Surface Scanner', class: 1, rating: 'C', mass: 1.30, fdid: 128666634, fdname: 'Int_DetailedSurfaceScanner_Tiny'},
 
+        /* TODO
+         Size 4 Meta Alloy Hull Reinforcement Package
+         */
     }, // eddb.module{}
 }; // eddb{}
